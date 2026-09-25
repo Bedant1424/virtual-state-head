@@ -1,0 +1,34 @@
+/**
+ * AUTHORITATIVE DESIGN TOKENS
+ * Virtual State Head — Sales Performance Engine
+ * All colors, typography, radii, and transitions strictly defined here.
+ */
+
+:root {
+  /* Approved Brand Color Palette */
+  --color-sky-brand: #87CEEB;   /* Light Sky Blue - highlights, borders, motion accents */
+  --color-white: #FFFFFF;       /* White - primary backgrounds, clean cards */
+  --color-paper: #F3F5F7;       /* Light Grey - secondary backgrounds, soft borders */
+  --color-muted: #6B7280;       /* Medium Grey - subtitles, secondary text */
+  --color-charcoal: #333333;    /* Charcoal - primary high-contrast body text */
+  --color-deep-blue: #123B63;   /* Deep Blue - brand contrast moments, primary buttons */
+  --color-navy: #0B1F33;        /* Dark Navy - hero/cohort contrast sections, deep accents */
+  --color-soft-blue: #EAF5FB;   /* Soft Blue - subtle tinted panels, active states */
+
+  /* Typography Token */
+  --font-primary: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Radii Tokens */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Motion & Timing Tokens */
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 400ms;
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+}

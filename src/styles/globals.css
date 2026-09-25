@@ -1,0 +1,122 @@
+@import "tailwindcss";
+@import "./tokens.css";
+
+@theme {
+  --color-sky-brand: #87CEEB;
+  --color-white: #FFFFFF;
+  --color-paper: #F3F5F7;
+  --color-muted: #6B7280;
+  --color-charcoal: #333333;
+  --color-deep-blue: #123B63;
+  --color-navy: #0B1F33;
+  --color-soft-blue: #EAF5FB;
+
+  --font-sans: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+}
+
+/* Base Styles & Accessible Defaults */
+html {
+  font-family: var(--font-primary);
+  color: var(--color-charcoal);
+  background-color: var(--color-white);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Focus Visibility & Accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-sky-brand);
+  outline-offset: 2px;
+}
+
+/* Skip to Content Link */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  z-index: 100;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-deep-blue);
+  color: var(--color-white);
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  transition: top var(--duration-fast) var(--ease-spring);
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Typography Hierarchy Utilities */
+.typography-display {
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+
+.typography-h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+}
+
+.typography-h2 {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.typography-h3 {
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+
+.typography-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.typography-body-lg {
+  font-size: 1.125rem;
+  line-height: 1.65;
+}
+
+.typography-body {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.typography-small {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.typography-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* Global Prefers-Reduced-Motion Handling */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
