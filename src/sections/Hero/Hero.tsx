@@ -9,7 +9,7 @@ import { AuthorityStrip } from './AuthorityStrip';
 import { SectionTransition } from './SectionTransition';
 import { siteContent } from '@/data/siteContent';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
-import { ArrowRight, ChevronRight, Check } from 'lucide-react';
+import { ArrowRight, ChevronDown, Check } from 'lucide-react';
 
 export interface HeroProps {
   onCtaClick?: () => void;
@@ -76,36 +76,33 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
                 </motion.h1>
               </div>
 
-              {/* Step 5: Compact Supporting Copy */}
+              {/* Step 5: Refined Supporting Copy (1 short paragraph + 1 concise sentence) */}
               <motion.div
-                initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+                initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.45, delay: 0.35 }}
-                className="space-y-3 max-w-2xl text-muted text-base sm:text-lg leading-relaxed mb-8"
+                transition={{ duration: 0.45, delay: 0.32 }}
+                className="space-y-3 max-w-2xl text-muted text-base sm:text-lg leading-relaxed mb-7"
               >
                 <p>
-                  Your salespeople may be working hard. Your business may have targets, processes, and technology in place.
+                  Your salespeople may be working hard, and targets, processes, and technology may already be in place. But without the right sales leadership, direction, and accountability, effort does not always translate into consistent performance.
                 </p>
-                <p className="font-semibold text-charcoal">
-                  But without the right sales leadership, direction, and accountability, effort does not always translate into consistent performance.
-                </p>
-                <p className="text-sm sm:text-base text-muted/90">
-                  Virtual State Head helps MSMEs in Odisha strengthen their sales strategy, develop their teams, and improve execution through experienced sales leadership and the Sales Performance Engine.
+                <p className="font-semibold text-charcoal text-base sm:text-lg">
+                  Virtual State Head helps MSMEs in Odisha strengthen sales strategy, develop teams, and improve execution through experienced sales leadership and the Sales Performance Engine.
                 </p>
               </motion.div>
 
-              {/* Step 6: Prominent Primary CTA & Secondary Action */}
+              {/* Step 6: Dominant Primary CTA & Lightweight Scroll Cue */}
               <motion.div
-                initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+                initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.45, delay: 0.45 }}
-                className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full sm:w-auto"
+                transition={{ duration: 0.45, delay: 0.42 }}
+                className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 w-full sm:w-auto"
               >
                 <Button
                   variant="primary"
                   size="lg"
                   onClick={onCtaClick}
-                  className="gap-2.5 shadow-md hover:shadow-lg font-bold text-base px-7 py-4"
+                  className="w-full sm:w-auto gap-2.5 shadow-md hover:shadow-lg font-bold text-base px-8 py-4 bg-deep-blue text-white hover:bg-navy border border-deep-blue hover:border-sky-brand"
                   aria-label="Book Your Sales Strategy Call with Virtual State Head"
                 >
                   <span>{siteContent.cta.primaryLabel}</span>
@@ -114,33 +111,34 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
 
                 <a
                   href="#engine"
-                  className="inline-flex items-center justify-center gap-1.5 px-6 py-4 rounded-md text-sm font-bold text-deep-blue hover:text-navy hover:bg-soft-blue/60 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-brand"
+                  className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-muted hover:text-deep-blue transition-colors group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-brand rounded py-2 px-1"
+                  aria-label="Scroll to see how the Sales Performance Engine works"
                 >
-                  <span>{siteContent.cta.secondaryLabel}</span>
-                  <ChevronRight className="w-4 h-4 text-muted" />
+                  <span>See how the system works</span>
+                  <ChevronDown className="w-4 h-4 text-muted group-hover:text-deep-blue group-hover:translate-y-0.5 transition-all" />
                 </a>
               </motion.div>
 
-              {/* Key Trust Highlights */}
+              {/* Key Trust & Positioning Alignment */}
               <motion.div
                 initial={reducedMotion ? { opacity: 1 } : { opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 0.4, delay: 0.55 }}
+                transition={{ duration: 0.4, delay: 0.52 }}
                 className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-muted font-medium"
               >
                 <div className="flex items-center gap-1">
-                  <Check className="w-3.5 h-3.5 text-deep-blue" />
+                  <Check className="w-3.5 h-3.5 text-deep-blue shrink-0" />
                   <span>Odisha MSME Dedicated</span>
                 </div>
                 <span className="text-gray-300">•</span>
                 <div className="flex items-center gap-1">
-                  <Check className="w-3.5 h-3.5 text-deep-blue" />
+                  <Check className="w-3.5 h-3.5 text-deep-blue shrink-0" />
                   <span>Direct Senior Advisory</span>
                 </div>
                 <span className="text-gray-300">•</span>
                 <div className="flex items-center gap-1">
-                  <Check className="w-3.5 h-3.5 text-deep-blue" />
-                  <span>3 Pillars Operating Model</span>
+                  <Check className="w-3.5 h-3.5 text-deep-blue shrink-0" />
+                  <span>3 Pillars: Training • Technology • Accountability</span>
                 </div>
               </motion.div>
             </motion.div>
