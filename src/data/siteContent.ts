@@ -78,10 +78,21 @@ export interface BatchInfo {
   readonly note: string;
 }
 
+export interface AuthorityConcept {
+  readonly title: string;
+  readonly description: string;
+}
+
+export interface AuthorityStripData {
+  readonly royalBalExperience: string;
+  readonly concepts: readonly AuthorityConcept[];
+}
+
 export interface SiteContent {
   readonly brand: BrandMetadata;
   readonly navigation: readonly NavigationItem[];
   readonly cta: CtaConfig;
+  readonly authority: AuthorityStripData;
   readonly pillars: readonly EnginePillar[];
   readonly frameworks: readonly Framework[];
   readonly coaches: readonly Coach[];
@@ -107,20 +118,40 @@ export const siteContent: SiteContent = {
   },
 
   navigation: [
+    { id: 'home', label: 'Home', href: '#' },
     { id: 'about', label: 'About', href: '#about' },
-    { id: 'problem', label: 'The Challenge', href: '#problem' },
-    { id: 'engine', label: 'Performance Engine', href: '#engine' },
-    { id: 'frameworks', label: 'Frameworks', href: '#frameworks' },
-    { id: 'coaches', label: 'Coaches', href: '#coaches' },
-    { id: 'process', label: 'Process', href: '#process' },
+    { id: 'engine', label: 'Sales Performance Engine', href: '#engine' },
+    { id: 'coaches', label: 'Our Coaches', href: '#coaches' },
     { id: 'fit', label: 'Who We Help', href: '#fit' },
-    { id: 'faq', label: 'FAQ', href: '#faq' },
+    { id: 'faq', label: 'FAQs', href: '#faq' },
   ],
 
   cta: {
     primaryLabel: 'Book Your Sales Strategy Call',
     secondaryLabel: 'Explore the Engine',
     helperText: 'Confidential 1-on-1 strategy discussion for MSME leadership in Odisha.',
+  },
+
+  authority: {
+    royalBalExperience: '30+ Years Sales Experience (Royal Bal)',
+    concepts: [
+      {
+        title: 'Experienced Sales Leadership',
+        description: 'Senior executive direction guiding field execution and pipeline rigor',
+      },
+      {
+        title: 'Strategic Direction',
+        description: 'Target market clarity, territory structuring, and margin protection',
+      },
+      {
+        title: 'Team Performance',
+        description: 'Capability development, objection handling, and conversion discipline',
+      },
+      {
+        title: 'Accountability',
+        description: 'Weekly reviews, pacing governance, and ownership removing founder burden',
+      },
+    ],
   },
 
   pillars: [

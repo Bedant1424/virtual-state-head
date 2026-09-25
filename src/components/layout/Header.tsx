@@ -30,8 +30,8 @@ export const Header: React.FC<HeaderProps> = ({ onCtaClick, className }) => {
         className={cn(
           'sticky top-0 z-40 w-full transition-all duration-200 border-b',
           isScrolled
-            ? 'bg-white/95 backdrop-blur-md border-paper shadow-sm py-3.5'
-            : 'bg-white border-transparent py-4 sm:py-5',
+            ? 'bg-white/95 backdrop-blur-md border-paper shadow-sm py-3 sm:py-3.5'
+            : 'bg-transparent border-transparent py-4 sm:py-5',
           className
         )}
       >
