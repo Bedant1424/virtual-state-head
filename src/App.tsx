@@ -1,18 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import { Hero } from '@/sections/Hero';
+import { DemoModal } from '@/components/ui/DemoModal';
 import { Container } from '@/components/layout/Container';
-import { SectionWrapper } from '@/components/layout/SectionWrapper';
-import { BackgroundGrid } from '@/components/layout/BackgroundGrid';
 import { SectionLabel } from '@/components/ui/SectionLabel';
-import { Button } from '@/components/ui/Button';
-import { Card } from '@/components/ui/Card';
+import { Compass, ShieldCheck, BarChart3, CheckCircle2 } from 'lucide-react';
 import { siteContent } from '@/data/siteContent';
-import { ArrowRight, CheckCircle2, ShieldCheck, Compass, BarChart3 } from 'lucide-react';
 
 export const App: React.FC = () => {
-  const handleCtaClick = () => {
-    alert(`Action: ${siteContent.cta.primaryLabel} (Demo Mode)`);
+  const [isDemoModalOpen, setIsDemoModalOpen] = useState<boolean>(false);
+
+  const handleOpenDemoModal = () => {
+    setIsDemoModalOpen(true);
+  };
+
+  const handleCloseDemoModal = () => {
+    setIsDemoModalOpen(false);
   };
 
   return (
@@ -22,53 +26,39 @@ export const App: React.FC = () => {
         Skip to main content
       </a>
 
-      {/* Structural Header Shell */}
-      <Header onCtaClick={handleCtaClick} />
+      {/* Premium Visual Header */}
+      <Header onCtaClick={handleOpenDemoModal} />
 
-      {/* Main Structural Content Shell */}
+      {/* Main Experience Container */}
       <main id="main-content" className="relative flex-1">
-        {/* Living Sales-Performance Background System */}
-        <BackgroundGrid variant="light" />
+        {/* SPRINT 1: Signature Hero Section Experience */}
+        <Hero onCtaClick={handleOpenDemoModal} />
 
-        {/* Sprint 0 Foundation Verification Shell */}
-        <SectionWrapper spacing="lg" className="relative z-10">
+        {/* Sprint 2 Boundary Placeholder: Operational Architecture Preview */}
+        <section
+          id="engine"
+          aria-label="Sales Performance Engine Pillars"
+          className="py-16 sm:py-20 bg-paper/50 border-b border-gray-200/80"
+        >
           <Container size="default">
-            {/* Section Eyebrow Label */}
             <div className="mb-4">
-              <SectionLabel label="Sprint 0 • Architecture & Design System Foundation" />
+              <SectionLabel label="Engine Pillars • Operating Architecture" />
             </div>
 
-            {/* Typography Hierarchy Demo & Core Positioning */}
-            <div className="max-w-3xl mb-12">
-              <h1 className="typography-h1 text-navy mb-4">
-                Virtual State Head
-                <span className="block text-deep-blue font-bold text-2xl sm:text-3xl mt-1">
-                  Sales Performance Engine
-                </span>
-              </h1>
-              <p className="typography-body-lg text-muted mb-6">
-                {siteContent.brand.positioningStatement}
+            <div className="max-w-2xl mb-10">
+              <h2 className="typography-h2 text-navy mb-3">
+                The Three Pillars of the Sales Performance Engine
+              </h2>
+              <p className="typography-body text-muted">
+                Virtual State Head replaces fragmented sales efforts with an integrated discipline combining training, visibility tools, and executive review cadence.
               </p>
-              <div className="flex flex-wrap items-center gap-3">
-                <Button variant="primary" size="lg" onClick={handleCtaClick}>
-                  <span>{siteContent.cta.primaryLabel}</span>
-                  <ArrowRight className="w-4 h-4 ml-1 text-sky-brand" />
-                </Button>
-                <Button variant="secondary" size="lg">
-                  <span>{siteContent.cta.secondaryLabel}</span>
-                </Button>
-              </div>
             </div>
 
-            {/* Foundation Primitives Verification: Cards & Pillars */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {siteContent.pillars.map((pillar) => (
-                <Card
+                <div
                   key={pillar.id}
-                  variant="white"
-                  padding="md"
-                  interactive
-                  className="flex flex-col justify-between"
+                  className="rounded-xl bg-white border border-gray-200/80 p-6 sm:p-7 shadow-sm hover:border-sky-brand/50 transition-colors flex flex-col justify-between"
                 >
                   <div>
                     <div className="w-10 h-10 rounded-lg bg-soft-blue text-deep-blue flex items-center justify-center mb-4 border border-sky-brand/30">
@@ -79,44 +69,25 @@ export const App: React.FC = () => {
                     <span className="typography-eyebrow text-muted block mb-1">
                       Pillar: {pillar.focus}
                     </span>
-                    <h2 className="typography-h3 text-navy mb-2">{pillar.name}</h2>
+                    <h3 className="typography-h3 text-navy mb-2">{pillar.name}</h3>
                     <p className="typography-small text-muted">{pillar.summary}</p>
                   </div>
                   <div className="mt-4 pt-3 border-t border-paper flex items-center gap-1.5 text-xs text-deep-blue font-bold">
                     <CheckCircle2 className="w-3.5 h-3.5 text-sky-brand" />
-                    <span>Active System Pillar</span>
+                    <span>Structured Execution</span>
                   </div>
-                </Card>
+                </div>
               ))}
             </div>
-
-            {/* Token & System Verification Strip */}
-            <Card variant="paper" padding="md" className="border-gray-200">
-              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                <div>
-                  <h3 className="typography-h3 text-navy">
-                    {siteContent.batch.statusBadge}
-                  </h3>
-                  <p className="typography-small text-muted mt-1">
-                    Focused engagement limited to <strong>{siteContent.batch.cohortLimit}</strong> in {siteContent.brand.location}.
-                  </p>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="inline-block px-3 py-1 rounded bg-deep-blue text-white text-xs font-bold">
-                    {siteContent.batch.targetMarket}
-                  </span>
-                  <span className="inline-block px-3 py-1 rounded bg-white text-deep-blue border border-sky-brand/40 text-xs font-bold">
-                    {siteContent.batch.deliveryModel}
-                  </span>
-                </div>
-              </div>
-            </Card>
           </Container>
-        </SectionWrapper>
+        </section>
       </main>
 
       {/* Structural Footer Shell */}
       <Footer />
+
+      {/* Controlled CTA Trial/Demo Feedback Modal */}
+      <DemoModal isOpen={isDemoModalOpen} onClose={handleCloseDemoModal} />
     </div>
   );
 };
