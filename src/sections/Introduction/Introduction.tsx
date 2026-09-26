@@ -19,7 +19,7 @@ export const Introduction: React.FC<IntroductionProps> = ({ onCtaClick }) => {
   const { solution } = siteContent;
 
   const handleNavigateNext = () => {
-    const nextElem = document.getElementById('benefits');
+    const nextElem = document.getElementById('coaches');
     if (nextElem) {
       nextElem.scrollIntoView({ behavior: shouldReduceMotion ? 'auto' : 'smooth' });
     }
@@ -126,11 +126,11 @@ export const Introduction: React.FC<IntroductionProps> = ({ onCtaClick }) => {
                 <div className="flex items-center gap-2 mb-1.5">
                   <CheckCircle className="w-4 h-4 text-deep-blue shrink-0" />
                   <span className="text-xs font-semibold uppercase tracking-wider text-deep-blue">
-                    Summary
+                    Integrated Value
                   </span>
                 </div>
                 <p className="text-xs sm:text-sm text-charcoal font-medium leading-relaxed">
-                  {solution.closingIdea}
+                  Sales performance is influenced by strategy, leadership, capability, execution, and accountability. Virtual State Head brings these elements together through a structured consulting and development approach.
                 </p>
               </div>
 
@@ -167,8 +167,8 @@ export const Introduction: React.FC<IntroductionProps> = ({ onCtaClick }) => {
 
         {/* Next Architectural Stage Transition Bridge */}
         <IntroductionTransition
-          statement={solution.bridge.statement}
-          targetLabel={solution.bridge.targetLabel}
+          statement="When leadership is in place, experienced coaches guide execution and accountability."
+          targetLabel="Sales Coaches"
           onNavigateNext={handleNavigateNext}
         />
       </Container>

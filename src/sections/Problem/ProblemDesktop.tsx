@@ -42,8 +42,8 @@ export const ProblemDesktop: React.FC = () => {
         trigger: containerRef.current,
         pin: pinWrapRef.current,
         start: 'top top',
-        end: '+=180%',
-        scrub: 0.5,
+        end: '+=115%',
+        scrub: 0.3,
         anticipatePin: 1,
         onUpdate: (self) => {
           const p = self.progress;

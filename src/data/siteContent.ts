@@ -279,9 +279,9 @@ export const siteContent: SiteContent = {
 
   navigation: [
     { id: 'about', label: 'About', href: '#about' },
+    { id: 'coaches', label: 'Our Coaches', href: '#coaches' },
     { id: 'engine', label: 'Sales Performance Engine', href: '#engine' },
-    { id: 'frameworks', label: 'Frameworks', href: '#frameworks' },
-    { id: 'process', label: 'Process', href: '#process' },
+    { id: 'how-it-works', label: 'How It Works', href: '#how-it-works' },
   ],
 
   cta: {

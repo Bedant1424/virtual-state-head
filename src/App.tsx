@@ -4,11 +4,10 @@ import { Footer } from '@/components/layout/Footer';
 import { Hero } from '@/sections/Hero';
 import { Problem } from '@/sections/Problem';
 import { Introduction } from '@/sections/Introduction';
-import { Benefits } from '@/sections/Benefits';
-import { DemoModal } from '@/components/ui/DemoModal';
+import { Coaches } from '@/sections/Coaches';
 import { PerformanceEngine } from '@/sections/PerformanceEngine';
-import { Frameworks } from '@/sections/Frameworks';
-import { EngagementProcess } from '@/sections/EngagementProcess';
+import { HowItWorks } from '@/sections/HowItWorks';
+import { DemoModal } from '@/components/ui/DemoModal';
 import { LazyMotion, domAnimation } from 'motion/react';
 
 export const App: React.FC = () => {
@@ -35,26 +34,23 @@ export const App: React.FC = () => {
 
       {/* Main Experience Container */}
       <main id="main-content" className="relative flex-1">
-        {/* SPRINT 1: Signature Hero Section Experience */}
+        {/* CHAPTER 1: Signature Hero Section Experience */}
         <Hero onCtaClick={handleOpenDemoModal} />
 
-        {/* SPRINT 2: Problem + Performance Gap Experience */}
+        {/* CHAPTER 2: Problem + Performance Gap Diagnostic Narrative */}
         <Problem />
 
-        {/* SPRINT 3: Experienced Sales Leadership / Solution Section */}
+        {/* CHAPTER 3: Experienced Sales Leadership & Business Value */}
         <Introduction onCtaClick={handleOpenDemoModal} />
 
-        {/* SPRINT 4: What Your Business Gets Experience */}
-        <Benefits onCtaClick={handleOpenDemoModal} />
+        {/* CHAPTER 4: Leadership Mentors & Human Credibility */}
+        <Coaches />
 
-        {/* SPRINT 5: The Sales Performance Engine Experience */}
+        {/* CHAPTER 5: The Sales Performance Engine Signature Peak */}
         <PerformanceEngine onCtaClick={handleOpenDemoModal} />
 
-        {/* SPRINT 6: Framework Library / Named Frameworks Experience */}
-        <Frameworks />
-
-        {/* SPRINT 7: Engagement Process Experience */}
-        <EngagementProcess />
+        {/* CHAPTER 6: How the Engagement Works (Process + Frameworks) */}
+        <HowItWorks />
       </main>
 
       {/* Structural Footer Shell */}
