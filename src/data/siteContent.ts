@@ -77,9 +77,16 @@ export interface EngineSectionData {
 
 export interface Framework {
   readonly id: string;
+  readonly number: string;
   readonly name: string;
-  readonly category: string;
-  readonly description: string;
+  readonly shortCode: string;
+}
+
+export interface FrameworksSectionData {
+  readonly id: string;
+  readonly eyebrow: string;
+  readonly headline: string;
+  readonly supportingText: string;
 }
 
 export interface Coach {
@@ -240,6 +247,7 @@ export interface SiteContent {
   readonly benefits: BenefitsSectionData;
   readonly engine: EngineSectionData;
   readonly pillars: readonly EnginePillar[];
+  readonly frameworksSection: FrameworksSectionData;
   readonly frameworks: readonly Framework[];
   readonly coaches: readonly Coach[];
   readonly processStages: readonly EngagementStage[];
@@ -671,41 +679,43 @@ export const siteContent: SiteContent = {
     },
   ],
 
+  frameworksSection: {
+    id: 'frameworks',
+    eyebrow: 'Methodology • Five Named Frameworks',
+    headline: 'Frameworks',
+    supportingText: 'Five named frameworks applied in sales performance consulting.',
+  },
+
   frameworks: [
     {
       id: 'royal-selling-formula',
+      number: '01',
       name: 'Royal Selling Formula',
-      category: 'Core Methodology',
-      description:
-        'The foundational sales conversion discipline that aligns prospect qualification, discovery, value articulation, and close.',
+      shortCode: 'RSF',
     },
     {
       id: 'strategic-negotiator',
+      number: '02',
       name: 'Strategic Negotiator',
-      category: 'Commercial Deal Making',
-      description:
-        'Protects gross margins, handles enterprise procurement pressure, and avoids premature discounting.',
+      shortCode: 'SN',
     },
     {
       id: 'sense-selling',
+      number: '03',
       name: 'Sense Selling',
-      category: 'Customer Insight',
-      description:
-        'Deep situational listening that identifies unstated customer friction and aligns offerings directly with buyer priorities.',
+      shortCode: 'SS',
     },
     {
       id: 'performance-consulting',
+      number: '04',
       name: 'Performance Consulting',
-      category: 'Organizational Diagnosis',
-      description:
-        'Uncovering sales bottlenecks, capability deficits, and pipeline leakages across the distribution and direct sales force.',
+      shortCode: 'PC',
     },
     {
       id: 'lifetime-client-relationship',
+      number: '05',
       name: 'Lifetime Client Relationship (LCR)',
-      category: 'Retention & Account Growth',
-      description:
-        'Transforming one-off transactional sales into sustained recurring business, repeat orders, and referral flywheels.',
+      shortCode: 'LCR',
     },
   ],
 

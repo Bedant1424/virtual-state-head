@@ -7,6 +7,7 @@ import { Introduction } from '@/sections/Introduction';
 import { Benefits } from '@/sections/Benefits';
 import { DemoModal } from '@/components/ui/DemoModal';
 import { PerformanceEngine } from '@/sections/PerformanceEngine';
+import { Frameworks } from '@/sections/Frameworks';
 import { LazyMotion, domAnimation } from 'motion/react';
 
 export const App: React.FC = () => {
@@ -47,6 +48,9 @@ export const App: React.FC = () => {
 
         {/* SPRINT 5: The Sales Performance Engine Experience */}
         <PerformanceEngine onCtaClick={handleOpenDemoModal} />
+
+        {/* SPRINT 6: Framework Library / Named Frameworks Experience */}
+        <Frameworks />
       </main>
 
       {/* Structural Footer Shell */}
