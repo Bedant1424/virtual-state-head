@@ -20,8 +20,8 @@ export function useScrollTrigger(
 
   useEffect(() => {
     // Automatically manage GSAP context & ScrollTrigger instances
-    const ctx = gsap.context(() => {
-      setupRef.current(ctx);
+    const ctx = gsap.context((self) => {
+      setupRef.current(self);
     }, scope?.current || undefined);
 
     return () => {
