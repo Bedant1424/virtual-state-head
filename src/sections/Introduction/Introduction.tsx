@@ -29,11 +29,8 @@ export const Introduction: React.FC<IntroductionProps> = ({ onCtaClick }) => {
     <section
       id="about"
       aria-label="Experienced Sales Leadership Solution"
-      className="py-18 sm:py-24 lg:py-28 bg-white border-b border-gray-200/80 relative overflow-hidden"
+      className="py-18 sm:py-24 lg:py-28 bg-paper border-b border-gray-200/80 relative overflow-hidden"
     >
-      {/* Background Soft Atmospheric Radiance */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-soft-blue/50 rounded-full blur-3xl pointer-events-none -z-10" />
-      <div className="absolute bottom-0 left-10 w-80 h-80 bg-paper/60 rounded-full blur-2xl pointer-events-none -z-10" />
 
       <Container size="default">
         {/* Top Section Header: Eyebrow + Primary Headline */}
@@ -124,12 +121,12 @@ export const Introduction: React.FC<IntroductionProps> = ({ onCtaClick }) => {
             />
 
             {/* Closing Idea & Call To Action */}
-            <div className="mt-6 p-5 sm:p-6 rounded-xl bg-paper/60 border border-gray-200/90 flex flex-col items-start gap-4">
+            <div className="mt-6 p-5 sm:p-6 rounded-xl bg-white border border-gray-200/90 shadow-xs flex flex-col items-start gap-4">
               <div className="w-full">
                 <div className="flex items-center gap-2 mb-1.5">
                   <CheckCircle className="w-4 h-4 text-deep-blue shrink-0" />
-                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-deep-blue">
-                    System Objective
+                  <span className="text-xs font-semibold uppercase tracking-wider text-deep-blue">
+                    Summary
                   </span>
                 </div>
                 <p className="text-xs sm:text-sm text-charcoal font-medium leading-relaxed">
@@ -152,10 +149,7 @@ export const Introduction: React.FC<IntroductionProps> = ({ onCtaClick }) => {
           {/* Primary Centerpiece Column (lg:col-span-7): The Leadership Layer Architectural Visual */}
           <div className="order-1 lg:order-2 lg:col-span-7 lg:sticky lg:top-24">
             <div className="mb-3 flex items-center justify-between px-1">
-              <span className="text-xs font-mono font-bold uppercase tracking-wider text-navy">
-                Visual Framework
-              </span>
-              <span className="text-[11px] font-mono text-muted">
+              <span className="text-xs font-semibold uppercase tracking-wider text-navy">
                 The Leadership Layer
               </span>
             </div>

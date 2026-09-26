@@ -28,11 +28,8 @@ export const BenefitsTransition: React.FC<BenefitsTransitionProps> = ({
         className
       )}
     >
-      {/* Downward Architecture Conduit Line */}
-      <div className="flex flex-col items-center gap-2 mb-6">
-        <div className="w-[1.5px] h-10 bg-gradient-to-b from-sky-brand via-deep-blue/40 to-deep-blue rounded-full" />
-        <div className="w-2.5 h-2.5 rounded-full border-2 border-deep-blue bg-sky-brand" />
-      </div>
+      {/* Clean Subtle Divider */}
+      <div className="w-12 h-0.5 bg-sky-brand/40 rounded-full mb-6" />
 
       {/* Conceptual Bridge Text */}
       <p className="max-w-xl text-sm sm:text-base text-muted font-sans leading-relaxed mb-4">

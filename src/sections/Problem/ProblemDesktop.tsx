@@ -42,7 +42,7 @@ export const ProblemDesktop: React.FC = () => {
         trigger: containerRef.current,
         pin: pinWrapRef.current,
         start: 'top top',
-        end: '+=320%',
+        end: '+=180%',
         scrub: 0.5,
         anticipatePin: 1,
         onUpdate: (self) => {

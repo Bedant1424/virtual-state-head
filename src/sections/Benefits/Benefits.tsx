@@ -6,7 +6,6 @@ import { Button } from '@/components/ui/Button';
 import { siteContent, ValueAreaKey } from '@/data/siteContent';
 import { ValueSystemVisual } from './ValueSystemVisual';
 import { ActiveValuePanel } from './ActiveValuePanel';
-import { ValueTickerRail } from './ValueTickerRail';
 import { BenefitsTransition } from './BenefitsTransition';
 import { ArrowRight, ChevronDown, CheckCircle2 } from 'lucide-react';
 import { clsx } from 'clsx';
@@ -40,10 +39,6 @@ export const Benefits: React.FC<BenefitsProps> = ({ onCtaClick }) => {
       aria-label="What Your Business Gets: Structured Sales Performance Support"
       className="py-16 sm:py-24 lg:py-28 bg-white border-b border-gray-200/80 relative overflow-hidden"
     >
-      {/* Background Soft Atmospheric Ambient Radiance */}
-      <div className="absolute top-10 left-1/3 w-96 h-96 bg-soft-blue/40 rounded-full blur-3xl pointer-events-none -z-10" />
-      <div className="absolute bottom-10 right-10 w-80 h-80 bg-paper/70 rounded-full blur-2xl pointer-events-none -z-10" />
-
       <Container size="default">
         {/* Top Eyebrow & Headline */}
         <div className="max-w-3xl mb-10 sm:mb-14">
@@ -289,9 +284,6 @@ export const Benefits: React.FC<BenefitsProps> = ({ onCtaClick }) => {
             </Button>
           </div>
         </div>
-
-        {/* Restrained Value Pillar Ticker Rail */}
-        <ValueTickerRail items={benefits.tickerItems} className="my-8" />
 
         {/* Transition Bridge Linking to Sales Performance Engine */}
         <BenefitsTransition

@@ -27,8 +27,8 @@ export const IntroductionTransition: React.FC<IntroductionTransitionProps> = ({
           <Layers className="w-5 h-5" />
         </div>
         <div>
-          <span className="text-[11px] font-mono uppercase tracking-wider text-muted font-bold block">
-            Next Architectural Stage
+          <span className="text-[11px] font-semibold uppercase tracking-wider text-muted font-bold block">
+            Next
           </span>
           <p className="text-sm sm:text-base font-medium text-navy">
             {statement}
@@ -37,7 +37,7 @@ export const IntroductionTransition: React.FC<IntroductionTransitionProps> = ({
       </div>
 
       <div className="shrink-0 flex items-center gap-3">
-        <span className="text-xs font-mono text-muted uppercase tracking-wider">
+        <span className="text-xs text-muted uppercase tracking-wider">
           Looking Ahead: <strong className="text-deep-blue">{targetLabel}</strong>
         </span>
         <button
@@ -46,7 +46,7 @@ export const IntroductionTransition: React.FC<IntroductionTransitionProps> = ({
           className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-white border border-gray-200/90 text-deep-blue hover:bg-soft-blue hover:border-deep-blue transition-colors shadow-xs"
           aria-label={`Advance to next section: ${targetLabel}`}
         >
-          <ArrowDown className="w-4 h-4 animate-bounce" />
+          <ArrowDown className="w-4 h-4" />
         </button>
       </div>
     </div>

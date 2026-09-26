@@ -42,7 +42,7 @@ export const EngineDesktop: React.FC<EngineDesktopProps> = ({ onCtaClick }) => {
         trigger: containerRef.current,
         pin: pinWrapRef.current,
         start: 'top top',
-        end: '+=280%',
+        end: '+=220%',
         scrub: 0.5,
         anticipatePin: 1,
         onUpdate: (self) => {

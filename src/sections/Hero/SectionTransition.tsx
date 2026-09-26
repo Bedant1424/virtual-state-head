@@ -26,7 +26,7 @@ export const SectionTransition: React.FC<SectionTransitionProps> = ({ className 
           Operational Diagnosis
         </span>
         <div className="w-8 h-8 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center text-deep-blue">
-          <ChevronDown className="w-4 h-4 animate-bounce" />
+          <ChevronDown className="w-4 h-4 text-muted" />
         </div>
       </div>
     </div>

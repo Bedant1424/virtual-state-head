@@ -278,12 +278,10 @@ export const siteContent: SiteContent = {
   },
 
   navigation: [
-    { id: 'home', label: 'Home', href: '#' },
     { id: 'about', label: 'About', href: '#about' },
     { id: 'engine', label: 'Sales Performance Engine', href: '#engine' },
-    { id: 'coaches', label: 'Our Coaches', href: '#coaches' },
-    { id: 'fit', label: 'Who We Help', href: '#fit' },
-    { id: 'faq', label: 'FAQs', href: '#faq' },
+    { id: 'frameworks', label: 'Frameworks', href: '#frameworks' },
+    { id: 'process', label: 'Process', href: '#process' },
   ],
 
   cta: {

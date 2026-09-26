@@ -24,16 +24,13 @@ export const ProblemTransition: React.FC<ProblemTransitionProps> = ({ className 
       }`}
       aria-label="Transition to Solution"
     >
-      {/* Structural Converging Grid Vectors */}
-      <div className="absolute inset-0 pointer-events-none opacity-30 bg-[linear-gradient(to_right,#123B63_1px,transparent_1px),linear-gradient(to_bottom,#123B63_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
-
-      {/* Central Linear Axis */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-16 bg-gradient-to-b from-sky-brand via-deep-blue/40 to-transparent" />
+      {/* Subtle Divider Line */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-12 h-0.5 bg-sky-brand/40 rounded-full" />
 
       <Container size="default">
         <div className="relative z-10 max-w-3xl mx-auto text-center flex flex-col items-center">
           {/* Transition Pill Indicator */}
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-gray-200/90 shadow-2xs text-xs font-mono font-semibold text-deep-blue mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-gray-200/90 shadow-2xs text-xs font-semibold text-deep-blue mb-4">
             <Compass className="w-3.5 h-3.5 text-sky-brand" />
             <span>The Strategic Question</span>
           </div>
@@ -48,9 +45,9 @@ export const ProblemTransition: React.FC<ProblemTransitionProps> = ({ className 
           </p>
 
           {/* Subtle Directional Lead */}
-          <div className="inline-flex flex-col items-center gap-1.5 text-xs font-mono font-bold tracking-wider uppercase text-deep-blue/80">
+          <div className="inline-flex flex-col items-center gap-1.5 text-xs font-bold tracking-wider uppercase text-deep-blue/80">
             <span>Next: {bridge.targetLabel}</span>
-            <ChevronDown className="w-4 h-4 text-sky-brand animate-bounce" />
+            <ChevronDown className="w-4 h-4 text-sky-brand" />
           </div>
         </div>
       </Container>

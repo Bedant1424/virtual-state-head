@@ -128,17 +128,17 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
               >
                 <div className="flex items-center gap-1">
                   <Check className="w-3.5 h-3.5 text-deep-blue shrink-0" />
-                  <span>Odisha MSME Dedicated</span>
+                  <span>Odisha MSME Focus</span>
                 </div>
                 <span className="text-gray-300">•</span>
                 <div className="flex items-center gap-1">
                   <Check className="w-3.5 h-3.5 text-deep-blue shrink-0" />
-                  <span>Direct Senior Advisory</span>
+                  <span>Senior Sales Leadership</span>
                 </div>
                 <span className="text-gray-300">•</span>
                 <div className="flex items-center gap-1">
                   <Check className="w-3.5 h-3.5 text-deep-blue shrink-0" />
-                  <span>3 Pillars: Training • Technology • Accountability</span>
+                  <span>Training • Technology • Accountability</span>
                 </div>
               </m.div>
             </m.div>
