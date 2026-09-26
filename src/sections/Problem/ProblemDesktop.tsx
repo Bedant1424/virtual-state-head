@@ -87,10 +87,10 @@ export const ProblemDesktop: React.FC = () => {
 
   return (
     <div ref={containerRef} className="relative w-full bg-white">
-      {/* Pinned Viewport Container */}
+      {/* Pinned Viewport Container with Controlled Bounds */}
       <div
         ref={pinWrapRef}
-        className="w-full min-h-screen flex flex-col justify-center py-10 lg:py-16 overflow-hidden"
+        className="w-full h-screen max-h-[880px] min-h-[620px] flex flex-col justify-center pt-16 pb-4 overflow-hidden"
       >
         <Container size="default">
           {/* Section Header Eyebrow & Headline */}

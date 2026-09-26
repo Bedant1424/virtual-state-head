@@ -98,10 +98,10 @@ export const EngineDesktop: React.FC<EngineDesktopProps> = ({ onCtaClick }) => {
 
   return (
     <div ref={containerRef} className="relative w-full bg-navy text-white">
-      {/* Pinned Viewport Container */}
+      {/* Pinned Viewport Container with Controlled Bounds */}
       <div
         ref={pinWrapRef}
-        className="w-full min-h-screen flex flex-col justify-center py-8 lg:py-12 overflow-hidden"
+        className="w-full h-screen max-h-[880px] min-h-[620px] flex flex-col justify-center pt-16 pb-4 overflow-hidden"
       >
         <Container size="default">
           {/* Header Row: Eyebrow + Minimal Stage Progress Indicator */}

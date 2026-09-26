@@ -35,7 +35,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ className }) => {
     <section
       id="how-it-works"
       aria-labelledby="how-it-works-heading"
-      className={`py-18 sm:py-22 lg:py-26 bg-[#F8FAFC] border-b border-gray-200/80 relative overflow-hidden ${
+      className={`py-12 sm:py-14 lg:py-16 bg-[#F8FAFC] border-b border-gray-200/80 relative overflow-hidden ${
         className || ''
       }`}
     >
@@ -45,7 +45,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ className }) => {
 
       <Container size="default">
         {/* Section Header */}
-        <div className="max-w-3xl mb-14 sm:mb-16">
+        <div className="max-w-3xl mb-10 sm:mb-12">
           <div className="mb-4">
             <SectionLabel label="Methodology & Frameworks • Structured Delivery" />
           </div>
@@ -63,8 +63,8 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ className }) => {
         {/* ============================================================== */}
         {/* PART 1: The 6-Stage Engagement Sequence                        */}
         {/* ============================================================== */}
-        <div className="mb-14 sm:mb-18">
-          <div className="flex items-center justify-between mb-6">
+        <div className="mb-8 sm:mb-10">
+          <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-deep-blue" />
               <h3 className="text-xs font-bold uppercase tracking-wider text-deep-blue font-sans">
@@ -77,7 +77,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ className }) => {
           </div>
 
           {/* Desktop Horizontal Track (>= 1024px) */}
-          <div className="hidden lg:block relative p-6 sm:p-8 rounded-2xl bg-white border border-gray-200/90 shadow-xs">
+          <div className="hidden lg:block relative p-5 sm:p-6 rounded-2xl bg-white border border-gray-200/90 shadow-xs">
             {/* Horizontal Connecting Baseline */}
             <div
               className="absolute top-1/2 left-12 right-12 h-0.5 bg-gray-200 -translate-y-1/2 pointer-events-none"
@@ -90,10 +90,10 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ className }) => {
                   key={stage.id}
                   className="flex flex-col items-center text-center group"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-paper border border-gray-200 group-hover:border-deep-blue group-hover:bg-soft-blue/60 transition-all duration-200 flex items-center justify-center font-bold text-sm text-navy mb-3 shadow-2xs">
+                  <div className="w-11 h-11 rounded-xl bg-paper border border-gray-200 group-hover:border-deep-blue group-hover:bg-soft-blue/60 transition-all duration-200 flex items-center justify-center font-bold text-sm text-navy mb-2 shadow-2xs">
                     {stage.number}
                   </div>
-                  <h4 className="text-sm font-bold text-navy font-sans tracking-tight mb-1">
+                  <h4 className="text-sm font-bold text-navy font-sans tracking-tight mb-0.5">
                     {stage.name}
                   </h4>
                   {idx < processStages.length - 1 ? (
@@ -112,11 +112,11 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ className }) => {
           </div>
 
           {/* Mobile Vertical Connected Timeline (< 1024px) */}
-          <div className="block lg:hidden relative pl-6 border-l-2 border-sky-brand/40 space-y-4 ml-3">
+          <div className="block lg:hidden relative pl-6 border-l-2 border-sky-brand/40 space-y-3 ml-3">
             {processStages.map((stage, idx) => (
               <div
                 key={stage.id}
-                className="relative flex items-center gap-3.5 p-3.5 rounded-xl bg-white border border-gray-200 shadow-2xs"
+                className="relative flex items-center gap-3 p-3 rounded-xl bg-white border border-gray-200 shadow-2xs"
               >
                 {/* Node on vertical line */}
                 <div className="absolute -left-[35px] w-6 h-6 rounded-full bg-deep-blue text-white text-[11px] font-bold flex items-center justify-center border-2 border-white shadow-xs">
@@ -139,7 +139,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ className }) => {
         </div>
 
         {/* Subtle Section Divider */}
-        <div className="w-full h-px bg-gray-200/80 mb-14 sm:mb-16" />
+        <div className="w-full h-px bg-gray-200/80 mb-8 sm:mb-10" />
 
         {/* ============================================================== */}
         {/* PART 2: Five Named Frameworks                                 */}

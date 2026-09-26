@@ -722,28 +722,28 @@ export const siteContent: SiteContent = {
     {
       id: 'royal-bal',
       name: 'Royal Bal',
-      role: 'Founder of Sales Performance Engine',
+      role: 'Sales Leadership Consultant • Founder of Sales Performance Engine',
       experience: 'More than 30 years of sales experience',
       bioSummary:
-        'Veteran enterprise sales leader who has architected state-wide sales distribution engines and coached high-performing sales teams across diverse industry verticals.',
+        'Sales Leadership Consultant and founder of the Sales Performance Engine, providing experienced sales direction and performance support for MSMEs in Odisha.',
       initials: 'RB',
     },
     {
       id: 'saroj-kumar-panda',
       name: 'Saroj Kumar Panda',
       role: 'Mindfulness Educator & Mindset Coach',
-      experience: 'Senior Executive Mentor',
+      experience: 'Mindset & Resilience Coach',
       bioSummary:
-        'Focuses on sales resilience, emotional equilibrium under pressure, mindset calibration, and mental stamina for demanding commercial targets.',
+        'Focuses on sales mindset, communication, and emotional resilience to support sustainable sales performance.',
       initials: 'SP',
     },
     {
       id: 'sudeep-mohanty',
       name: 'Sudeep Mohanty',
-      role: 'Head Coach & Senior Sales Leadership Mentor',
-      experience: 'Operational Sales Strategist',
+      role: 'Head Coach',
+      experience: 'Sales Leadership Coach',
       bioSummary:
-        'Specializes in field execution discipline, pipeline management, territory distribution rigor, and accountability reviews.',
+        'Works with sales teams to build execution discipline, daily consistency, and structured sales follow-through.',
       initials: 'SM',
     },
   ],

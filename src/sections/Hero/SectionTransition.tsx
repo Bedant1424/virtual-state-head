@@ -16,7 +16,7 @@ export const SectionTransition: React.FC<SectionTransitionProps> = ({ className 
   return (
     <div
       className={cn(
-        'relative w-full pt-12 pb-6 flex flex-col items-center justify-center border-b border-gray-200/80 bg-gradient-to-b from-transparent via-white/80 to-paper',
+        'relative w-full pt-4 pb-3 flex flex-col items-center justify-center border-b border-gray-200/80',
         className
       )}
       aria-hidden="true"

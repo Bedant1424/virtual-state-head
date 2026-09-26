@@ -18,7 +18,7 @@ export const IntroductionTransition: React.FC<IntroductionTransitionProps> = ({
   return (
     <div
       className={clsx(
-        'mt-16 sm:mt-20 pt-8 sm:pt-10 border-t border-gray-200/80 flex flex-col md:flex-row items-center justify-between gap-6',
+        'mt-8 sm:mt-10 pt-6 sm:pt-6 border-t border-gray-200/80 flex flex-col md:flex-row items-center justify-between gap-4',
         className
       )}
     >

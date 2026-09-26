@@ -1,5 +1,5 @@
 import React from 'react';
-import { Compass, ShieldCheck, BarChart3, Layers } from 'lucide-react';
+import { Compass, Users, CheckCircle, ShieldCheck, ArrowDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export interface HeroVisualProps {
@@ -8,124 +8,157 @@ export interface HeroVisualProps {
 
 /**
  * HeroVisual
- * Clean architectural visualization of the Sales Performance Engine pillars.
- * Shows the three pillars (Training, Technology, Accountability) with
- * source-backed descriptions only. No unsupported micro-claims.
+ * Premium editorial sales leadership visual.
+ *
+ * Replaces SaaS/Kanban dashboards with an authoritative consulting architecture:
+ *
+ * BUSINESS OBJECTIVES
+ *        ↓
+ * SALES LEADERSHIP (Virtual State Head)
+ *        ↓
+ * STRATEGY  •  TEAM  •  EXECUTION  •  ACCOUNTABILITY
+ *
+ * Communicates: Experience, Authority, Strategy, Commercial Understanding.
  */
 export const HeroVisual: React.FC<HeroVisualProps> = ({ className }) => {
   return (
     <div
       className={cn(
-        'relative w-full max-w-[490px] mx-auto lg:max-w-none transform-gpu',
+        'relative w-full max-w-[500px] mx-auto lg:max-w-none select-none',
         className
       )}
     >
-      {/* Subtle Ambient Glow Plane */}
+      {/* Subtle Ambient Elevation Base */}
       <div
-        className="absolute -inset-2 rounded-2xl bg-gradient-to-tr from-deep-blue/10 via-sky-brand/15 to-transparent blur-xl pointer-events-none"
+        className="absolute -inset-2 rounded-3xl bg-gradient-to-tr from-deep-blue/10 via-sky-brand/10 to-transparent blur-xl pointer-events-none"
         aria-hidden="true"
       />
 
-      {/* Main Architectural Visual Container */}
-      <div className="relative rounded-2xl bg-white/95 border border-sky-brand/35 shadow-xl overflow-hidden backdrop-blur-sm">
-        {/* Top Architecture Header */}
-        <div className="bg-navy px-5 py-4 text-white border-b border-white/10 flex items-center justify-between">
-          <div className="flex items-center gap-2.5">
-            <span className="w-2.5 h-2.5 rounded-full bg-sky-brand" />
-            <div>
-              <span className="text-[11px] font-bold uppercase tracking-widest text-sky-brand block leading-none">
-                Sales Performance Engine
-              </span>
-              <span className="text-xs text-slate-300 font-medium mt-0.5 block">
-                Sales Performance Consulting for MSMEs in Odisha
-              </span>
-            </div>
+      {/* Main Editorial Visual Card */}
+      <div className="relative rounded-2xl bg-navy text-white border border-white/15 shadow-2xl p-6 sm:p-8 overflow-hidden">
+        {/* Editorial Eyebrow & Brand Tag */}
+        <div className="flex items-center justify-between pb-5 border-b border-white/10 text-xs">
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-sky-brand" />
+            <span className="font-bold tracking-widest uppercase text-sky-brand text-[11px]">
+              Sales Leadership Model
+            </span>
           </div>
-          <span className="px-2.5 py-1 rounded bg-deep-blue/90 border border-sky-brand/40 text-[10px] font-bold text-sky-brand uppercase tracking-wider shrink-0">
-            3 Pillars
+          <span className="text-slate-300 text-xs font-medium">
+            Odisha MSME Focus
           </span>
         </div>
 
-        {/* System Formula Banner */}
-        <div className="bg-soft-blue/70 px-5 py-2.5 border-b border-sky-brand/20 flex items-center justify-center text-xs">
-          <div className="flex items-center gap-1.5 sm:gap-2 font-mono font-bold text-[11px] text-deep-blue tracking-tight">
-            <span className="text-navy">TRAINING</span>
-            <span className="text-sky-brand font-black">+</span>
-            <span className="text-navy">TECHNOLOGY</span>
-            <span className="text-sky-brand font-black">+</span>
-            <span className="text-navy">ACCOUNTABILITY</span>
+        {/* ============================================================== */}
+        {/* TIER 1: BUSINESS GOALS (Top Authority Level)                   */}
+        {/* ============================================================== */}
+        <div className="pt-6 pb-2 text-center">
+          <div className="inline-block px-5 py-2.5 rounded-xl bg-white/10 border border-white/20 text-center shadow-xs">
+            <span className="text-[10px] font-mono uppercase tracking-widest text-slate-300 block mb-0.5">
+              The Enterprise Goal
+            </span>
+            <span className="text-sm sm:text-base font-extrabold text-white tracking-tight">
+              Business Goals & Commercial Objectives
+            </span>
           </div>
         </div>
 
-        {/* Central Core: The 3 Official System Pillars */}
-        <div className="p-5 sm:p-6 space-y-3.5 bg-gradient-to-b from-paper/30 to-white">
-          {/* PILLAR 1: TRAINING */}
-          <div className="p-4 rounded-xl bg-white border border-gray-200 shadow-sm group hover:border-sky-brand/60 transition-colors">
-            <div className="flex items-start gap-3.5">
-              <div className="w-10 h-10 rounded-lg bg-soft-blue text-deep-blue flex items-center justify-center border border-sky-brand/40 shrink-0">
-                <Compass className="w-5 h-5 text-deep-blue" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <h3 className="text-sm font-extrabold text-navy tracking-tight uppercase mb-1">
-                  1. Training
-                </h3>
-                <p className="text-xs text-charcoal leading-relaxed font-medium">
-                  Develop skills, mindset, communication and sales capability.
-                </p>
-              </div>
+        {/* Central Vertical Connector */}
+        <div className="flex flex-col items-center my-1.5" aria-hidden="true">
+          <div className="w-0.5 h-6 bg-gradient-to-b from-white/40 to-sky-brand" />
+          <ArrowDown className="w-3.5 h-3.5 text-sky-brand -mt-1" />
+        </div>
+
+        {/* ============================================================== */}
+        {/* TIER 2: VIRTUAL STATE HEAD (Senior Sales Leadership Anchor)     */}
+        {/* ============================================================== */}
+        <div className="p-4 sm:p-5 rounded-xl bg-deep-blue border border-sky-brand/40 shadow-md text-center relative">
+          <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 px-2.5 py-0.5 rounded-full bg-sky-brand text-navy font-extrabold text-[10px] uppercase tracking-wider">
+            Senior Sales Leadership
+          </div>
+          <h3 className="text-base sm:text-lg font-extrabold text-white tracking-tight mt-1 mb-1">
+            Virtual State Head
+          </h3>
+          <p className="text-xs text-slate-200 font-medium max-w-sm mx-auto leading-relaxed">
+            Connecting owner vision to daily sales execution with structured direction, capability development, and accountability.
+          </p>
+        </div>
+
+        {/* Downward Branching Connectors */}
+        <div className="flex flex-col items-center my-2" aria-hidden="true">
+          <div className="w-0.5 h-5 bg-gradient-to-b from-sky-brand to-white/30" />
+        </div>
+
+        {/* ============================================================== */}
+        {/* TIER 3: THE FOUR OPERATIONAL DOMAINS (Structured Foundation)   */}
+        {/* ============================================================== */}
+        <div className="grid grid-cols-2 gap-3 pt-1">
+          {/* Domain 1: Strategy */}
+          <div className="p-3 rounded-lg bg-white/5 border border-white/10 hover:border-sky-brand/40 transition-colors">
+            <div className="flex items-center gap-2 mb-1">
+              <Compass className="w-4 h-4 text-sky-brand shrink-0" />
+              <span className="text-xs font-bold text-white uppercase tracking-tight">
+                Strategy
+              </span>
             </div>
+            <p className="text-[11px] text-slate-300 leading-snug">
+              Commercial priorities & target market clarity
+            </p>
           </div>
 
-          {/* PILLAR 2: TECHNOLOGY */}
-          <div className="p-4 rounded-xl bg-white border border-gray-200 shadow-sm group hover:border-sky-brand/60 transition-colors">
-            <div className="flex items-start gap-3.5">
-              <div className="w-10 h-10 rounded-lg bg-soft-blue text-deep-blue flex items-center justify-center border border-sky-brand/40 shrink-0">
-                <BarChart3 className="w-5 h-5 text-deep-blue" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <h3 className="text-sm font-extrabold text-navy tracking-tight uppercase mb-1">
-                  2. Technology
-                </h3>
-                <p className="text-xs text-charcoal leading-relaxed font-medium">
-                  Support sales visibility, tracking, coordination and execution through appropriate tools and systems.
-                </p>
-              </div>
+          {/* Domain 2: Team */}
+          <div className="p-3 rounded-lg bg-white/5 border border-white/10 hover:border-sky-brand/40 transition-colors">
+            <div className="flex items-center gap-2 mb-1">
+              <Users className="w-4 h-4 text-sky-brand shrink-0" />
+              <span className="text-xs font-bold text-white uppercase tracking-tight">
+                Team
+              </span>
             </div>
+            <p className="text-[11px] text-slate-300 leading-snug">
+              Skill development & objection handling rigor
+            </p>
           </div>
 
-          {/* PILLAR 3: ACCOUNTABILITY */}
-          <div className="p-4 rounded-xl bg-deep-blue text-white border border-sky-brand/40 shadow-sm">
-            <div className="flex items-start gap-3.5">
-              <div className="w-10 h-10 rounded-lg bg-navy text-sky-brand flex items-center justify-center border border-sky-brand/40 shrink-0">
-                <ShieldCheck className="w-5 h-5 text-sky-brand" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <h3 className="text-sm font-extrabold text-white tracking-tight uppercase mb-1">
-                  3. Accountability
-                </h3>
-                <p className="text-xs text-slate-100 leading-relaxed font-medium">
-                  Create ownership through structured reviews, commitments, follow-through and performance discussions.
-                </p>
-              </div>
+          {/* Domain 3: Execution */}
+          <div className="p-3 rounded-lg bg-white/5 border border-white/10 hover:border-sky-brand/40 transition-colors">
+            <div className="flex items-center gap-2 mb-1">
+              <CheckCircle className="w-4 h-4 text-sky-brand shrink-0" />
+              <span className="text-xs font-bold text-white uppercase tracking-tight">
+                Execution
+              </span>
             </div>
+            <p className="text-[11px] text-slate-300 leading-snug">
+              Structured cadence & daily sales practices
+            </p>
           </div>
 
-          {/* Leadership Authority Anchor Bar */}
-          <div className="pt-3 border-t border-gray-200/70 flex items-center justify-between text-xs">
-            <div className="flex items-center gap-2">
-              <div className="w-7 h-7 rounded-md bg-navy text-sky-brand font-extrabold text-[11px] flex items-center justify-center">
-                RB
-              </div>
-              <div>
-                <span className="font-bold text-navy block leading-none">Royal Bal</span>
-                <span className="text-[10px] text-muted">More than 30 Years Sales Experience</span>
-              </div>
+          {/* Domain 4: Accountability */}
+          <div className="p-3 rounded-lg bg-white/5 border border-white/10 hover:border-sky-brand/40 transition-colors">
+            <div className="flex items-center gap-2 mb-1">
+              <ShieldCheck className="w-4 h-4 text-sky-brand shrink-0" />
+              <span className="text-xs font-bold text-white uppercase tracking-tight">
+                Accountability
+              </span>
             </div>
-            <div className="flex items-center gap-1.5 text-deep-blue font-semibold text-[11px]">
-              <Layers className="w-3.5 h-3.5 text-sky-brand" />
-              <span>Royal Way Academy</span>
-            </div>
+            <p className="text-[11px] text-slate-300 leading-snug">
+              Regular reviews & commitment tracking
+            </p>
           </div>
+        </div>
+
+        {/* Bottom Credibility Anchor */}
+        <div className="mt-5 pt-4 border-t border-white/10 flex items-center justify-between text-xs">
+          <div>
+            <span className="text-white font-bold block leading-none">
+              Royal Bal
+            </span>
+            <span className="text-[10px] text-slate-300">
+              More than 30 Years Sales Experience
+            </span>
+          </div>
+          <span className="text-[11px] font-semibold text-sky-brand">
+            Royal Way Academy
+          </span>
         </div>
       </div>
     </div>

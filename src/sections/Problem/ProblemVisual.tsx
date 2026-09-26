@@ -39,7 +39,7 @@ export const ProblemVisual: React.FC<ProblemVisualProps> = ({
         activeState === 'recognition' ? 'border-deep-blue/40 bg-soft-blue/20' : '',
         className
       )}
-      style={{ minHeight: isCompact ? '260px' : '440px' }}
+      style={{ minHeight: isCompact ? '260px' : '380px' }}
       aria-hidden="true"
     >
       {/* Background Architectural Coordinate Grid */}

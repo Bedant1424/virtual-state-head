@@ -108,7 +108,7 @@ export const EnginePillarPanel: React.FC<EnginePillarPanelProps> = ({
           )}
         >
           <CheckCircle2 className="w-3.5 h-3.5" />
-          <span>System Integration</span>
+          <span>Integration</span>
         </button>
       </div>
 
@@ -126,7 +126,7 @@ export const EnginePillarPanel: React.FC<EnginePillarPanelProps> = ({
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-sky-brand" />
               <span className="text-xs font-sans font-bold uppercase tracking-wider text-sky-brand">
-                Operating Architecture
+                Three Pillars
               </span>
             </div>
             <h3 className="text-xl sm:text-2xl font-sans font-bold text-white tracking-tight">
@@ -319,7 +319,7 @@ export const EnginePillarPanel: React.FC<EnginePillarPanelProps> = ({
             className="space-y-3.5"
           >
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-sky-brand animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-sky-brand" />
               <span className="text-xs font-sans font-bold uppercase tracking-wider text-sky-brand">
                 {climaxData.subtitle}
               </span>

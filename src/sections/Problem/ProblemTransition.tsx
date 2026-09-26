@@ -19,7 +19,7 @@ export const ProblemTransition: React.FC<ProblemTransitionProps> = ({ className 
 
   return (
     <div
-      className={`relative w-full overflow-hidden bg-gradient-to-b from-white via-soft-blue/20 to-paper/60 pt-16 pb-12 sm:pt-20 sm:pb-16 border-b border-gray-200/80 ${
+      className={`relative w-full overflow-hidden bg-gradient-to-b from-white via-soft-blue/20 to-paper/60 pt-8 pb-8 sm:pt-10 sm:pb-10 border-b border-gray-200/80 ${
         className || ''
       }`}
       aria-label="Transition to Solution"

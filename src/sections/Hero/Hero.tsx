@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { m, useScroll, useTransform } from 'motion/react';
+import { m } from 'motion/react';
 import { Container } from '@/components/layout/Container';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 import { Button } from '@/components/ui/Button';
@@ -19,16 +19,6 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
   const containerRef = useRef<HTMLElement>(null);
   const reducedMotion = useReducedMotion();
 
-  // Subtle Scroll-Linked Parallax Choreography
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ['start start', 'end start'],
-  });
-
-  const contentY = useTransform(scrollYProgress, [0, 1], [0, reducedMotion ? 0 : 25]);
-  const visualY = useTransform(scrollYProgress, [0, 1], [0, reducedMotion ? 0 : 50]);
-  const heroOpacity = useTransform(scrollYProgress, [0, 0.9, 1], [1, 0.96, reducedMotion ? 1 : 0.85]);
-
   return (
     <section
       ref={containerRef}
@@ -39,18 +29,12 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
       {/* Signature Living Background System */}
       <HeroBackground />
 
-      <m.div
-        style={{ opacity: heroOpacity }}
-        className="relative z-10 w-full"
-      >
+      <div className="relative z-10 w-full">
         <Container size="default">
           {/* Main 2-Column Hero Composition */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             {/* Left Column: Headline, Narrative & Primary Actions */}
-            <m.div
-              style={{ y: contentY }}
-              className="lg:col-span-7 flex flex-col items-start"
-            >
+            <div className="lg:col-span-7 flex flex-col items-start">
               {/* Step 3: Eyebrow / Category Label */}
               <m.div
                 initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 12 }}
@@ -141,11 +125,10 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
                   <span>Training • Technology • Accountability</span>
                 </div>
               </m.div>
-            </m.div>
+            </div>
 
             {/* Right Column: Original Business Performance System Visual */}
             <m.div
-              style={{ y: visualY }}
               initial={reducedMotion ? { opacity: 1 } : { opacity: 0, scale: 0.97, y: 24 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
@@ -166,8 +149,8 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
         </Container>
 
         {/* Step 8 / Section 15: Clean Architectural Transition Boundary */}
-        <SectionTransition className="mt-14 sm:mt-18 lg:mt-24" />
-      </m.div>
+        <SectionTransition className="mt-6 sm:mt-8 lg:mt-10" />
+      </div>
     </section>
   );
 };
