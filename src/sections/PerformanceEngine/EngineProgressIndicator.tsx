@@ -16,18 +16,17 @@ interface StageStep {
 }
 
 const STAGES: readonly StageStep[] = [
-  { index: 0, label: 'Intro', shortCode: 'INTRO' },
+  { index: 0, label: 'Overview', shortCode: 'ALL' },
   { index: 1, label: '01 Training', shortCode: '01' },
   { index: 2, label: '02 Technology', shortCode: '02' },
   { index: 3, label: '03 Accountability', shortCode: '03' },
-  { index: 4, label: 'Integration Climax', shortCode: 'CLIMAX' },
+  { index: 4, label: 'Unified Engine', shortCode: 'UNIFIED' },
 ];
 
 /**
  * EngineProgressIndicator
- * Minimal, secondary stage indicator for the desktop pinned Engine sequence.
- * Stages: INTRO • 01 • 02 • 03 • CLIMAX.
- * Avoids percentage values and oversized progress bars.
+ * Editorial stage indicator for the desktop Engine sequence.
+ * Stages: ALL • 01 • 02 • 03 • UNIFIED.
  */
 export const EngineProgressIndicator: React.FC<EngineProgressIndicatorProps> = ({
   currentStage,
@@ -66,3 +65,5 @@ export const EngineProgressIndicator: React.FC<EngineProgressIndicatorProps> = (
     </nav>
   );
 };
+
+export default EngineProgressIndicator;
