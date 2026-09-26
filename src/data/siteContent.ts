@@ -88,11 +88,45 @@ export interface AuthorityStripData {
   readonly concepts: readonly AuthorityConcept[];
 }
 
+export interface ProblemStage {
+  readonly number: string;
+  readonly id: string;
+  readonly title: string;
+  readonly shortLabel: string;
+  readonly description: string;
+  readonly visualState: 'misaligned' | 'inconsistent' | 'unaccounted' | 'missed-opportunities' | 'leadership-gap';
+  readonly operationalImpact: string;
+}
+
+export interface ProblemClimax {
+  readonly equation: string;
+  readonly supportingStatement: string;
+  readonly closingIdea: string;
+}
+
+export interface ProblemSectionData {
+  readonly id: string;
+  readonly eyebrow: string;
+  readonly headline: string;
+  readonly introParagraphs: readonly string[];
+  readonly state0Busy: {
+    readonly title: string;
+    readonly description: string;
+  };
+  readonly stages: readonly ProblemStage[];
+  readonly climax: ProblemClimax;
+  readonly bridge: {
+    readonly statement: string;
+    readonly targetLabel: string;
+  };
+}
+
 export interface SiteContent {
   readonly brand: BrandMetadata;
   readonly navigation: readonly NavigationItem[];
   readonly cta: CtaConfig;
   readonly authority: AuthorityStripData;
+  readonly problem: ProblemSectionData;
   readonly pillars: readonly EnginePillar[];
   readonly frameworks: readonly Framework[];
   readonly coaches: readonly Coach[];
@@ -152,6 +186,89 @@ export const siteContent: SiteContent = {
         description: 'Weekly reviews, pacing governance, and ownership removing founder burden',
       },
     ],
+  },
+
+  problem: {
+    id: 'problem',
+    eyebrow: 'Diagnostic Exploration • The Performance Gap',
+    headline: 'More Salespeople. More Targets. Still Not Enough Sales?',
+    introParagraphs: [
+      'Many businesses invest in salespeople, processes, and technology.',
+      'Yet the results may remain inconsistent.',
+      'The problem may not simply be the number of people on the sales team. It may also involve the leadership, direction, execution, and accountability surrounding them.',
+    ],
+    state0Busy: {
+      title: 'High Sales Activity',
+      description: 'The team is active, pipelines are moving, and targets are set. But activity alone does not ensure coordinated performance.',
+    },
+    stages: [
+      {
+        number: '01',
+        id: 'sales-without-clear-direction',
+        title: 'Sales Without Clear Direction',
+        shortLabel: 'Direction Gap',
+        description:
+          'Your team is active, but priorities, strategy, and execution may not be aligned with business goals.',
+        visualState: 'misaligned',
+        operationalImpact:
+          'Effort disperses across scattered targets rather than concentrating on core business growth priorities.',
+      },
+      {
+        number: '02',
+        id: 'inconsistent-sales-performance',
+        title: 'Inconsistent Sales Performance',
+        shortLabel: 'Consistency Gap',
+        description:
+          'Some periods are good. Others are disappointing. Performance may depend too heavily on a few individuals rather than a repeatable system.',
+        visualState: 'inconsistent',
+        operationalImpact:
+          'Revenue rhythm fluctuates unreliably when conversions rely on isolated hero efforts instead of an institutionalized sales system.',
+      },
+      {
+        number: '03',
+        id: 'weak-accountability',
+        title: 'Weak Accountability',
+        shortLabel: 'Accountability Gap',
+        description:
+          'Targets may be established, but reviews, follow-through, and ownership of results may not be consistent.',
+        visualState: 'unaccounted',
+        operationalImpact:
+          'Sales commitments lose momentum when tracking intervals lack disciplined weekly governance and clear individual ownership.',
+      },
+      {
+        number: '04',
+        id: 'missed-opportunities',
+        title: 'Missed Opportunities',
+        shortLabel: 'Opportunity Gap',
+        description:
+          'Potential customers, follow-ups, negotiations, and conversions may not receive the attention they require.',
+        visualState: 'missed-opportunities',
+        operationalImpact:
+          'Qualified leads drift out of active pipeline focus due to inconsistent follow-up cadence and unmanaged negotiation stages.',
+      },
+      {
+        number: '05',
+        id: 'leadership-gaps',
+        title: 'Leadership Gaps',
+        shortLabel: 'Leadership Gap',
+        description:
+          'As the business grows, the owner may find it difficult to manage sales strategy, team performance, customer relationships, and daily operations simultaneously.',
+        visualState: 'leadership-gap',
+        operationalImpact:
+          'Executive bandwidth becomes the central operational bottleneck when leadership, coaching, and execution discipline rest solely on the owner.',
+      },
+    ],
+    climax: {
+      equation: 'ACTIVITY ≠ PERFORMANCE',
+      supportingStatement:
+        'A hardworking sales team still needs direction, execution discipline and accountability around the work.',
+      closingIdea:
+        'When sales leadership and execution are not aligned, even a hardworking team can struggle to deliver consistent results.',
+    },
+    bridge: {
+      statement: 'When activity is not enough, leadership and structure become the next question.',
+      targetLabel: 'Experienced Sales Leadership',
+    },
   },
 
   pillars: [

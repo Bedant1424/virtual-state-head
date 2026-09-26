@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Hero } from '@/sections/Hero';
+import { Problem } from '@/sections/Problem';
 import { DemoModal } from '@/components/ui/DemoModal';
 import { Container } from '@/components/layout/Container';
 import { SectionLabel } from '@/components/ui/SectionLabel';
@@ -34,7 +35,10 @@ export const App: React.FC = () => {
         {/* SPRINT 1: Signature Hero Section Experience */}
         <Hero onCtaClick={handleOpenDemoModal} />
 
-        {/* Sprint 2 Boundary Placeholder: Operational Architecture Preview */}
+        {/* SPRINT 2: Problem + Performance Gap Experience */}
+        <Problem />
+
+        {/* Sprint 3 Boundary Placeholder: Operational Architecture Preview */}
         <section
           id="engine"
           aria-label="Sales Performance Engine Pillars"

@@ -110,11 +110,11 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
                 </Button>
 
                 <a
-                  href="#engine"
+                  href="#problem"
                   className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-muted hover:text-deep-blue transition-colors group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-brand rounded py-2 px-1"
-                  aria-label="Scroll to see how the Sales Performance Engine works"
+                  aria-label="Scroll to see where the performance gap begins"
                 >
-                  <span>See how the system works</span>
+                  <span>See where the gap begins</span>
                   <ChevronDown className="w-4 h-4 text-muted group-hover:text-deep-blue group-hover:translate-y-0.5 transition-all" />
                 </a>
               </motion.div>
