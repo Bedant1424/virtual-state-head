@@ -143,7 +143,8 @@ export interface SolutionSectionData {
   readonly credibility: {
     readonly name: string;
     readonly experience: string;
-    readonly label: string;
+    readonly designation: string;
+    readonly role: string;
   };
   readonly capabilities: readonly SolutionCapability[];
   readonly bridge: {
@@ -320,8 +321,9 @@ export const siteContent: SiteContent = {
       'The objective is to help your sales function become more structured, aligned, and performance-focused.',
     credibility: {
       name: 'Royal Bal',
-      experience: '30+ Years of Sales Experience',
-      label: 'Senior Sales Leadership Advisor',
+      experience: 'More than 30 years of sales experience',
+      designation: 'Sales Leadership Consultant',
+      role: 'Founder of Sales Performance Engine',
     },
     capabilities: [
       {
@@ -445,8 +447,8 @@ export const siteContent: SiteContent = {
     {
       id: 'royal-bal',
       name: 'Royal Bal',
-      role: 'Founder & Sales Leadership Consultant',
-      experience: 'More than 30 Years Experience',
+      role: 'Founder of Sales Performance Engine',
+      experience: 'More than 30 years of sales experience',
       bioSummary:
         'Veteran enterprise sales leader who has architected state-wide sales distribution engines and coached high-performing sales teams across diverse industry verticals.',
       initials: 'RB',

@@ -106,7 +106,7 @@ export const Introduction: React.FC<IntroductionProps> = ({ onCtaClick }) => {
                 </span>
               </div>
               <span className="text-xs text-muted block">
-                {solution.credibility.label} • Strategic Sales Guidance for Odisha MSMEs
+                {solution.credibility.designation} • {solution.credibility.role}
               </span>
             </div>
             <Award className="w-4 h-4 text-deep-blue shrink-0 ml-1 hidden sm:block" />

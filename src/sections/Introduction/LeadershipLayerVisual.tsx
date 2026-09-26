@@ -23,9 +23,9 @@ export interface LeadershipLayerVisualProps {
  *
  * Visualizes how Experienced Sales Leadership creates structure,
  * alignment, execution discipline, and performance reviews around
- * existing sales team activity.
+ * all six core capability dimensions of sales activity.
  *
- * Grounded strictly in approved source concepts.
+ * Grounded strictly in approved source concepts and brand colors.
  */
 export const LeadershipLayerVisual: React.FC<LeadershipLayerVisualProps> = ({
   activeFocus,
@@ -81,20 +81,16 @@ export const LeadershipLayerVisual: React.FC<LeadershipLayerVisualProps> = ({
             <stop offset="0%" stopColor="#123B63" />
             <stop offset="100%" stopColor="#0B1F33" />
           </linearGradient>
-          <linearGradient id="ll-gradActive" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#87CEEB" />
-            <stop offset="100%" stopColor="#123B63" />
-          </linearGradient>
         </defs>
 
         {/* ------------------------------------------------------------- */}
-        {/* LEVEL 1: BUSINESS / SALES FUNCTION (Top Anchor)               */}
+        {/* LEVEL 1: BUSINESS & SALES FUNCTION (Top Anchor)               */}
         {/* ------------------------------------------------------------- */}
         <g className="transition-all duration-300">
           <rect
-            x="210"
+            x="200"
             y="28"
-            width="220"
+            width="240"
             height="38"
             rx="8"
             fill="#F3F5F7"
@@ -131,9 +127,9 @@ export const LeadershipLayerVisual: React.FC<LeadershipLayerVisualProps> = ({
         <g className="transition-all duration-300">
           {/* Main Leadership Layer Band */}
           <rect
-            x="80"
+            x="40"
             y="100"
-            width="480"
+            width="560"
             height="56"
             rx="12"
             fill="url(#ll-gradHeader)"
@@ -166,228 +162,266 @@ export const LeadershipLayerVisual: React.FC<LeadershipLayerVisualProps> = ({
             STRATEGY • DIRECTION • EXECUTION • REVIEWS
           </text>
 
-          {/* Decorative Corner Signal Dots on Layer */}
-          <circle cx="98" cy="128" r="4" fill="#87CEEB" />
-          <circle cx="542" cy="128" r="4" fill="#87CEEB" />
+          {/* Decorative Signal Dots on Layer */}
+          <circle cx="58" cy="128" r="4" fill="#87CEEB" />
+          <circle cx="582" cy="128" r="4" fill="#87CEEB" />
         </g>
 
         {/* ------------------------------------------------------------- */}
-        {/* LEVEL 3: 5 INTEGRATED DISCIPLINE STREAMS                       */}
+        {/* LEVEL 3: SIX INTEGRATED DISCIPLINE PATHWAYS                    */}
         {/* ------------------------------------------------------------- */}
-        {/* Pathway 1: Strategy & Direction */}
+
+        {/* Pathway 1: 01 Sales Strategy (center = 65) */}
         <g
           className={clsx(
             'cursor-pointer transition-all duration-300',
             activeFocus === 'strategy' ? 'opacity-100 scale-102' : activeFocus ? 'opacity-40' : 'opacity-85'
           )}
-          onClick={() => onFocusChange?.('strategy')}
+          onClick={() => onFocusChange?.(activeFocus === 'strategy' ? null : 'strategy')}
         >
           <line
-            x1="130"
+            x1="65"
             y1="156"
-            x2="130"
-            y2="230"
-            stroke={activeFocus === 'strategy' ? '#123B63' : '#123B63'}
-            strokeWidth={activeFocus === 'strategy' ? '3' : '2'}
+            x2="65"
+            y2="228"
+            stroke="#123B63"
+            strokeWidth={activeFocus === 'strategy' ? '3' : '1.5'}
           />
           <rect
-            x="75"
-            y="230"
-            width="110"
-            height="46"
+            x="22"
+            y="228"
+            width="86"
+            height="48"
             rx="8"
             fill={activeFocus === 'strategy' ? '#EAF5FB' : '#FFFFFF'}
             stroke="#123B63"
-            strokeWidth={activeFocus === 'strategy' ? '2' : '1.5'}
+            strokeWidth={activeFocus === 'strategy' ? '2.5' : '1.5'}
           />
-          <text x="130" y="250" textAnchor="middle" fill="#123B63" fontSize="10" fontWeight="bold">
+          <text x="65" y="248" textAnchor="middle" fill="#123B63" fontSize="9.5" fontWeight="bold">
             Sales Strategy
           </text>
-          <text x="130" y="264" textAnchor="middle" fill="#6B7280" fontSize="8">
+          <text x="65" y="263" textAnchor="middle" fill="#6B7280" fontSize="8">
             Clear Direction
           </text>
         </g>
 
-        {/* Pathway 2: Team Development */}
+        {/* Pathway 2: 02 Team Development (center = 167) */}
         <g
           className={clsx(
             'cursor-pointer transition-all duration-300',
             activeFocus === 'team' ? 'opacity-100 scale-102' : activeFocus ? 'opacity-40' : 'opacity-85'
           )}
-          onClick={() => onFocusChange?.('team')}
+          onClick={() => onFocusChange?.(activeFocus === 'team' ? null : 'team')}
         >
           <line
-            x1="225"
+            x1="167"
             y1="156"
-            x2="225"
-            y2="230"
+            x2="167"
+            y2="228"
             stroke="#123B63"
-            strokeWidth={activeFocus === 'team' ? '3' : '2'}
+            strokeWidth={activeFocus === 'team' ? '3' : '1.5'}
           />
           <rect
-            x="170"
-            y="230"
-            width="110"
-            height="46"
+            x="124"
+            y="228"
+            width="86"
+            height="48"
             rx="8"
             fill={activeFocus === 'team' ? '#EAF5FB' : '#FFFFFF'}
             stroke="#123B63"
-            strokeWidth={activeFocus === 'team' ? '2' : '1.5'}
+            strokeWidth={activeFocus === 'team' ? '2.5' : '1.5'}
           />
-          <text x="225" y="250" textAnchor="middle" fill="#123B63" fontSize="10" fontWeight="bold">
-            Team Capability
+          <text x="167" y="248" textAnchor="middle" fill="#123B63" fontSize="9" fontWeight="bold">
+            Team Dev
           </text>
-          <text x="225" y="264" textAnchor="middle" fill="#6B7280" fontSize="8">
-            Skills &amp; Discipline
+          <text x="167" y="263" textAnchor="middle" fill="#6B7280" fontSize="8">
+            Sales Capability
           </text>
         </g>
 
-        {/* Pathway 3: Leadership Support & Discussions */}
+        {/* Pathway 3: 03 Leadership Support (center = 269) */}
         <g
           className={clsx(
             'cursor-pointer transition-all duration-300',
-            activeFocus === 'leadership' || activeFocus === 'discussions'
-              ? 'opacity-100 scale-102'
-              : activeFocus
-              ? 'opacity-40'
-              : 'opacity-85'
+            activeFocus === 'leadership' ? 'opacity-100 scale-102' : activeFocus ? 'opacity-40' : 'opacity-85'
           )}
-          onClick={() => onFocusChange?.('leadership')}
+          onClick={() => onFocusChange?.(activeFocus === 'leadership' ? null : 'leadership')}
         >
           <line
-            x1="320"
+            x1="269"
             y1="156"
-            x2="320"
-            y2="230"
+            x2="269"
+            y2="228"
             stroke="#123B63"
-            strokeWidth={activeFocus === 'leadership' || activeFocus === 'discussions' ? '3' : '2'}
+            strokeWidth={activeFocus === 'leadership' ? '3' : '1.5'}
           />
           <rect
-            x="265"
-            y="230"
-            width="110"
-            height="46"
+            x="226"
+            y="228"
+            width="86"
+            height="48"
             rx="8"
-            fill={activeFocus === 'leadership' || activeFocus === 'discussions' ? '#EAF5FB' : '#FFFFFF'}
+            fill={activeFocus === 'leadership' ? '#EAF5FB' : '#FFFFFF'}
             stroke="#123B63"
-            strokeWidth={activeFocus === 'leadership' || activeFocus === 'discussions' ? '2' : '1.5'}
+            strokeWidth={activeFocus === 'leadership' ? '2.5' : '1.5'}
           />
-          <text x="320" y="250" textAnchor="middle" fill="#123B63" fontSize="10" fontWeight="bold">
-            Leadership Support
+          <text x="269" y="248" textAnchor="middle" fill="#123B63" fontSize="8.5" fontWeight="bold">
+            Leadership
           </text>
-          <text x="320" y="264" textAnchor="middle" fill="#6B7280" fontSize="8">
+          <text x="269" y="263" textAnchor="middle" fill="#6B7280" fontSize="8">
             Owner Guidance
           </text>
         </g>
 
-        {/* Pathway 4: Execution & Follow-Through */}
+        {/* Pathway 4: 06 Strategic Discussions (center = 371) */}
+        <g
+          className={clsx(
+            'cursor-pointer transition-all duration-300',
+            activeFocus === 'discussions' ? 'opacity-100 scale-102' : activeFocus ? 'opacity-40' : 'opacity-85'
+          )}
+          onClick={() => onFocusChange?.(activeFocus === 'discussions' ? null : 'discussions')}
+        >
+          <line
+            x1="371"
+            y1="156"
+            x2="371"
+            y2="228"
+            stroke="#123B63"
+            strokeWidth={activeFocus === 'discussions' ? '3' : '1.5'}
+          />
+          <rect
+            x="328"
+            y="228"
+            width="86"
+            height="48"
+            rx="8"
+            fill={activeFocus === 'discussions' ? '#EAF5FB' : '#FFFFFF'}
+            stroke="#123B63"
+            strokeWidth={activeFocus === 'discussions' ? '2.5' : '1.5'}
+          />
+          <text x="371" y="248" textAnchor="middle" fill="#123B63" fontSize="8.5" fontWeight="bold">
+            Discussions
+          </text>
+          <text x="371" y="263" textAnchor="middle" fill="#6B7280" fontSize="8">
+            Owner Priorities
+          </text>
+        </g>
+
+        {/* Pathway 5: 05 Sales Execution (center = 473) */}
         <g
           className={clsx(
             'cursor-pointer transition-all duration-300',
             activeFocus === 'execution' ? 'opacity-100 scale-102' : activeFocus ? 'opacity-40' : 'opacity-85'
           )}
-          onClick={() => onFocusChange?.('execution')}
+          onClick={() => onFocusChange?.(activeFocus === 'execution' ? null : 'execution')}
         >
           <line
-            x1="415"
+            x1="473"
             y1="156"
-            x2="415"
-            y2="230"
+            x2="473"
+            y2="228"
             stroke="#123B63"
-            strokeWidth={activeFocus === 'execution' ? '3' : '2'}
+            strokeWidth={activeFocus === 'execution' ? '3' : '1.5'}
           />
           <rect
-            x="360"
-            y="230"
-            width="110"
-            height="46"
+            x="430"
+            y="228"
+            width="86"
+            height="48"
             rx="8"
             fill={activeFocus === 'execution' ? '#EAF5FB' : '#FFFFFF'}
             stroke="#123B63"
-            strokeWidth={activeFocus === 'execution' ? '2' : '1.5'}
+            strokeWidth={activeFocus === 'execution' ? '2.5' : '1.5'}
           />
-          <text x="415" y="250" textAnchor="middle" fill="#123B63" fontSize="10" fontWeight="bold">
-            Sales Execution
+          <text x="473" y="248" textAnchor="middle" fill="#123B63" fontSize="9.5" fontWeight="bold">
+            Execution
           </text>
-          <text x="415" y="264" textAnchor="middle" fill="#6B7280" fontSize="8">
-            Agreed Practices
+          <text x="473" y="263" textAnchor="middle" fill="#6B7280" fontSize="8">
+            Agreed Actions
           </text>
         </g>
 
-        {/* Pathway 5: Accountability & Reviews */}
+        {/* Pathway 6: 04 Accountability (center = 575) */}
         <g
           className={clsx(
             'cursor-pointer transition-all duration-300',
             activeFocus === 'accountability' ? 'opacity-100 scale-102' : activeFocus ? 'opacity-40' : 'opacity-85'
           )}
-          onClick={() => onFocusChange?.('accountability')}
+          onClick={() => onFocusChange?.(activeFocus === 'accountability' ? null : 'accountability')}
         >
           <line
-            x1="510"
+            x1="575"
             y1="156"
-            x2="510"
-            y2="230"
+            x2="575"
+            y2="228"
             stroke="#123B63"
-            strokeWidth={activeFocus === 'accountability' ? '3' : '2'}
+            strokeWidth={activeFocus === 'accountability' ? '3' : '1.5'}
           />
           <rect
-            x="455"
-            y="230"
-            width="110"
-            height="46"
+            x="532"
+            y="228"
+            width="86"
+            height="48"
             rx="8"
             fill={activeFocus === 'accountability' ? '#EAF5FB' : '#FFFFFF'}
             stroke="#123B63"
-            strokeWidth={activeFocus === 'accountability' ? '2' : '1.5'}
+            strokeWidth={activeFocus === 'accountability' ? '2.5' : '1.5'}
           />
-          <text x="510" y="250" textAnchor="middle" fill="#123B63" fontSize="10" fontWeight="bold">
+          <text x="575" y="248" textAnchor="middle" fill="#123B63" fontSize="9" fontWeight="bold">
             Accountability
           </text>
-          <text x="510" y="264" textAnchor="middle" fill="#6B7280" fontSize="8">
+          <text x="575" y="263" textAnchor="middle" fill="#6B7280" fontSize="8">
             Regular Reviews
           </text>
         </g>
 
         {/* ------------------------------------------------------------- */}
-        {/* LEVEL 4: ORGANIZED SALES TEAM ACTIVITY (Bottom Output)        */}
+        {/* LEVEL 4: STRUCTURED SALES TEAM ACTIVITY (Bottom Output)       */}
         {/* ------------------------------------------------------------- */}
-        {/* Coordinated Downward Lines converging into organized stream */}
+        {/* 6 Converging Feeds into organized stream */}
         <path
-          d="M 130 276 C 130 320, 260 340, 320 340"
+          d="M 65 276 C 65 320, 200 344, 320 344"
           stroke="#123B63"
-          strokeWidth="1.5"
-          strokeDasharray="4 3"
+          strokeWidth={activeFocus === 'strategy' ? '2.5' : '1.5'}
+          strokeDasharray={activeFocus === 'strategy' ? undefined : '4 3'}
         />
         <path
-          d="M 225 276 C 225 315, 280 340, 320 340"
+          d="M 167 276 C 167 315, 250 344, 320 344"
           stroke="#123B63"
-          strokeWidth="1.5"
-          strokeDasharray="4 3"
+          strokeWidth={activeFocus === 'team' ? '2.5' : '1.5'}
+          strokeDasharray={activeFocus === 'team' ? undefined : '4 3'}
         />
         <path
-          d="M 320 276 L 320 340"
+          d="M 269 276 C 269 310, 290 344, 320 344"
           stroke="#123B63"
-          strokeWidth="2"
+          strokeWidth={activeFocus === 'leadership' ? '2.5' : '1.5'}
+          strokeDasharray={activeFocus === 'leadership' ? undefined : '4 3'}
         />
         <path
-          d="M 415 276 C 415 315, 360 340, 320 340"
+          d="M 371 276 C 371 310, 350 344, 320 344"
           stroke="#123B63"
-          strokeWidth="1.5"
-          strokeDasharray="4 3"
+          strokeWidth={activeFocus === 'discussions' ? '2.5' : '1.5'}
+          strokeDasharray={activeFocus === 'discussions' ? undefined : '4 3'}
         />
         <path
-          d="M 510 276 C 510 320, 380 340, 320 340"
+          d="M 473 276 C 473 315, 390 344, 320 344"
           stroke="#123B63"
-          strokeWidth="1.5"
-          strokeDasharray="4 3"
+          strokeWidth={activeFocus === 'execution' ? '2.5' : '1.5'}
+          strokeDasharray={activeFocus === 'execution' ? undefined : '4 3'}
+        />
+        <path
+          d="M 575 276 C 575 320, 440 344, 320 344"
+          stroke="#123B63"
+          strokeWidth={activeFocus === 'accountability' ? '2.5' : '1.5'}
+          strokeDasharray={activeFocus === 'accountability' ? undefined : '4 3'}
         />
 
-        {/* Bottom Organized Flow Foundation */}
+        {/* Bottom Structured Sales Team Activity Foundation */}
         <g className="transition-all duration-300">
           <rect
-            x="140"
-            y="340"
-            width="360"
+            x="110"
+            y="344"
+            width="420"
             height="52"
             rx="10"
             fill="#EAF5FB"
@@ -396,7 +430,7 @@ export const LeadershipLayerVisual: React.FC<LeadershipLayerVisualProps> = ({
           />
           <text
             x="320"
-            y="363"
+            y="367"
             textAnchor="middle"
             fill="#123B63"
             fontSize="12"
@@ -406,7 +440,7 @@ export const LeadershipLayerVisual: React.FC<LeadershipLayerVisualProps> = ({
           </text>
           <text
             x="320"
-            y="380"
+            y="384"
             textAnchor="middle"
             fill="#6B7280"
             fontSize="9"
