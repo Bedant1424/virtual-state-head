@@ -182,7 +182,7 @@ export const Benefits: React.FC<BenefitsProps> = ({ onCtaClick }) => {
             role="tablist"
             aria-label="Areas of Structured Support"
           >
-            <div className="px-1 flex items-center justify-between text-xs text-muted font-mono mb-2">
+            <div className="px-1 flex items-center justify-between text-xs text-muted font-sans font-semibold tracking-wider mb-2">
               <span>AREAS OF SUPPORT (01 - 05)</span>
               <span>TAP TO EXPLORE</span>
             </div>
@@ -212,7 +212,7 @@ export const Benefits: React.FC<BenefitsProps> = ({ onCtaClick }) => {
                     <div className="flex items-center gap-3">
                       <span
                         className={clsx(
-                          'w-7 h-7 rounded-lg flex items-center justify-center text-xs font-bold font-mono transition-colors',
+                          'w-7 h-7 rounded-lg flex items-center justify-center text-xs font-bold font-sans transition-colors',
                           isActive
                             ? 'bg-deep-blue text-white'
                             : 'bg-paper text-deep-blue border border-gray-200'
@@ -249,7 +249,7 @@ export const Benefits: React.FC<BenefitsProps> = ({ onCtaClick }) => {
                       <p className="text-sm text-charcoal leading-relaxed font-sans font-normal">
                         {area.description}
                       </p>
-                      <div className="flex items-center gap-2 text-[11px] font-mono text-muted pt-1">
+                      <div className="flex items-center gap-2 text-[11px] font-sans font-medium text-muted pt-1">
                         <span className="w-1.5 h-1.5 rounded-full bg-deep-blue" />
                         <span>Core focus: {area.visualConcept}</span>
                       </div>

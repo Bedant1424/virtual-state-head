@@ -75,20 +75,20 @@ export const ActiveValuePanel: React.FC<ActiveValuePanelProps> = ({
         {/* Number & Category Pill */}
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-soft-blue text-deep-blue text-xs font-bold font-mono border border-sky-brand/40">
+            <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-soft-blue text-deep-blue text-xs font-bold font-sans border border-sky-brand/40">
               {activeArea.number}
             </span>
-            <span className="text-xs font-bold uppercase tracking-wider text-deep-blue">
+            <span className="text-xs font-bold uppercase tracking-wider text-deep-blue font-sans">
               Area of Support
             </span>
           </div>
-          <span className="text-xs font-medium text-muted font-mono">
+          <span className="text-xs font-medium text-muted font-sans">
             {activeArea.visualConcept}
           </span>
         </div>
 
         {/* Title */}
-        <h3 className="text-xl sm:text-2xl font-bold text-deep-blue font-serif tracking-tight">
+        <h3 className="text-xl sm:text-2xl font-bold text-deep-blue font-sans tracking-tight">
           {activeArea.title}
         </h3>
 

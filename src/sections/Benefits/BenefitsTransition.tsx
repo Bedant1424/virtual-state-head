@@ -39,21 +39,23 @@ export const BenefitsTransition: React.FC<BenefitsTransitionProps> = ({
         {statement}
       </p>
 
-      {/* Anchor Navigation Button to Next Section */}
+      {/* Lightweight Secondary Text Link */}
       <a
         href={targetHref}
-        className="group inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-paper border border-gray-200 text-deep-blue text-xs sm:text-sm font-bold tracking-wide hover:bg-soft-blue/60 hover:border-sky-brand transition-all duration-200 shadow-2xs focus:outline-none focus-visible:ring-2 focus-visible:ring-deep-blue"
+        className="group inline-flex items-center gap-1.5 text-sm font-bold text-deep-blue hover:text-navy transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-deep-blue rounded-sm py-1 px-2 font-sans"
       >
-        <span>Explore The {targetLabel}</span>
-        <ArrowDown className="w-3.5 h-3.5 text-deep-blue group-hover:translate-y-0.5 transition-transform duration-200" />
+        <span className="underline decoration-deep-blue/30 group-hover:decoration-deep-blue underline-offset-4">
+          See how the {targetLabel} works
+        </span>
+        <ArrowDown className="w-4 h-4 text-deep-blue/70 group-hover:text-deep-blue group-hover:translate-y-0.5 transition-all duration-200" aria-hidden="true" />
       </a>
 
       {/* Tripartite Engine Foundation Preview Pills */}
-      <div className="flex items-center gap-3 mt-4 text-[11px] font-mono text-muted uppercase tracking-wider">
+      <div className="flex items-center gap-3 mt-4 text-[11px] font-sans font-semibold text-muted uppercase tracking-wider">
         <span>Training</span>
-        <span className="text-sky-brand">•</span>
+        <span className="text-sky-brand font-bold">•</span>
         <span>Technology</span>
-        <span className="text-sky-brand">•</span>
+        <span className="text-sky-brand font-bold">•</span>
         <span>Accountability</span>
       </div>
     </div>

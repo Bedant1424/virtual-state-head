@@ -143,7 +143,7 @@ export const ValueSystemVisual: React.FC<ValueSystemVisualProps> = ({
       {/* Main SVG Vector Canvas */}
       <svg
         viewBox="0 0 680 490"
-        className="w-full h-auto max-w-[640px] select-none transition-all duration-300"
+        className="w-full h-auto max-w-[640px] select-none transition-all duration-300 font-sans"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
