@@ -153,6 +153,43 @@ export interface SolutionSectionData {
   };
 }
 
+export type ValueAreaKey = 'strategy' | 'team' | 'leadership' | 'accountability' | 'consulting';
+
+export interface BusinessValueArea {
+  readonly id: string;
+  readonly number: string;
+  readonly title: string;
+  readonly shortLabel: string;
+  readonly description: string;
+  readonly visualConcept: string;
+  readonly valueKey: ValueAreaKey;
+}
+
+export interface BenefitsSectionData {
+  readonly id: string;
+  readonly eyebrow: string;
+  readonly headline: {
+    readonly primary: string;
+    readonly secondary: string;
+  };
+  readonly introLead: string;
+  readonly valueAreas: readonly BusinessValueArea[];
+  readonly centralCore: {
+    readonly title: string;
+    readonly subline: string;
+  };
+  readonly closing: {
+    readonly statement1: string;
+    readonly statement2: string;
+  };
+  readonly bridge: {
+    readonly statement: string;
+    readonly targetLabel: string;
+    readonly targetHref: string;
+  };
+  readonly tickerItems: readonly string[];
+}
+
 export interface SiteContent {
   readonly brand: BrandMetadata;
   readonly navigation: readonly NavigationItem[];
@@ -160,6 +197,7 @@ export interface SiteContent {
   readonly authority: AuthorityStripData;
   readonly problem: ProblemSectionData;
   readonly solution: SolutionSectionData;
+  readonly benefits: BenefitsSectionData;
   readonly pillars: readonly EnginePillar[];
   readonly frameworks: readonly Framework[];
   readonly coaches: readonly Coach[];
@@ -379,6 +417,85 @@ export const siteContent: SiteContent = {
       statement: 'When leadership is in place, the operational benefits become clearer.',
       targetLabel: 'What Your Business Gets',
     },
+  },
+
+  benefits: {
+    id: 'benefits',
+    eyebrow: 'What Your Business Gets • Structured Performance Support',
+    headline: {
+      primary: 'More Than Training.',
+      secondary: 'A Structured Approach to Sales Performance.',
+    },
+    introLead:
+      'Virtual State Head addresses the broader sales-performance system, aligning strategy, capability, leadership, execution, and accountability into a cohesive operational discipline.',
+    centralCore: {
+      title: 'SALES PERFORMANCE',
+      subline: 'Strategy • Capability • Leadership • Accountability • Consulting',
+    },
+    valueAreas: [
+      {
+        id: 'sales-strategy',
+        number: '01',
+        title: 'SALES STRATEGY',
+        shortLabel: 'Sales Strategy',
+        description:
+          'Bring greater clarity to priorities, direction, and the actions required to support business objectives.',
+        visualConcept: 'Direction, clarity and commercial priorities',
+        valueKey: 'strategy',
+      },
+      {
+        id: 'team-performance',
+        number: '02',
+        title: 'TEAM PERFORMANCE',
+        shortLabel: 'Team Performance',
+        description:
+          'Develop sales capability, communication, customer engagement, and execution discipline.',
+        visualConcept: 'Coordinated capability, skills and communication',
+        valueKey: 'team',
+      },
+      {
+        id: 'leadership-support',
+        number: '03',
+        title: 'LEADERSHIP SUPPORT',
+        shortLabel: 'Leadership Support',
+        description:
+          'Help business owners and sales leaders strengthen the way they guide, manage, and support their teams.',
+        visualConcept: 'Guidance and management support for leaders',
+        valueKey: 'leadership',
+      },
+      {
+        id: 'accountability',
+        number: '04',
+        title: 'ACCOUNTABILITY',
+        shortLabel: 'Accountability',
+        description:
+          'Establish a more structured approach to reviewing activities, commitments, progress, and performance.',
+        visualConcept: 'Structured review rhythm and commitment tracking',
+        valueKey: 'accountability',
+      },
+      {
+        id: 'performance-consulting',
+        number: '05',
+        title: 'PERFORMANCE CONSULTING',
+        shortLabel: 'Performance Consulting',
+        description:
+          'Identify gaps, discuss practical solutions, and support the implementation of improvements.',
+        visualConcept: 'Practical gap identification and solution implementation',
+        valueKey: 'consulting',
+      },
+    ],
+    closing: {
+      statement1:
+        'Sales performance is influenced by strategy, leadership, capability, execution, and accountability.',
+      statement2:
+        'Virtual State Head brings these elements together through a structured consulting and development approach.',
+    },
+    bridge: {
+      statement: 'When the value areas are clear, the operating engine becomes the foundation for execution.',
+      targetLabel: 'Sales Performance Engine',
+      targetHref: '#engine',
+    },
+    tickerItems: ['STRATEGY', 'TEAM', 'LEADERSHIP', 'ACCOUNTABILITY', 'CONSULTING'],
   },
 
   pillars: [
