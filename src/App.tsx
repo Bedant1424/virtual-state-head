@@ -3,13 +3,16 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Hero } from '@/sections/Hero';
 import { Problem } from '@/sections/Problem';
+import { PerformanceGapCost } from '@/sections/Problem/PerformanceGapCost';
 import { Introduction } from '@/sections/Introduction';
 import { Coaches } from '@/sections/Coaches';
 import { PerformanceEngine } from '@/sections/PerformanceEngine';
+import { Frameworks } from '@/sections/Frameworks';
 import { HowItWorks } from '@/sections/HowItWorks';
-import { WhyVirtualStateHead } from '@/sections/Benefits/WhyVirtualStateHead';
 import { WhoIsThisFor } from '@/sections/Fit';
+import { WhyVirtualStateHead } from '@/sections/Benefits/WhyVirtualStateHead';
 import { UpcomingBatch } from '@/sections/Batch';
+import { WhatHappensAfterBooking } from '@/sections/Booking';
 import { FAQSection } from '@/sections/FAQ';
 import { FinalCTA } from '@/sections/FinalCTA';
 import { DemoModal } from '@/components/ui/DemoModal';
@@ -41,43 +44,52 @@ export const App: React.FC = () => {
         {/* Premium Visual Header */}
         <Header onCtaClick={handleOpenDemoModal} />
 
-        {/* Main Experience Container */}
+        {/* Main Experience Container: 15 Core Chapters */}
         <main id="main-content" className="relative flex-1">
-          {/* CHAPTER 1: Signature Hero Section Experience */}
+          {/* CHAPTER 1: Hero */}
           <Hero onCtaClick={handleOpenDemoModal} />
 
-          {/* CHAPTER 2: Problem + Performance Gap Diagnostic Narrative */}
+          {/* CHAPTER 2: Problem */}
           <Problem />
 
-          {/* CHAPTER 3: Experienced Sales Leadership & Business Value */}
+          {/* CHAPTER 3: Introducing Virtual State Head */}
           <Introduction onCtaClick={handleOpenDemoModal} />
 
-          {/* CHAPTER 4: Leadership Mentors & Human Credibility */}
+          {/* CHAPTER 4: Meet the Coaches */}
           <Coaches />
 
-          {/* CHAPTER 5: The Sales Performance Engine Signature Peak */}
+          {/* CHAPTER 5: Sales Performance Engine */}
           <PerformanceEngine onCtaClick={handleOpenDemoModal} />
 
-          {/* CHAPTER 6: How the Engagement Works (Process + Frameworks) */}
+          {/* CHAPTER 6: Sales Frameworks */}
+          <Frameworks />
+
+          {/* CHAPTER 7: How the Engagement Works */}
           <HowItWorks />
 
-          {/* CHAPTER 7: Why Virtual State Head? (4 Typographic Statements) */}
-          <WhyVirtualStateHead />
-
-          {/* CHAPTER 8: Who It Is For (Cohort Qualification & Fit) */}
+          {/* CHAPTER 8: Who Is This For? */}
           <WhoIsThisFor />
 
-          {/* CHAPTER 9: Upcoming Batch (10 MSME Companies) */}
+          {/* CHAPTER 9: Why Virtual State Head? */}
+          <WhyVirtualStateHead />
+
+          {/* CHAPTER 10: Cost of the Performance Gap */}
+          <PerformanceGapCost />
+
+          {/* CHAPTER 11: Upcoming Batch */}
           <UpcomingBatch onCtaClick={handleOpenDemoModal} />
 
-          {/* CHAPTER 10: FAQ Accordion */}
+          {/* CHAPTER 12: What Happens After You Book? */}
+          <WhatHappensAfterBooking />
+
+          {/* CHAPTER 13: FAQ */}
           <FAQSection />
 
-          {/* CHAPTER 11: Final Closing Call to Action */}
+          {/* CHAPTER 14: Final CTA */}
           <FinalCTA onCtaClick={handleOpenDemoModal} />
         </main>
 
-        {/* Structural Footer Shell */}
+        {/* CHAPTER 15: Footer */}
         <Footer />
 
         {/* Controlled CTA Trial/Demo Feedback Modal */}

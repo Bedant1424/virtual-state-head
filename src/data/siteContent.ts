@@ -110,9 +110,15 @@ export interface EngagementProcessSectionData {
 }
 
 export interface AudienceFitCategory {
-  readonly type: 'ideal' | 'not_suited';
+  readonly type: 'ideal' | 'not_suited' | 'criteria';
   readonly heading: string;
   readonly points: readonly string[];
+}
+
+export interface WhyVshDifferentiator {
+  readonly number: string;
+  readonly title: string;
+  readonly description: string;
 }
 
 export interface FaqItem {
@@ -258,6 +264,7 @@ export interface SiteContent {
   readonly processSection: EngagementProcessSectionData;
   readonly processStages: readonly EngagementStage[];
   readonly audienceFit: readonly AudienceFitCategory[];
+  readonly whyVsh: readonly WhyVshDifferentiator[];
   readonly faqs: readonly FaqItem[];
   readonly batch: BatchInfo;
 }
@@ -611,7 +618,7 @@ export const siteContent: SiteContent = {
       },
     ],
     climax: {
-      eyebrow: 'System Integration • Operating Engine',
+      eyebrow: 'Three Elements • One Performance Approach',
       title: 'SALES PERFORMANCE ENGINE',
       subtitle: 'TRAINING + TECHNOLOGY + ACCOUNTABILITY',
       headline: 'TRAINING + TECHNOLOGY + ACCOUNTABILITY',
@@ -626,7 +633,7 @@ export const siteContent: SiteContent = {
       },
     },
     bridge: {
-      statement: 'A structured system needs practical sales frameworks.',
+      statement: 'Three elements. One structured approach to sales performance.',
       targetLabel: 'Sales Frameworks',
       targetHref: '#frameworks',
     },
@@ -766,55 +773,104 @@ export const siteContent: SiteContent = {
   audienceFit: [
     {
       type: 'ideal',
-      heading: 'Designed For',
+      heading: 'Who We Help',
       points: [
-        'Established MSME businesses in Odisha with existing products, customers, and revenues.',
-        'Businesses with an active sales team of 3 to 25+ people that requires stronger leadership.',
-        'Founders and directors spending too much time firefighting daily sales operations.',
-        'Organizations with ambitious business goals that want structured execution rather than guesswork.',
+        'MSME owners, founders, directors, and business leaders seeking structured sales growth.',
+        'Businesses with an existing sales team that need senior leadership, direction, and coaching.',
+        'Companies experiencing inconsistent sales performance across months or quarters.',
+        'Organizations dealing with unclear sales priorities, weak follow-through, or tracking gaps.',
+        'Teams with frontline sales development needs that require experienced leadership support.',
       ],
     },
+  ],
+
+  whyVsh: [
     {
-      type: 'not_suited',
-      heading: 'Not Designed For',
-      points: [
-        'Pre-revenue concepts without a validated product or operational business model.',
-        'Companies looking for a hands-off lead generation vendor or marketing outsourcing agency.',
-        'Teams resistant to weekly accountability, structured reviews, and transparent performance metrics.',
-      ],
+      number: '01',
+      title: 'Experienced Sales Leadership',
+      description:
+        'Senior sales leadership, strategic insight, and executive direction from seasoned consultants with more than 30 years of sales experience.',
+    },
+    {
+      number: '02',
+      title: 'A Broader Performance Perspective',
+      description:
+        'Looking beyond isolated sales training to address direction, team development, technology support, and ongoing accountability together.',
+    },
+    {
+      number: '03',
+      title: 'Practical Business Focus',
+      description:
+        'Grounded in the day-to-day sales realities of operating businesses, focusing on pipeline rigor, buyer communication, and disciplined execution routines.',
+    },
+    {
+      number: '04',
+      title: 'Structured Support',
+      description:
+        'Consistent weekly reviews, pipeline tracking, and performance discussions that build rhythm and follow-through across the sales team.',
+    },
+    {
+      number: '05',
+      title: 'Designed for MSMEs',
+      description:
+        'Tailored specifically for growing enterprises that already have sales activity and need leadership to strengthen execution without adding full-time overhead.',
     },
   ],
 
   faqs: [
     {
       id: 'faq-1',
-      question: 'What is a Virtual State Head?',
+      question: 'What is Virtual State Head?',
       answer:
-        'A Virtual State Head acts as your senior sales leadership partner. We provide the strategic clarity, team coaching, and regular accountability reviews of an experienced sales leader without the overhead of a full-time executive hire.',
+        'Virtual State Head provides experienced sales leadership, strategic direction, team development, performance consulting, and accountability support for MSMEs in Odisha that already have sales activity but need stronger direction, execution, and performance discipline.',
     },
     {
       id: 'faq-2',
-      question: 'How is this different from traditional sales training?',
+      question: 'What is the Sales Performance Engine?',
       answer:
-        'Traditional training is an isolated event where knowledge fades quickly. The Sales Performance Engine integrates training with technology and ongoing weekly accountability reviews to ensure habits, pipelines, and performance results actually stick.',
+        'The Sales Performance Engine is a structured approach that brings together three essential elements of sales performance: Training (capability, communication, and mindset), Technology (visibility, tracking, and execution support), and Accountability (regular reviews, commitments, and follow-through).',
     },
     {
       id: 'faq-3',
-      question: 'Do we need a full CRM before starting?',
+      question: 'Is this only a sales training program?',
       answer:
-        'No. We meet your business where it currently operates—whether using spreadsheets, paper registers, or an existing CRM. We first establish reporting discipline and pipeline hygiene before introducing or optimizing software.',
+        'No. Training alone rarely creates lasting performance change. The engagement combines frontline sales capability development with senior strategic direction, visibility tools, and disciplined weekly accountability reviews.',
     },
     {
       id: 'faq-4',
-      question: 'Who conducts the weekly reviews?',
+      question: 'Who should consider this engagement?',
       answer:
-        'Our senior sales coaches and consultants conduct the weekly performance reviews directly with your sales team and leadership, reviewing pipeline health, deal blockers, and commitments.',
+        'MSME owners, founders, directors, and business leaders in Odisha who already have an active sales team (typically 3 to 25+ salespeople) and want to address inconsistent performance, unclear priorities, follow-up gaps, or founder bandwidth constraints.',
     },
     {
       id: 'faq-5',
-      question: 'How are companies selected for the upcoming batch?',
+      question: 'Do I need to have an existing sales team?',
       answer:
-        'We select 10 MSME companies in Odisha per cohort to ensure deep executive attention. Selection is based on mutual fit during the initial Sales Strategy Call.',
+        'Yes. This engagement is designed for businesses that already have active salespeople, products, and existing market operations, but require experienced sales leadership and structured execution routines to improve consistency.',
+    },
+    {
+      id: 'faq-6',
+      question: 'Does booking a call guarantee selection?',
+      answer:
+        'No. Booking a Sales Strategy Call is an exploratory diagnostic discussion to understand your business, sales challenges, and growth goals. Selection into a cohort is based on mutual fit and team readiness.',
+    },
+    {
+      id: 'faq-7',
+      question: 'How many companies will be selected for the upcoming batch?',
+      answer:
+        'Each batch is strictly limited to 10 MSME companies from Odisha to ensure intensive, high-touch executive oversight and direct coaching attention from our senior leaders.',
+    },
+    {
+      id: 'faq-8',
+      question: 'Will the program guarantee higher sales?',
+      answer:
+        'No ethical consulting engagement guarantees future sales figures, as external market conditions and internal operational follow-through play vital roles. We provide the experienced sales leadership, practical frameworks, daily execution discipline, and regular accountability that give your team the strongest foundation for consistent performance.',
+    },
+    {
+      id: 'faq-9',
+      question: 'How can I get started?',
+      answer:
+        'You can start by booking a confidential 45-minute Sales Strategy Call. We will review your current sales structure, identify key friction points, and determine whether the Virtual State Head engagement is the right strategic fit for your business.',
     },
   ],
 

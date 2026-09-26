@@ -97,7 +97,7 @@ export const EngineReducedMotion: React.FC<EngineReducedMotionProps> = ({ onCtaC
           </div>
 
           <h3 className="text-xl sm:text-2xl font-bold text-white font-sans mb-4">
-            System Integration
+            One Integrated Approach
           </h3>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6 p-4 rounded-xl bg-navy/80 border border-white/10">

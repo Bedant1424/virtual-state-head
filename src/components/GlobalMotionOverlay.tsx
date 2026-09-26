@@ -3,14 +3,14 @@ import React from 'react';
 /**
  * GlobalMotionOverlay
  *
- * A continuous, subtle, deterministic SVG motion layer fixed across the entire viewport.
- * Provides a unified visual identity of flowing strategic momentum / data currents.
+ * A continuous, elegant SVG motion layer fixed across the entire viewport.
+ * Provides a clear, recognizable visual identity of flowing strategic momentum.
  *
- * Requirements:
- * - Fixed inset-0, pointer-events-none, behind all page content
- * - 3-4 large continuous flowing lines spanning the viewport
- * - Slow, smooth, deterministic animation (independent of scroll/mouse/state)
- * - Low opacity (never obscures text)
+ * Specifications:
+ * - Fixed inset-0, pointer-events-none, z-0 behind content
+ * - 4 long flowing curves entering from viewport edges with gentle intersections
+ * - Visible but restrained sky-blue / soft-blue strokes with travelling highlights
+ * - Continuous CSS animations independent of scroll position or React state
  * - Freezes under prefers-reduced-motion
  */
 export const GlobalMotionOverlay: React.FC = () => {
@@ -24,63 +24,86 @@ export const GlobalMotionOverlay: React.FC = () => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         preserveAspectRatio="none"
-        className="w-full h-full opacity-60 dark:opacity-40"
+        className="w-full h-full"
       >
         <defs>
-          {/* Subtle Strategic Gradients */}
-          <linearGradient id="gmo-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#87CEEB" stopOpacity="0.18" />
-            <stop offset="50%" stopColor="#123B63" stopOpacity="0.08" />
-            <stop offset="100%" stopColor="#87CEEB" stopOpacity="0.22" />
+          {/* Base Flow Gradients */}
+          <linearGradient id="gmo-stroke-1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#87CEEB" stopOpacity="0.28" />
+            <stop offset="50%" stopColor="#123B63" stopOpacity="0.18" />
+            <stop offset="100%" stopColor="#87CEEB" stopOpacity="0.32" />
           </linearGradient>
 
-          <linearGradient id="gmo-grad-2" x1="100%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="#123B63" stopOpacity="0.12" />
-            <stop offset="60%" stopColor="#87CEEB" stopOpacity="0.16" />
-            <stop offset="100%" stopColor="#123B63" stopOpacity="0.06" />
+          <linearGradient id="gmo-stroke-2" x1="100%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#123B63" stopOpacity="0.2" />
+            <stop offset="60%" stopColor="#87CEEB" stopOpacity="0.3" />
+            <stop offset="100%" stopColor="#123B63" stopOpacity="0.15" />
           </linearGradient>
 
-          <linearGradient id="gmo-grad-3" x1="0%" y1="100%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#87CEEB" stopOpacity="0.14" />
-            <stop offset="50%" stopColor="#EAF5FB" stopOpacity="0.06" />
-            <stop offset="100%" stopColor="#123B63" stopOpacity="0.18" />
+          <linearGradient id="gmo-stroke-3" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#87CEEB" stopOpacity="0.25" />
+            <stop offset="50%" stopColor="#0B1F33" stopOpacity="0.15" />
+            <stop offset="100%" stopColor="#87CEEB" stopOpacity="0.3" />
           </linearGradient>
 
-          {/* Embedded deterministic CSS animations */}
+          {/* Travelling Highlight Glow Gradients */}
+          <linearGradient id="gmo-pulse-1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#87CEEB" stopOpacity="0" />
+            <stop offset="50%" stopColor="#FFFFFF" stopOpacity="0.85" />
+            <stop offset="100%" stopColor="#87CEEB" stopOpacity="0" />
+          </linearGradient>
+
+          <linearGradient id="gmo-pulse-2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#87CEEB" stopOpacity="0" />
+            <stop offset="50%" stopColor="#87CEEB" stopOpacity="0.9" />
+            <stop offset="100%" stopColor="#87CEEB" stopOpacity="0" />
+          </linearGradient>
+
+          {/* CSS Animations */}
           <style>{`
-            @keyframes gmo-flow-1 {
+            @keyframes gmo-dash-1 {
+              0% { stroke-dashoffset: 2800; }
+              100% { stroke-dashoffset: 0; }
+            }
+            @keyframes gmo-dash-2 {
               0% { stroke-dashoffset: 0; }
-              100% { stroke-dashoffset: -1600; }
+              100% { stroke-dashoffset: 2600; }
             }
-            @keyframes gmo-flow-2 {
-              0% { stroke-dashoffset: 0; }
-              100% { stroke-dashoffset: 1400; }
+            @keyframes gmo-dash-3 {
+              0% { stroke-dashoffset: 2400; }
+              100% { stroke-dashoffset: 0; }
             }
-            @keyframes gmo-flow-3 {
-              0% { stroke-dashoffset: 0; }
-              100% { stroke-dashoffset: -1200; }
+            @keyframes gmo-breathe-subtle {
+              0%, 100% { opacity: 0.65; }
+              50% { opacity: 0.95; }
             }
-            @keyframes gmo-breathe {
-              0%, 100% { opacity: 0.75; }
-              50% { opacity: 1; }
+
+            .gmo-base-1 {
+              animation: gmo-breathe-subtle 12s ease-in-out infinite;
             }
-            .gmo-stream-1 {
-              stroke-dasharray: 800 600;
-              animation: gmo-flow-1 48s linear infinite, gmo-breathe 16s ease-in-out infinite;
+            .gmo-base-2 {
+              animation: gmo-breathe-subtle 16s ease-in-out infinite reverse;
             }
-            .gmo-stream-2 {
-              stroke-dasharray: 700 700;
-              animation: gmo-flow-2 56s linear infinite, gmo-breathe 20s ease-in-out infinite reverse;
+            .gmo-base-3 {
+              animation: gmo-breathe-subtle 14s ease-in-out infinite;
             }
-            .gmo-stream-3 {
-              stroke-dasharray: 900 500;
-              animation: gmo-flow-3 64s linear infinite, gmo-breathe 18s ease-in-out infinite;
+
+            .gmo-highlight-1 {
+              stroke-dasharray: 280 2520;
+              animation: gmo-dash-1 22s linear infinite;
             }
-            .gmo-stream-static {
-              opacity: 0.45;
+            .gmo-highlight-2 {
+              stroke-dasharray: 240 2360;
+              animation: gmo-dash-2 28s linear infinite;
             }
+            .gmo-highlight-3 {
+              stroke-dasharray: 300 2300;
+              animation: gmo-dash-3 25s linear infinite;
+            }
+
             @media (prefers-reduced-motion: reduce) {
-              .gmo-stream-1, .gmo-stream-2, .gmo-stream-3 {
+              .gmo-highlight-1, .gmo-highlight-2, .gmo-highlight-3,
+              .gmo-base-1, .gmo-base-2, .gmo-base-3 {
                 animation: none !important;
                 stroke-dasharray: none !important;
               }
@@ -88,37 +111,66 @@ export const GlobalMotionOverlay: React.FC = () => {
           `}</style>
         </defs>
 
-        {/* Stream 1: Primary Diagonal Flow (Upper-Left to Lower-Right) */}
+        {/* ============================================================== */}
+        {/* PATH 1: Upper-Left to Lower-Right Diagonal Current              */}
+        {/* ============================================================== */}
         <path
-          d="M -120 180 C 380 80, 740 420, 1180 260 C 1520 140, 1780 480, 2060 380"
-          stroke="url(#gmo-grad-1)"
+          d="M -150 180 C 350 80, 720 380, 1160 220 C 1500 110, 1740 440, 2070 340"
+          stroke="url(#gmo-stroke-1)"
           strokeWidth="2.5"
-          className="gmo-stream-1"
+          className="gmo-base-1"
+        />
+        <path
+          d="M -150 180 C 350 80, 720 380, 1160 220 C 1500 110, 1740 440, 2070 340"
+          stroke="url(#gmo-pulse-1)"
+          strokeWidth="3.5"
+          strokeLinecap="round"
+          className="gmo-highlight-1"
         />
 
-        {/* Stream 2: Counter Strategic Current (Lower-Left to Upper-Right) */}
+        {/* ============================================================== */}
+        {/* PATH 2: Lower-Left to Upper-Right Intersecting Current          */}
+        {/* ============================================================== */}
         <path
-          d="M -80 880 C 420 720, 820 940, 1260 760 C 1620 620, 1840 820, 2040 690"
-          stroke="url(#gmo-grad-2)"
-          strokeWidth="2"
-          className="gmo-stream-2"
+          d="M -100 860 C 400 700, 800 920, 1240 740 C 1600 600, 1820 800, 2060 670"
+          stroke="url(#gmo-stroke-2)"
+          strokeWidth="2.5"
+          className="gmo-base-2"
+        />
+        <path
+          d="M -100 860 C 400 700, 800 920, 1240 740 C 1600 600, 1820 800, 2060 670"
+          stroke="url(#gmo-pulse-2)"
+          strokeWidth="3.5"
+          strokeLinecap="round"
+          className="gmo-highlight-2"
         />
 
-        {/* Stream 3: Central Harmonizing Wave */}
+        {/* ============================================================== */}
+        {/* PATH 3: Central Transverse Flow                                */}
+        {/* ============================================================== */}
         <path
-          d="M -100 520 C 340 380, 680 620, 1120 490 C 1480 380, 1720 580, 2080 460"
-          stroke="url(#gmo-grad-3)"
-          strokeWidth="2"
-          className="gmo-stream-3"
+          d="M -120 510 C 320 370, 660 610, 1100 480 C 1460 370, 1700 570, 2080 450"
+          stroke="url(#gmo-stroke-3)"
+          strokeWidth="2.5"
+          className="gmo-base-3"
+        />
+        <path
+          d="M -120 510 C 320 370, 660 610, 1100 480 C 1460 370, 1700 570, 2080 450"
+          stroke="url(#gmo-pulse-1)"
+          strokeWidth="3"
+          strokeLinecap="round"
+          className="gmo-highlight-3"
         />
 
-        {/* Stream 4: Subtle Deep Foundation Track (Static Contour) */}
+        {/* ============================================================== */}
+        {/* PATH 4: Soft Structural Rhythm Horizon                         */}
+        {/* ============================================================== */}
         <path
-          d="M -60 320 C 460 220, 920 460, 1380 340 C 1720 240, 1960 410, 2060 350"
+          d="M -80 340 C 440 240, 900 480, 1360 360 C 1700 260, 1940 430, 2060 370"
           stroke="#87CEEB"
-          strokeWidth="1"
-          strokeDasharray="4 8"
-          className="gmo-stream-static"
+          strokeWidth="1.5"
+          strokeDasharray="6 8"
+          strokeOpacity="0.25"
         />
       </svg>
     </div>

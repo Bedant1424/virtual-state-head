@@ -66,13 +66,13 @@ export const ProblemVisual: React.FC<ProblemVisualProps> = ({
           )}
         />
         <span className="text-[10px] sm:text-xs font-mono uppercase tracking-wider text-muted font-semibold">
-          {activeState === 'busy' && 'System Reality: High Activity'}
+          {activeState === 'busy' && 'Current Reality: High Sales Activity'}
           {activeState === 'misaligned' && '01 Direction: Strategy & Target Misalignment'}
           {activeState === 'inconsistent' && '02 Performance: Inconsistent Sales Conversion'}
           {activeState === 'unaccounted' && '03 Accountability: Inconsistent Review Rhythm'}
           {activeState === 'missed-opportunities' && '04 Opportunities: Follow-Up & Negotiation Drift'}
           {activeState === 'leadership-gap' && '05 Leadership: Founder Sales Bottleneck'}
-          {activeState === 'recognition' && 'System Insight: Activity ≠ Performance'}
+          {activeState === 'recognition' && 'Core Insight: Activity ≠ Performance'}
         </span>
       </div>
 

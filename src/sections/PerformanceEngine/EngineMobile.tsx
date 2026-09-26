@@ -62,11 +62,6 @@ export const EngineMobile: React.FC<EngineMobileProps> = ({ onCtaClick }) => {
             currentStage={visualStage}
             pillars={engine.pillars}
             isCompact={true}
-            onSelectStage={(stage) => {
-              if (stage === 1) setActivePillarKey('training');
-              if (stage === 2) setActivePillarKey('technology');
-              if (stage === 3) setActivePillarKey('accountability');
-            }}
           />
         </div>
 
@@ -177,7 +172,7 @@ export const EngineMobile: React.FC<EngineMobileProps> = ({ onCtaClick }) => {
           </div>
 
           <h3 className="text-base sm:text-lg font-bold text-white font-sans mb-3">
-            System Integration
+            One Integrated Approach
           </h3>
 
           <div className="space-y-2.5 mb-5 p-3.5 rounded-xl bg-navy/60 border border-white/10">
@@ -194,7 +189,7 @@ export const EngineMobile: React.FC<EngineMobileProps> = ({ onCtaClick }) => {
 
           <div className="pt-3 border-t border-white/10 text-center">
             <div className="text-[11px] font-mono uppercase tracking-wider text-white/60 mb-1">
-              Integrated System
+              Unified Approach
             </div>
             <div className="text-xs sm:text-sm font-sans font-extrabold text-sky-brand tracking-wide">
               TRAINING + TECHNOLOGY + ACCOUNTABILITY
