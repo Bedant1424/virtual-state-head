@@ -4,6 +4,7 @@ import { Footer } from '@/components/layout/Footer';
 import { Hero } from '@/sections/Hero';
 import { Problem } from '@/sections/Problem';
 import { Introduction } from '@/sections/Introduction';
+import { Benefits } from '@/sections/Benefits';
 import { DemoModal } from '@/components/ui/DemoModal';
 import { Container } from '@/components/layout/Container';
 import { SectionLabel } from '@/components/ui/SectionLabel';
@@ -43,6 +44,9 @@ export const App: React.FC = () => {
 
         {/* SPRINT 3: Experienced Sales Leadership / Solution Section */}
         <Introduction onCtaClick={handleOpenDemoModal} />
+
+        {/* SPRINT 4: What Your Business Gets Experience */}
+        <Benefits onCtaClick={handleOpenDemoModal} />
 
         {/* Future Sprint Boundary Preview: Operational Architecture Preview */}
         <section

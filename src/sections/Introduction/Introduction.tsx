@@ -19,7 +19,7 @@ export const Introduction: React.FC<IntroductionProps> = ({ onCtaClick }) => {
   const { solution } = siteContent;
 
   const handleNavigateNext = () => {
-    const nextElem = document.getElementById('engine');
+    const nextElem = document.getElementById('benefits');
     if (nextElem) {
       nextElem.scrollIntoView({ behavior: shouldReduceMotion ? 'auto' : 'smooth' });
     }
