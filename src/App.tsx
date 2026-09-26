@@ -3,6 +3,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Hero } from '@/sections/Hero';
 import { Problem } from '@/sections/Problem';
+import { Introduction } from '@/sections/Introduction';
 import { DemoModal } from '@/components/ui/DemoModal';
 import { Container } from '@/components/layout/Container';
 import { SectionLabel } from '@/components/ui/SectionLabel';
@@ -38,7 +39,10 @@ export const App: React.FC = () => {
         {/* SPRINT 2: Problem + Performance Gap Experience */}
         <Problem />
 
-        {/* Sprint 3 Boundary Placeholder: Operational Architecture Preview */}
+        {/* SPRINT 3: Experienced Sales Leadership / Solution Section */}
+        <Introduction onCtaClick={handleOpenDemoModal} />
+
+        {/* Future Sprint Boundary Preview: Operational Architecture Preview */}
         <section
           id="engine"
           aria-label="Sales Performance Engine Pillars"
