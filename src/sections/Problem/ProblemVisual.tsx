@@ -56,22 +56,22 @@ export const ProblemVisual: React.FC<ProblemVisualProps> = ({
         <span
           className={clsx(
             'w-2 h-2 rounded-full transition-colors duration-300',
-            activeState === 'busy' && 'bg-sky-brand animate-pulse',
+            activeState === 'busy' && 'bg-sky-brand',
             activeState === 'misaligned' && 'bg-amber-500',
             activeState === 'inconsistent' && 'bg-amber-600',
             activeState === 'unaccounted' && 'bg-rose-500',
             activeState === 'missed-opportunities' && 'bg-rose-600',
-            activeState === 'leadership-gap' && 'bg-deep-blue animate-pulse',
+            activeState === 'leadership-gap' && 'bg-deep-blue',
             activeState === 'recognition' && 'bg-deep-blue'
           )}
         />
         <span className="text-[10px] sm:text-xs font-mono uppercase tracking-wider text-muted font-semibold">
-          {activeState === 'busy' && 'System Cadence: High Velocity Activity'}
-          {activeState === 'misaligned' && 'Direction: Vector Divergence'}
-          {activeState === 'inconsistent' && 'Execution: Asymmetric Conversion Rhythm'}
-          {activeState === 'unaccounted' && 'Governance: Unanchored Review Commitments'}
-          {activeState === 'missed-opportunities' && 'Pipeline: Unmonitored Follow-up Drift'}
-          {activeState === 'leadership-gap' && 'Architecture: Central Founder Bottleneck'}
+          {activeState === 'busy' && 'System Reality: High Activity'}
+          {activeState === 'misaligned' && '01 Direction: Strategy & Target Misalignment'}
+          {activeState === 'inconsistent' && '02 Performance: Inconsistent Sales Conversion'}
+          {activeState === 'unaccounted' && '03 Accountability: Inconsistent Review Rhythm'}
+          {activeState === 'missed-opportunities' && '04 Opportunities: Follow-Up & Negotiation Drift'}
+          {activeState === 'leadership-gap' && '05 Leadership: Founder Sales Bottleneck'}
           {activeState === 'recognition' && 'System Insight: Activity ≠ Performance'}
         </span>
       </div>

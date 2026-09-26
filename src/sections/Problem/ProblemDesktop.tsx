@@ -86,16 +86,16 @@ export const ProblemDesktop: React.FC = () => {
   };
 
   return (
-    <div ref={containerRef} className="relative w-full bg-white">
+    <div ref={containerRef} className="relative w-full bg-[#F8FAFC]">
       {/* Pinned Viewport Container with Controlled Bounds */}
       <div
         ref={pinWrapRef}
-        className="w-full h-screen max-h-[880px] min-h-[620px] flex flex-col justify-center pt-16 pb-4 overflow-hidden"
+        className="w-full h-screen max-h-[840px] min-h-[580px] flex flex-col justify-center pt-16 pb-4 overflow-hidden"
       >
         <Container size="default">
           {/* Section Header Eyebrow & Headline */}
-          <div className="mb-6 lg:mb-8">
-            <div className="mb-3">
+          <div className="mb-4 lg:mb-5">
+            <div className="mb-2.5">
               <SectionLabel label={problemData.eyebrow} />
             </div>
             <h2 className="typography-h2 text-navy max-w-3xl font-extrabold tracking-tight">
@@ -104,7 +104,7 @@ export const ProblemDesktop: React.FC = () => {
           </div>
 
           {/* Minimal Progress Indicator */}
-          <div className="mb-6 pb-4 border-b border-gray-100 flex items-center justify-between">
+          <div className="mb-4 pb-3 border-b border-gray-200/80 flex items-center justify-between">
             <ProblemProgressIndicator
               currentStageIndex={activeStageIndex}
               onSelectStage={handleSelectStage}
@@ -146,7 +146,7 @@ export const ProblemDesktop: React.FC = () => {
 
                     <div className="pt-2 flex items-center gap-2 text-xs font-semibold text-deep-blue">
                       <span>Begin scrolling to examine where friction enters the system</span>
-                      <ArrowRight className="w-4 h-4 text-sky-brand animate-bounceX" />
+                      <ArrowRight className="w-4 h-4 text-sky-brand" />
                     </div>
                   </m.div>
                 )}

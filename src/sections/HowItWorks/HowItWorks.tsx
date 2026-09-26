@@ -2,19 +2,28 @@ import React from 'react';
 import { Container } from '@/components/layout/Container';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 import { siteContent } from '@/data/siteContent';
-import { ArrowRight, ArrowDown, Check, Layers } from 'lucide-react';
+import { ArrowRight, ArrowDown } from 'lucide-react';
 
 export interface HowItWorksProps {
   className?: string;
 }
 
+const stageDescriptions: Record<string, string> = {
+  '01': 'Diagnostic review of sales capabilities & friction points.',
+  '02': 'Align commercial objectives, target market & priorities.',
+  '03': 'Build team capability, objection handling & communication.',
+  '04': 'Structured sales cadence & agreed daily follow-through.',
+  '05': 'Regular performance reviews & commitment tracking.',
+  '06': 'Continuous feedback & institutionalized sales discipline.',
+};
+
 /**
  * HowItWorks Section (<section id="how-it-works">)
- * Unified methodology chapter combining the 6-stage Engagement Process
- * and the 5 Named Sales Frameworks.
+ *
+ * Visual sequence for the 6-stage Engagement Process and 5 Named Sales Frameworks.
  *
  * Sequence:
- * Assess → Set Direction → Develop → Execute → Review → Improve
+ * 01 ASSESS → 02 SET DIRECTION → 03 DEVELOP → 04 EXECUTE → 05 REVIEW → 06 IMPROVE
  *
  * Frameworks:
  * 1. Royal Selling Formula
@@ -23,10 +32,8 @@ export interface HowItWorksProps {
  * 4. Performance Consulting
  * 5. Lifetime Client Relationship (LCR)
  *
- * Design:
- * - Scannable editorial timeline + clean typographic framework cards.
- * - Calm, structured, human, and credible.
- * - Zero bloated dashboard selectors or redundant click requirements.
+ * Editorial methodology layout with one connected line, large step numbers,
+ * concise descriptions, and zero dashboard/accordion UI cards.
  */
 export const HowItWorks: React.FC<HowItWorksProps> = ({ className }) => {
   const { processStages, frameworks } = siteContent;
@@ -46,12 +53,12 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ className }) => {
       <Container size="default">
         {/* Section Header */}
         <div className="max-w-3xl mb-10 sm:mb-12">
-          <div className="mb-4">
-            <SectionLabel label="Methodology & Frameworks • Structured Delivery" />
+          <div className="mb-3">
+            <SectionLabel label="Structured Delivery & Methodology" />
           </div>
           <h2
             id="how-it-works-heading"
-            className="typography-h2 text-navy mb-4 font-sans font-extrabold"
+            className="typography-h2 text-navy mb-3 font-sans font-extrabold tracking-tight"
           >
             How the Engagement Works
           </h2>
@@ -61,10 +68,10 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ className }) => {
         </div>
 
         {/* ============================================================== */}
-        {/* PART 1: The 6-Stage Engagement Sequence                        */}
+        {/* PART 1: The Connected Visual Process Sequence                  */}
         {/* ============================================================== */}
-        <div className="mb-8 sm:mb-10">
-          <div className="flex items-center justify-between mb-4">
+        <div className="mb-12 sm:mb-14">
+          <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-deep-blue" />
               <h3 className="text-xs font-bold uppercase tracking-wider text-deep-blue font-sans">
@@ -76,73 +83,89 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ className }) => {
             </span>
           </div>
 
-          {/* Desktop Horizontal Track (>= 1024px) */}
-          <div className="hidden lg:block relative p-5 sm:p-6 rounded-2xl bg-white border border-gray-200/90 shadow-xs">
-            {/* Horizontal Connecting Baseline */}
+          {/* Desktop Continuous Connected Line Sequence (>= 1024px) */}
+          <div className="hidden lg:block relative py-4">
+            {/* The Continuous Connected Flow Line */}
             <div
-              className="absolute top-1/2 left-12 right-12 h-0.5 bg-gray-200 -translate-y-1/2 pointer-events-none"
+              className="absolute top-10 left-8 right-8 h-0.5 bg-gradient-to-r from-deep-blue via-sky-brand to-deep-blue pointer-events-none"
               aria-hidden="true"
             />
 
-            <div className="grid grid-cols-6 gap-3 relative z-10">
+            <div className="grid grid-cols-6 gap-4 relative z-10">
               {processStages.map((stage, idx) => (
                 <div
                   key={stage.id}
-                  className="flex flex-col items-center text-center group"
+                  className="flex flex-col items-start pr-2 group"
                 >
-                  <div className="w-11 h-11 rounded-xl bg-paper border border-gray-200 group-hover:border-deep-blue group-hover:bg-soft-blue/60 transition-all duration-200 flex items-center justify-center font-bold text-sm text-navy mb-2 shadow-2xs">
-                    {stage.number}
+                  {/* Step Node on Line */}
+                  <div className="flex items-center justify-between w-full mb-3">
+                    <div className="w-8 h-8 rounded-full bg-white border-2 border-deep-blue flex items-center justify-center shadow-xs group-hover:border-sky-brand transition-colors">
+                      <span className="w-2.5 h-2.5 rounded-full bg-deep-blue group-hover:bg-sky-brand transition-colors" />
+                    </div>
+                    {idx < processStages.length - 1 && (
+                      <span className="text-xs font-bold text-sky-brand font-mono opacity-60 group-hover:opacity-100 transition-opacity">
+                        →
+                      </span>
+                    )}
                   </div>
-                  <h4 className="text-sm font-bold text-navy font-sans tracking-tight mb-0.5">
+
+                  {/* Large Step Number */}
+                  <span className="text-2xl sm:text-3xl font-extrabold font-mono text-deep-blue/40 tracking-tight leading-none mb-1 group-hover:text-deep-blue transition-colors">
+                    {stage.number}
+                  </span>
+
+                  {/* Stage Name */}
+                  <h4 className="text-sm font-extrabold text-navy uppercase tracking-tight font-sans mb-1.5 leading-snug">
                     {stage.name}
                   </h4>
-                  {idx < processStages.length - 1 ? (
-                    <span className="text-[11px] font-mono text-muted flex items-center gap-1">
-                      Step {stage.number}
-                    </span>
-                  ) : (
-                    <span className="text-[11px] font-semibold text-deep-blue flex items-center gap-0.5">
-                      <Check className="w-3 h-3 text-sky-brand" />
-                      Continuous
-                    </span>
-                  )}
+
+                  {/* Very Short Description */}
+                  <p className="text-xs text-charcoal/80 leading-relaxed font-sans">
+                    {stageDescriptions[stage.number] || stage.name}
+                  </p>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Mobile Vertical Connected Timeline (< 1024px) */}
-          <div className="block lg:hidden relative pl-6 border-l-2 border-sky-brand/40 space-y-3 ml-3">
+          {/* Mobile Vertical Connected Line (< 1024px) */}
+          <div className="block lg:hidden relative pl-6 border-l-2 border-deep-blue/30 space-y-5 ml-3">
             {processStages.map((stage, idx) => (
               <div
                 key={stage.id}
-                className="relative flex items-center gap-3 p-3 rounded-xl bg-white border border-gray-200 shadow-2xs"
+                className="relative flex flex-col items-start"
               >
                 {/* Node on vertical line */}
-                <div className="absolute -left-[35px] w-6 h-6 rounded-full bg-deep-blue text-white text-[11px] font-bold flex items-center justify-center border-2 border-white shadow-xs">
-                  {stage.number}
+                <div className="absolute -left-[33px] top-0.5 w-5 h-5 rounded-full bg-deep-blue text-white flex items-center justify-center border-2 border-white shadow-xs">
+                  <span className="w-1.5 h-1.5 rounded-full bg-sky-brand" />
                 </div>
-                <div>
-                  <h4 className="text-sm font-bold text-navy font-sans">
+
+                <div className="flex items-center gap-2 mb-0.5">
+                  <span className="text-xs font-mono font-bold text-deep-blue">
+                    {stage.number}
+                  </span>
+                  <h4 className="text-sm font-extrabold text-navy uppercase tracking-tight font-sans">
                     {stage.name}
                   </h4>
-                  <span className="text-[11px] text-muted font-sans">
-                    Stage {stage.number} of 06
-                  </span>
                 </div>
+
+                <p className="text-xs text-charcoal/80 leading-relaxed font-sans">
+                  {stageDescriptions[stage.number] || stage.name}
+                </p>
+
                 {idx < processStages.length - 1 && (
-                  <ArrowDown className="w-3.5 h-3.5 text-muted ml-auto" />
+                  <ArrowDown className="w-3.5 h-3.5 text-sky-brand mt-2" />
                 )}
               </div>
             ))}
           </div>
         </div>
 
-        {/* Subtle Section Divider */}
-        <div className="w-full h-px bg-gray-200/80 mb-8 sm:mb-10" />
+        {/* Subtle Horizontal Divider */}
+        <div className="w-full h-px bg-gray-200/90 mb-10 sm:mb-12" />
 
         {/* ============================================================== */}
-        {/* PART 2: Five Named Frameworks                                 */}
+        {/* PART 2: Five Named Sales Frameworks (Compact Editorial Section) */}
         {/* ============================================================== */}
         <div>
           <div className="flex items-center justify-between mb-6">
@@ -157,25 +180,22 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ className }) => {
             </span>
           </div>
 
-          {/* Scannable 5-Card Typographic Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+          {/* Compact Editorial Typographic Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
             {frameworks.map((fw) => (
               <div
                 key={fw.id}
-                className="p-5 rounded-xl bg-white border border-gray-200/90 shadow-xs hover:border-sky-brand/60 transition-all duration-200 flex flex-col justify-between"
+                className="p-5 rounded-xl bg-white border border-gray-200/90 shadow-2xs hover:border-deep-blue/40 transition-colors flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-center justify-between gap-2 mb-3">
-                    <span className="w-7 h-7 rounded-lg bg-soft-blue text-deep-blue font-mono font-bold text-xs flex items-center justify-center border border-sky-brand/30">
-                      {fw.number}
-                    </span>
-                    <Layers className="w-4 h-4 text-sky-brand/70" />
-                  </div>
-                  <h4 className="text-sm sm:text-base font-bold text-navy font-sans leading-snug">
+                  <span className="text-xs font-mono font-bold text-deep-blue block mb-2">
+                    {fw.number}
+                  </span>
+                  <h4 className="text-base font-bold text-navy font-sans leading-snug">
                     {fw.name}
                   </h4>
                 </div>
-                <div className="mt-4 pt-2.5 border-t border-gray-100 flex items-center gap-1.5 text-[11px] font-semibold text-deep-blue">
+                <div className="mt-4 pt-2.5 border-t border-gray-100 flex items-center gap-1.5 text-[11px] font-semibold text-muted">
                   <span className="w-1.5 h-1.5 rounded-full bg-sky-brand" />
                   <span>Sales Framework</span>
                 </div>
@@ -185,7 +205,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ className }) => {
         </div>
 
         {/* Bottom Editorial Reinforcement */}
-        <div className="mt-12 sm:mt-14 p-6 rounded-2xl bg-white border border-gray-200/90 shadow-2xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div className="mt-10 sm:mt-12 p-5 sm:p-6 rounded-xl bg-white border border-gray-200/90 shadow-2xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <p className="text-xs sm:text-sm text-charcoal font-medium font-sans">
             These frameworks and stages are implemented collaboratively with your sales leadership and frontline team.
           </p>

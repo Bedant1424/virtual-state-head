@@ -4,9 +4,7 @@ import { SectionLabel } from '@/components/ui/SectionLabel';
 import { Button } from '@/components/ui/Button';
 import { CapabilitySystem } from './CapabilitySystem';
 import { LeadershipLayerVisual, FocusKey } from './LeadershipLayerVisual';
-import { IntroductionTransition } from './IntroductionTransition';
 import { siteContent } from '@/data/siteContent';
-import { useReducedMotion } from '@/hooks/useReducedMotion';
 import { CheckCircle, ArrowRight } from 'lucide-react';
 
 export interface IntroductionProps {
@@ -25,21 +23,13 @@ export interface IntroductionProps {
  */
 export const Introduction: React.FC<IntroductionProps> = ({ onCtaClick }) => {
   const [activeFocus, setActiveFocus] = useState<FocusKey>(null);
-  const shouldReduceMotion = useReducedMotion();
   const { solution } = siteContent;
-
-  const handleNavigateNext = () => {
-    const nextElem = document.getElementById('coaches');
-    if (nextElem) {
-      nextElem.scrollIntoView({ behavior: shouldReduceMotion ? 'auto' : 'smooth' });
-    }
-  };
 
   return (
     <section
       id="about"
       aria-label="Experienced Sales Leadership Solution"
-      className="py-14 sm:py-18 lg:py-22 bg-paper border-b border-gray-200/80 relative overflow-hidden"
+      className="py-12 sm:py-14 lg:py-16 bg-white border-b border-gray-200/80 relative overflow-hidden"
     >
       <Container size="default">
         {/* Strong Editorial 2-Column Composition */}
@@ -123,13 +113,6 @@ export const Introduction: React.FC<IntroductionProps> = ({ onCtaClick }) => {
             </p>
           </div>
         </div>
-
-        {/* Next Architectural Stage Transition Bridge */}
-        <IntroductionTransition
-          statement="When leadership is in place, experienced coaches guide execution and accountability."
-          targetLabel="Sales Coaches"
-          onNavigateNext={handleNavigateNext}
-        />
       </Container>
     </section>
   );

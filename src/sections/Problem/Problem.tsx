@@ -2,7 +2,6 @@ import React from 'react';
 import { ProblemDesktop } from './ProblemDesktop';
 import { ProblemMobile } from './ProblemMobile';
 import { ProblemReducedMotion } from './ProblemReducedMotion';
-import { ProblemTransition } from './ProblemTransition';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 
 export interface ProblemProps {
@@ -28,7 +27,7 @@ export const Problem: React.FC<ProblemProps> = ({ className }) => {
     <section
       id="problem"
       aria-label="Sales Performance Gap Analysis"
-      className={`relative w-full bg-white overflow-hidden ${className || ''}`}
+      className={`relative w-full bg-[#F8FAFC] border-b border-gray-200/80 overflow-hidden ${className || ''}`}
     >
       {prefersReducedMotion ? (
         <ProblemReducedMotion />
@@ -45,9 +44,6 @@ export const Problem: React.FC<ProblemProps> = ({ className }) => {
           </div>
         </>
       )}
-
-      {/* Structural Architectural Transition Boundary */}
-      <ProblemTransition />
     </section>
   );
 };

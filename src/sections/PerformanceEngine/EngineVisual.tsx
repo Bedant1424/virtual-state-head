@@ -68,14 +68,14 @@ export const EngineVisual: React.FC<EngineVisualProps> = ({
           <span
             className={clsx(
               'w-2 h-2 rounded-full transition-colors duration-300',
-              isClimax ? 'bg-sky-brand animate-pulse' : 'bg-sky-brand/70'
+              isClimax ? 'bg-sky-brand' : 'bg-sky-brand/70'
             )}
           />
           <span className="text-[11px] sm:text-xs font-sans font-bold uppercase tracking-wider text-white/90">
             {isClimax
-              ? 'Integrated System • Active'
+              ? 'Integrated Performance Engine'
               : isIntro
-                ? 'System Architecture • Initial State'
+                ? 'Strategic Framework • Initial State'
                 : 'Assembly Stage'}
           </span>
         </div>
@@ -87,7 +87,7 @@ export const EngineVisual: React.FC<EngineVisualProps> = ({
             {isTrainingActive && '01 Capability'}
             {isTechnologyActive && '02 Visibility + Execution'}
             {isAccountabilityActive && '03 Follow-Through'}
-            {isClimax && 'Complete Engine'}
+            {isClimax && 'Three Pillars Integrated'}
           </span>
         </div>
       </div>
@@ -306,7 +306,7 @@ export const EngineVisual: React.FC<EngineVisualProps> = ({
             fontWeight="800"
             letterSpacing="1.4"
           >
-            {isClimax ? 'OPERATING SYSTEM' : 'SYSTEM CORE'}
+            {isClimax ? 'INTEGRATED ENGINE' : 'SALES PERFORMANCE'}
           </text>
           <text
             x="360"
@@ -368,27 +368,27 @@ export const EngineVisual: React.FC<EngineVisualProps> = ({
         >
           {/* Card Contour */}
           <rect
-            x="70"
-            y="95"
-            width="200"
-            height="56"
-            rx="14"
+            x="60"
+            y="86"
+            width="220"
+            height="66"
+            rx="12"
             fill={isTrainingActive ? `url(#${gradActivePillarId})` : '#0B1F33'}
             stroke={isTrainingActive || isClimax ? '#87CEEB' : 'rgba(255,255,255,0.2)'}
             strokeWidth={isTrainingActive ? '2' : '1'}
           />
           {/* Number Pill */}
           <rect
-            x="84"
-            y="110"
+            x="74"
+            y="98"
             width="26"
-            height="24"
+            height="22"
             rx="6"
             fill={isTrainingActive ? '#87CEEB' : 'rgba(255,255,255,0.1)'}
           />
           <text
-            x="97"
-            y="126"
+            x="87"
+            y="113"
             textAnchor="middle"
             fill={isTrainingActive ? '#0B1F33' : '#FFFFFF'}
             fontSize="10"
@@ -397,26 +397,24 @@ export const EngineVisual: React.FC<EngineVisualProps> = ({
             01
           </text>
           {/* Title */}
-          <text x="120" y="122" fill="#FFFFFF" fontSize="11" fontWeight="800" letterSpacing="0.4">
+          <text x="110" y="112" fill="#FFFFFF" fontSize="11" fontWeight="800" letterSpacing="0.4">
             TRAINING
           </text>
           {/* Concept Tag */}
-          <text x="120" y="137" fill="#87CEEB" fontSize="8" fontWeight="600" letterSpacing="0.6">
+          <text x="210" y="112" fill="#87CEEB" fontSize="8" fontWeight="600" letterSpacing="0.6">
             CAPABILITY
           </text>
-          {/* Capability Compass Vector */}
-          <circle cx="245" cy="123" r="8" stroke={isTrainingActive ? '#87CEEB' : 'rgba(255,255,255,0.3)'} strokeWidth="1" />
-          <path
-            d="M 245 118 L 247 123 L 245 128 L 243 123 Z"
-            fill={isTrainingActive ? '#87CEEB' : 'rgba(255,255,255,0.4)'}
-          />
+          {/* 4 Strategic Dimensions */}
+          <text x="74" y="138" fill="rgba(255,255,255,0.85)" fontSize="7.5" fontWeight="500">
+            Skills • Mindset • Communication • Capability
+          </text>
         </g>
 
         {/* PILLAR 02: TECHNOLOGY (Top-Right) */}
         <g
           tabIndex={0}
           role="button"
-          aria-label="02 Technology: Use appropriate tools and systems to support sales visibility and execution"
+          aria-label="02 Technology: Visibility, tracking, coordination, and execution support"
           aria-pressed={isTechnologyActive}
           onClick={() => onSelectStage?.(2)}
           onKeyDown={(e) => {
@@ -432,27 +430,27 @@ export const EngineVisual: React.FC<EngineVisualProps> = ({
         >
           {/* Card Contour */}
           <rect
-            x="450"
-            y="95"
-            width="200"
-            height="56"
-            rx="14"
+            x="440"
+            y="86"
+            width="220"
+            height="66"
+            rx="12"
             fill={isTechnologyActive ? `url(#${gradActivePillarId})` : '#0B1F33'}
             stroke={isTechnologyActive || isClimax ? '#87CEEB' : 'rgba(255,255,255,0.2)'}
             strokeWidth={isTechnologyActive ? '2' : '1'}
           />
           {/* Number Pill */}
           <rect
-            x="464"
-            y="110"
+            x="454"
+            y="98"
             width="26"
-            height="24"
+            height="22"
             rx="6"
             fill={isTechnologyActive ? '#87CEEB' : 'rgba(255,255,255,0.1)'}
           />
           <text
-            x="477"
-            y="126"
+            x="467"
+            y="113"
             textAnchor="middle"
             fill={isTechnologyActive ? '#0B1F33' : '#FFFFFF'}
             fontSize="10"
@@ -461,27 +459,24 @@ export const EngineVisual: React.FC<EngineVisualProps> = ({
             02
           </text>
           {/* Title */}
-          <text x="500" y="122" fill="#FFFFFF" fontSize="11" fontWeight="800" letterSpacing="0.4">
+          <text x="490" y="112" fill="#FFFFFF" fontSize="11" fontWeight="800" letterSpacing="0.4">
             TECHNOLOGY
           </text>
           {/* Concept Tag */}
-          <text x="500" y="137" fill="#87CEEB" fontSize="8" fontWeight="600" letterSpacing="0.6">
-            VISIBILITY + EXECUTION
+          <text x="590" y="112" fill="#87CEEB" fontSize="8" fontWeight="600" letterSpacing="0.6">
+            VISIBILITY
           </text>
-          {/* Visibility Grid Icon */}
-          <g opacity={isTechnologyActive ? 1 : 0.5}>
-            <rect x="620" y="116" width="6" height="6" rx="1" fill="#87CEEB" />
-            <rect x="628" y="116" width="6" height="6" rx="1" fill="#87CEEB" />
-            <rect x="620" y="124" width="6" height="6" rx="1" fill="#87CEEB" />
-            <rect x="628" y="124" width="6" height="6" rx="1" fill="#87CEEB" />
-          </g>
+          {/* 4 Strategic Dimensions */}
+          <text x="454" y="138" fill="rgba(255,255,255,0.85)" fontSize="7.5" fontWeight="500">
+            Visibility • Tracking • Coordination • Support
+          </text>
         </g>
 
         {/* PILLAR 03: ACCOUNTABILITY (Bottom-Center) */}
         <g
           tabIndex={0}
           role="button"
-          aria-label="03 Accountability: Create greater ownership through structured reviews and follow-through"
+          aria-label="03 Accountability: Reviews, commitments, follow-through, and performance discussions"
           aria-pressed={isAccountabilityActive}
           onClick={() => onSelectStage?.(3)}
           onKeyDown={(e) => {
@@ -497,27 +492,27 @@ export const EngineVisual: React.FC<EngineVisualProps> = ({
         >
           {/* Card Contour */}
           <rect
-            x="260"
-            y="415"
-            width="200"
-            height="56"
-            rx="14"
+            x="250"
+            y="410"
+            width="220"
+            height="66"
+            rx="12"
             fill={isAccountabilityActive ? `url(#${gradActivePillarId})` : '#0B1F33'}
             stroke={isAccountabilityActive || isClimax ? '#87CEEB' : 'rgba(255,255,255,0.2)'}
             strokeWidth={isAccountabilityActive ? '2' : '1'}
           />
           {/* Number Pill */}
           <rect
-            x="274"
-            y="430"
+            x="264"
+            y="422"
             width="26"
-            height="24"
+            height="22"
             rx="6"
             fill={isAccountabilityActive ? '#87CEEB' : 'rgba(255,255,255,0.1)'}
           />
           <text
-            x="287"
-            y="446"
+            x="277"
+            y="437"
             textAnchor="middle"
             fill={isAccountabilityActive ? '#0B1F33' : '#FFFFFF'}
             fontSize="10"
@@ -526,18 +521,17 @@ export const EngineVisual: React.FC<EngineVisualProps> = ({
             03
           </text>
           {/* Title */}
-          <text x="310" y="442" fill="#FFFFFF" fontSize="11" fontWeight="800" letterSpacing="0.4">
+          <text x="300" y="436" fill="#FFFFFF" fontSize="11" fontWeight="800" letterSpacing="0.4">
             ACCOUNTABILITY
           </text>
           {/* Concept Tag */}
-          <text x="310" y="457" fill="#87CEEB" fontSize="8" fontWeight="600" letterSpacing="0.6">
+          <text x="408" y="436" fill="#87CEEB" fontSize="8" fontWeight="600" letterSpacing="0.6">
             FOLLOW-THROUGH
           </text>
-          {/* Cadence Checkmark Icon */}
-          <g opacity={isAccountabilityActive ? 1 : 0.5}>
-            <circle cx="435" cy="443" r="8" stroke="#87CEEB" strokeWidth="1" />
-            <path d="M 432 443 L 434.5 445.5 L 438 440.5" stroke="#87CEEB" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-          </g>
+          {/* 4 Strategic Dimensions */}
+          <text x="264" y="462" fill="rgba(255,255,255,0.85)" fontSize="7.5" fontWeight="500">
+            Reviews • Commitments • Follow-Through • Discussions
+          </text>
         </g>
       </svg>
 

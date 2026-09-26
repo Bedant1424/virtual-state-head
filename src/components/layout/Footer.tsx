@@ -75,7 +75,7 @@ export const Footer: React.FC = () => {
             © {currentYear} {siteContent.brand.parentEntity}. All rights reserved.
           </p>
           <p className="text-[11px] text-gray-500 text-center sm:text-right">
-            Demonstration website for evaluation • Proprietary frameworks of {siteContent.brand.parentEntity}
+            Demonstration website for evaluation • Frameworks and methodologies of {siteContent.brand.parentEntity}
           </p>
         </div>
       </Container>

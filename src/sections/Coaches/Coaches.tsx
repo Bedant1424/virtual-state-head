@@ -2,7 +2,7 @@ import React from 'react';
 import { Container } from '@/components/layout/Container';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 import { siteContent } from '@/data/siteContent';
-import { Award, ChevronRight, User } from 'lucide-react';
+import { Award, User } from 'lucide-react';
 
 export interface CoachesProps {
   className?: string;
@@ -111,7 +111,7 @@ export const Coaches: React.FC<CoachesProps> = ({ className }) => {
                   </span>
                   <span className="flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-sky-brand" />
-                    Odisha MSME Advisory
+                    Odisha MSME Consulting
                   </span>
                 </div>
               </div>
@@ -164,20 +164,6 @@ export const Coaches: React.FC<CoachesProps> = ({ className }) => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Subtle Bridge to Engine */}
-        <div className="mt-10 sm:mt-12 pt-6 border-t border-gray-200/70 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <p className="text-xs sm:text-sm text-muted font-sans">
-            Leadership works through a structured framework. See how training, technology, and accountability connect.
-          </p>
-          <a
-            href="#engine"
-            className="group inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-deep-blue hover:text-navy transition-colors shrink-0"
-          >
-            <span>See the Sales Performance Engine</span>
-            <ChevronRight className="w-4 h-4 text-sky-brand group-hover:translate-x-0.5 transition-transform" />
-          </a>
         </div>
       </Container>
     </section>

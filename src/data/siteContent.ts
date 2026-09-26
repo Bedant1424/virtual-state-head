@@ -357,7 +357,7 @@ export const siteContent: SiteContent = {
           'Targets may be established, but reviews, follow-through, and ownership of results may not be consistent.',
         visualState: 'unaccounted',
         operationalImpact:
-          'Sales commitments lose momentum when tracking intervals lack disciplined weekly governance and clear individual ownership.',
+          'Sales commitments lose momentum when tracking intervals lack consistent reviews and clear individual ownership.',
       },
       {
         number: '04',
@@ -790,7 +790,7 @@ export const siteContent: SiteContent = {
       id: 'faq-1',
       question: 'What is a Virtual State Head?',
       answer:
-        'A Virtual State Head acts as your senior sales director on an advisory and governance model. We provide the strategic clarity, team coaching, and weekly accountability of an enterprise sales leader without the overhead of a full-time executive hire.',
+        'A Virtual State Head acts as your senior sales leadership partner. We provide the strategic clarity, team coaching, and regular accountability reviews of an experienced sales leader without the overhead of a full-time executive hire.',
     },
     {
       id: 'faq-2',
@@ -822,7 +822,7 @@ export const siteContent: SiteContent = {
     statusBadge: 'Upcoming Focused Engagement',
     cohortLimit: '10 MSME Companies',
     targetMarket: 'Odisha MSMEs',
-    deliveryModel: 'Direct Advisory & Leadership',
+    deliveryModel: 'Senior Sales Leadership & Coaching',
     note: 'Selection confirmed through mutual fit assessment during initial strategy discussion.',
   },
 };
