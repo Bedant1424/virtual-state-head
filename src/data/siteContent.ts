@@ -121,12 +121,44 @@ export interface ProblemSectionData {
   };
 }
 
+export interface SolutionCapability {
+  readonly number: string;
+  readonly id: string;
+  readonly title: string;
+  readonly description: string;
+  readonly focusKey: 'strategy' | 'team' | 'leadership' | 'accountability' | 'execution' | 'discussions';
+}
+
+export interface SolutionSectionData {
+  readonly id: string;
+  readonly eyebrow: string;
+  readonly headline: {
+    readonly primary: string;
+    readonly secondary: string;
+  };
+  readonly introLead: string;
+  readonly supportingParagraph1: string;
+  readonly supportingParagraph2: string;
+  readonly closingIdea: string;
+  readonly credibility: {
+    readonly name: string;
+    readonly experience: string;
+    readonly label: string;
+  };
+  readonly capabilities: readonly SolutionCapability[];
+  readonly bridge: {
+    readonly statement: string;
+    readonly targetLabel: string;
+  };
+}
+
 export interface SiteContent {
   readonly brand: BrandMetadata;
   readonly navigation: readonly NavigationItem[];
   readonly cta: CtaConfig;
   readonly authority: AuthorityStripData;
   readonly problem: ProblemSectionData;
+  readonly solution: SolutionSectionData;
   readonly pillars: readonly EnginePillar[];
   readonly frameworks: readonly Framework[];
   readonly coaches: readonly Coach[];
@@ -268,6 +300,82 @@ export const siteContent: SiteContent = {
     bridge: {
       statement: 'When activity is not enough, leadership and structure become the next question.',
       targetLabel: 'Experienced Sales Leadership',
+    },
+  },
+
+  solution: {
+    id: 'about',
+    eyebrow: 'Experienced Sales Leadership • Structured Performance Support',
+    headline: {
+      primary: 'Experienced Sales Leadership.',
+      secondary: 'Without Necessarily Hiring Another Full-Time Executive.',
+    },
+    introLead:
+      'Virtual State Head is designed to help MSMEs in Odisha access experienced sales leadership and structured performance support.',
+    supportingParagraph1:
+      'We work with business owners and sales teams to bring greater clarity to sales strategy, improve execution, strengthen accountability, and develop sales capability.',
+    supportingParagraph2:
+      'Instead of treating sales challenges as isolated training problems, the approach considers the wider sales performance system.',
+    closingIdea:
+      'The objective is to help your sales function become more structured, aligned, and performance-focused.',
+    credibility: {
+      name: 'Royal Bal',
+      experience: '30+ Years of Sales Experience',
+      label: 'Senior Sales Leadership Advisor',
+    },
+    capabilities: [
+      {
+        number: '01',
+        id: 'sales-strategy',
+        title: 'Sales Strategy',
+        description:
+          'Bring greater clarity to priorities, direction and actions required to support business objectives.',
+        focusKey: 'strategy',
+      },
+      {
+        number: '02',
+        id: 'team-development',
+        title: 'Team Development',
+        description:
+          'Develop sales capability, communication, customer engagement and execution discipline.',
+        focusKey: 'team',
+      },
+      {
+        number: '03',
+        id: 'leadership-support',
+        title: 'Leadership Support',
+        description:
+          'Help business owners and sales leaders strengthen how they guide, manage and support teams.',
+        focusKey: 'leadership',
+      },
+      {
+        number: '04',
+        id: 'accountability',
+        title: 'Accountability',
+        description:
+          'Establish a more structured approach to reviewing activities, commitments, progress and performance.',
+        focusKey: 'accountability',
+      },
+      {
+        number: '05',
+        id: 'sales-execution',
+        title: 'Sales Execution',
+        description:
+          'Support implementation of agreed actions and sales practices.',
+        focusKey: 'execution',
+      },
+      {
+        number: '06',
+        id: 'strategic-discussions',
+        title: 'Strategic Discussions',
+        description:
+          'Work with business owners and leadership teams on important sales decisions and priorities.',
+        focusKey: 'discussions',
+      },
+    ],
+    bridge: {
+      statement: 'When leadership is in place, the operational benefits become clearer.',
+      targetLabel: 'What Your Business Gets',
     },
   },
 
