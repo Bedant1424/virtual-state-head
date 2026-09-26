@@ -147,26 +147,25 @@ export const EngineVisual: React.FC<EngineVisualProps> = ({
         {/* CLIMAX: CONTINUOUS CIRCULATING CLOSED LOOP                    */}
         {/* ------------------------------------------------------------- */}
         {isClimax && (
-          <g className="transition-all duration-500">
-            {/* Outer Soft Energy Glow */}
+          <g className="transition-opacity duration-500">
+            {/* Outer Soft Ambient Ring */}
             <circle
               cx="360"
               cy="270"
               r="140"
               stroke="#87CEEB"
-              strokeWidth="6"
-              opacity="0.3"
-              className="animate-pulse"
+              strokeWidth="4"
+              opacity="0.2"
             />
-            {/* Main Circulating Continuous Ring */}
+            {/* Main Continuous Ring */}
             <circle
               cx="360"
               cy="270"
               r="140"
               stroke={`url(#${gradLoopId})`}
-              strokeWidth="3"
-              strokeDasharray="18 8"
-              opacity="0.9"
+              strokeWidth="2.5"
+              strokeDasharray="14 8"
+              opacity="0.85"
             />
           </g>
         )}
@@ -547,7 +546,7 @@ export const EngineVisual: React.FC<EngineVisualProps> = ({
         <p className="text-[11px] text-white/50 font-sans leading-relaxed">
           {isClimax
             ? 'Training builds capability • Technology supports execution • Accountability strengthens follow-through.'
-            : 'Three complementary elements connecting into one disciplined sales operating system.'}
+            : 'Three complementary elements forming the Sales Performance Engine.'}
         </p>
       </div>
     </div>

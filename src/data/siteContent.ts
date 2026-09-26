@@ -54,17 +54,20 @@ export interface EngineSectionData {
   };
   readonly intro: string;
   readonly pillars: readonly EnginePillar[];
-  readonly climax: {
-    readonly eyebrow: string;
-    readonly title: string;
-    readonly subtitle: string;
-    readonly headline: string;
-    readonly statements: readonly {
-      readonly pillar: string;
-      readonly action: string;
-    }[];
-    readonly conclusion: string;
-  };
+    readonly climax: {
+      readonly eyebrow: string;
+      readonly title: string;
+      readonly subtitle: string;
+      readonly headline: string;
+      readonly statements: readonly {
+        readonly pillar: string;
+        readonly action: string;
+      }[];
+      readonly formula: {
+        readonly parts: string;
+        readonly result: string;
+      };
+    };
   readonly bridge: {
     readonly statement: string;
     readonly targetLabel: string;
@@ -556,11 +559,7 @@ export const siteContent: SiteContent = {
           'Develop the skills, mindset, communication, and sales capabilities required for effective performance.',
         visualKey: 'training',
         visualIdea: 'Capability nodes activate and skill signals begin flowing into the system',
-        focusPoints: [
-          'Sales skills and communication techniques',
-          'Negotiation and objection handling',
-          'Mindset and disciplined sales habits',
-        ],
+        focusPoints: ['Skills', 'Mindset', 'Communication', 'Sales Capability'],
         name: 'Training',
         focus: 'Sales Capability & Skills',
         summary:
@@ -576,11 +575,7 @@ export const siteContent: SiteContent = {
           'Use appropriate tools and systems to support sales visibility, tracking, coordination, and execution.',
         visualKey: 'technology',
         visualIdea: 'Visibility pathways, tracking connections, and coordination lines activate',
-        focusPoints: [
-          'Appropriate pipeline and activity tracking',
-          'Sales visibility and coordination tools',
-          'Execution support without software bloat',
-        ],
+        focusPoints: ['Visibility', 'Tracking', 'Coordination', 'Execution Support'],
         name: 'Technology',
         focus: 'Visibility & Tools',
         summary:
@@ -596,11 +591,7 @@ export const siteContent: SiteContent = {
           'Create greater ownership through structured reviews, clear commitments, follow-through, and performance discussions.',
         visualKey: 'accountability',
         visualIdea: 'Review checkpoints connect, closing the follow-through loop into a repeating rhythm',
-        focusPoints: [
-          'Structured weekly review cadence',
-          'Clear performance commitments',
-          'Ownership and follow-through discussions',
-        ],
+        focusPoints: ['Reviews', 'Commitments', 'Follow-through', 'Performance Discussions'],
         name: 'Accountability',
         focus: 'Governance & Ownership',
         summary:
@@ -611,14 +602,16 @@ export const siteContent: SiteContent = {
       eyebrow: 'System Integration • Operating Engine',
       title: 'SALES PERFORMANCE ENGINE',
       subtitle: 'TRAINING + TECHNOLOGY + ACCOUNTABILITY',
-      headline: 'How the Engine Works Together',
+      headline: 'TRAINING + TECHNOLOGY + ACCOUNTABILITY',
       statements: [
         { pillar: 'Training', action: 'builds capability.' },
         { pillar: 'Technology', action: 'supports execution.' },
         { pillar: 'Accountability', action: 'strengthens follow-through.' },
       ],
-      conclusion:
-        'When these three elements work together under experienced sales leadership, sales teams build discipline, managers gain visibility, and business owners gain confidence in sales execution.',
+      formula: {
+        parts: 'TRAINING + TECHNOLOGY + ACCOUNTABILITY',
+        result: 'SALES PERFORMANCE ENGINE',
+      },
     },
     bridge: {
       statement: 'A structured system needs practical sales frameworks.',
@@ -638,11 +631,7 @@ export const siteContent: SiteContent = {
         'Develop the skills, mindset, communication, and sales capabilities required for effective performance.',
       visualKey: 'training',
       visualIdea: 'Capability nodes activate and skill signals begin flowing into the system',
-      focusPoints: [
-        'Sales skills and communication techniques',
-        'Negotiation and objection handling',
-        'Mindset and disciplined sales habits',
-      ],
+      focusPoints: ['Skills', 'Mindset', 'Communication', 'Sales Capability'],
       name: 'Training',
       focus: 'Sales Capability & Skills',
       summary:
@@ -658,11 +647,7 @@ export const siteContent: SiteContent = {
         'Use appropriate tools and systems to support sales visibility, tracking, coordination, and execution.',
       visualKey: 'technology',
       visualIdea: 'Visibility pathways, tracking connections, and coordination lines activate',
-      focusPoints: [
-        'Appropriate pipeline and activity tracking',
-        'Sales visibility and coordination tools',
-        'Execution support without software bloat',
-      ],
+      focusPoints: ['Visibility', 'Tracking', 'Coordination', 'Execution Support'],
       name: 'Technology',
       focus: 'Visibility & Tools',
       summary:
@@ -678,11 +663,7 @@ export const siteContent: SiteContent = {
         'Create greater ownership through structured reviews, clear commitments, follow-through, and performance discussions.',
       visualKey: 'accountability',
       visualIdea: 'Review checkpoints connect, closing the follow-through loop into a repeating rhythm',
-      focusPoints: [
-        'Structured weekly review cadence',
-        'Clear performance commitments',
-        'Ownership and follow-through discussions',
-      ],
+      focusPoints: ['Reviews', 'Commitments', 'Follow-through', 'Performance Discussions'],
       name: 'Accountability',
       focus: 'Governance & Ownership',
       summary:

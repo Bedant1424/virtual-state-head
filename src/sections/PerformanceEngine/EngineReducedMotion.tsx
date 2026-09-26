@@ -97,7 +97,7 @@ export const EngineReducedMotion: React.FC<EngineReducedMotionProps> = ({ onCtaC
           </div>
 
           <h3 className="text-xl sm:text-2xl font-bold text-white font-sans mb-4">
-            {engine.climax.headline}
+            System Integration
           </h3>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6 p-4 rounded-xl bg-navy/80 border border-white/10">
@@ -115,9 +115,18 @@ export const EngineReducedMotion: React.FC<EngineReducedMotionProps> = ({ onCtaC
             </div>
           </div>
 
-          <p className="text-sm sm:text-base text-white/80 font-sans leading-relaxed mb-6">
-            {engine.climax.conclusion}
-          </p>
+          <div className="pt-4 border-t border-white/10 text-center mb-6">
+            <div className="text-xs font-mono uppercase tracking-wider text-white/60 mb-1">
+              System Integration
+            </div>
+            <div className="text-sm sm:text-base font-sans font-extrabold text-sky-brand tracking-wide">
+              TRAINING + TECHNOLOGY + ACCOUNTABILITY
+            </div>
+            <div className="text-white/60 my-1 text-sm font-bold">=</div>
+            <div className="text-base sm:text-lg font-sans font-extrabold text-white tracking-wider">
+              SALES PERFORMANCE ENGINE
+            </div>
+          </div>
 
           <Button
             variant="primary"

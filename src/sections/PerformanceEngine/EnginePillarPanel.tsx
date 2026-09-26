@@ -15,6 +15,10 @@ export interface EnginePillarPanelProps {
       readonly pillar: string;
       readonly action: string;
     }[];
+    readonly formula?: {
+      readonly parts: string;
+      readonly result: string;
+    };
   };
   onSelectPillarStage?: (stage: EngineStageIndex) => void;
   className?: string;
@@ -174,9 +178,20 @@ export const EnginePillarPanel: React.FC<EnginePillarPanelProps> = ({
               {trainingPillar.description}
             </p>
 
-            <div className="pt-2 border-t border-white/10 flex items-center gap-2 text-xs text-white/60 font-sans">
-              <span className="w-1.5 h-1.5 rounded-full bg-sky-brand" />
-              <span>Training builds the sales capability required to compete effectively.</span>
+            <div className="pt-2 border-t border-white/10">
+              <span className="text-[10px] font-mono uppercase tracking-wider text-sky-brand font-semibold block mb-1.5">
+                Key Focus
+              </span>
+              <div className="flex flex-wrap gap-1.5">
+                {trainingPillar.focusPoints.map((point) => (
+                  <span
+                    key={point}
+                    className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-sans font-medium bg-white/10 text-white/90 border border-white/10"
+                  >
+                    {point}
+                  </span>
+                ))}
+              </div>
             </div>
           </m.div>
         )}
@@ -218,9 +233,20 @@ export const EnginePillarPanel: React.FC<EnginePillarPanelProps> = ({
               {technologyPillar.description}
             </p>
 
-            <div className="pt-2 border-t border-white/10 flex items-center gap-2 text-xs text-white/60 font-sans">
-              <span className="w-1.5 h-1.5 rounded-full bg-sky-brand" />
-              <span>Technology supports sales visibility and structured execution without software bloat.</span>
+            <div className="pt-2 border-t border-white/10">
+              <span className="text-[10px] font-mono uppercase tracking-wider text-sky-brand font-semibold block mb-1.5">
+                Key Focus
+              </span>
+              <div className="flex flex-wrap gap-1.5">
+                {technologyPillar.focusPoints.map((point) => (
+                  <span
+                    key={point}
+                    className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-sans font-medium bg-white/10 text-white/90 border border-white/10"
+                  >
+                    {point}
+                  </span>
+                ))}
+              </div>
             </div>
           </m.div>
         )}
@@ -262,9 +288,20 @@ export const EnginePillarPanel: React.FC<EnginePillarPanelProps> = ({
               {accountabilityPillar.description}
             </p>
 
-            <div className="pt-2 border-t border-white/10 flex items-center gap-2 text-xs text-white/60 font-sans">
-              <span className="w-1.5 h-1.5 rounded-full bg-sky-brand" />
-              <span>Accountability creates greater ownership and closes the follow-through loop.</span>
+            <div className="pt-2 border-t border-white/10">
+              <span className="text-[10px] font-mono uppercase tracking-wider text-sky-brand font-semibold block mb-1.5">
+                Key Focus
+              </span>
+              <div className="flex flex-wrap gap-1.5">
+                {accountabilityPillar.focusPoints.map((point) => (
+                  <span
+                    key={point}
+                    className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-sans font-medium bg-white/10 text-white/90 border border-white/10"
+                  >
+                    {point}
+                  </span>
+                ))}
+              </div>
             </div>
           </m.div>
         )}
@@ -304,8 +341,18 @@ export const EnginePillarPanel: React.FC<EnginePillarPanelProps> = ({
               ))}
             </div>
 
-            <div className="pt-3 border-t border-white/10 text-xs text-white/70 font-sans leading-relaxed">
-              When capability, visibility, and follow-through act together, sales performance becomes a disciplined, repeatable reality.
+            {/* Structured System Formula Equation */}
+            <div className="pt-3 border-t border-white/10 text-center">
+              <div className="text-[11px] font-mono uppercase tracking-wider text-white/60 mb-1">
+                System Integration
+              </div>
+              <div className="text-xs sm:text-sm font-sans font-extrabold text-sky-brand tracking-wide">
+                TRAINING + TECHNOLOGY + ACCOUNTABILITY
+              </div>
+              <div className="text-white/60 my-0.5 text-xs font-bold">=</div>
+              <div className="text-sm sm:text-base font-sans font-extrabold text-white tracking-wider">
+                SALES PERFORMANCE ENGINE
+              </div>
             </div>
           </m.div>
         )}

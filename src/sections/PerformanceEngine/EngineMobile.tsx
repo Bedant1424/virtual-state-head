@@ -75,7 +75,11 @@ export const EngineMobile: React.FC<EngineMobileProps> = ({ onCtaClick }) => {
           <div className="text-xs font-mono uppercase tracking-wider text-sky-brand mb-3 font-semibold">
             Explore The Three Pillars
           </div>
-          <div className="grid grid-cols-3 gap-2 p-1.5 bg-white/5 border border-white/10 rounded-2xl">
+          <div
+            className="grid grid-cols-3 gap-1.5 p-1 bg-white/5 border border-white/10 rounded-2xl"
+            role="tablist"
+            aria-label="Engine Pillars"
+          >
             {engine.pillars.map((pillar) => {
               const isActive = activePillarKey === pillar.id;
               return (
@@ -83,18 +87,26 @@ export const EngineMobile: React.FC<EngineMobileProps> = ({ onCtaClick }) => {
                   key={pillar.id}
                   id={`mobile-tab-${pillar.id}`}
                   type="button"
+                  role="tab"
+                  aria-selected={isActive}
+                  aria-controls={`mobile-panel-${pillar.id}`}
                   onClick={() => setActivePillarKey(pillar.id)}
                   className={clsx(
-                    'py-2.5 px-1.5 rounded-xl text-center transition-all duration-200 outline-none',
+                    'py-2.5 px-1 rounded-xl text-center transition-all duration-200 cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-sky-brand',
                     isActive
                       ? 'bg-sky-brand text-navy shadow-sm'
                       : 'text-white/70 hover:text-white hover:bg-white/5'
                   )}
                 >
-                  <span className="block text-[10px] font-mono font-bold">
+                  <span
+                    className={clsx(
+                      'block text-[11px] font-mono font-bold leading-none mb-1',
+                      isActive ? 'text-navy' : 'text-sky-brand'
+                    )}
+                  >
                     {pillar.number}
                   </span>
-                  <span className="block text-[10.5px] sm:text-xs font-sans font-bold tracking-tight">
+                  <span className="block text-xs font-sans font-bold tracking-tight">
                     {pillar.shortLabel}
                   </span>
                 </button>
@@ -109,7 +121,12 @@ export const EngineMobile: React.FC<EngineMobileProps> = ({ onCtaClick }) => {
           const Icon = pillarIconMap[currentPillar.id];
 
           return (
-            <div className="rounded-2xl bg-white/5 border border-white/15 p-6 mb-8 shadow-lg">
+            <div
+              id={`mobile-panel-${currentPillar.id}`}
+              role="tabpanel"
+              aria-labelledby={`mobile-tab-${currentPillar.id}`}
+              className="rounded-2xl bg-white/5 border border-white/15 p-6 mb-8 shadow-lg"
+            >
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-sky-brand/10 border border-sky-brand/30 flex items-center justify-center text-sky-brand">
@@ -134,14 +151,17 @@ export const EngineMobile: React.FC<EngineMobileProps> = ({ onCtaClick }) => {
                 <span className="text-[11px] font-mono uppercase tracking-wider text-sky-brand font-semibold block mb-2">
                   Key Focus Areas
                 </span>
-                <ul className="space-y-2">
+                <div className="flex flex-wrap gap-2">
                   {currentPillar.focusPoints.map((point, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5 text-xs text-white/75 font-sans">
-                      <CheckCircle2 className="w-4 h-4 text-sky-brand shrink-0 mt-0.5" />
+                    <span
+                      key={idx}
+                      className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-sans font-medium bg-white/10 text-white/90 border border-white/10"
+                    >
+                      <CheckCircle2 className="w-3.5 h-3.5 text-sky-brand shrink-0" />
                       <span>{point}</span>
-                    </li>
+                    </span>
                   ))}
-                </ul>
+                </div>
               </div>
             </div>
           );
@@ -157,24 +177,33 @@ export const EngineMobile: React.FC<EngineMobileProps> = ({ onCtaClick }) => {
           </div>
 
           <h3 className="text-base sm:text-lg font-bold text-white font-sans mb-3">
-            {engine.climax.headline}
+            System Integration
           </h3>
 
           <div className="space-y-2.5 mb-5 p-3.5 rounded-xl bg-navy/60 border border-white/10">
-            <div className="text-xs font-sans text-white/90">
+            <div className="text-xs sm:text-sm font-sans text-white/90">
               <span className="font-bold text-sky-brand">Training</span> builds capability.
             </div>
-            <div className="text-xs font-sans text-white/90">
+            <div className="text-xs sm:text-sm font-sans text-white/90">
               <span className="font-bold text-sky-brand">Technology</span> supports execution.
             </div>
-            <div className="text-xs font-sans text-white/90">
+            <div className="text-xs sm:text-sm font-sans text-white/90">
               <span className="font-bold text-sky-brand">Accountability</span> strengthens follow-through.
             </div>
           </div>
 
-          <p className="text-xs sm:text-sm text-white/75 font-sans leading-relaxed">
-            {engine.climax.conclusion}
-          </p>
+          <div className="pt-3 border-t border-white/10 text-center">
+            <div className="text-[11px] font-mono uppercase tracking-wider text-white/60 mb-1">
+              Integrated System
+            </div>
+            <div className="text-xs sm:text-sm font-sans font-extrabold text-sky-brand tracking-wide">
+              TRAINING + TECHNOLOGY + ACCOUNTABILITY
+            </div>
+            <div className="text-white/60 my-0.5 text-xs font-bold">=</div>
+            <div className="text-sm sm:text-base font-sans font-extrabold text-white tracking-wider">
+              SALES PERFORMANCE ENGINE
+            </div>
+          </div>
         </div>
 
         {/* Primary Call to Action */}
