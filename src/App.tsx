@@ -1,22 +1,20 @@
 import React, { useState } from 'react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-import { Hero } from '@/sections/Hero';
-import { Problem } from '@/sections/Problem';
-import { PerformanceGapCost } from '@/sections/Problem/PerformanceGapCost';
-import { Introduction } from '@/sections/Introduction';
-import { Coaches } from '@/sections/Coaches';
-import { PerformanceEngine } from '@/sections/PerformanceEngine';
-import { Frameworks } from '@/sections/Frameworks';
-import { HowItWorks } from '@/sections/HowItWorks';
-import { WhoIsThisFor } from '@/sections/Fit';
-import { WhyVirtualStateHead } from '@/sections/Benefits/WhyVirtualStateHead';
-import { UpcomingBatch } from '@/sections/Batch';
-import { WhatHappensAfterBooking } from '@/sections/Booking';
-import { FAQSection } from '@/sections/FAQ';
-import { FinalCTA } from '@/sections/FinalCTA';
+import {
+  Chapter01Hero,
+  Chapter02Problem,
+  Chapter03IntroducingVSH,
+  Chapter04Coaches,
+  Chapter05WhatYouGet,
+  Chapter06Engine,
+  Chapter07FrameworksProcess,
+  Chapter08AudienceWhyVSH,
+  Chapter09PerformanceGapBatch,
+  Chapter10BookingFAQCTA,
+} from '@/sections/Chapters';
 import { DemoModal } from '@/components/ui/DemoModal';
-import { GlobalMotionOverlay } from '@/components/GlobalMotionOverlay';
+import { GlobalSalesSignal } from '@/components/GlobalSalesSignal';
 import { LazyMotion, domAnimation } from 'motion/react';
 
 export const App: React.FC = () => {
@@ -32,67 +30,55 @@ export const App: React.FC = () => {
 
   return (
     <LazyMotion features={domAnimation} strict>
-      <div className="min-h-screen flex flex-col bg-white text-charcoal relative selection:bg-sky-brand/20 selection:text-navy">
-        {/* Continuous Strategic Motion Layer */}
-        <GlobalMotionOverlay />
+      <div className="min-h-screen flex flex-col bg-white text-[#333333] relative selection:bg-[#87CEEB]/20 selection:text-[#0B1F33]">
+        {/* Global Sales Signal — Locked Atmospheric Motion Layer */}
+        <GlobalSalesSignal />
 
         {/* WCAG Accessible Skip Link */}
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
 
-        {/* Premium Visual Header */}
+        {/* Editorial Header */}
         <Header onCtaClick={handleOpenDemoModal} />
 
-        {/* Main Experience Container: 15 Core Chapters */}
+        {/* Main Experience: The 10 Visual Chapters */}
         <main id="main-content" className="relative flex-1">
-          {/* CHAPTER 1: Hero */}
-          <Hero onCtaClick={handleOpenDemoModal} />
+          {/* CHAPTER 01: Hero — The Provocation & Senior Authority */}
+          <Chapter01Hero onCtaClick={handleOpenDemoModal} />
 
-          {/* CHAPTER 2: Problem */}
-          <Problem />
+          {/* CHAPTER 02: The Problem — Why Sales Stall Without Direction */}
+          <Chapter02Problem />
 
-          {/* CHAPTER 3: Introducing Virtual State Head */}
-          <Introduction onCtaClick={handleOpenDemoModal} />
+          {/* CHAPTER 03: Introducing VSH — The Executive Advisory Solution */}
+          <Chapter03IntroducingVSH onCtaClick={handleOpenDemoModal} />
 
-          {/* CHAPTER 4: Meet the Coaches */}
-          <Coaches />
+          {/* CHAPTER 04: Meet the Coaches — 30+ Years Frontline Sales Leadership */}
+          <Chapter04Coaches />
 
-          {/* CHAPTER 5: Sales Performance Engine */}
-          <PerformanceEngine onCtaClick={handleOpenDemoModal} />
+          {/* CHAPTER 05: What Your Business Gets — Five Structured Value Areas */}
+          <Chapter05WhatYouGet />
 
-          {/* CHAPTER 6: Sales Frameworks */}
-          <Frameworks />
+          {/* CHAPTER 06: Sales Performance Engine — Training + Technology + Accountability */}
+          <Chapter06Engine onCtaClick={handleOpenDemoModal} />
 
-          {/* CHAPTER 7: How the Engagement Works */}
-          <HowItWorks />
+          {/* CHAPTER 07: Frameworks & Execution Process — 5 Methodologies & 6 Stages */}
+          <Chapter07FrameworksProcess />
 
-          {/* CHAPTER 8: Who Is This For? */}
-          <WhoIsThisFor />
+          {/* CHAPTER 08: Audience & Differentiation — Who We Help & Why VSH */}
+          <Chapter08AudienceWhyVSH />
 
-          {/* CHAPTER 9: Why Virtual State Head? */}
-          <WhyVirtualStateHead />
+          {/* CHAPTER 09: The Performance Gap & Upcoming Batch — Cost & Cohort */}
+          <Chapter09PerformanceGapBatch onCtaClick={handleOpenDemoModal} />
 
-          {/* CHAPTER 10: Cost of the Performance Gap */}
-          <PerformanceGapCost />
-
-          {/* CHAPTER 11: Upcoming Batch */}
-          <UpcomingBatch onCtaClick={handleOpenDemoModal} />
-
-          {/* CHAPTER 12: What Happens After You Book? */}
-          <WhatHappensAfterBooking />
-
-          {/* CHAPTER 13: FAQ */}
-          <FAQSection />
-
-          {/* CHAPTER 14: Final CTA */}
-          <FinalCTA onCtaClick={handleOpenDemoModal} />
+          {/* CHAPTER 10: Conversion — What Happens After, FAQ & Final CTA */}
+          <Chapter10BookingFAQCTA onCtaClick={handleOpenDemoModal} />
         </main>
 
-        {/* CHAPTER 15: Footer */}
+        {/* Editorial Footer */}
         <Footer />
 
-        {/* Controlled CTA Trial/Demo Feedback Modal */}
+        {/* Confidential Strategy Discussion Booking Modal */}
         <DemoModal isOpen={isDemoModalOpen} onClose={handleCloseDemoModal} />
       </div>
     </LazyMotion>

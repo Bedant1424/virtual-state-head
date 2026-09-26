@@ -14,6 +14,7 @@ export const vshImages = {
   howItWorks: howItWorksField,
   audience: audienceIndustrialLeader,
   performanceGap: performanceGapTension,
+  gap: performanceGapTension,
 };
 
 export default vshImages;

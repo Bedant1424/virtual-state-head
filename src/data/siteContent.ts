@@ -286,9 +286,10 @@ export const siteContent: SiteContent = {
 
   navigation: [
     { id: 'about', label: 'About', href: '#about' },
-    { id: 'coaches', label: 'Our Coaches', href: '#coaches' },
     { id: 'engine', label: 'Sales Performance Engine', href: '#engine' },
-    { id: 'how-it-works', label: 'How It Works', href: '#how-it-works' },
+    { id: 'coaches', label: 'Our Coaches', href: '#coaches' },
+    { id: 'who-we-help', label: 'Who We Help', href: '#who-we-help' },
+    { id: 'faqs', label: 'FAQs', href: '#faqs' },
   ],
 
   cta: {
