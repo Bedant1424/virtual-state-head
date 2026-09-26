@@ -514,7 +514,7 @@ export const siteContent: SiteContent = {
         'Established MSME businesses in Odisha with existing products, customers, and revenues.',
         'Businesses with an active sales team of 3 to 25+ people that requires stronger leadership.',
         'Founders and directors spending too much time firefighting daily sales operations.',
-        'Organizations with ambitious revenue targets that want structured execution rather than guesswork.',
+        'Organizations with ambitious business goals that want structured execution rather than guesswork.',
       ],
     },
     {

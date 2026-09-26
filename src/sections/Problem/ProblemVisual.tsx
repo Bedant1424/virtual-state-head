@@ -576,7 +576,7 @@ export const ProblemVisual: React.FC<ProblemVisualProps> = ({
             </text>
 
             <text x="402" y="270" textAnchor="middle" fill="#123B63" fontSize="9" fontWeight="bold">
-              = Predictable Results
+              = Performance Focus
             </text>
 
             {/* Direct Connect to Ultimate Goal */}

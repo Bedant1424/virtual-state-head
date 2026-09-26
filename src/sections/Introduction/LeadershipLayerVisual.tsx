@@ -34,7 +34,7 @@ const capabilityNodes: CapabilityNode[] = [
     key: 'strategy',
     number: '01',
     title: 'Sales Strategy',
-    subtitle: 'Clear Direction & Focus',
+    subtitle: 'Clear Direction & Priorities',
     col: 0,
     row: 0,
     x: 24,
@@ -44,7 +44,7 @@ const capabilityNodes: CapabilityNode[] = [
     key: 'team',
     number: '02',
     title: 'Team Development',
-    subtitle: 'Capability & Mindset',
+    subtitle: 'Sales Capability & Skills',
     col: 1,
     row: 0,
     x: 226,
@@ -54,7 +54,7 @@ const capabilityNodes: CapabilityNode[] = [
     key: 'leadership',
     number: '03',
     title: 'Leadership Support',
-    subtitle: 'Owner Guidance & Rhythm',
+    subtitle: 'Owner & Team Guidance',
     col: 2,
     row: 0,
     x: 428,
@@ -65,7 +65,7 @@ const capabilityNodes: CapabilityNode[] = [
     key: 'discussions',
     number: '06',
     title: 'Strategic Discussions',
-    subtitle: 'Decisions & Priorities',
+    subtitle: 'Strategic Priorities & Alignment',
     col: 0,
     row: 1,
     x: 24,
@@ -75,7 +75,7 @@ const capabilityNodes: CapabilityNode[] = [
     key: 'execution',
     number: '05',
     title: 'Sales Execution',
-    subtitle: 'Agreed Action Delivery',
+    subtitle: 'Agreed Action Follow-Through',
     col: 1,
     row: 1,
     x: 226,
@@ -85,7 +85,7 @@ const capabilityNodes: CapabilityNode[] = [
     key: 'accountability',
     number: '04',
     title: 'Accountability',
-    subtitle: 'Structured Review Rhythm',
+    subtitle: 'Regular Performance Reviews',
     col: 2,
     row: 1,
     x: 428,
@@ -122,7 +122,7 @@ export const LeadershipLayerVisual: React.FC<LeadershipLayerVisualProps> = ({
         <div className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-deep-blue" />
           <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-deep-blue">
-            Strategic Architecture • The Leadership Layer
+            Experienced Sales Leadership • The Leadership Layer
           </span>
         </div>
 
@@ -162,7 +162,7 @@ export const LeadershipLayerVisual: React.FC<LeadershipLayerVisualProps> = ({
         </defs>
 
         {/* ------------------------------------------------------------- */}
-        {/* LEVEL 1: BUSINESS & EXECUTIVE MANDATE (Top Anchor)            */}
+        {/* LEVEL 1: BUSINESS GOALS (Top Anchor)                          */}
         {/* ------------------------------------------------------------- */}
         <g className="transition-all duration-300">
           <rect
@@ -185,7 +185,7 @@ export const LeadershipLayerVisual: React.FC<LeadershipLayerVisualProps> = ({
             fontWeight="800"
             letterSpacing="0.8"
           >
-            BUSINESS &amp; EXECUTIVE GOALS
+            BUSINESS GOALS
           </text>
           <text
             x="320"
@@ -195,7 +195,7 @@ export const LeadershipLayerVisual: React.FC<LeadershipLayerVisualProps> = ({
             fontSize="8.5"
             fontWeight="500"
           >
-            Growth Objectives • Target Markets • Commercial Vision
+            Business Objectives • Priorities • Strategic Direction
           </text>
 
           {/* Central Connecting Feeder Line */}
@@ -235,7 +235,7 @@ export const LeadershipLayerVisual: React.FC<LeadershipLayerVisualProps> = ({
             fontWeight="700"
             letterSpacing="1.4"
           >
-            THE INTEGRATION LAYER • VIRTUAL STATE HEAD
+            VIRTUAL STATE HEAD
           </text>
           <text
             x="320"
@@ -257,7 +257,7 @@ export const LeadershipLayerVisual: React.FC<LeadershipLayerVisualProps> = ({
             opacity="0.95"
             letterSpacing="0.2"
           >
-            Strategy • Capability Development • Management Support • Accountability Governance
+            Strategy • Team Capability • Leadership Support • Accountability
           </text>
         </g>
 
@@ -450,7 +450,7 @@ export const LeadershipLayerVisual: React.FC<LeadershipLayerVisualProps> = ({
         <circle cx="320" cy="358" r="2.5" fill="#123B63" />
 
         {/* ------------------------------------------------------------- */}
-        {/* LEVEL 4: STRUCTURED SALES TEAM PERFORMANCE (Foundation)       */}
+        {/* LEVEL 4: STRUCTURED SALES ACTIVITY & PERFORMANCE FOCUS        */}
         {/* ------------------------------------------------------------- */}
         <g className="transition-all duration-300">
           <rect
@@ -472,7 +472,7 @@ export const LeadershipLayerVisual: React.FC<LeadershipLayerVisualProps> = ({
             fontWeight="700"
             letterSpacing="1.4"
           >
-            COMMERCIAL IMPACT • THE DISCIPLINED SALES FUNCTION
+            STRUCTURED SALES ACTIVITY
           </text>
           <text
             x="320"
@@ -483,7 +483,7 @@ export const LeadershipLayerVisual: React.FC<LeadershipLayerVisualProps> = ({
             fontWeight="800"
             letterSpacing="0.6"
           >
-            STRUCTURED SALES TEAM PERFORMANCE
+            STRUCTURED SALES PERFORMANCE
           </text>
           <text
             x="320"
@@ -493,7 +493,7 @@ export const LeadershipLayerVisual: React.FC<LeadershipLayerVisualProps> = ({
             fontSize="8.5"
             fontWeight="500"
           >
-            Consistent Field Activity • Transparent Review Rhythm • Predictable Results
+            Consistent Execution • Regular Performance Reviews • Performance Focus
           </text>
         </g>
       </svg>
@@ -501,7 +501,7 @@ export const LeadershipLayerVisual: React.FC<LeadershipLayerVisualProps> = ({
       {/* Editorial Footnote */}
       <div className="w-full text-center mt-2">
         <p className="text-[11px] text-muted font-sans">
-          Diagram shows how experienced sales leadership integrates all six operational dimensions into structured performance.
+          Diagram illustrates how experienced sales leadership supports strategy, team capability, execution discipline, and performance reviews.
         </p>
       </div>
     </div>

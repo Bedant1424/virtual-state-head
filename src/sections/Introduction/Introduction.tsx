@@ -166,7 +166,7 @@ export const Introduction: React.FC<IntroductionProps> = ({ onCtaClick }) => {
             />
 
             <p className="text-[11px] text-muted text-center mt-3 font-sans">
-              Diagram represents the integration layer bridging executive intent with day-to-day sales execution.
+              Diagram illustrates how experienced sales leadership connects business goals with structured sales activity.
             </p>
           </div>
         </div>
