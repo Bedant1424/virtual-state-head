@@ -98,9 +98,15 @@ export interface Coach {
 }
 
 export interface EngagementStage {
-  readonly step: number;
-  readonly title: string;
-  readonly description: string;
+  readonly id: string;
+  readonly number: string;
+  readonly name: string;
+}
+
+export interface EngagementProcessSectionData {
+  readonly id: string;
+  readonly eyebrow: string;
+  readonly headline: string;
 }
 
 export interface AudienceFitCategory {
@@ -249,6 +255,7 @@ export interface SiteContent {
   readonly frameworksSection: FrameworksSectionData;
   readonly frameworks: readonly Framework[];
   readonly coaches: readonly Coach[];
+  readonly processSection: EngagementProcessSectionData;
   readonly processStages: readonly EngagementStage[];
   readonly audienceFit: readonly AudienceFitCategory[];
   readonly faqs: readonly FaqItem[];
@@ -743,37 +750,19 @@ export const siteContent: SiteContent = {
     },
   ],
 
+  processSection: {
+    id: 'process',
+    eyebrow: 'Engagement Process',
+    headline: 'Assess → Set Direction → Develop → Execute → Review → Improve',
+  },
+
   processStages: [
-    {
-      step: 1,
-      title: 'Sales Diagnostic',
-      description: 'Audit current pipeline, team skill matrix, conversion ratios, and owner bottlenecks.',
-    },
-    {
-      step: 2,
-      title: 'Strategy & Territory Alignment',
-      description: 'Define clear target sectors, account prioritization, and realistic monthly milestones.',
-    },
-    {
-      step: 3,
-      title: 'Capability & Skills Activation',
-      description: 'Field coaching on the 5 proprietary frameworks to improve conversion and value defense.',
-    },
-    {
-      step: 4,
-      title: 'Technology & Reporting Cadence',
-      description: 'Deploy streamlined tracking tools for daily activity metrics and pipeline visibility.',
-    },
-    {
-      step: 5,
-      title: 'Weekly Governance & Reviews',
-      description: 'Conduct structured weekly sales reviews to drive accountability and deal progression.',
-    },
-    {
-      step: 6,
-      title: 'Continuous Performance Optimization',
-      description: 'Refine territory coverage, incentives, and leadership capacity for sustained scale.',
-    },
+    { id: 'assess', number: '01', name: 'Assess' },
+    { id: 'set-direction', number: '02', name: 'Set Direction' },
+    { id: 'develop', number: '03', name: 'Develop' },
+    { id: 'execute', number: '04', name: 'Execute' },
+    { id: 'review', number: '05', name: 'Review' },
+    { id: 'improve', number: '06', name: 'Improve' },
   ],
 
   audienceFit: [

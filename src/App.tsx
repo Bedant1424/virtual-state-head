@@ -8,6 +8,7 @@ import { Benefits } from '@/sections/Benefits';
 import { DemoModal } from '@/components/ui/DemoModal';
 import { PerformanceEngine } from '@/sections/PerformanceEngine';
 import { Frameworks } from '@/sections/Frameworks';
+import { EngagementProcess } from '@/sections/EngagementProcess';
 import { LazyMotion, domAnimation } from 'motion/react';
 
 export const App: React.FC = () => {
@@ -51,6 +52,9 @@ export const App: React.FC = () => {
 
         {/* SPRINT 6: Framework Library / Named Frameworks Experience */}
         <Frameworks />
+
+        {/* SPRINT 7: Engagement Process Experience */}
+        <EngagementProcess />
       </main>
 
       {/* Structural Footer Shell */}
