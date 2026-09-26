@@ -94,13 +94,12 @@ export const FrameworkMobile: React.FC<FrameworkMobileProps> = ({
                   <FrameworkGraphic
                     frameworkId={framework.id}
                     frameworkNumber={framework.number}
-                    shortCode={framework.shortCode}
                     isCompact={true}
                   />
                 </div>
 
                 <div className="pt-2 flex items-center justify-between text-xs text-muted font-sans">
-                  <span>Named Framework</span>
+                  <span>Five named frameworks</span>
                   <span className="font-mono text-sky-brand font-semibold">{framework.number} of 05</span>
                 </div>
               </div>

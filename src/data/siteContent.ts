@@ -79,7 +79,6 @@ export interface Framework {
   readonly id: string;
   readonly number: string;
   readonly name: string;
-  readonly shortCode: string;
 }
 
 export interface FrameworksSectionData {
@@ -681,9 +680,9 @@ export const siteContent: SiteContent = {
 
   frameworksSection: {
     id: 'frameworks',
-    eyebrow: 'Methodology • Five Named Frameworks',
+    eyebrow: 'Five Named Frameworks',
     headline: 'Frameworks',
-    supportingText: 'Five named frameworks applied in sales performance consulting.',
+    supportingText: 'Five named frameworks',
   },
 
   frameworks: [
@@ -691,31 +690,26 @@ export const siteContent: SiteContent = {
       id: 'royal-selling-formula',
       number: '01',
       name: 'Royal Selling Formula',
-      shortCode: 'RSF',
     },
     {
       id: 'strategic-negotiator',
       number: '02',
       name: 'Strategic Negotiator',
-      shortCode: 'SN',
     },
     {
       id: 'sense-selling',
       number: '03',
       name: 'Sense Selling',
-      shortCode: 'SS',
     },
     {
       id: 'performance-consulting',
       number: '04',
       name: 'Performance Consulting',
-      shortCode: 'PC',
     },
     {
       id: 'lifetime-client-relationship',
       number: '05',
       name: 'Lifetime Client Relationship (LCR)',
-      shortCode: 'LCR',
     },
   ],
 

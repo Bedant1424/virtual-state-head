@@ -5,7 +5,6 @@ import { m, AnimatePresence } from 'motion/react';
 export interface FrameworkGraphicProps {
   frameworkId: string;
   frameworkNumber: string;
-  shortCode: string;
   className?: string;
   isCompact?: boolean;
 }
@@ -22,7 +21,6 @@ export interface FrameworkGraphicProps {
 export const FrameworkGraphic: React.FC<FrameworkGraphicProps> = ({
   frameworkId,
   frameworkNumber,
-  shortCode,
   className,
   isCompact = false,
 }) => {
@@ -41,12 +39,6 @@ export const FrameworkGraphic: React.FC<FrameworkGraphicProps> = ({
       {/* Background Watermark Number */}
       <div className="absolute right-4 bottom-2 select-none pointer-events-none opacity-5 font-mono font-black text-8xl sm:text-9xl text-navy">
         {frameworkNumber}
-      </div>
-
-      {/* Abstract Monogram Stamp in corner */}
-      <div className="absolute top-4 right-4 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/80 border border-gray-200/60 backdrop-blur-xs text-[11px] font-mono font-bold text-navy shadow-xs">
-        <span className="w-1.5 h-1.5 rounded-full bg-sky-brand" />
-        <span>{shortCode}</span>
       </div>
 
       <AnimatePresence mode="wait">

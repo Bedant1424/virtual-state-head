@@ -63,11 +63,10 @@ export const Frameworks: React.FC = () => {
                 className="rounded-2xl bg-white border border-gray-200/80 p-6 flex flex-col justify-between shadow-xs"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center justify-start mb-4">
                     <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-mono font-bold bg-soft-blue text-deep-blue border border-sky-brand/30">
                       FRAMEWORK {fw.number}
                     </span>
-                    <span className="text-xs font-mono text-muted">{fw.shortCode}</span>
                   </div>
                   <h3 className="text-xl font-extrabold text-navy font-sans mb-4">
                     {fw.name}
@@ -77,7 +76,6 @@ export const Frameworks: React.FC = () => {
                   <FrameworkGraphic
                     frameworkId={fw.id}
                     frameworkNumber={fw.number}
-                    shortCode={fw.shortCode}
                     isCompact={true}
                   />
                 </div>

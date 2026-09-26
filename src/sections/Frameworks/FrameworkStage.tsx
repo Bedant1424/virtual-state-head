@@ -33,12 +33,9 @@ export const FrameworkStage: React.FC<FrameworkStageProps> = ({ framework }) => 
           transition={{ duration: 0.25, ease: 'easeOut' }}
           className="space-y-4 mb-8"
         >
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-start">
             <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-soft-blue text-deep-blue border border-sky-brand/30">
               FRAMEWORK {framework.number}
-            </span>
-            <span className="text-xs font-mono font-semibold text-muted">
-              {framework.shortCode}
             </span>
           </div>
 
@@ -58,13 +55,12 @@ export const FrameworkStage: React.FC<FrameworkStageProps> = ({ framework }) => 
         <FrameworkGraphic
           frameworkId={framework.id}
           frameworkNumber={framework.number}
-          shortCode={framework.shortCode}
         />
       </div>
 
       {/* Grounded Subline */}
       <div className="pt-6 mt-4 border-t border-gray-100 flex items-center justify-between text-xs text-muted font-sans">
-        <span>Part of the five named frameworks</span>
+        <span>Five named frameworks</span>
         <span className="font-mono text-sky-brand font-semibold">{framework.number} / 05</span>
       </div>
     </div>
