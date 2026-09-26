@@ -27,39 +27,39 @@ export const WhoIsThisFor: React.FC<WhoIsThisForProps> = ({ className }) => {
 
   const qualificationCriteria = [
     {
-      title: 'MSME Owners, Founders & Business Directors',
+      title: 'MSME Owners, Founders, Directors & Business Leaders',
       description:
-        'Business leaders who carry the burden of sales strategy and need experienced sales leadership to structure execution.',
+        'Business owners and leadership teams seeking experienced sales direction and execution discipline.',
     },
     {
-      title: 'Companies with Existing Sales Teams',
+      title: 'Businesses with an Existing Sales Team',
       description:
-        'Businesses that already have sales activity and active personnel in the field, but lack a structured management rhythm.',
+        'Companies with active sales personnel and products in the market who need structured performance support.',
     },
     {
-      title: 'Facing Inconsistent Sales Performance',
+      title: 'Inconsistent Sales Performance',
       description:
-        'Organizations where sales results fluctuate from month to month because performance depends on isolated individual efforts.',
+        'Organizations where sales conversions fluctuate unpredictably across months or quarters.',
     },
     {
-      title: 'Dealing with Unclear Priorities',
+      title: 'Need Clearer Direction and Priorities',
       description:
-        'Sales teams that are busy with high activity but lack clear target segment focus, margin discipline, or territory direction.',
+        'Teams that require sharper focus on target customers, sales activities, and commercial priorities.',
     },
     {
-      title: 'Follow-up & Accountability Issues',
+      title: 'Follow-up and Accountability Issues',
       description:
-        'Pipelines where customer follow-ups lapse and commitments lose momentum due to absence of regular performance reviews.',
+        'Pipelines where client follow-up lapses and commitments lose momentum without structured reviews.',
     },
     {
-      title: 'Frontline Sales Development Needs',
+      title: 'Sales Development Needs',
       description:
-        'Teams requiring practical capability development in sales communication, objection handling, and customer negotiation.',
+        'Frontline salespeople requiring capability building in customer engagement, communication, and negotiation.',
     },
     {
-      title: 'Need for Senior Sales Leadership Support',
+      title: 'Need for Experienced Sales Leadership Support',
       description:
-        'Enterprises needing executive-level sales direction and strategic governance without adding the cost of another full-time hire.',
+        'Enterprises needing senior sales guidance, performance consulting, and executive direction.',
     },
   ];
 

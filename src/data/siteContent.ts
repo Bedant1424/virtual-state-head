@@ -773,13 +773,15 @@ export const siteContent: SiteContent = {
   audienceFit: [
     {
       type: 'ideal',
-      heading: 'Who We Help',
+      heading: 'Who Virtual State Head Is For',
       points: [
-        'MSME owners, founders, directors, and business leaders seeking structured sales growth.',
-        'Businesses with an existing sales team that need senior leadership, direction, and coaching.',
-        'Companies experiencing inconsistent sales performance across months or quarters.',
-        'Organizations dealing with unclear sales priorities, weak follow-through, or tracking gaps.',
-        'Teams with frontline sales development needs that require experienced leadership support.',
+        'MSME owners, founders, directors, and business leaders',
+        'Businesses with an existing sales team',
+        'Inconsistent sales performance',
+        'Need clearer direction and priorities',
+        'Follow-up and accountability issues',
+        'Sales development needs',
+        'Need for experienced sales leadership support',
       ],
     },
   ],

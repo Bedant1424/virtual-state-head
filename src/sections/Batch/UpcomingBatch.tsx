@@ -40,7 +40,7 @@ export const UpcomingBatch: React.FC<UpcomingBatchProps> = ({ onCtaClick, classN
           <div className="relative z-10 max-w-3xl">
             {/* Cohort Status Pill */}
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sky-brand/15 border border-sky-brand/30 text-sky-brand text-xs font-mono font-bold tracking-wider uppercase mb-6">
-              <span className="w-2 h-2 rounded-full bg-sky-brand animate-ping" />
+              <span className="w-2 h-2 rounded-full bg-sky-brand" />
               <span>{batch.statusBadge}</span>
             </div>
 
