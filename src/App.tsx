@@ -9,6 +9,7 @@ import { Container } from '@/components/layout/Container';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 import { Compass, ShieldCheck, BarChart3, CheckCircle2 } from 'lucide-react';
 import { siteContent } from '@/data/siteContent';
+import { LazyMotion, domAnimation } from 'motion/react';
 
 export const App: React.FC = () => {
   const [isDemoModalOpen, setIsDemoModalOpen] = useState<boolean>(false);
@@ -22,11 +23,12 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-charcoal relative selection:bg-sky-brand/20 selection:text-navy">
-      {/* WCAG Accessible Skip Link */}
-      <a href="#main-content" className="skip-link">
-        Skip to main content
-      </a>
+    <LazyMotion features={domAnimation} strict>
+      <div className="min-h-screen flex flex-col bg-white text-charcoal relative selection:bg-sky-brand/20 selection:text-navy">
+        {/* WCAG Accessible Skip Link */}
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
 
       {/* Premium Visual Header */}
       <Header onCtaClick={handleOpenDemoModal} />
@@ -97,6 +99,7 @@ export const App: React.FC = () => {
       {/* Controlled CTA Trial/Demo Feedback Modal */}
       <DemoModal isOpen={isDemoModalOpen} onClose={handleCloseDemoModal} />
     </div>
+  </LazyMotion>
   );
 };
 

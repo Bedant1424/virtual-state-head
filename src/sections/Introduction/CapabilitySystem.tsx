@@ -47,7 +47,7 @@ export const CapabilitySystem: React.FC<CapabilitySystemProps> = ({
       </div>
 
       <div
-        className="grid grid-cols-1 sm:grid-cols-2 gap-3"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2.5 sm:gap-3"
         role="region"
         aria-label="Sales Performance Capability Dimensions"
       >
@@ -72,16 +72,16 @@ export const CapabilitySystem: React.FC<CapabilitySystemProps> = ({
                 }
               }}
               className={clsx(
-                'group relative rounded-xl p-4 sm:p-4.5 text-left transition-all duration-200 cursor-pointer outline-none select-none',
+                'group relative rounded-xl p-3 sm:p-3.5 text-left transition-all duration-200 cursor-pointer outline-none select-none',
                 'border',
                 isActive
-                  ? 'bg-soft-blue/60 border-deep-blue shadow-sm ring-1 ring-deep-blue/20'
+                  ? 'bg-soft-blue/70 border-deep-blue shadow-xs ring-1 ring-deep-blue/20'
                   : 'bg-white border-gray-200/80 hover:border-deep-blue/40 hover:bg-paper/40'
               )}
               aria-pressed={isActive}
             >
               {/* Header Row: Number + Icon + Status indicator */}
-              <div className="flex items-center justify-between mb-2">
+              <div className="flex items-center justify-between mb-1.5">
                 <div className="flex items-center gap-2">
                   <span
                     className={clsx(

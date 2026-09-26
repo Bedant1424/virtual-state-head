@@ -6,7 +6,7 @@ import { ProblemProgressIndicator } from './ProblemProgressIndicator';
 import { siteContent, type ProblemStage } from '@/data/siteContent';
 import { useScrollTrigger } from '@/hooks/useScrollTrigger';
 import { ScrollTrigger } from '@/lib/gsap';
-import { AnimatePresence, motion } from 'motion/react';
+import { AnimatePresence, m } from 'motion/react';
 import { ArrowRight, AlertCircle, Sparkles, CheckCircle2 } from 'lucide-react';
 
 export const ProblemDesktop: React.FC = () => {
@@ -121,7 +121,7 @@ export const ProblemDesktop: React.FC = () => {
               <AnimatePresence mode="wait">
                 {/* STATE 0: Initial Busy Activity Context */}
                 {activeStageIndex === 0 && (
-                  <motion.div
+                  <m.div
                     key="state-0"
                     initial={{ opacity: 0, y: 14 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -148,12 +148,12 @@ export const ProblemDesktop: React.FC = () => {
                       <span>Begin scrolling to examine where friction enters the system</span>
                       <ArrowRight className="w-4 h-4 text-sky-brand animate-bounceX" />
                     </div>
-                  </motion.div>
+                  </m.div>
                 )}
 
                 {/* STATES 1 to 5: Approved Problems 01 to 05 */}
                 {currentStage && (
-                  <motion.div
+                  <m.div
                     key={`state-${currentStage.number}`}
                     initial={{ opacity: 0, y: 14 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -189,12 +189,12 @@ export const ProblemDesktop: React.FC = () => {
                         {currentStage.operationalImpact}
                       </p>
                     </div>
-                  </motion.div>
+                  </m.div>
                 )}
 
                 {/* STATE 6: Climax / Recognition (Activity != Performance) */}
                 {activeStageIndex === 6 && (
-                  <motion.div
+                  <m.div
                     key="state-6-recognition"
                     initial={{ opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -225,7 +225,7 @@ export const ProblemDesktop: React.FC = () => {
                     <p className="typography-small text-muted italic">
                       "{problemData.climax.closingIdea}"
                     </p>
-                  </motion.div>
+                  </m.div>
                 )}
               </AnimatePresence>
             </div>

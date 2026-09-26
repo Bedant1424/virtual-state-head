@@ -17,15 +17,90 @@ export interface LeadershipLayerVisualProps {
   isCompact?: boolean;
 }
 
+interface CapabilityNode {
+  key: NonNullable<FocusKey>;
+  number: string;
+  title: string;
+  subtitle: string;
+  col: number; // 0, 1, 2
+  row: number; // 0, 1
+  x: number;
+  y: number;
+}
+
+const capabilityNodes: CapabilityNode[] = [
+  // Row 1: Direction & Organizational Capabilities
+  {
+    key: 'strategy',
+    number: '01',
+    title: 'Sales Strategy',
+    subtitle: 'Clear Direction & Focus',
+    col: 0,
+    row: 0,
+    x: 24,
+    y: 190,
+  },
+  {
+    key: 'team',
+    number: '02',
+    title: 'Team Development',
+    subtitle: 'Capability & Mindset',
+    col: 1,
+    row: 0,
+    x: 226,
+    y: 190,
+  },
+  {
+    key: 'leadership',
+    number: '03',
+    title: 'Leadership Support',
+    subtitle: 'Owner Guidance & Rhythm',
+    col: 2,
+    row: 0,
+    x: 428,
+    y: 190,
+  },
+  // Row 2: Alignment, Action & Review Rhythms
+  {
+    key: 'discussions',
+    number: '06',
+    title: 'Strategic Discussions',
+    subtitle: 'Decisions & Priorities',
+    col: 0,
+    row: 1,
+    x: 24,
+    y: 272,
+  },
+  {
+    key: 'execution',
+    number: '05',
+    title: 'Sales Execution',
+    subtitle: 'Agreed Action Delivery',
+    col: 1,
+    row: 1,
+    x: 226,
+    y: 272,
+  },
+  {
+    key: 'accountability',
+    number: '04',
+    title: 'Accountability',
+    subtitle: 'Structured Review Rhythm',
+    col: 2,
+    row: 1,
+    x: 428,
+    y: 272,
+  },
+];
+
 /**
  * LeadershipLayerVisual
- * Conceptual Systems Visualization: The Leadership Layer
+ * Strategic Architecture Visualization: The Leadership Layer
  *
- * Visualizes how Experienced Sales Leadership creates structure,
- * alignment, execution discipline, and performance reviews around
- * all six core capability dimensions of sales activity.
+ * Demonstrates how Experienced Sales Leadership bridges executive business goals
+ * with disciplined sales team execution across six core capability dimensions.
  *
- * Grounded strictly in approved source concepts and brand colors.
+ * Designed with an editorial, executive consulting aesthetic strictly using the 8 approved brand colors.
  */
 export const LeadershipLayerVisual: React.FC<LeadershipLayerVisualProps> = ({
   activeFocus,
@@ -36,419 +111,400 @@ export const LeadershipLayerVisual: React.FC<LeadershipLayerVisualProps> = ({
   return (
     <div
       className={clsx(
-        'relative w-full rounded-2xl bg-white border border-gray-200/90 shadow-sm overflow-hidden flex flex-col items-center justify-center p-4 sm:p-6 transition-all duration-300',
+        'relative w-full rounded-2xl bg-gradient-to-b from-white via-paper/40 to-soft-blue/20 border border-gray-200/90 shadow-sm overflow-hidden flex flex-col items-center justify-center p-4 sm:p-6 transition-all duration-300',
         className
       )}
       style={{ minHeight: isCompact ? '280px' : '460px' }}
       aria-hidden="true"
     >
-      {/* Light Structured Background Coordinate Grid */}
-      <div className="absolute inset-0 pointer-events-none opacity-30 bg-[radial-gradient(#123B63_0.75px,transparent_0.75px)] [background-size:16px_16px]" />
-
-      {/* Frame Corner Accents */}
-      <div className="absolute top-3 left-3 w-2 h-2 border-t-2 border-l-2 border-deep-blue/30" />
-      <div className="absolute top-3 right-3 w-2 h-2 border-t-2 border-r-2 border-deep-blue/30" />
-      <div className="absolute bottom-3 left-3 w-2 h-2 border-b-2 border-l-2 border-deep-blue/30" />
-      <div className="absolute bottom-3 right-3 w-2 h-2 border-b-2 border-r-2 border-deep-blue/30" />
-
-      {/* Visual Status Indicator */}
-      <div className="absolute top-3 sm:top-4 left-4 sm:left-6 flex items-center gap-2 z-10">
-        <span className="w-2 h-2 rounded-full bg-deep-blue animate-pulse" />
-        <span className="text-[10px] sm:text-xs font-mono uppercase tracking-wider text-deep-blue font-bold">
-          System State: Structured Alignment
-        </span>
-      </div>
-
-      {/* Active Focus Indicator */}
-      {activeFocus && (
-        <div className="absolute top-3 sm:top-4 right-4 sm:right-6 hidden sm:flex items-center gap-1.5 z-10 px-2 py-0.5 rounded bg-soft-blue border border-sky-brand/40 text-[10px] font-mono font-bold text-deep-blue">
-          <span>Active Pathway:</span>
-          <span className="uppercase text-sky-brand bg-deep-blue px-1.5 py-0.2 rounded">
-            {activeFocus}
+      {/* Executive Header Bar */}
+      <div className="w-full flex items-center justify-between mb-2 z-10 px-1">
+        <div className="flex items-center gap-2">
+          <span className="w-2 h-2 rounded-full bg-deep-blue" />
+          <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-deep-blue">
+            Strategic Architecture • The Leadership Layer
           </span>
         </div>
-      )}
 
-      {/* Main SVG Vector Canvas */}
+        {activeFocus ? (
+          <div className="flex items-center gap-1.5 px-2 py-0.5 rounded bg-white border border-sky-brand/50 shadow-2xs">
+            <span className="text-[10px] text-muted font-medium">Dimension:</span>
+            <span className="text-[10px] font-bold text-deep-blue uppercase">
+              {capabilityNodes.find((c) => c.key === activeFocus)?.title}
+            </span>
+          </div>
+        ) : (
+          <span className="text-[11px] text-muted hidden sm:inline-block font-sans">
+            Interactive System Overview
+          </span>
+        )}
+      </div>
+
+      {/* Main Vector Diagram Canvas */}
       <svg
-        viewBox="0 0 640 440"
-        className="w-full h-auto max-w-[580px] select-none transition-all duration-300"
+        viewBox="0 0 640 460"
+        className="w-full h-auto max-w-[620px] select-none transition-all duration-300"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
-          <linearGradient id="ll-gradHeader" x1="0" y1="0" x2="1" y2="0">
+          {/* Executive Leadership Layer Gradient */}
+          <linearGradient id="ll-gradLeadership" x1="0" y1="0" x2="1" y2="0">
             <stop offset="0%" stopColor="#123B63" />
             <stop offset="100%" stopColor="#0B1F33" />
+          </linearGradient>
+
+          {/* Base Foundation Soft Gradient */}
+          <linearGradient id="ll-gradFoundation" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#FFFFFF" />
+            <stop offset="100%" stopColor="#EAF5FB" />
           </linearGradient>
         </defs>
 
         {/* ------------------------------------------------------------- */}
-        {/* LEVEL 1: BUSINESS & SALES FUNCTION (Top Anchor)               */}
+        {/* LEVEL 1: BUSINESS & EXECUTIVE MANDATE (Top Anchor)            */}
         {/* ------------------------------------------------------------- */}
         <g className="transition-all duration-300">
           <rect
-            x="200"
-            y="28"
-            width="240"
-            height="38"
-            rx="8"
-            fill="#F3F5F7"
+            x="160"
+            y="16"
+            width="320"
+            height="46"
+            rx="10"
+            fill="#FFFFFF"
+            stroke="#123B63"
+            strokeWidth="1.5"
+            className="filter drop-shadow-2xs"
+          />
+          <text
+            x="320"
+            y="36"
+            textAnchor="middle"
+            fill="#123B63"
+            fontSize="11"
+            fontWeight="800"
+            letterSpacing="0.8"
+          >
+            BUSINESS &amp; EXECUTIVE GOALS
+          </text>
+          <text
+            x="320"
+            y="51"
+            textAnchor="middle"
+            fill="#6B7280"
+            fontSize="8.5"
+            fontWeight="500"
+          >
+            Growth Objectives • Target Markets • Commercial Vision
+          </text>
+
+          {/* Central Connecting Feeder Line */}
+          <line
+            x1="320"
+            y1="62"
+            x2="320"
+            y2="88"
             stroke="#123B63"
             strokeWidth="1.5"
           />
-          <text
-            x="320"
-            y="52"
-            textAnchor="middle"
-            fill="#123B63"
-            fontSize="12"
-            fontWeight="800"
-            letterSpacing="0.5"
-          >
-            BUSINESS &amp; SALES FUNCTION
-          </text>
-
-          {/* Central Feed Downward Line */}
-          <line
-            x1="320"
-            y1="66"
-            x2="320"
-            y2="100"
-            stroke="#123B63"
-            strokeWidth="2"
-            strokeDasharray="3 3"
-          />
+          <circle cx="320" cy="75" r="2.5" fill="#123B63" />
         </g>
 
         {/* ------------------------------------------------------------- */}
-        {/* LEVEL 2: EXPERIENCED SALES LEADERSHIP (Central Layer)         */}
+        {/* LEVEL 2: THE LEADERSHIP LAYER (Central Keystone)              */}
         {/* ------------------------------------------------------------- */}
         <g className="transition-all duration-300">
-          {/* Main Leadership Layer Band */}
+          {/* Main Leadership Banner */}
           <rect
-            x="40"
-            y="100"
-            width="560"
-            height="56"
+            x="24"
+            y="88"
+            width="592"
+            height="62"
             rx="12"
-            fill="url(#ll-gradHeader)"
+            fill="url(#ll-gradLeadership)"
             stroke="#87CEEB"
             strokeWidth="2"
-            className="shadow-sm"
           />
 
-          {/* Label inside the layer */}
           <text
             x="320"
-            y="126"
+            y="108"
+            textAnchor="middle"
+            fill="#87CEEB"
+            fontSize="9"
+            fontWeight="700"
+            letterSpacing="1.4"
+          >
+            THE INTEGRATION LAYER • VIRTUAL STATE HEAD
+          </text>
+          <text
+            x="320"
+            y="128"
             textAnchor="middle"
             fill="#FFFFFF"
-            fontSize="13"
+            fontSize="14"
             fontWeight="800"
-            letterSpacing="0.8"
+            letterSpacing="0.6"
           >
             EXPERIENCED SALES LEADERSHIP
           </text>
           <text
             x="320"
-            y="144"
+            y="142"
             textAnchor="middle"
             fill="#87CEEB"
-            fontSize="10"
-            fontFamily="monospace"
-            letterSpacing="1.2"
+            fontSize="8.5"
+            opacity="0.95"
+            letterSpacing="0.2"
           >
-            STRATEGY • DIRECTION • EXECUTION • REVIEWS
-          </text>
-
-          {/* Decorative Signal Dots on Layer */}
-          <circle cx="58" cy="128" r="4" fill="#87CEEB" />
-          <circle cx="582" cy="128" r="4" fill="#87CEEB" />
-        </g>
-
-        {/* ------------------------------------------------------------- */}
-        {/* LEVEL 3: SIX INTEGRATED DISCIPLINE PATHWAYS                    */}
-        {/* ------------------------------------------------------------- */}
-
-        {/* Pathway 1: 01 Sales Strategy (center = 65) */}
-        <g
-          className={clsx(
-            'cursor-pointer transition-all duration-300',
-            activeFocus === 'strategy' ? 'opacity-100 scale-102' : activeFocus ? 'opacity-40' : 'opacity-85'
-          )}
-          onClick={() => onFocusChange?.(activeFocus === 'strategy' ? null : 'strategy')}
-        >
-          <line
-            x1="65"
-            y1="156"
-            x2="65"
-            y2="228"
-            stroke="#123B63"
-            strokeWidth={activeFocus === 'strategy' ? '3' : '1.5'}
-          />
-          <rect
-            x="22"
-            y="228"
-            width="86"
-            height="48"
-            rx="8"
-            fill={activeFocus === 'strategy' ? '#EAF5FB' : '#FFFFFF'}
-            stroke="#123B63"
-            strokeWidth={activeFocus === 'strategy' ? '2.5' : '1.5'}
-          />
-          <text x="65" y="248" textAnchor="middle" fill="#123B63" fontSize="9.5" fontWeight="bold">
-            Sales Strategy
-          </text>
-          <text x="65" y="263" textAnchor="middle" fill="#6B7280" fontSize="8">
-            Clear Direction
-          </text>
-        </g>
-
-        {/* Pathway 2: 02 Team Development (center = 167) */}
-        <g
-          className={clsx(
-            'cursor-pointer transition-all duration-300',
-            activeFocus === 'team' ? 'opacity-100 scale-102' : activeFocus ? 'opacity-40' : 'opacity-85'
-          )}
-          onClick={() => onFocusChange?.(activeFocus === 'team' ? null : 'team')}
-        >
-          <line
-            x1="167"
-            y1="156"
-            x2="167"
-            y2="228"
-            stroke="#123B63"
-            strokeWidth={activeFocus === 'team' ? '3' : '1.5'}
-          />
-          <rect
-            x="124"
-            y="228"
-            width="86"
-            height="48"
-            rx="8"
-            fill={activeFocus === 'team' ? '#EAF5FB' : '#FFFFFF'}
-            stroke="#123B63"
-            strokeWidth={activeFocus === 'team' ? '2.5' : '1.5'}
-          />
-          <text x="167" y="248" textAnchor="middle" fill="#123B63" fontSize="9" fontWeight="bold">
-            Team Dev
-          </text>
-          <text x="167" y="263" textAnchor="middle" fill="#6B7280" fontSize="8">
-            Sales Capability
-          </text>
-        </g>
-
-        {/* Pathway 3: 03 Leadership Support (center = 269) */}
-        <g
-          className={clsx(
-            'cursor-pointer transition-all duration-300',
-            activeFocus === 'leadership' ? 'opacity-100 scale-102' : activeFocus ? 'opacity-40' : 'opacity-85'
-          )}
-          onClick={() => onFocusChange?.(activeFocus === 'leadership' ? null : 'leadership')}
-        >
-          <line
-            x1="269"
-            y1="156"
-            x2="269"
-            y2="228"
-            stroke="#123B63"
-            strokeWidth={activeFocus === 'leadership' ? '3' : '1.5'}
-          />
-          <rect
-            x="226"
-            y="228"
-            width="86"
-            height="48"
-            rx="8"
-            fill={activeFocus === 'leadership' ? '#EAF5FB' : '#FFFFFF'}
-            stroke="#123B63"
-            strokeWidth={activeFocus === 'leadership' ? '2.5' : '1.5'}
-          />
-          <text x="269" y="248" textAnchor="middle" fill="#123B63" fontSize="8.5" fontWeight="bold">
-            Leadership
-          </text>
-          <text x="269" y="263" textAnchor="middle" fill="#6B7280" fontSize="8">
-            Owner Guidance
-          </text>
-        </g>
-
-        {/* Pathway 4: 06 Strategic Discussions (center = 371) */}
-        <g
-          className={clsx(
-            'cursor-pointer transition-all duration-300',
-            activeFocus === 'discussions' ? 'opacity-100 scale-102' : activeFocus ? 'opacity-40' : 'opacity-85'
-          )}
-          onClick={() => onFocusChange?.(activeFocus === 'discussions' ? null : 'discussions')}
-        >
-          <line
-            x1="371"
-            y1="156"
-            x2="371"
-            y2="228"
-            stroke="#123B63"
-            strokeWidth={activeFocus === 'discussions' ? '3' : '1.5'}
-          />
-          <rect
-            x="328"
-            y="228"
-            width="86"
-            height="48"
-            rx="8"
-            fill={activeFocus === 'discussions' ? '#EAF5FB' : '#FFFFFF'}
-            stroke="#123B63"
-            strokeWidth={activeFocus === 'discussions' ? '2.5' : '1.5'}
-          />
-          <text x="371" y="248" textAnchor="middle" fill="#123B63" fontSize="8.5" fontWeight="bold">
-            Discussions
-          </text>
-          <text x="371" y="263" textAnchor="middle" fill="#6B7280" fontSize="8">
-            Owner Priorities
-          </text>
-        </g>
-
-        {/* Pathway 5: 05 Sales Execution (center = 473) */}
-        <g
-          className={clsx(
-            'cursor-pointer transition-all duration-300',
-            activeFocus === 'execution' ? 'opacity-100 scale-102' : activeFocus ? 'opacity-40' : 'opacity-85'
-          )}
-          onClick={() => onFocusChange?.(activeFocus === 'execution' ? null : 'execution')}
-        >
-          <line
-            x1="473"
-            y1="156"
-            x2="473"
-            y2="228"
-            stroke="#123B63"
-            strokeWidth={activeFocus === 'execution' ? '3' : '1.5'}
-          />
-          <rect
-            x="430"
-            y="228"
-            width="86"
-            height="48"
-            rx="8"
-            fill={activeFocus === 'execution' ? '#EAF5FB' : '#FFFFFF'}
-            stroke="#123B63"
-            strokeWidth={activeFocus === 'execution' ? '2.5' : '1.5'}
-          />
-          <text x="473" y="248" textAnchor="middle" fill="#123B63" fontSize="9.5" fontWeight="bold">
-            Execution
-          </text>
-          <text x="473" y="263" textAnchor="middle" fill="#6B7280" fontSize="8">
-            Agreed Actions
-          </text>
-        </g>
-
-        {/* Pathway 6: 04 Accountability (center = 575) */}
-        <g
-          className={clsx(
-            'cursor-pointer transition-all duration-300',
-            activeFocus === 'accountability' ? 'opacity-100 scale-102' : activeFocus ? 'opacity-40' : 'opacity-85'
-          )}
-          onClick={() => onFocusChange?.(activeFocus === 'accountability' ? null : 'accountability')}
-        >
-          <line
-            x1="575"
-            y1="156"
-            x2="575"
-            y2="228"
-            stroke="#123B63"
-            strokeWidth={activeFocus === 'accountability' ? '3' : '1.5'}
-          />
-          <rect
-            x="532"
-            y="228"
-            width="86"
-            height="48"
-            rx="8"
-            fill={activeFocus === 'accountability' ? '#EAF5FB' : '#FFFFFF'}
-            stroke="#123B63"
-            strokeWidth={activeFocus === 'accountability' ? '2.5' : '1.5'}
-          />
-          <text x="575" y="248" textAnchor="middle" fill="#123B63" fontSize="9" fontWeight="bold">
-            Accountability
-          </text>
-          <text x="575" y="263" textAnchor="middle" fill="#6B7280" fontSize="8">
-            Regular Reviews
+            Strategy • Capability Development • Management Support • Accountability Governance
           </text>
         </g>
 
         {/* ------------------------------------------------------------- */}
-        {/* LEVEL 4: STRUCTURED SALES TEAM ACTIVITY (Bottom Output)       */}
+        {/* STRUCTURAL CONNECTORS: LEADERSHIP TO CAPABILITIES             */}
         {/* ------------------------------------------------------------- */}
-        {/* 6 Converging Feeds into organized stream */}
+        {/* Feeder line dropping from Leadership Layer */}
+        <line x1="320" y1="150" x2="320" y2="168" stroke="#123B63" strokeWidth="1.5" />
+
+        {/* Horizontal Distribution Trunk */}
+        <line x1="118" y1="168" x2="522" y2="168" stroke="#123B63" strokeWidth="1.5" />
+
+        {/* Column 1 Vertical Drop to Row 1 */}
         <path
-          d="M 65 276 C 65 320, 200 344, 320 344"
-          stroke="#123B63"
-          strokeWidth={activeFocus === 'strategy' ? '2.5' : '1.5'}
-          strokeDasharray={activeFocus === 'strategy' ? undefined : '4 3'}
-        />
-        <path
-          d="M 167 276 C 167 315, 250 344, 320 344"
-          stroke="#123B63"
-          strokeWidth={activeFocus === 'team' ? '2.5' : '1.5'}
-          strokeDasharray={activeFocus === 'team' ? undefined : '4 3'}
-        />
-        <path
-          d="M 269 276 C 269 310, 290 344, 320 344"
-          stroke="#123B63"
-          strokeWidth={activeFocus === 'leadership' ? '2.5' : '1.5'}
-          strokeDasharray={activeFocus === 'leadership' ? undefined : '4 3'}
-        />
-        <path
-          d="M 371 276 C 371 310, 350 344, 320 344"
-          stroke="#123B63"
-          strokeWidth={activeFocus === 'discussions' ? '2.5' : '1.5'}
-          strokeDasharray={activeFocus === 'discussions' ? undefined : '4 3'}
-        />
-        <path
-          d="M 473 276 C 473 315, 390 344, 320 344"
-          stroke="#123B63"
-          strokeWidth={activeFocus === 'execution' ? '2.5' : '1.5'}
-          strokeDasharray={activeFocus === 'execution' ? undefined : '4 3'}
-        />
-        <path
-          d="M 575 276 C 575 320, 440 344, 320 344"
-          stroke="#123B63"
-          strokeWidth={activeFocus === 'accountability' ? '2.5' : '1.5'}
-          strokeDasharray={activeFocus === 'accountability' ? undefined : '4 3'}
+          d="M 118 168 L 118 190"
+          stroke={activeFocus === 'strategy' || activeFocus === 'discussions' ? '#123B63' : '#123B63'}
+          strokeWidth={activeFocus === 'strategy' || activeFocus === 'discussions' ? '2.5' : '1.5'}
         />
 
-        {/* Bottom Structured Sales Team Activity Foundation */}
+        {/* Column 2 Vertical Drop to Row 1 */}
+        <path
+          d="M 320 168 L 320 190"
+          stroke={activeFocus === 'team' || activeFocus === 'execution' ? '#123B63' : '#123B63'}
+          strokeWidth={activeFocus === 'team' || activeFocus === 'execution' ? '2.5' : '1.5'}
+        />
+
+        {/* Column 3 Vertical Drop to Row 1 */}
+        <path
+          d="M 522 168 L 522 190"
+          stroke={activeFocus === 'leadership' || activeFocus === 'accountability' ? '#123B63' : '#123B63'}
+          strokeWidth={activeFocus === 'leadership' || activeFocus === 'accountability' ? '2.5' : '1.5'}
+        />
+
+        {/* ------------------------------------------------------------- */}
+        {/* LEVEL 3: SIX STRATEGIC CAPABILITY PILLARS                     */}
+        {/* ------------------------------------------------------------- */}
+        {capabilityNodes.map((node) => {
+          const isActive = activeFocus === node.key;
+          const isDimmed = activeFocus !== null && !isActive;
+
+          return (
+            <g
+              key={node.key}
+              tabIndex={0}
+              role="button"
+              aria-label={`${node.number} ${node.title}: ${node.subtitle}`}
+              aria-pressed={isActive}
+              onClick={() => onFocusChange?.(isActive ? null : node.key)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  onFocusChange?.(isActive ? null : node.key);
+                }
+              }}
+              onMouseEnter={() => onFocusChange?.(node.key)}
+              onMouseLeave={() => onFocusChange?.(null)}
+              className={clsx(
+                'cursor-pointer outline-none transition-all duration-300',
+                isActive ? 'opacity-100' : isDimmed ? 'opacity-45' : 'opacity-100 hover:opacity-90'
+              )}
+            >
+              {/* Card Container */}
+              <rect
+                x={node.x}
+                y={node.y}
+                width="188"
+                height="58"
+                rx="10"
+                fill={isActive ? '#EAF5FB' : '#FFFFFF'}
+                stroke={isActive ? '#123B63' : '#123B63'}
+                strokeWidth={isActive ? '2' : '1.2'}
+              />
+
+              {/* Number Badge */}
+              <rect
+                x={node.x + 12}
+                y={node.y + 14}
+                width="28"
+                height="22"
+                rx="6"
+                fill={isActive ? '#123B63' : '#F3F5F7'}
+                stroke={isActive ? '#123B63' : '#123B63'}
+                strokeWidth={isActive ? '1' : '0.5'}
+              />
+              <text
+                x={node.x + 26}
+                y={node.y + 29}
+                textAnchor="middle"
+                fill={isActive ? '#FFFFFF' : '#123B63'}
+                fontSize="9.5"
+                fontWeight="800"
+              >
+                {node.number}
+              </text>
+
+              {/* Title */}
+              <text
+                x={node.x + 48}
+                y={node.y + 28}
+                fill="#123B63"
+                fontSize="11"
+                fontWeight="700"
+                letterSpacing="0.2"
+              >
+                {node.title}
+              </text>
+
+              {/* Subtitle */}
+              <text
+                x={node.x + 48}
+                y={node.y + 44}
+                fill="#6B7280"
+                fontSize="8.5"
+                fontWeight="500"
+              >
+                {node.subtitle}
+              </text>
+            </g>
+          );
+        })}
+
+        {/* ------------------------------------------------------------- */}
+        {/* INTER-ROW STRUCTURAL CONNECTORS (Row 1 -> Row 2)             */}
+        {/* ------------------------------------------------------------- */}
+        {/* Col 1 connector (Row 1 to Row 2) */}
+        <line
+          x1="118"
+          y1="248"
+          x2="118"
+          y2="272"
+          stroke="#123B63"
+          strokeWidth={activeFocus === 'strategy' || activeFocus === 'discussions' ? '2.5' : '1.5'}
+        />
+
+        {/* Col 2 connector (Row 1 to Row 2) */}
+        <line
+          x1="320"
+          y1="248"
+          x2="320"
+          y2="272"
+          stroke="#123B63"
+          strokeWidth={activeFocus === 'team' || activeFocus === 'execution' ? '2.5' : '1.5'}
+        />
+
+        {/* Col 3 connector (Row 1 to Row 2) */}
+        <line
+          x1="522"
+          y1="248"
+          x2="522"
+          y2="272"
+          stroke="#123B63"
+          strokeWidth={activeFocus === 'leadership' || activeFocus === 'accountability' ? '2.5' : '1.5'}
+        />
+
+        {/* ------------------------------------------------------------- */}
+        {/* STRUCTURAL CONNECTORS: CAPABILITIES TO FOUNDATION             */}
+        {/* ------------------------------------------------------------- */}
+        {/* Col 1 drop to bottom conduit */}
+        <line
+          x1="118"
+          y1="330"
+          x2="118"
+          y2="348"
+          stroke="#123B63"
+          strokeWidth={activeFocus === 'strategy' || activeFocus === 'discussions' ? '2.5' : '1.5'}
+        />
+
+        {/* Col 3 drop to bottom conduit */}
+        <line
+          x1="522"
+          y1="330"
+          x2="522"
+          y2="348"
+          stroke="#123B63"
+          strokeWidth={activeFocus === 'leadership' || activeFocus === 'accountability' ? '2.5' : '1.5'}
+        />
+
+        {/* Bottom Horizontal Conduit */}
+        <line x1="118" y1="348" x2="522" y2="348" stroke="#123B63" strokeWidth="1.5" />
+
+        {/* Central Feed into Foundation */}
+        <line
+          x1="320"
+          y1="330"
+          x2="320"
+          y2="368"
+          stroke="#123B63"
+          strokeWidth="2"
+        />
+        <circle cx="320" cy="358" r="2.5" fill="#123B63" />
+
+        {/* ------------------------------------------------------------- */}
+        {/* LEVEL 4: STRUCTURED SALES TEAM PERFORMANCE (Foundation)       */}
+        {/* ------------------------------------------------------------- */}
         <g className="transition-all duration-300">
           <rect
-            x="110"
-            y="344"
-            width="420"
-            height="52"
-            rx="10"
-            fill="#EAF5FB"
+            x="24"
+            y="368"
+            width="592"
+            height="62"
+            rx="12"
+            fill="url(#ll-gradFoundation)"
             stroke="#123B63"
             strokeWidth="1.5"
           />
           <text
             x="320"
-            y="367"
+            y="389"
             textAnchor="middle"
             fill="#123B63"
-            fontSize="12"
-            fontWeight="800"
+            fontSize="9"
+            fontWeight="700"
+            letterSpacing="1.4"
           >
-            STRUCTURED SALES TEAM ACTIVITY
+            COMMERCIAL IMPACT • THE DISCIPLINED SALES FUNCTION
           </text>
           <text
             x="320"
-            y="384"
+            y="409"
+            textAnchor="middle"
+            fill="#0B1F33"
+            fontSize="13.5"
+            fontWeight="800"
+            letterSpacing="0.6"
+          >
+            STRUCTURED SALES TEAM PERFORMANCE
+          </text>
+          <text
+            x="320"
+            y="422"
             textAnchor="middle"
             fill="#6B7280"
-            fontSize="9"
+            fontSize="8.5"
+            fontWeight="500"
           >
-            Clear Priorities • Structured Reviews • Repeatable Performance
+            Consistent Field Activity • Transparent Review Rhythm • Predictable Results
           </text>
         </g>
       </svg>
+
+      {/* Editorial Footnote */}
+      <div className="w-full text-center mt-2">
+        <p className="text-[11px] text-muted font-sans">
+          Diagram shows how experienced sales leadership integrates all six operational dimensions into structured performance.
+        </p>
+      </div>
     </div>
   );
 };
+

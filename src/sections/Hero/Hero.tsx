@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'motion/react';
+import { m, useScroll, useTransform } from 'motion/react';
 import { Container } from '@/components/layout/Container';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 import { Button } from '@/components/ui/Button';
@@ -39,7 +39,7 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
       {/* Signature Living Background System */}
       <HeroBackground />
 
-      <motion.div
+      <m.div
         style={{ opacity: heroOpacity }}
         className="relative z-10 w-full"
       >
@@ -47,23 +47,23 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
           {/* Main 2-Column Hero Composition */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             {/* Left Column: Headline, Narrative & Primary Actions */}
-            <motion.div
+            <m.div
               style={{ y: contentY }}
               className="lg:col-span-7 flex flex-col items-start"
             >
               {/* Step 3: Eyebrow / Category Label */}
-              <motion.div
+              <m.div
                 initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.35, delay: 0.1 }}
                 className="mb-4"
               >
                 <SectionLabel label="Sales Leadership & Performance Consulting for MSMEs in Odisha" />
-              </motion.div>
+              </m.div>
 
               {/* Step 4: Refined Headline Reveal */}
               <div className="mb-6 overflow-hidden">
-                <motion.h1
+                <m.h1
                   initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 28 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
@@ -73,11 +73,11 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
                   <span className="block text-deep-blue mt-1 sm:mt-1.5">
                     But Is Your Business Growing?
                   </span>
-                </motion.h1>
+                </m.h1>
               </div>
 
               {/* Step 5: Refined Supporting Copy (1 short paragraph + 1 concise sentence) */}
-              <motion.div
+              <m.div
                 initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.45, delay: 0.32 }}
@@ -89,10 +89,10 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
                 <p className="font-semibold text-charcoal text-base sm:text-lg">
                   Virtual State Head helps MSMEs in Odisha strengthen sales strategy, develop teams, and improve execution through experienced sales leadership and the Sales Performance Engine.
                 </p>
-              </motion.div>
+              </m.div>
 
               {/* Step 6: Dominant Primary CTA & Lightweight Scroll Cue */}
-              <motion.div
+              <m.div
                 initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.45, delay: 0.42 }}
@@ -117,10 +117,10 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
                   <span>See where the gap begins</span>
                   <ChevronDown className="w-4 h-4 text-muted group-hover:text-deep-blue group-hover:translate-y-0.5 transition-all" />
                 </a>
-              </motion.div>
+              </m.div>
 
               {/* Key Trust & Positioning Alignment */}
-              <motion.div
+              <m.div
                 initial={reducedMotion ? { opacity: 1 } : { opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.4, delay: 0.52 }}
@@ -140,11 +140,11 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
                   <Check className="w-3.5 h-3.5 text-deep-blue shrink-0" />
                   <span>3 Pillars: Training • Technology • Accountability</span>
                 </div>
-              </motion.div>
-            </motion.div>
+              </m.div>
+            </m.div>
 
             {/* Right Column: Original Business Performance System Visual */}
-            <motion.div
+            <m.div
               style={{ y: visualY }}
               initial={reducedMotion ? { opacity: 1 } : { opacity: 0, scale: 0.97, y: 24 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -152,22 +152,22 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
               className="lg:col-span-5"
             >
               <HeroVisual />
-            </motion.div>
+            </m.div>
           </div>
 
           {/* Step 7: Authority Strip (Connected Rail Presentation) */}
-          <motion.div
+          <m.div
             initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.55 }}
           >
             <AuthorityStrip />
-          </motion.div>
+          </m.div>
         </Container>
 
         {/* Step 8 / Section 15: Clean Architectural Transition Boundary */}
         <SectionTransition className="mt-14 sm:mt-18 lg:mt-24" />
-      </motion.div>
+      </m.div>
     </section>
   );
 };

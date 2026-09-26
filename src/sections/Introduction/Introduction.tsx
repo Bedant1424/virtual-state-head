@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, useReducedMotion } from 'motion/react';
+import { m, useReducedMotion } from 'motion/react';
 import { Container } from '@/components/layout/Container';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 import { Button } from '@/components/ui/Button';
@@ -38,7 +38,7 @@ export const Introduction: React.FC<IntroductionProps> = ({ onCtaClick }) => {
       <Container size="default">
         {/* Top Section Header: Eyebrow + Primary Headline */}
         <div className="max-w-3xl mb-12 sm:mb-16">
-          <motion.div
+          <m.div
             initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
@@ -46,9 +46,9 @@ export const Introduction: React.FC<IntroductionProps> = ({ onCtaClick }) => {
             className="mb-4"
           >
             <SectionLabel label={solution.eyebrow} />
-          </motion.div>
+          </m.div>
 
-          <motion.h2
+          <m.h2
             initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
@@ -59,10 +59,10 @@ export const Introduction: React.FC<IntroductionProps> = ({ onCtaClick }) => {
             <span className="text-deep-blue/80 font-semibold block sm:inline">
               {solution.headline.secondary}
             </span>
-          </motion.h2>
+          </m.h2>
 
           {/* Lead Intro Paragraph */}
-          <motion.p
+          <m.p
             initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
@@ -70,10 +70,10 @@ export const Introduction: React.FC<IntroductionProps> = ({ onCtaClick }) => {
             className="text-base sm:text-lg text-charcoal font-medium leading-relaxed mb-4"
           >
             {solution.introLead}
-          </motion.p>
+          </m.p>
 
           {/* Supporting Paragraphs */}
-          <motion.div
+          <m.div
             initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
@@ -82,10 +82,10 @@ export const Introduction: React.FC<IntroductionProps> = ({ onCtaClick }) => {
           >
             <p>{solution.supportingParagraph1}</p>
             <p>{solution.supportingParagraph2}</p>
-          </motion.div>
+          </m.div>
 
           {/* Credibility Anchor Badge (Royal Bal, 30+ Years) */}
-          <motion.div
+          <m.div
             initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
@@ -110,13 +110,13 @@ export const Introduction: React.FC<IntroductionProps> = ({ onCtaClick }) => {
               </span>
             </div>
             <Award className="w-4 h-4 text-deep-blue shrink-0 ml-1 hidden sm:block" />
-          </motion.div>
+          </m.div>
         </div>
 
-        {/* Interactive Dual-Panel Centerpiece: Visual Layer + Capability System */}
+        {/* Interactive Dual-Panel Centerpiece: Capability Directory + Visual Layer */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
-          {/* Left Column (lg:col-span-7): The 6-Dimension Capability Architecture */}
-          <div className="lg:col-span-7 flex flex-col justify-between">
+          {/* Supporting Column (lg:col-span-5): The 6 Core Capability Dimensions Directory */}
+          <div className="order-2 lg:order-1 lg:col-span-5 flex flex-col justify-between">
             <CapabilitySystem
               capabilities={solution.capabilities}
               activeFocus={activeFocus}
@@ -124,8 +124,8 @@ export const Introduction: React.FC<IntroductionProps> = ({ onCtaClick }) => {
             />
 
             {/* Closing Idea & Call To Action */}
-            <div className="mt-8 p-5 sm:p-6 rounded-xl bg-paper/60 border border-gray-200/90 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-              <div className="max-w-md">
+            <div className="mt-6 p-5 sm:p-6 rounded-xl bg-paper/60 border border-gray-200/90 flex flex-col items-start gap-4">
+              <div className="w-full">
                 <div className="flex items-center gap-2 mb-1.5">
                   <CheckCircle className="w-4 h-4 text-deep-blue shrink-0" />
                   <span className="text-xs font-mono font-bold uppercase tracking-wider text-deep-blue">
@@ -141,7 +141,7 @@ export const Introduction: React.FC<IntroductionProps> = ({ onCtaClick }) => {
                 variant="primary"
                 size="md"
                 onClick={onCtaClick}
-                className="shrink-0 group shadow-sm hover:shadow"
+                className="w-full sm:w-auto group shadow-sm hover:shadow"
               >
                 <span>Book Your Sales Strategy Call</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" />
@@ -149,8 +149,8 @@ export const Introduction: React.FC<IntroductionProps> = ({ onCtaClick }) => {
             </div>
           </div>
 
-          {/* Right Column (lg:col-span-5): The Conceptual Systems Visualization */}
-          <div className="lg:col-span-5 lg:sticky lg:top-24">
+          {/* Primary Centerpiece Column (lg:col-span-7): The Leadership Layer Architectural Visual */}
+          <div className="order-1 lg:order-2 lg:col-span-7 lg:sticky lg:top-24">
             <div className="mb-3 flex items-center justify-between px-1">
               <span className="text-xs font-mono font-bold uppercase tracking-wider text-navy">
                 Visual Framework
