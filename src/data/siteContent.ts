@@ -28,11 +28,48 @@ export interface CtaConfig {
   readonly helperText: string;
 }
 
+export type EnginePillarKey = 'training' | 'technology' | 'accountability';
+
 export interface EnginePillar {
-  readonly id: 'training' | 'technology' | 'accountability';
+  readonly id: EnginePillarKey;
+  readonly number: string;
+  readonly title: string;
+  readonly shortLabel: string;
+  readonly coreConcept: string;
+  readonly description: string;
+  readonly visualKey: EnginePillarKey;
+  readonly visualIdea: string;
+  readonly focusPoints: readonly string[];
   readonly name: string;
   readonly focus: string;
   readonly summary: string;
+}
+
+export interface EngineSectionData {
+  readonly id: string;
+  readonly eyebrow: string;
+  readonly headline: {
+    readonly primary: string;
+    readonly secondary: string;
+  };
+  readonly intro: string;
+  readonly pillars: readonly EnginePillar[];
+  readonly climax: {
+    readonly eyebrow: string;
+    readonly title: string;
+    readonly subtitle: string;
+    readonly headline: string;
+    readonly statements: readonly {
+      readonly pillar: string;
+      readonly action: string;
+    }[];
+    readonly conclusion: string;
+  };
+  readonly bridge: {
+    readonly statement: string;
+    readonly targetLabel: string;
+    readonly targetHref: string;
+  };
 }
 
 export interface Framework {
@@ -198,6 +235,7 @@ export interface SiteContent {
   readonly problem: ProblemSectionData;
   readonly solution: SolutionSectionData;
   readonly benefits: BenefitsSectionData;
+  readonly engine: EngineSectionData;
   readonly pillars: readonly EnginePillar[];
   readonly frameworks: readonly Framework[];
   readonly coaches: readonly Coach[];
@@ -498,27 +536,157 @@ export const siteContent: SiteContent = {
     tickerItems: ['STRATEGY', 'TEAM', 'LEADERSHIP', 'ACCOUNTABILITY', 'CONSULTING'],
   },
 
+  engine: {
+    id: 'engine',
+    eyebrow: 'The Operating Approach • Three Core Elements',
+    headline: {
+      primary: 'Introducing the',
+      secondary: 'Sales Performance Engine',
+    },
+    intro:
+      'A structured approach that brings together three essential elements of sales performance.',
+    pillars: [
+      {
+        id: 'training',
+        number: '01',
+        title: 'TRAINING',
+        shortLabel: 'Training',
+        coreConcept: 'CAPABILITY',
+        description:
+          'Develop the skills, mindset, communication, and sales capabilities required for effective performance.',
+        visualKey: 'training',
+        visualIdea: 'Capability nodes activate and skill signals begin flowing into the system',
+        focusPoints: [
+          'Sales skills and communication techniques',
+          'Negotiation and objection handling',
+          'Mindset and disciplined sales habits',
+        ],
+        name: 'Training',
+        focus: 'Sales Capability & Skills',
+        summary:
+          'Develop the skills, mindset, communication, and sales capabilities required for effective performance.',
+      },
+      {
+        id: 'technology',
+        number: '02',
+        title: 'TECHNOLOGY',
+        shortLabel: 'Technology',
+        coreConcept: 'VISIBILITY + EXECUTION SUPPORT',
+        description:
+          'Use appropriate tools and systems to support sales visibility, tracking, coordination, and execution.',
+        visualKey: 'technology',
+        visualIdea: 'Visibility pathways, tracking connections, and coordination lines activate',
+        focusPoints: [
+          'Appropriate pipeline and activity tracking',
+          'Sales visibility and coordination tools',
+          'Execution support without software bloat',
+        ],
+        name: 'Technology',
+        focus: 'Visibility & Tools',
+        summary:
+          'Use appropriate tools and systems to support sales visibility, tracking, coordination, and execution.',
+      },
+      {
+        id: 'accountability',
+        number: '03',
+        title: 'ACCOUNTABILITY',
+        shortLabel: 'Accountability',
+        coreConcept: 'FOLLOW-THROUGH',
+        description:
+          'Create greater ownership through structured reviews, clear commitments, follow-through, and performance discussions.',
+        visualKey: 'accountability',
+        visualIdea: 'Review checkpoints connect, closing the follow-through loop into a repeating rhythm',
+        focusPoints: [
+          'Structured weekly review cadence',
+          'Clear performance commitments',
+          'Ownership and follow-through discussions',
+        ],
+        name: 'Accountability',
+        focus: 'Governance & Ownership',
+        summary:
+          'Create greater ownership through structured reviews, clear commitments, follow-through, and performance discussions.',
+      },
+    ],
+    climax: {
+      eyebrow: 'System Integration • Operating Engine',
+      title: 'SALES PERFORMANCE ENGINE',
+      subtitle: 'TRAINING + TECHNOLOGY + ACCOUNTABILITY',
+      headline: 'How the Engine Works Together',
+      statements: [
+        { pillar: 'Training', action: 'builds capability.' },
+        { pillar: 'Technology', action: 'supports execution.' },
+        { pillar: 'Accountability', action: 'strengthens follow-through.' },
+      ],
+      conclusion:
+        'When these three elements work together under experienced sales leadership, sales teams build discipline, managers gain visibility, and business owners gain confidence in sales execution.',
+    },
+    bridge: {
+      statement: 'A structured system needs practical sales frameworks.',
+      targetLabel: 'Sales Frameworks',
+      targetHref: '#frameworks',
+    },
+  },
+
   pillars: [
     {
       id: 'training',
+      number: '01',
+      title: 'TRAINING',
+      shortLabel: 'Training',
+      coreConcept: 'CAPABILITY',
+      description:
+        'Develop the skills, mindset, communication, and sales capabilities required for effective performance.',
+      visualKey: 'training',
+      visualIdea: 'Capability nodes activate and skill signals begin flowing into the system',
+      focusPoints: [
+        'Sales skills and communication techniques',
+        'Negotiation and objection handling',
+        'Mindset and disciplined sales habits',
+      ],
       name: 'Training',
       focus: 'Sales Capability & Skills',
       summary:
-        'Equipping field teams with structured negotiation, objection handling, and relationship-building capabilities.',
+        'Develop the skills, mindset, communication, and sales capabilities required for effective performance.',
     },
     {
       id: 'technology',
+      number: '02',
+      title: 'TECHNOLOGY',
+      shortLabel: 'Technology',
+      coreConcept: 'VISIBILITY + EXECUTION SUPPORT',
+      description:
+        'Use appropriate tools and systems to support sales visibility, tracking, coordination, and execution.',
+      visualKey: 'technology',
+      visualIdea: 'Visibility pathways, tracking connections, and coordination lines activate',
+      focusPoints: [
+        'Appropriate pipeline and activity tracking',
+        'Sales visibility and coordination tools',
+        'Execution support without software bloat',
+      ],
       name: 'Technology',
       focus: 'Visibility & Tools',
       summary:
-        'Enabling lead hygiene, pipeline visibility, daily reporting cadence, and activity tracking without software bloat.',
+        'Use appropriate tools and systems to support sales visibility, tracking, coordination, and execution.',
     },
     {
       id: 'accountability',
+      number: '03',
+      title: 'ACCOUNTABILITY',
+      shortLabel: 'Accountability',
+      coreConcept: 'FOLLOW-THROUGH',
+      description:
+        'Create greater ownership through structured reviews, clear commitments, follow-through, and performance discussions.',
+      visualKey: 'accountability',
+      visualIdea: 'Review checkpoints connect, closing the follow-through loop into a repeating rhythm',
+      focusPoints: [
+        'Structured weekly review cadence',
+        'Clear performance commitments',
+        'Ownership and follow-through discussions',
+      ],
       name: 'Accountability',
       focus: 'Governance & Ownership',
       summary:
-        'Weekly sales reviews, target pacing, pipeline inspection, and performance governance that removes the burden from founders.',
+        'Create greater ownership through structured reviews, clear commitments, follow-through, and performance discussions.',
     },
   ],
 
