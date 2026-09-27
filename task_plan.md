@@ -4,13 +4,13 @@
 `feature/vsh-uiux-redesign` (Created from `feature/vsh-premium-rebuild`)
 
 ## Status
-- **Current Milestone:** Milestone 04 — Frameworks + Audience + Batch
-- **Current Task:** Rebuild Chapter 07 (`Chapter07FrameworksProcess.tsx`), Chapter 08 (`Chapter08AudienceWhyVSH.tsx`), and Chapter 09 (`Chapter09PerformanceGapBatch.tsx`)
-- **Files Changed:** `src/sections/Chapters/Chapter05WhatYouGet.tsx`, `src/sections/Chapters/Chapter06Engine.tsx`, `task_plan.md`
-- **Validation Result:** Milestone 03 passed TypeScript (`tsc --noEmit`), Vite build, Playwright (1440px and 375px: 0 console errors, 0 warnings, 0px horizontal overflow).
-- **Visual Review Result:** What You Get (pure typography horizontal bands) and Sales Performance Engine (cinematic optical prism with strictly named TRAINING + TECHNOLOGY + ACCOUNTABILITY) validated.
+- **Current Milestone:** Milestone 05 — Booking + FAQ + Final CTA
+- **Current Task:** Rebuild Chapter 10 (`Chapter10BookingFAQCTA.tsx`)
+- **Files Changed:** `src/sections/Chapters/Chapter07FrameworksProcess.tsx`, `src/sections/Chapters/Chapter08AudienceWhyVSH.tsx`, `src/sections/Chapters/Chapter09PerformanceGapBatch.tsx`, `task_plan.md`
+- **Validation Result:** Milestone 04 passed TypeScript (`tsc --noEmit`), Vite build, Playwright (1440px and 375px: 0 console errors, 0 warnings, 0px horizontal overflow).
+- **Visual Review Result:** Frameworks (pure typography stages, no arrows), Audience (dominant 3:4 portrait, quiet differentiators), and Performance Gap (8 approved impacts, '10' cohort block) validated.
 - **Known Issues:** None
-- **Next Task:** Rebuild `Chapter07FrameworksProcess.tsx` (field reportage photo, 5 named frameworks, 6 stages purely as typography with no arrows/rails/connectors), `Chapter08AudienceWhyVSH.tsx` (dominant 3:4 portrait, concise criteria, quiet secondary differentiators, no cards, no dual dense lists), and `Chapter09PerformanceGapBatch.tsx` (tension photo, 8 approved impacts in 2-col matrix, sculptural '10' cohort block, locked CTA).
+- **Next Task:** Rebuild `Chapter10BookingFAQCTA.tsx` (4 approved booking stages `01 Book Your Call` to `04 Discuss the Engagement`, all 9 master FAQs with accessible accordions, decisive Midnight Navy closing canvas with locked CTA, zero confidential/guaranteed tags).
 
 ---
 
@@ -35,11 +35,11 @@
   - Playwright visual audit across 1440 and 375 viewports (0 console errors, 0px overflow).
   - Commit: `feat(vsh): rebuild value and performance engine sections`.
 
-- [ ] **Milestone 04: Frameworks + Audience + Batch**
-  - Rebuild `Chapter07FrameworksProcess.tsx`: Field reportage photo (`how_it_works_field.jpg`), 5 named Royal Way frameworks, 6 engagement stages purely as typography (no arrows, no connectors, no rail, no flowchart, no progress bar).
-  - Rebuild `Chapter08AudienceWhyVSH.tsx`: Dominant 3:4 vertical editorial portrait (`audience_industrial_leader.jpg`), concise qualification criteria, 5 quiet secondary differentiators beneath. No dual dense lists, no cards.
-  - Rebuild `Chapter09PerformanceGapBatch.tsx`: Structural tension photo (`performance_gap_tension.jpg`), 8 approved performance impacts in quiet 2-col matrix, sculptural '10' cohort block, locked CTA.
-  - Playwright visual audit across 1440, 1280, 390, 375 viewports.
+- [x] **Milestone 04: Frameworks + Audience + Batch**
+  - Rebuilt `Chapter07FrameworksProcess.tsx`: Field reportage photo (`how_it_works_field.jpg`), 5 named Royal Way frameworks, 6 engagement stages purely as typography (no arrows, no connectors, no rail, no flowchart, no progress bar).
+  - Rebuilt `Chapter08AudienceWhyVSH.tsx`: Dominant 3:4 vertical editorial portrait (`audience_industrial_leader.jpg`), concise qualification criteria, 5 quiet secondary differentiators beneath. No dual dense lists, no cards.
+  - Rebuilt `Chapter09PerformanceGapBatch.tsx`: Structural tension photo (`performance_gap_tension.jpg`), 8 approved performance impacts in quiet 2-col matrix, sculptural '10' cohort block, locked CTA.
+  - Playwright visual audit across 1440 and 375 viewports (0 console errors, 0px overflow).
   - Commit: `feat(vsh): rebuild methodology and fit experience`.
 
 - [ ] **Milestone 05: Booking + FAQ + Final CTA**

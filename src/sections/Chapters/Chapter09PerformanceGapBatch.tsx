@@ -3,7 +3,7 @@ import { Container } from '@/components/layout/Container';
 import { Button } from '@/components/ui/Button';
 import { vshImages } from '@/assets/images';
 import { siteContent } from '@/data/siteContent';
-import { ArrowRight, ShieldAlert } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export interface Chapter09PerformanceGapBatchProps {
   onCtaClick?: () => void;
@@ -11,20 +11,24 @@ export interface Chapter09PerformanceGapBatchProps {
 
 /**
  * CHAPTER 09 — THE PERFORMANCE GAP & UPCOMING BATCH
- * Editorial Strategic Authority
+ * Editorial Strategic Authority: Sculptural Monument & Tension Chasm
  *
- * Left: Photographic tension visual + 8 operational cost realities.
- * Right: Sculptural '10' cohort presentation + upcoming batch governance.
+ * Left: Photographic tension visual + 8 approved performance impacts in quiet 2-col matrix.
+ * Right: Sculptural '10' cohort block with focused cohort limit.
  * Zero fake countdown timers. Zero artificial pressure.
  */
 export const Chapter09PerformanceGapBatch: React.FC<Chapter09PerformanceGapBatchProps> = ({ onCtaClick }) => {
   const { batch } = siteContent;
 
   const gapImpacts = [
-    'Unmanaged pipeline leakage and lost deals',
-    'Frequent discounting and margin erosion',
-    'Founder exhaustion from daily firefighting',
-    'Erratic and unpredictable revenue swings',
+    'Lost or delayed sales opportunities',
+    'Inconsistent follow-up',
+    'Weak visibility into sales activities',
+    'Unclear ownership of targets',
+    'Repeated negotiation difficulties',
+    'Underdeveloped sales capability',
+    'Excessive dependence on the business owner',
+    'Time spent managing problems that could be addressed more systematically',
   ];
 
   return (
@@ -34,35 +38,30 @@ export const Chapter09PerformanceGapBatch: React.FC<Chapter09PerformanceGapBatch
       className="py-16 sm:py-24 lg:py-28 bg-white border-b border-gray-200/80 overflow-hidden"
     >
       <Container size="default">
-        {/* Chapter Micro-Index */}
-        <div className="text-xs font-mono font-semibold uppercase tracking-widest text-[#123B63] mb-4">
-          CHAPTER 09 • THE COST OF INACTION & THE NEXT COHORT
-        </div>
-
         {/* Section Headline */}
         <div className="max-w-3xl mb-12 sm:mb-16">
           <h2
             id="gap-batch-heading"
             className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0B1F33] font-sans tracking-tight leading-tight mb-4"
           >
-            The Hidden Cost of an{' '}
+            The Operational Cost of an{' '}
             <span className="text-[#123B63] block sm:inline">
-              Unstructured Sales Team.
+              Unstructured Sales Function.
             </span>
           </h2>
           <p className="text-base sm:text-lg text-[#333333] font-sans leading-relaxed">
-            Without sales leadership and accountability, businesses continually absorb silent financial leakage across delayed deals, price cuts, and diverted executive focus.
+            When sales leadership, direction, and accountability are absent, businesses continually absorb commercial friction across pipeline stalls, delayed follow-ups, and diverted leadership focus.
           </p>
         </div>
 
-        {/* 2-Column Split: The Gap Visual & Realities Left (55%), Cohort Focus Right (45%) */}
+        {/* 2-Column Split: The Gap Visual & 8 Realities Left (58%), Cohort Monument Right (42%) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-          {/* Left Column (7 cols): Tension Photo & 4 Core Friction Points */}
+          {/* Left Column (7 cols): Tension Photo & 8 Approved Impacts Matrix */}
           <div className="lg:col-span-7 space-y-6">
             <div className="relative aspect-[16/9] w-full rounded-[4px] overflow-hidden border border-gray-200 bg-gray-50">
               <img
                 src={vshImages.gap}
-                alt="Architectural shadow and tension representing corporate performance drag"
+                alt="Architectural shadow and tension representing operational friction across sales functions"
                 width={1200}
                 height={675}
                 className="w-full h-full object-cover object-center filter saturate-[0.9]"
@@ -74,12 +73,14 @@ export const Chapter09PerformanceGapBatch: React.FC<Chapter09PerformanceGapBatch
               </div>
             </div>
 
-            {/* Gap Impacts Register */}
+            {/* Eight Approved Impacts: Compressed 2-Column Matrix */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
               {gapImpacts.map((impact, idx) => (
-                <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#333333] font-sans">
-                  <ShieldAlert className="w-4 h-4 text-[#123B63] shrink-0 mt-0.5" />
-                  <span>{impact}</span>
+                <div key={idx} className="flex items-baseline gap-2.5 text-xs sm:text-sm text-[#333333] font-sans">
+                  <span className="text-xs font-mono font-bold text-[#123B63] shrink-0">
+                    {String(idx + 1).padStart(2, '0')}.
+                  </span>
+                  <span className="leading-snug">{impact}</span>
                 </div>
               ))}
             </div>
@@ -111,7 +112,7 @@ export const Chapter09PerformanceGapBatch: React.FC<Chapter09PerformanceGapBatch
               </div>
 
               <p className="text-xs sm:text-sm text-[#4A5568] font-sans leading-relaxed mb-6">
-                To guarantee direct senior executive attention and high-touch oversight from Royal Bal and the lead coaches, each batch is strictly capped at ten client firms.
+                Each batch is strictly limited to 10 MSME companies from Odisha to ensure intensive coaching attention and executive oversight.
               </p>
 
               <div className="text-[11px] font-mono text-[#6B7280] bg-white p-3 rounded-[3px] border border-gray-200 mb-6">
@@ -125,7 +126,7 @@ export const Chapter09PerformanceGapBatch: React.FC<Chapter09PerformanceGapBatch
                 variant="primary"
                 size="lg"
                 onClick={onCtaClick}
-                className="w-full bg-[#123B63] text-white hover:bg-[#0B1F33] transition-colors font-bold px-8 py-4 rounded-[4px] shadow-none flex items-center justify-center gap-3 cursor-pointer"
+                className="w-full bg-[#123B63] text-white hover:bg-[#0B1F33] transition-colors font-bold px-8 py-4 rounded-[4px] shadow-none flex items-center justify-center gap-3 cursor-pointer whitespace-nowrap"
               >
                 <span>Book Your Sales Strategy Call</span>
                 <ArrowRight className="w-4 h-4 text-[#87CEEB]" />
