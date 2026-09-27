@@ -1,15 +1,18 @@
 import { useRef, useEffect, useState, type RefObject } from 'react';
 
 /**
- * Shared motion hooks for scroll-driven choreography.
- * Uses IntersectionObserver for reveal triggers.
- * GSAP ScrollTrigger for the Engine cinematic sequence.
+ * Shared motion hooks for purposeful, performant choreography.
+ * LEVEL 1: GlobalSalesSignal (atmospheric, CSS)
+ * LEVEL 2: Sales Performance Engine (cinematic scroll scrub)
+ * LEVEL 3: Major photography (subtle parallax / scale / crop reveal)
+ * LEVEL 4: Typography (restrained one-time reveals)
+ * LEVEL 5: Interactions (FAQ drawer, buttons)
  */
 
 /** Hook: triggers once when element enters viewport */
 export function useScrollReveal(
-  threshold = 0.15,
-  rootMargin = '0px 0px -60px 0px'
+  threshold = 0.12,
+  rootMargin = '0px 0px -40px 0px'
 ): [RefObject<HTMLDivElement | null>, boolean] {
   const ref = useRef<HTMLDivElement | null>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -18,7 +21,6 @@ export function useScrollReveal(
     const el = ref.current;
     if (!el) return;
 
-    // Respect prefers-reduced-motion
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
     if (mq.matches) {
       setIsVisible(true);
@@ -58,33 +60,46 @@ export function useScrollProgress(): [RefObject<HTMLDivElement | null>, number] 
     }
 
     let rafId: number;
-    const update = () => {
-      const rect = el.getBoundingClientRect();
-      const vh = window.innerHeight;
-      // 0 when top enters bottom of viewport, 1 when bottom exits top
-      const raw = (vh - rect.top) / (vh + rect.height);
-      setProgress(Math.max(0, Math.min(1, raw)));
-      rafId = requestAnimationFrame(update);
+    let ticking = false;
+
+    const onScroll = () => {
+      if (!ticking) {
+        rafId = requestAnimationFrame(() => {
+          if (el) {
+            const rect = el.getBoundingClientRect();
+            const vh = window.innerHeight;
+            const raw = (vh - rect.top) / (vh + rect.height);
+            setProgress(Math.max(0, Math.min(1, raw)));
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
-    rafId = requestAnimationFrame(update);
-    return () => cancelAnimationFrame(rafId);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll(); // initial check
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      cancelAnimationFrame(rafId);
+    };
   }, []);
 
   return [ref, progress];
 }
 
-/** Stagger delay calculator */
-export function staggerDelay(index: number, base = 80): string {
+/** Stagger delay calculator: crisp, tight micro-delays (30–50ms) */
+export function staggerDelay(index: number, base = 40): string {
   return `${index * base}ms`;
 }
 
-/** Motion variant classes for reveal animations */
+/** Motion variant classes for crisp, restrained reveals */
 export const revealStyles = {
-  hidden: 'opacity-0 translate-y-6',
+  hidden: 'opacity-0 translate-y-4',
   visible: 'opacity-100 translate-y-0',
-  transition: 'transition-all duration-700 ease-out',
-  imageHidden: 'opacity-0 scale-105',
+  transition: 'transition-all duration-500 ease-out',
+  imageHidden: 'opacity-0 scale-[1.04]',
   imageVisible: 'opacity-100 scale-100',
-  imageTransition: 'transition-all duration-1000 ease-out',
+  imageTransition: 'transition-all duration-700 ease-out',
 } as const;

@@ -18,18 +18,18 @@ export const Chapter04Coaches: React.FC = () => {
       id="coaches"
       ref={sectionRef}
       aria-labelledby="coaches-heading"
-      className="py-12 sm:py-16 lg:py-20 bg-[#0B1F33] text-white border-b border-white/10 overflow-hidden relative"
+      className="py-8 sm:py-12 lg:py-14 bg-[#0B1F33] text-white border-b border-white/10 overflow-hidden relative"
     >
       <Container size="default">
         {/* Eyebrow + Section Headline */}
-        <div className={`mb-10 sm:mb-14 ${revealStyles.transition} ${isVisible ? revealStyles.visible : revealStyles.hidden}`}>
-          <div className="text-xs font-mono font-semibold uppercase tracking-widest text-[#87CEEB] mb-3">
+        <div className={`mb-6 sm:mb-8 ${revealStyles.transition} ${isVisible ? revealStyles.visible : revealStyles.hidden}`}>
+          <div className="text-xs font-mono font-semibold uppercase tracking-widest text-[#87CEEB] mb-2.5">
             • Senior Sales Leadership • Royal Way Academy
           </div>
           <div className="max-w-3xl">
             <h2
               id="coaches-heading"
-              className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-sans tracking-tight leading-tight mb-3"
+              className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-sans tracking-tight leading-tight mb-2.5"
             >
               30+ Years of Frontline{' '}
               <span className="text-[#87CEEB]">Sales Experience.</span>
@@ -41,16 +41,16 @@ export const Chapter04Coaches: React.FC = () => {
         </div>
 
         {/* Human Editorial Composition — Open Canvas, No Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start border-t border-white/15 pt-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start border-t border-white/15 pt-6">
           {/* Dominant Coach: Royal Bal (7 cols) */}
           <div
-            className={`lg:col-span-7 space-y-6 ${revealStyles.transition} ${isVisible ? revealStyles.visible : revealStyles.hidden}`}
+            className={`lg:col-span-7 space-y-4 sm:space-y-5 ${revealStyles.transition} ${isVisible ? revealStyles.visible : revealStyles.hidden}`}
             style={{ transitionDelay: '100ms' }}
           >
-            <div className="flex items-start gap-6">
+            <div className="flex items-start gap-5">
               {/* Minimal Monogram Typography */}
-              <div className="w-16 h-20 sm:w-20 sm:h-24 border border-[#87CEEB]/40 flex flex-col items-center justify-center shrink-0">
-                <span className="text-2xl sm:text-3xl font-mono font-extrabold text-[#87CEEB] tracking-wider">
+              <div className="w-14 h-18 sm:w-18 sm:h-22 border border-[#87CEEB]/40 flex flex-col items-center justify-center shrink-0">
+                <span className="text-xl sm:text-2xl font-mono font-extrabold text-[#87CEEB] tracking-wider">
                   {royalBal.initials}
                 </span>
                 <span className="text-[9px] font-mono text-gray-400 mt-0.5">ODISHA</span>
@@ -76,7 +76,7 @@ export const Chapter04Coaches: React.FC = () => {
               {royalBal.bioSummary}
             </p>
 
-            <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-gray-400">
+            <div className="pt-3 border-t border-white/10 flex items-center justify-between text-xs font-mono text-gray-400">
               <span>SALES LEADERSHIP CONSULTING</span>
               <span className="text-[#87CEEB]">ODISHA MSME SECTOR</span>
             </div>
@@ -84,15 +84,15 @@ export const Chapter04Coaches: React.FC = () => {
 
           {/* Supporting Coaches: Saroj Kumar Panda & Sudeep Mohanty (5 cols) */}
           <div
-            className={`lg:col-span-5 space-y-6 lg:border-l lg:border-white/15 lg:pl-10 ${revealStyles.transition} ${isVisible ? revealStyles.visible : revealStyles.hidden}`}
-            style={{ transitionDelay: '250ms' }}
+            className={`lg:col-span-5 space-y-4 sm:space-y-5 lg:border-l lg:border-white/15 lg:pl-8 ${revealStyles.transition} ${isVisible ? revealStyles.visible : revealStyles.hidden}`}
+            style={{ transitionDelay: '200ms' }}
           >
             {/* Coach 2: Saroj Kumar Panda */}
-            <div className="space-y-1.5 pb-6 border-b border-white/10">
+            <div className="space-y-1 pb-4 border-b border-white/10">
               <div className="text-[11px] font-mono font-semibold text-[#87CEEB] uppercase tracking-wider">
                 ASSOCIATE COACH
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-white font-sans">
+              <h3 className="text-lg sm:text-xl font-bold text-white font-sans">
                 {sarojPanda.name}
               </h3>
               <p className="text-xs sm:text-sm font-semibold text-gray-200">
@@ -104,11 +104,11 @@ export const Chapter04Coaches: React.FC = () => {
             </div>
 
             {/* Coach 3: Sudeep Mohanty */}
-            <div className="space-y-1.5">
+            <div className="space-y-1">
               <div className="text-[11px] font-mono font-semibold text-[#87CEEB] uppercase tracking-wider">
                 ASSOCIATE COACH
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-white font-sans">
+              <h3 className="text-lg sm:text-xl font-bold text-white font-sans">
                 {sudeepMohanty.name}
               </h3>
               <p className="text-xs sm:text-sm font-semibold text-gray-200">

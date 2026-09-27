@@ -20,11 +20,11 @@ export const Chapter07FrameworksProcess: React.FC = () => {
       id="how-it-works"
       ref={sectionRef}
       aria-labelledby="frameworks-process-heading"
-      className="py-12 sm:py-16 lg:py-20 bg-white border-b border-gray-200/80 overflow-hidden"
+      className="py-8 sm:py-12 lg:py-14 bg-white border-b border-gray-200/80 overflow-hidden"
     >
       <Container size="default">
         {/* Section Headline */}
-        <div className={`max-w-3xl mb-8 sm:mb-10 ${revealStyles.transition} ${isVisible ? revealStyles.visible : revealStyles.hidden}`}>
+        <div className={`max-w-3xl mb-6 sm:mb-8 ${revealStyles.transition} ${isVisible ? revealStyles.visible : revealStyles.hidden}`}>
           <h2
             id="frameworks-process-heading"
             className="text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-[#0B1F33] font-sans tracking-tight leading-tight mb-2"
@@ -37,7 +37,7 @@ export const Chapter07FrameworksProcess: React.FC = () => {
         </div>
 
         {/* 2-Column: Frameworks left, large image right */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center mb-8 sm:mb-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center mb-6 sm:mb-8">
           {/* Frameworks — typography with clean hairlines */}
           <div className="lg:col-span-5 space-y-0 border-t border-gray-300">
             {frameworks.map((fw, idx) => (

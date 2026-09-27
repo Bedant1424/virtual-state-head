@@ -37,16 +37,16 @@ export const Chapter10BookingFAQCTA: React.FC<Chapter10BookingFAQCTAProps> = ({ 
       <section
         id="faqs"
         aria-labelledby="faq-heading"
-        className="py-10 sm:py-14 lg:py-16 bg-[#F3F5F7]"
+        className="py-8 sm:py-12 lg:py-14 bg-[#F3F5F7]"
       >
         <Container size="default">
           {/* Eyebrow 3 of 3 */}
-          <div className="text-xs font-mono font-semibold uppercase tracking-widest text-[#123B63] mb-3">
+          <div className="text-xs font-mono font-semibold uppercase tracking-widest text-[#123B63] mb-2 sm:mb-3">
             • Process Transparency • Direct Answers
           </div>
 
           {/* Section Heading */}
-          <div className="max-w-3xl mb-8 sm:mb-10">
+          <div className="max-w-3xl mb-6 sm:mb-8">
             <h2
               id="faq-heading"
               className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0B1F33] font-sans tracking-tight leading-tight mb-2"
@@ -59,11 +59,11 @@ export const Chapter10BookingFAQCTA: React.FC<Chapter10BookingFAQCTAProps> = ({ 
           </div>
 
           {/* 4 Booking Stages — compact row */}
-          <div ref={stagesRef} className="mb-10 pb-8 border-b border-gray-300">
-            <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#123B63] mb-5">
+          <div ref={stagesRef} className="mb-8 pb-6 border-b border-gray-300">
+            <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#123B63] mb-4">
               WHAT HAPPENS AFTER YOU REQUEST A CALL
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {bookingStages.map((stage, idx) => (
                 <div
                   key={stage.num}
@@ -139,10 +139,10 @@ export const Chapter10BookingFAQCTA: React.FC<Chapter10BookingFAQCTAProps> = ({ 
         id="final-cta"
         ref={ctaRef}
         aria-labelledby="final-cta-heading"
-        className="py-16 sm:py-20 lg:py-24 bg-[#0B1F33] text-white relative overflow-hidden"
+        className="py-12 sm:py-16 lg:py-20 bg-[#0B1F33] text-white relative overflow-hidden"
       >
         <Container size="default">
-          <div className={`max-w-3xl mx-auto text-center space-y-5 sm:space-y-6 ${revealStyles.transition} ${ctaVisible ? revealStyles.visible : revealStyles.hidden}`}>
+          <div className={`max-w-3xl mx-auto text-center space-y-4 sm:space-y-5 ${revealStyles.transition} ${ctaVisible ? revealStyles.visible : revealStyles.hidden}`}>
             <div className="text-xs font-mono font-semibold uppercase tracking-widest text-[#87CEEB]">
               • SALES LEADERSHIP FOR ODISHA MSMES •
             </div>

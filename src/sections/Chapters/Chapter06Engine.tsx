@@ -13,8 +13,8 @@ export interface Chapter06EngineProps {
 /**
  * CHAPTER 06 — SALES PERFORMANCE ENGINE
  * Cinematic visual peak. The optical crystal prism dominates the viewport.
+ * Scroll progress drives crop, scale, light intensity, and pillar convergence.
  * ZERO frosted glass cards, ZERO status dots, ZERO UI-like pillar controls.
- * Pure typography integrated into cinematic art direction.
  */
 export const Chapter06Engine: React.FC<Chapter06EngineProps> = ({ onCtaClick }) => {
   const { pillars } = siteContent.engine;
@@ -32,9 +32,9 @@ export const Chapter06Engine: React.FC<Chapter06EngineProps> = ({ onCtaClick }) 
   const activeIndex = getActiveIndex();
   const isConverged = activeIndex === 3;
 
-  // Image transform based on scroll
-  const imageScale = 1.12 - progress * 0.12;
-  const imageY = (1 - progress) * 15;
+  // Image transform based on scroll: cinematic scale & subtle parallax
+  const imageScale = 1.10 - progress * 0.10;
+  const imageY = (1 - progress) * 12;
 
   return (
     <section
@@ -44,7 +44,7 @@ export const Chapter06Engine: React.FC<Chapter06EngineProps> = ({ onCtaClick }) 
       className="relative bg-[#0B1F33] overflow-hidden"
     >
       {/* Full-bleed cinematic artwork canvas */}
-      <div className="relative min-h-[720px] lg:min-h-[820px]">
+      <div className="relative min-h-[640px] lg:min-h-[760px]">
         {/* Dominant Artwork Background */}
         <div
           className="absolute inset-0 overflow-hidden"
@@ -69,18 +69,18 @@ export const Chapter06Engine: React.FC<Chapter06EngineProps> = ({ onCtaClick }) 
         </div>
 
         {/* Content overlay: Pure typography directly on the visual field */}
-        <div className="relative z-10 flex flex-col justify-end min-h-[720px] lg:min-h-[820px] px-5 sm:px-8 pb-12 sm:pb-16 lg:pb-20 pt-20">
+        <div className="relative z-10 flex flex-col justify-end min-h-[640px] lg:min-h-[760px] px-5 sm:px-8 pb-10 sm:pb-14 lg:pb-16 pt-16 sm:pt-20">
           <Container size="default">
             {/* Section Heading */}
             <div
               ref={headerRef}
-              className={`mb-8 sm:mb-12 max-w-2xl ${revealStyles.transition} ${
+              className={`mb-6 sm:mb-10 max-w-2xl ${revealStyles.transition} ${
                 headerVisible ? revealStyles.visible : revealStyles.hidden
               }`}
             >
               <h2
                 id="engine-heading"
-                className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white font-sans tracking-tight leading-tight mb-3"
+                className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white font-sans tracking-tight leading-tight mb-2.5"
               >
                 The{' '}
                 <span className="text-[#87CEEB]">
@@ -93,11 +93,11 @@ export const Chapter06Engine: React.FC<Chapter06EngineProps> = ({ onCtaClick }) 
             </div>
 
             {/* Three Pillars: Pure Typography Over Artwork (No Cards, No Status Dots) */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-12 mb-10 border-t border-white/20 pt-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-10 mb-8 border-t border-white/20 pt-5">
               {pillars.map((pillar, idx) => {
                 const isActive = activeIndex === idx || isConverged;
                 return (
-                  <div key={pillar.id} className="space-y-2">
+                  <div key={pillar.id} className="space-y-1.5">
                     <div className="flex items-baseline gap-2">
                       <span className="text-xs font-mono font-bold text-[#87CEEB]">
                         {pillar.number}
@@ -124,7 +124,7 @@ export const Chapter06Engine: React.FC<Chapter06EngineProps> = ({ onCtaClick }) 
 
             {/* Convergence Formula Lockup + Primary Action */}
             <div
-              className={`flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pt-6 border-t border-white/20 transition-all duration-700 ${
+              className={`flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 pt-5 border-t border-white/20 transition-all duration-700 ${
                 isConverged ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}
             >

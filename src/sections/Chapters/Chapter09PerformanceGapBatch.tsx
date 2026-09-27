@@ -36,13 +36,13 @@ export const Chapter09PerformanceGapBatch: React.FC<Chapter09PerformanceGapBatch
     <section
       id="batch"
       aria-labelledby="gap-batch-heading"
-      className="py-12 sm:py-16 lg:py-20 bg-white border-b border-gray-200/80 overflow-hidden"
+      className="py-8 sm:py-12 lg:py-14 bg-white border-b border-gray-200/80 overflow-hidden"
     >
       <Container size="default">
         {/* Section Headline */}
         <div
           ref={sectionRef}
-          className={`max-w-3xl mb-8 sm:mb-12 ${revealStyles.transition} ${
+          className={`max-w-3xl mb-6 sm:mb-8 ${revealStyles.transition} ${
             isVisible ? revealStyles.visible : revealStyles.hidden
           }`}
         >
@@ -57,9 +57,9 @@ export const Chapter09PerformanceGapBatch: React.FC<Chapter09PerformanceGapBatch
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start">
           {/* Left: Tension image + 8 impacts matrix */}
-          <div className="lg:col-span-6 space-y-6">
+          <div className="lg:col-span-6 space-y-4">
             <div
               className={`relative aspect-[2/1] w-full rounded-[2px] overflow-hidden ${
                 revealStyles.imageTransition
@@ -80,19 +80,19 @@ export const Chapter09PerformanceGapBatch: React.FC<Chapter09PerformanceGapBatch
             </div>
 
             {/* Eight Approved Impacts: 2-Column Hairline Matrix */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 pt-2 border-t border-gray-200">
+            <div className="grid grid-cols-2 gap-x-3 sm:gap-x-6 gap-y-1.5 pt-2 border-t border-gray-200">
               {gapImpacts.map((impact, idx) => (
                 <div
                   key={idx}
-                  className={`flex items-baseline gap-2 text-xs sm:text-sm text-[#333333] font-sans py-1.5 border-b border-gray-100 ${
+                  className={`flex items-baseline gap-1.5 sm:gap-2 text-[11px] sm:text-xs text-[#333333] font-sans py-1 sm:py-1.5 border-b border-gray-100 ${
                     revealStyles.transition
                   } ${isVisible ? revealStyles.visible : revealStyles.hidden}`}
                   style={{ transitionDelay: staggerDelay(idx, 30) }}
                 >
-                  <span className="text-xs font-mono font-bold text-[#123B63] shrink-0">
+                  <span className="text-[11px] font-mono font-bold text-[#123B63] shrink-0">
                     {String(idx + 1).padStart(2, '0')}.
                   </span>
-                  <span className="leading-snug">{impact}</span>
+                  <span className="leading-tight sm:leading-snug">{impact}</span>
                 </div>
               ))}
             </div>
@@ -101,10 +101,10 @@ export const Chapter09PerformanceGapBatch: React.FC<Chapter09PerformanceGapBatch
           {/* Right: Typographic "10" Event (Open Canvas, No Enclosing Card) */}
           <div
             ref={batchRef}
-            className="lg:col-span-6 flex flex-col justify-between space-y-6 lg:pl-6"
+            className="lg:col-span-6 flex flex-col justify-between space-y-4 lg:pl-6"
           >
             {/* Header info line with delicate hairline */}
-            <div className="flex items-baseline justify-between pb-3 border-b border-gray-200">
+            <div className="flex items-baseline justify-between pb-2.5 border-b border-gray-200">
               <span className="text-xs font-mono font-bold uppercase text-[#123B63] tracking-wider">
                 {batch.statusBadge}
               </span>
@@ -115,16 +115,16 @@ export const Chapter09PerformanceGapBatch: React.FC<Chapter09PerformanceGapBatch
 
             {/* Sculptural "10" Typographic Event */}
             <div
-              className={`flex items-baseline gap-5 my-2 transition-all duration-1000 ease-out ${
+              className={`flex items-baseline gap-4 sm:gap-5 my-1 sm:my-2 transition-all duration-1000 ease-out ${
                 batchVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-[0.7]'
               }`}
             >
-              <span className="text-8xl sm:text-9xl lg:text-[7.5rem] font-extrabold text-[#0B1F33] font-mono leading-none tracking-tighter">
+              <span className="text-7xl sm:text-8xl lg:text-[7.5rem] font-extrabold text-[#0B1F33] font-mono leading-none tracking-tighter">
                 10
               </span>
-              <div className="text-2xl sm:text-3xl font-extrabold text-[#0B1F33] font-sans leading-tight">
+              <div className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-[#0B1F33] font-sans leading-tight">
                 MSME Companies.
-                <span className="block text-[#123B63] font-bold text-lg sm:text-xl mt-1">
+                <span className="block text-[#123B63] font-bold text-base sm:text-lg lg:text-xl mt-0.5 sm:mt-1">
                   One Focused Batch.
                 </span>
               </div>

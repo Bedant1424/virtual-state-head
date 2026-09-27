@@ -5,8 +5,8 @@ import { useScrollReveal, staggerDelay, revealStyles } from '@/hooks/useMotion';
 
 /**
  * CHAPTER 05 — WHAT YOUR BUSINESS GETS
- * Dramatically compressed. Large typography, no descriptions.
- * Sequential scroll reveal stagger.
+ * Pure typographic authority. High-contrast headline bands acting as a rhythmic visual breath.
+ * Zero cards, zero bloated descriptions.
  */
 export const Chapter05WhatYouGet: React.FC = () => {
   const [sectionRef, isVisible] = useScrollReveal(0.15);
@@ -17,14 +17,14 @@ export const Chapter05WhatYouGet: React.FC = () => {
       id="benefits"
       ref={sectionRef}
       aria-labelledby="benefits-heading"
-      className="py-10 sm:py-14 lg:py-16 bg-white overflow-hidden"
+      className="py-8 sm:py-10 lg:py-12 bg-white border-b border-gray-200/80 overflow-hidden"
     >
       <Container size="default">
-        {/* Compact headline — no supporting paragraph */}
-        <div className={`mb-6 sm:mb-8 ${revealStyles.transition} ${isVisible ? revealStyles.visible : revealStyles.hidden}`}>
+        {/* Section Headline */}
+        <div className={`mb-5 sm:mb-6 ${revealStyles.transition} ${isVisible ? revealStyles.visible : revealStyles.hidden}`}>
           <h2
             id="benefits-heading"
-            className="text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-[#0B1F33] font-sans tracking-tight leading-tight"
+            className="text-2xl sm:text-3xl lg:text-[2.5rem] font-extrabold text-[#0B1F33] font-sans tracking-tight leading-tight"
           >
             More Than Training.{' '}
             <span className="text-[#123B63]">
@@ -33,18 +33,18 @@ export const Chapter05WhatYouGet: React.FC = () => {
           </h2>
         </div>
 
-        {/* Five value bands — large typography, tight spacing */}
+        {/* Five Value Bands: High-Contrast Typographic Rhythm */}
         <div className="border-t border-gray-300 divide-y divide-gray-300">
           {valueAreas.map((area, idx) => (
             <div
               key={area.id}
-              className={`py-3 sm:py-4 flex items-baseline gap-4 ${revealStyles.transition} ${isVisible ? revealStyles.visible : revealStyles.hidden}`}
-              style={{ transitionDelay: staggerDelay(idx, 80) }}
+              className={`py-2.5 sm:py-3.5 flex items-baseline gap-4 ${revealStyles.transition} ${isVisible ? revealStyles.visible : revealStyles.hidden}`}
+              style={{ transitionDelay: staggerDelay(idx, 40) }}
             >
               <span className="text-xs font-mono font-bold text-[#123B63] w-6 shrink-0">
                 {area.number}
               </span>
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#0B1F33] font-sans tracking-tight">
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#0B1F33] font-sans tracking-tight">
                 {area.shortLabel}
               </h3>
             </div>

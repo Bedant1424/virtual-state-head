@@ -16,7 +16,7 @@ export interface Chapter03IntroducingVSHProps {
  */
 export const Chapter03IntroducingVSH: React.FC<Chapter03IntroducingVSHProps> = ({ onCtaClick }) => {
   const [sectionRef, isVisible] = useScrollReveal(0.1);
-  const [capsRef, capsVisible] = useScrollReveal(0.2);
+  const [capsRef, capsVisible] = useScrollReveal(0.15);
 
   const capabilityAreas = [
     { num: '01', title: 'Sales Strategy' },
@@ -32,11 +32,11 @@ export const Chapter03IntroducingVSH: React.FC<Chapter03IntroducingVSHProps> = (
       id="about"
       aria-labelledby="introducing-heading"
       ref={sectionRef}
-      className="py-12 sm:py-16 lg:py-20 bg-white border-b border-gray-200/80 overflow-hidden"
+      className="py-8 sm:py-12 lg:py-14 bg-white border-b border-gray-200/80 overflow-hidden"
     >
       <Container size="default">
         {/* Editorial Split: Large Documentary Photo (7 cols) + Authoritative Statement (5 cols) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-12 sm:mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center mb-8 sm:mb-10">
           {/* Left: Documentary Photograph */}
           <div className="lg:col-span-7">
             <div className={`relative aspect-[3/2] w-full rounded-[2px] overflow-hidden ${revealStyles.imageTransition} ${isVisible ? revealStyles.imageVisible : revealStyles.imageHidden}`}>
@@ -56,13 +56,13 @@ export const Chapter03IntroducingVSH: React.FC<Chapter03IntroducingVSHProps> = (
           </div>
 
           {/* Right: Oversized Headline + Statement (Open canvas, no cards) */}
-          <div className={`lg:col-span-5 space-y-5 ${revealStyles.transition} ${isVisible ? revealStyles.visible : revealStyles.hidden}`}>
+          <div className={`lg:col-span-5 space-y-4 sm:space-y-5 ${revealStyles.transition} ${isVisible ? revealStyles.visible : revealStyles.hidden}`}>
             <h2
               id="introducing-heading"
               className="text-3xl sm:text-4xl lg:text-[2.65rem] font-extrabold text-[#0B1F33] font-sans tracking-tight leading-[1.08]"
             >
               Experienced Sales Leadership.{' '}
-              <span className="text-[#123B63] block mt-1.5 text-xl sm:text-2xl lg:text-3xl font-bold">
+              <span className="text-[#123B63] block mt-1 text-xl sm:text-2xl lg:text-3xl font-bold">
                 Without Necessarily Hiring Another Full-Time Executive.
               </span>
             </h2>
@@ -71,7 +71,7 @@ export const Chapter03IntroducingVSH: React.FC<Chapter03IntroducingVSHProps> = (
               Virtual State Head provides experienced sales leadership, strategic direction, team development, performance consulting, and accountability support for MSMEs in Odisha that already have sales activity but need stronger direction, execution, and performance discipline.
             </p>
 
-            <div className="pt-2">
+            <div className="pt-1">
               <Button
                 variant="primary"
                 size="lg"
@@ -86,16 +86,16 @@ export const Chapter03IntroducingVSH: React.FC<Chapter03IntroducingVSHProps> = (
         </div>
 
         {/* Sparse Capability Typography: Open flow across canvas */}
-        <div ref={capsRef} className="pt-8 border-t border-gray-200">
-          <div className={`text-xs font-mono font-bold uppercase tracking-wider text-[#123B63] mb-6 ${revealStyles.transition} ${capsVisible ? revealStyles.visible : revealStyles.hidden}`}>
+        <div ref={capsRef} className="pt-6 border-t border-gray-200">
+          <div className={`text-xs font-mono font-bold uppercase tracking-wider text-[#123B63] mb-4 sm:mb-5 ${revealStyles.transition} ${capsVisible ? revealStyles.visible : revealStyles.hidden}`}>
             AREAS OF ACTIVE CONSULTING INTERVENTION
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 items-baseline">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 items-baseline">
             {capabilityAreas.map((area, idx) => (
               <div
                 key={area.num}
-                className={`space-y-1 ${revealStyles.transition} ${capsVisible ? revealStyles.visible : revealStyles.hidden}`}
-                style={{ transitionDelay: staggerDelay(idx, 50) }}
+                className={`space-y-0.5 ${revealStyles.transition} ${capsVisible ? revealStyles.visible : revealStyles.hidden}`}
+                style={{ transitionDelay: staggerDelay(idx, 40) }}
               >
                 <span className="text-xs font-mono font-bold text-[#123B63] block">
                   {area.num}

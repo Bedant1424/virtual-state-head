@@ -27,12 +27,12 @@ export const Chapter08AudienceWhyVSH: React.FC = () => {
       id="who-we-help"
       aria-labelledby="audience-heading"
       ref={sectionRef}
-      className="py-12 sm:py-16 lg:py-20 bg-[#F3F5F7] border-b border-gray-200/80 overflow-hidden"
+      className="py-8 sm:py-12 lg:py-14 bg-[#F3F5F7] border-b border-gray-200/80 overflow-hidden"
     >
       <Container size="default">
         {/* Section Headline */}
         <div
-          className={`max-w-3xl mb-8 sm:mb-12 ${revealStyles.transition} ${
+          className={`max-w-3xl mb-6 sm:mb-8 ${revealStyles.transition} ${
             isVisible ? revealStyles.visible : revealStyles.hidden
           }`}
         >
@@ -48,9 +48,9 @@ export const Chapter08AudienceWhyVSH: React.FC = () => {
         </div>
 
         {/* 2-Column Split: Qualification left, Dominant Portrait right */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
           {/* Left Column: Criteria (Primary + Secondary) */}
-          <div className="lg:col-span-5 space-y-6">
+          <div className="lg:col-span-5 space-y-5">
             {/* PRIMARY: Who this is for */}
             <div
               className={`space-y-3 ${revealStyles.transition} ${
@@ -107,7 +107,7 @@ export const Chapter08AudienceWhyVSH: React.FC = () => {
           {/* Right Column: Dominant Portrait Anchor (Pure image, no badge card) */}
           <div className="lg:col-span-7">
             <div
-              className={`relative aspect-[3/4] max-h-[560px] w-full rounded-[2px] overflow-hidden border border-gray-300 shadow-none bg-white ${
+              className={`relative aspect-[16/10] sm:aspect-[3/4] max-h-[260px] sm:max-h-[520px] lg:max-h-[560px] w-full rounded-[2px] overflow-hidden border border-gray-300 shadow-none bg-white ${
                 revealStyles.imageTransition
               } ${isVisible ? revealStyles.imageVisible : revealStyles.imageHidden}`}
             >

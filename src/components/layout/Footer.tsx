@@ -7,10 +7,10 @@ export const Footer: React.FC = () => {
 
   return (
     <footer className="w-full bg-[#0B1F33] text-white border-t border-white/10 mt-auto">
-      <Container size="default" className="py-12 sm:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 pb-12 border-b border-white/10">
+      <Container size="default" className="py-8 sm:py-12">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-12 pb-8 border-b border-white/10">
           {/* Brand & Positioning Summary */}
-          <div className="md:col-span-6 lg:col-span-5 flex flex-col items-start space-y-4">
+          <div className="md:col-span-6 lg:col-span-5 flex flex-col items-start space-y-3">
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-[3px] bg-[#123B63] text-white border border-[#87CEEB]/40 flex items-center justify-center font-mono font-bold text-xs tracking-tight shadow-none">
                 {siteContent.brand.shortName}
@@ -36,15 +36,15 @@ export const Footer: React.FC = () => {
 
           {/* Program Architecture Navigation */}
           <div className="md:col-span-3 lg:col-span-3">
-            <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-[#87CEEB] mb-4">
+            <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-[#87CEEB] mb-3">
               Navigation
             </h4>
-            <ul className="space-y-2 text-xs font-sans text-gray-300">
+            <ul className="grid grid-cols-2 md:grid-cols-1 gap-1 text-xs font-sans text-gray-300">
               {siteContent.navigation.map((item) => (
                 <li key={item.id}>
                   <a
                     href={item.href}
-                    className="hover:text-[#87CEEB] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#87CEEB] rounded-[2px] py-3 min-h-[44px] min-w-[44px] inline-flex items-center"
+                    className="hover:text-[#87CEEB] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#87CEEB] rounded-[2px] py-1.5 inline-flex items-center"
                   >
                     {item.label}
                   </a>
@@ -55,12 +55,12 @@ export const Footer: React.FC = () => {
 
           {/* Methodology & Frameworks */}
           <div className="md:col-span-3 lg:col-span-4">
-            <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-[#87CEEB] mb-4">
+            <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-[#87CEEB] mb-3">
               Confirmed Frameworks
             </h4>
-            <ul className="space-y-2 text-xs font-sans text-gray-300">
+            <ul className="space-y-1.5 text-xs font-sans text-gray-300">
               {siteContent.frameworks.map((framework) => (
-                <li key={framework.id} className="flex items-center gap-2">
+                <li key={framework.id} className="flex items-center gap-2 py-0.5">
                   <span className="w-1 h-1 rounded-full bg-[#87CEEB]" aria-hidden="true" />
                   <span>{framework.name}</span>
                 </li>
@@ -70,7 +70,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Disclaimer & Copyright */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-gray-400">
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono text-gray-400">
           <p>
             © {currentYear} {siteContent.brand.parentEntity}. All rights reserved.
           </p>

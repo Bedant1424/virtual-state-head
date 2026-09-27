@@ -5,12 +5,12 @@ import { useScrollReveal, staggerDelay, revealStyles } from '@/hooks/useMotion';
 
 /**
  * CHAPTER 02 — THE PROBLEM
- * Compressed composition: dominant image + headline + 5 scannable gaps.
- * Image mask reveal + heading reveal + problem items stagger.
+ * Tight editorial composition: 4:3 boardroom image + headline + 5 scannable operational gaps.
+ * Zero dead travel, transitions smoothly from Hero into Introducing VSH.
  */
 export const Chapter02Problem: React.FC = () => {
   const [sectionRef, isVisible] = useScrollReveal(0.1);
-  const [gapsRef, gapsVisible] = useScrollReveal(0.2);
+  const [gapsRef, gapsVisible] = useScrollReveal(0.15);
 
   const operationalGaps = [
     { num: '01', title: 'Sales Without Clear Direction' },
@@ -24,14 +24,14 @@ export const Chapter02Problem: React.FC = () => {
     <section
       id="problem"
       aria-labelledby="problem-heading"
-      className="relative py-12 sm:py-16 lg:py-20 bg-[#F3F5F7] overflow-hidden"
+      className="relative py-8 sm:py-12 lg:py-14 bg-[#F3F5F7] overflow-hidden"
     >
       <Container size="default">
         {/* Compact 2-column: Large image left, headline + gaps right */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
           {/* Left: Dominant atmospheric image with mask reveal */}
           <div className="lg:col-span-6" ref={sectionRef}>
-            <div className={`relative aspect-[4/3] w-full rounded-[4px] overflow-hidden ${revealStyles.imageTransition} ${isVisible ? 'clip-reveal-done' : 'clip-reveal-start'}`}>
+            <div className={`relative aspect-[4/3] w-full rounded-[2px] overflow-hidden ${revealStyles.imageTransition} ${isVisible ? 'clip-reveal-done' : 'clip-reveal-start'}`}>
               <img
                 src={vshImages.problem}
                 alt="Executive boardroom table at dusk with solitary lamp illuminating operational reports"
@@ -48,11 +48,11 @@ export const Chapter02Problem: React.FC = () => {
           </div>
 
           {/* Right: Headline + 5 scannable gaps */}
-          <div className="lg:col-span-6 space-y-6">
+          <div className="lg:col-span-6 space-y-4 sm:space-y-5">
             <div className={`${revealStyles.transition} ${isVisible ? revealStyles.visible : revealStyles.hidden}`}>
               <h2
                 id="problem-heading"
-                className="text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-[#0B1F33] font-sans tracking-tight leading-tight mb-3"
+                className="text-3xl sm:text-4xl lg:text-[2.65rem] font-extrabold text-[#0B1F33] font-sans tracking-tight leading-tight mb-2.5"
               >
                 More Salespeople. More Targets.{' '}
                 <span className="text-[#123B63] block sm:inline">
@@ -69,8 +69,8 @@ export const Chapter02Problem: React.FC = () => {
               {operationalGaps.map((item, idx) => (
                 <div
                   key={item.num}
-                  className={`py-3 flex items-center gap-3 border-b border-gray-300/60 ${revealStyles.transition} ${gapsVisible ? revealStyles.visible : revealStyles.hidden}`}
-                  style={{ transitionDelay: staggerDelay(idx, 60) }}
+                  className={`py-2.5 flex items-center gap-3 border-b border-gray-300/60 ${revealStyles.transition} ${gapsVisible ? revealStyles.visible : revealStyles.hidden}`}
+                  style={{ transitionDelay: staggerDelay(idx, 40) }}
                 >
                   <span className="text-xs font-mono font-bold text-[#123B63] shrink-0 w-6">
                     {item.num}
@@ -83,7 +83,7 @@ export const Chapter02Problem: React.FC = () => {
             </div>
 
             {/* Closing principle */}
-            <p className="text-sm font-semibold text-[#0B1F33] font-sans italic border-l-2 border-[#87CEEB] pl-4 py-1 leading-relaxed">
+            <p className="text-xs sm:text-sm font-semibold text-[#0B1F33] font-sans italic border-l-2 border-[#87CEEB] pl-3.5 py-0.5 leading-relaxed">
               "A hardworking sales team still needs direction, execution discipline, and accountability around the work."
             </p>
           </div>
