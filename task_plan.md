@@ -4,13 +4,13 @@
 `feature/vsh-uiux-redesign` (Created from `feature/vsh-premium-rebuild`)
 
 ## Status
-- **Current Milestone:** Milestone 05 — Booking + FAQ + Final CTA
-- **Current Task:** Rebuild Chapter 10 (`Chapter10BookingFAQCTA.tsx`)
-- **Files Changed:** `src/sections/Chapters/Chapter07FrameworksProcess.tsx`, `src/sections/Chapters/Chapter08AudienceWhyVSH.tsx`, `src/sections/Chapters/Chapter09PerformanceGapBatch.tsx`, `task_plan.md`
-- **Validation Result:** Milestone 04 passed TypeScript (`tsc --noEmit`), Vite build, Playwright (1440px and 375px: 0 console errors, 0 warnings, 0px horizontal overflow).
-- **Visual Review Result:** Frameworks (pure typography stages, no arrows), Audience (dominant 3:4 portrait, quiet differentiators), and Performance Gap (8 approved impacts, '10' cohort block) validated.
+- **Current Milestone:** Milestone 06 — Mobile + Motion + Visual Refinement
+- **Current Task:** Comprehensive multi-viewport testing across 1440x900, 1280x800, 390x844, 375x667; verify word budget (~875 words target), eyebrow count (exactly 3), responsive typography, and tap targets.
+- **Files Changed:** `src/components/ui/DemoModal.tsx`, `src/sections/Chapters/Chapter10BookingFAQCTA.tsx`, `task_plan.md`
+- **Validation Result:** Milestone 05 passed TypeScript (`tsc --noEmit`), Vite build, Playwright (1440px and 375px: 0 console errors, 0 warnings, 0px horizontal overflow, all 9 FAQs present and interactive).
+- **Visual Review Result:** Booking stages (clean linear typography), 9 FAQs (accordions), and final CTA (Midnight Navy monolith with locked CTA) validated.
 - **Known Issues:** None
-- **Next Task:** Rebuild `Chapter10BookingFAQCTA.tsx` (4 approved booking stages `01 Book Your Call` to `04 Discuss the Engagement`, all 9 master FAQs with accessible accordions, decisive Midnight Navy closing canvas with locked CTA, zero confidential/guaranteed tags).
+- **Next Task:** Multi-viewport visual audit, word count evaluate check, eyebrow count evaluate check, and refinement.
 
 ---
 
@@ -42,9 +42,10 @@
   - Playwright visual audit across 1440 and 375 viewports (0 console errors, 0px overflow).
   - Commit: `feat(vsh): rebuild methodology and fit experience`.
 
-- [ ] **Milestone 05: Booking + FAQ + Final CTA**
-  - Rebuild `Chapter10BookingFAQCTA.tsx`: 4 approved booking stages (`01 Book Your Call` to `04 Discuss the Engagement`), all 9 master FAQs with smooth keyboard-accessible accordions (collapsed by default), decisive Midnight Navy closing canvas with locked CTA.
-  - Playwright visual audit across 1440, 1280, 390, 375 viewports.
+- [x] **Milestone 05: Booking + FAQ + Final CTA**
+  - Rebuilt `Chapter10BookingFAQCTA.tsx`: 4 approved booking stages (`01 Book Your Call` to `04 Discuss the Engagement`), all 9 master FAQs with smooth keyboard-accessible accordions (collapsed by default), decisive Midnight Navy closing canvas with locked CTA.
+  - Cleaned `DemoModal.tsx` input value placeholder to "Active Sales Team" (removed invented 3 - 25+).
+  - Playwright visual audit across 1440 and 375 viewports (0 console errors, 0px overflow).
   - Commit: `feat(vsh): rebuild conversion experience`.
 
 - [ ] **Milestone 06: Mobile + Motion + Visual Refinement**

@@ -9,12 +9,12 @@ export interface Chapter10BookingFAQCTAProps {
 }
 
 /**
- * CHAPTER 10 — CONVERSION: WHAT HAPPENS AFTER, FAQ & FINAL CTA
- * Editorial Strategic Authority
+ * CHAPTER 10 — CONVERSION: BOOKING STAGES, FAQS & DECISIVE CLOSING
+ * Editorial Strategic Authority: Two-Tone Conversion Gateway
  *
- * 1. What Happens When You Book: 4 concise stages.
- * 2. Exactly 9 Authoritative Master FAQs (collapsed accordions).
- * 3. Final Decisive CTA in Deep Navy (#0B1F33).
+ * Part A: 4 approved booking stages in clean linear typography + 9 Master FAQs.
+ * Part B: Centered Midnight Navy (#0B1F33) closing canvas with locked CTA.
+ * No cards, no workflow diagrams, no fake booking calendar.
  */
 export const Chapter10BookingFAQCTA: React.FC<Chapter10BookingFAQCTAProps> = ({ onCtaClick }) => {
   const { faqs } = siteContent;
@@ -24,41 +24,41 @@ export const Chapter10BookingFAQCTA: React.FC<Chapter10BookingFAQCTAProps> = ({ 
     setOpenFaq((prev) => (prev === id ? null : id));
   };
 
-  const bookingSteps = [
+  const bookingStages = [
     {
       num: '01',
-      title: 'Confidential Strategy Call',
-      desc: 'A 45-minute structured discussion to understand your current sales bottlenecks and team dynamics.',
+      title: 'Book Your Call',
+      desc: 'Schedule an initial sales strategy discussion for your business.',
     },
     {
       num: '02',
-      title: 'Sales Diagnostic Review',
-      desc: 'Clear analysis of pipeline leakage, follow-through discipline, and leadership alignment.',
+      title: 'Discuss Your Business',
+      desc: 'Review your sales structure, challenges, and goals.',
     },
     {
       num: '03',
-      title: 'Mutual Fit Evaluation',
-      desc: 'Confirming whether your business and sales team are prepared for structured performance coaching.',
+      title: 'Assess the Fit',
+      desc: 'Determine mutual fit and readiness for the engagement.',
     },
     {
       num: '04',
-      title: 'Engagement Roadmap',
-      desc: 'Defining the operational cadence, review rhythms, and milestone objectives for your batch.',
+      title: 'Discuss the Engagement',
+      desc: 'Outline the operating cadence, support structure, and next steps.',
     },
   ];
 
   return (
     <div id="conversion" className="overflow-hidden">
-      {/* SECTION 1: WHAT HAPPENS WHEN YOU BOOK & FAQS (Light Mist Ground) */}
+      {/* SECTION 1: BOOKING STAGES & FAQS (Light Mist Ground #F3F5F7) */}
       <section
         id="faqs"
         aria-labelledby="faq-heading"
         className="py-16 sm:py-24 lg:py-28 bg-[#F3F5F7] border-b border-gray-200/80"
       >
         <Container size="default">
-          {/* Chapter Micro-Index */}
+          {/* Chapter Micro-Index (Eyebrow 3 of 3 on page) */}
           <div className="text-xs font-mono font-semibold uppercase tracking-widest text-[#123B63] mb-4">
-            CHAPTER 10 • PROCESS TRANSPARENCY & CLARITY
+            • Process Transparency • Direct Answers
           </div>
 
           {/* Heading */}
@@ -73,26 +73,26 @@ export const Chapter10BookingFAQCTA: React.FC<Chapter10BookingFAQCTAProps> = ({ 
               </span>
             </h2>
             <p className="text-base sm:text-lg text-[#333333] font-sans leading-relaxed">
-              We maintain absolute transparency regarding our advisory engagement, selection standards, and operational process.
+              We maintain absolute transparency regarding our sales leadership engagement, selection standards, and operational process.
             </p>
           </div>
 
-          {/* 4-Step Booking Roadmap (Hairline Register) */}
+          {/* 4 Approved Booking Stages (Simple Linear Typography, No Workflow Diagrams, No Cards) */}
           <div className="mb-16 pb-12 border-b border-gray-300">
-            <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#123B63] mb-6">
+            <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#123B63] mb-8">
               WHAT HAPPENS AFTER YOU REQUEST A CALL
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {bookingSteps.map((step) => (
-                <div key={step.num} className="bg-white p-5 rounded-[4px] border border-gray-300">
-                  <span className="text-xs font-mono font-bold text-[#123B63] block mb-2">
-                    STAGE {step.num}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              {bookingStages.map((stage) => (
+                <div key={stage.num} className="space-y-2">
+                  <span className="text-xs font-mono font-bold text-[#123B63] block">
+                    STAGE {stage.num}
                   </span>
-                  <h3 className="text-base font-bold text-[#0B1F33] font-sans mb-1.5">
-                    {step.title}
+                  <h3 className="text-base font-bold text-[#0B1F33] font-sans">
+                    {stage.title}
                   </h3>
-                  <p className="text-xs text-[#6B7280] font-sans leading-relaxed">
-                    {step.desc}
+                  <p className="text-xs sm:text-sm text-[#6B7280] font-sans leading-relaxed">
+                    {stage.desc}
                   </p>
                 </div>
               ))}
@@ -158,7 +158,7 @@ export const Chapter10BookingFAQCTA: React.FC<Chapter10BookingFAQCTAProps> = ({ 
           <div className="max-w-3xl mx-auto text-center space-y-6 sm:space-y-8">
             <div className="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-widest text-[#87CEEB]">
               <span className="w-1.5 h-1.5 rounded-full bg-[#87CEEB]" />
-              <span>CONFIDENTIAL EXECUTIVE ADVISORY</span>
+              <span>SALES LEADERSHIP FOR ODISHA MSMES</span>
             </div>
 
             <h2
@@ -172,7 +172,7 @@ export const Chapter10BookingFAQCTA: React.FC<Chapter10BookingFAQCTAProps> = ({ 
             </h2>
 
             <p className="text-base sm:text-lg text-gray-300 font-sans leading-relaxed max-w-2xl mx-auto">
-              Equip your business with the experienced sales leadership, execution structure, and accountability required for sustainable commercial growth in Odisha.
+              Equip your business with the experienced sales leadership, execution structure, and accountability required for consistent sales performance in Odisha.
             </p>
 
             <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -180,7 +180,7 @@ export const Chapter10BookingFAQCTA: React.FC<Chapter10BookingFAQCTAProps> = ({ 
                 variant="primary"
                 size="lg"
                 onClick={onCtaClick}
-                className="w-full sm:w-auto bg-[#123B63] text-white hover:bg-[#1a4a7a] transition-colors font-bold px-10 py-4 rounded-[4px] shadow-none flex items-center justify-center gap-3 cursor-pointer border border-[#87CEEB]/30"
+                className="w-full sm:w-auto bg-[#123B63] text-white hover:bg-[#1a4a7a] transition-colors font-bold px-10 py-4 rounded-[4px] shadow-none flex items-center justify-center gap-3 cursor-pointer border border-[#87CEEB]/30 whitespace-nowrap"
               >
                 <span>Book Your Sales Strategy Call</span>
                 <ArrowRight className="w-4 h-4 text-[#87CEEB]" />
@@ -189,7 +189,7 @@ export const Chapter10BookingFAQCTA: React.FC<Chapter10BookingFAQCTAProps> = ({ 
 
             <div className="pt-2 flex items-center justify-center gap-2 text-xs text-gray-400 font-sans">
               <ShieldCheck className="w-4 h-4 text-[#87CEEB] shrink-0" />
-              <span>Strictly 10 MSME Companies per Batch • Confidential 1-on-1 Discussion</span>
+              <span>Strictly Limited to 10 MSME Companies • Selection Based on Mutual Fit</span>
             </div>
           </div>
         </Container>

@@ -114,7 +114,7 @@ export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
               <input
                 type="text"
                 readOnly
-                value="3 – 25+ People"
+                value="Active Sales Team"
                 className="w-full px-3.5 py-2 rounded-lg border border-gray-200 bg-paper text-xs text-muted"
               />
             </div>
