@@ -21,28 +21,27 @@ export const Chapter06Engine: React.FC<Chapter06EngineProps> = ({ onCtaClick }) 
   const [scrollRef, progress] = useScrollProgress();
   const [headerRef, headerVisible] = useScrollReveal(0.15);
 
-  // Five distinct scroll-driven phases:
-  // Phase 01: TRAINING
-  // Phase 02: TECHNOLOGY
-  // Phase 03: ACCOUNTABILITY
-  // Phase 04: CONVERGENCE
-  // Phase 05: SALES PERFORMANCE ENGINE
-  const getPhaseInfo = (p: number) => {
-    if (p < 0.36) return { phase: 1, name: 'TRAINING', label: 'PHASE 01 • TRAINING' };
-    if (p < 0.54) return { phase: 2, name: 'TECHNOLOGY', label: 'PHASE 02 • TECHNOLOGY' };
-    if (p < 0.72) return { phase: 3, name: 'ACCOUNTABILITY', label: 'PHASE 03 • ACCOUNTABILITY' };
-    if (p < 0.86) return { phase: 4, name: 'CONVERGENCE', label: 'PHASE 04 • CONVERGENCE' };
-    return { phase: 5, name: 'SALES PERFORMANCE ENGINE', label: 'PHASE 05 • SALES PERFORMANCE ENGINE' };
+  // Five distinct scroll-driven visual states:
+  // State 01: TRAINING
+  // State 02: TECHNOLOGY
+  // State 03: ACCOUNTABILITY
+  // State 04: CONVERGENCE
+  // State 05: SALES PERFORMANCE ENGINE
+  const getVisualState = (p: number) => {
+    if (p < 0.36) return 1;
+    if (p < 0.54) return 2;
+    if (p < 0.72) return 3;
+    if (p < 0.86) return 4;
+    return 5;
   };
 
-  const phaseInfo = getPhaseInfo(progress);
-  const currentPhase = phaseInfo.phase;
-  const isConverged = currentPhase >= 4;
+  const currentVisualState = getVisualState(progress);
+  const isConverged = currentVisualState >= 4;
 
   // Optical prism transforms: scale increases, position subtly tracks, light bloom intensifies
   const artworkScale = (1.04 + progress * 0.10).toFixed(3);
   const artworkY = ((progress - 0.5) * -26).toFixed(1);
-  const lightBloomOpacity = isConverged ? 0.75 : 0.35 + currentPhase * 0.08;
+  const lightBloomOpacity = isConverged ? 0.75 : 0.35 + currentVisualState * 0.08;
 
   return (
     <section
@@ -86,13 +85,8 @@ export const Chapter06Engine: React.FC<Chapter06EngineProps> = ({ onCtaClick }) 
         {/* Content overlay: Pure typography directly on the visual field */}
         <div className="relative z-10 flex flex-col justify-end min-h-[720px] lg:min-h-[840px] px-5 sm:px-8 pb-10 sm:pb-14 lg:pb-16 pt-16 sm:pt-20">
           <Container size="default">
-            {/* Phase Tag + Section Heading */}
+            {/* Section Heading — Pure Typography, No UI Badges or Phase Indicators */}
             <div ref={headerRef} className="mb-6 sm:mb-10 max-w-2xl">
-              {/* Dynamic Scroll Phase Indicator */}
-              <div className="text-xs font-mono font-bold uppercase tracking-widest text-[#87CEEB] mb-2.5 transition-all duration-300">
-                {phaseInfo.label}
-              </div>
-
               <div className={revealStyles.clipMaskContainer}>
                 <h2
                   id="engine-heading"
@@ -119,8 +113,8 @@ export const Chapter06Engine: React.FC<Chapter06EngineProps> = ({ onCtaClick }) 
             {/* Three Approved Pillars: TRAINING, TECHNOLOGY, ACCOUNTABILITY (Fixed Grid, Pure Typography) */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-10 mb-8 border-t border-white/20 pt-5">
               {pillars.map((pillar, idx) => {
-                const pillarPhase = idx + 1;
-                const isPillarActive = currentPhase === pillarPhase || isConverged;
+                const pillarNumber = idx + 1;
+                const isPillarActive = currentVisualState === pillarNumber || isConverged;
                 return (
                   <div key={pillar.id} className="space-y-1.5 transition-all duration-500">
                     <div className="flex items-baseline gap-2">
