@@ -13,6 +13,11 @@ import benefitDemoTeam from './benefit_demo_team.jpg';
 import benefitDemoLeadership from './benefit_demo_leadership.jpg';
 import benefitDemoAccountability from './benefit_demo_accountability.jpg';
 import benefitDemoConsulting from './benefit_demo_consulting.jpg';
+import frameworkDemoRoyal from './framework_demo_royal_selling.jpg';
+import frameworkDemoNegotiator from './framework_demo_strategic_negotiator.jpg';
+import frameworkDemoSense from './framework_demo_sense_selling.jpg';
+import frameworkDemoConsulting from './framework_demo_performance_consulting.jpg';
+import frameworkDemoLcr from './framework_demo_lifetime_client.jpg';
 
 export const vshImages = {
   hero: heroExecutiveDawn,
@@ -34,6 +39,13 @@ export const vshImages = {
     leadership: benefitDemoLeadership,
     accountability: benefitDemoAccountability,
     consulting: benefitDemoConsulting,
+  },
+  frameworks: {
+    royalSelling: frameworkDemoRoyal,
+    strategicNegotiator: frameworkDemoNegotiator,
+    senseSelling: frameworkDemoSense,
+    performanceConsulting: frameworkDemoConsulting,
+    lifetimeClient: frameworkDemoLcr,
   },
 };
 
