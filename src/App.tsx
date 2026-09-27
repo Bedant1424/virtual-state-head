@@ -78,7 +78,7 @@ export const App: React.FC = () => {
         {/* Editorial Footer */}
         <Footer />
 
-        {/* Confidential Strategy Discussion Booking Modal */}
+        {/* Strategy Discussion Booking Modal */}
         <DemoModal isOpen={isDemoModalOpen} onClose={handleCloseDemoModal} />
       </div>
     </LazyMotion>

@@ -23,14 +23,14 @@ export const Chapter01Hero: React.FC<Chapter01HeroProps> = ({ onCtaClick }) => {
       className="relative pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20 lg:pb-24 bg-white border-b border-gray-200/80 overflow-hidden"
     >
       <Container size="default">
-        {/* Editorial 2-Column Split: Text Left (42%), Large Photo Right (58%) */}
+        {/* Editorial 2-Column Split: Text Left (5 cols), Large Photo Right (7 cols) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           {/* Left Column (5 cols on lg): Editorial Typography & CTA */}
           <div className="lg:col-span-5 space-y-6 sm:space-y-8 z-10">
-            {/* Chapter Micro-Index */}
+            {/* Chapter Micro-Index (Eyebrow 1 of 3 on page) */}
             <div className="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-widest text-[#123B63]">
               <span className="w-1.5 h-1.5 rounded-full bg-[#123B63]" />
-              <span>Executive Sales Leadership • Odisha MSMEs</span>
+              <span>• Sales Leadership • Odisha MSMEs</span>
             </div>
 
             {/* Display Headline */}
@@ -55,7 +55,7 @@ export const Chapter01Hero: React.FC<Chapter01HeroProps> = ({ onCtaClick }) => {
                 variant="primary"
                 size="lg"
                 onClick={onCtaClick}
-                className="w-full sm:w-auto bg-[#123B63] text-white hover:bg-[#0B1F33] transition-colors font-bold px-8 py-4 rounded-[4px] shadow-none flex items-center justify-center gap-3 cursor-pointer"
+                className="w-full sm:w-auto bg-[#123B63] text-white hover:bg-[#0B1F33] transition-colors font-bold px-8 py-4 rounded-[4px] shadow-none flex items-center justify-center gap-3 cursor-pointer whitespace-nowrap"
               >
                 <span>Book Your Sales Strategy Call</span>
                 <ArrowRight className="w-4 h-4 text-[#87CEEB]" />
@@ -81,6 +81,7 @@ export const Chapter01Hero: React.FC<Chapter01HeroProps> = ({ onCtaClick }) => {
                 height={675}
                 className="w-full h-full object-cover object-center filter saturate-[0.92] contrast-[1.05]"
                 loading="eager"
+                fetchPriority="high"
               />
               {/* Subtle Film Vignette Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B1F33]/25 via-transparent to-transparent pointer-events-none" />
