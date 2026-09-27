@@ -18,6 +18,7 @@ import frameworkDemoNegotiator from './framework_demo_strategic_negotiator.jpg';
 import frameworkDemoSense from './framework_demo_sense_selling.jpg';
 import frameworkDemoConsulting from './framework_demo_performance_consulting.jpg';
 import frameworkDemoLcr from './framework_demo_lifetime_client.jpg';
+import whyVshDemoLeadership from './why_vsh_demo_leadership.jpg';
 
 export const vshImages = {
   hero: heroExecutiveDawn,
@@ -26,6 +27,7 @@ export const vshImages = {
   engine: engineOpticalPrism,
   howItWorks: howItWorksField,
   audience: audienceIndustrialLeader,
+  whyVsh: whyVshDemoLeadership,
   performanceGap: performanceGapTension,
   gap: performanceGapTension,
   coaches: {
