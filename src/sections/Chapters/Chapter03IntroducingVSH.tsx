@@ -10,19 +10,43 @@ export interface Chapter03IntroducingVSHProps {
 
 /**
  * CHAPTER 03 — INTRODUCING VIRTUAL STATE HEAD
- * Editorial Strategic Authority
+ * Editorial Strategic Authority: Human / Candid Advisory & Asymmetrical Typography
  *
- * Image-led (candid advisory photograph) + large proposition + 6 support areas as an editorial register.
- * No 6-card grid. No architecture diagram.
+ * Image-led (candid advisory photograph) + authoritative H2 statement + 6 support areas in sparse typography.
+ * Avoids rigid grids, conventional 3-column cards, and SaaS service matrices.
  */
 export const Chapter03IntroducingVSH: React.FC<Chapter03IntroducingVSHProps> = ({ onCtaClick }) => {
-  const supportAreas = [
-    { num: '01', title: 'Sales strategy and direction', focus: 'Target market clarity, commercial priorities, and sales positioning.' },
-    { num: '02', title: 'Sales team development', focus: 'Capability building, customer communication, and objection handling.' },
-    { num: '03', title: 'Leadership and management support', focus: 'Guiding business owners and sales managers in daily team leadership.' },
-    { num: '04', title: 'Performance reviews and accountability', focus: 'Structured weekly review cadence, commitments, and pipeline rigor.' },
-    { num: '05', title: 'Sales execution and follow-through', focus: 'Systematic client follow-up, deal velocity, and disciplined closing routines.' },
-    { num: '06', title: 'Strategic discussions with business owners', focus: 'Ongoing executive counsel on margin protection, team structure, and growth.' },
+  const capabilityAreas = [
+    {
+      num: '01',
+      title: 'Sales Strategy',
+      description: 'Bring greater clarity to priorities, direction, and commercial actions required to support business objectives.',
+    },
+    {
+      num: '02',
+      title: 'Team Development',
+      description: 'Develop sales capability, communication, customer engagement, and execution discipline across the team.',
+    },
+    {
+      num: '03',
+      title: 'Leadership Support',
+      description: 'Help business owners and sales leaders strengthen how they guide, manage, and support daily sales operations.',
+    },
+    {
+      num: '04',
+      title: 'Accountability',
+      description: 'Establish a more structured approach to reviewing activities, commitments, progress, and performance.',
+    },
+    {
+      num: '05',
+      title: 'Sales Execution',
+      description: 'Support practical implementation of agreed sales actions, buyer discussions, and disciplined follow-through routines.',
+    },
+    {
+      num: '06',
+      title: 'Strategic Discussions',
+      description: 'Work with business owners and leadership teams on important commercial decisions, priorities, and growth.',
+    },
   ];
 
   return (
@@ -32,19 +56,14 @@ export const Chapter03IntroducingVSH: React.FC<Chapter03IntroducingVSHProps> = (
       className="py-16 sm:py-24 lg:py-28 bg-white border-b border-gray-200/80 overflow-hidden"
     >
       <Container size="default">
-        {/* Chapter Index */}
-        <div className="text-xs font-mono font-semibold uppercase tracking-widest text-[#123B63] mb-4">
-          CHAPTER 03 • THE LEADERSHIP SOLUTION
-        </div>
-
-        {/* 2-Column Split: Image Left (55%), Editorial Content Right (45%) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center mb-14">
-          {/* Left Column (7 cols): Candid Advisory Photograph */}
+        {/* Asymmetric Editorial Header: Photo Left (7 cols), Primary Statement Right (5 cols) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center mb-16 sm:mb-20">
+          {/* Left Column (7 cols): Candid Documentary Advisory Photograph */}
           <div className="lg:col-span-7">
             <div className="relative aspect-[16/9] w-full rounded-[4px] overflow-hidden border border-gray-200 bg-gray-50">
               <img
                 src={vshImages.introducingVsh}
-                alt="Two senior Indian business leaders in deep strategic advisory discussion"
+                alt="Two senior Indian business leaders in deep strategic advisory discussion over operational plans"
                 width={1200}
                 height={675}
                 className="w-full h-full object-cover object-center filter saturate-[0.95]"
@@ -52,7 +71,7 @@ export const Chapter03IntroducingVSH: React.FC<Chapter03IntroducingVSHProps> = (
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B1F33]/30 via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-3 left-3 px-3 py-1.5 rounded-[2px] bg-[#0B1F33]/80 backdrop-blur-xs text-[11px] font-mono text-white/90">
-                EXECUTIVE PARTNERSHIP MODEL
+                SALES LEADERSHIP SUPPORT
               </div>
             </div>
           </div>
@@ -70,7 +89,7 @@ export const Chapter03IntroducingVSH: React.FC<Chapter03IntroducingVSHProps> = (
             </h2>
 
             <p className="text-base sm:text-lg text-[#333333] font-sans leading-relaxed">
-              Virtual State Head provides senior executive direction, active sales coaching, and weekly performance governance for businesses that already have sales activity but need structured management to eliminate variance.
+              Virtual State Head provides experienced sales leadership, strategic direction, team development, performance consulting, and accountability support for MSMEs in Odisha that already have sales activity but need stronger direction, execution, and performance discipline.
             </p>
 
             <div className="pt-2">
@@ -78,7 +97,7 @@ export const Chapter03IntroducingVSH: React.FC<Chapter03IntroducingVSHProps> = (
                 variant="primary"
                 size="lg"
                 onClick={onCtaClick}
-                className="w-full sm:w-auto bg-[#123B63] text-white hover:bg-[#0B1F33] transition-colors font-bold px-8 py-4 rounded-[4px] shadow-none flex items-center justify-center gap-3 cursor-pointer"
+                className="w-full sm:w-auto bg-[#123B63] text-white hover:bg-[#0B1F33] transition-colors font-bold px-8 py-4 rounded-[4px] shadow-none flex items-center justify-center gap-3 cursor-pointer whitespace-nowrap"
               >
                 <span>Book Your Sales Strategy Call</span>
                 <ArrowRight className="w-4 h-4 text-[#87CEEB]" />
@@ -87,25 +106,88 @@ export const Chapter03IntroducingVSH: React.FC<Chapter03IntroducingVSHProps> = (
           </div>
         </div>
 
-        {/* Six Core Support Areas: Compact Typographic Register (Hairline Rules, No 6-Card Grid) */}
-        <div className="pt-8 border-t border-gray-200">
-          <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#6B7280] mb-6">
-            SIX AREAS OF ACTIVE CONSULTING INTERVENTION
+        {/* Six Capability Focus Areas: Sparse Typography with Asymmetrical Staggered Placement */}
+        <div className="pt-10 border-t border-gray-200">
+          <div className="text-xs font-mono font-bold uppercase tracking-widest text-[#123B63] mb-10">
+            AREAS OF ACTIVE CONSULTING INTERVENTION
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6">
-            {supportAreas.map((area) => (
-              <div key={area.num} className="border-t border-gray-200 pt-3">
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="text-xs font-mono font-bold text-[#123B63]">{area.num}</span>
-                  <h3 className="text-sm sm:text-base font-bold text-[#0B1F33] font-sans leading-snug">
-                    {area.title}
-                  </h3>
-                </div>
-                <p className="text-xs text-[#6B7280] font-sans leading-relaxed pl-5">
-                  {area.focus}
-                </p>
+
+          {/* Asymmetric, Airy Flow (Not a Rigid 3-Column Boxed Grid) */}
+          <div className="space-y-8 lg:space-y-0 lg:grid lg:grid-cols-12 lg:gap-x-12 lg:gap-y-12">
+            {/* Area 01 & 02: First Row Asymmetry */}
+            <div className="lg:col-span-5 space-y-2 border-l-2 border-[#123B63] pl-4">
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-mono font-bold text-[#123B63]">{capabilityAreas[0].num}</span>
+                <h3 className="text-base font-bold text-[#0B1F33] font-sans">
+                  {capabilityAreas[0].title}
+                </h3>
               </div>
-            ))}
+              <p className="text-xs sm:text-sm text-[#6B7280] font-sans leading-relaxed">
+                {capabilityAreas[0].description}
+              </p>
+            </div>
+
+            <div className="lg:col-span-6 lg:col-start-7 space-y-2 border-l-2 border-gray-300 pl-4">
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-mono font-bold text-[#123B63]">{capabilityAreas[1].num}</span>
+                <h3 className="text-base font-bold text-[#0B1F33] font-sans">
+                  {capabilityAreas[1].title}
+                </h3>
+              </div>
+              <p className="text-xs sm:text-sm text-[#6B7280] font-sans leading-relaxed">
+                {capabilityAreas[1].description}
+              </p>
+            </div>
+
+            {/* Area 03 & 04: Second Row Asymmetry with Staggered Width */}
+            <div className="lg:col-span-6 space-y-2 border-l-2 border-gray-300 pl-4">
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-mono font-bold text-[#123B63]">{capabilityAreas[2].num}</span>
+                <h3 className="text-base font-bold text-[#0B1F33] font-sans">
+                  {capabilityAreas[2].title}
+                </h3>
+              </div>
+              <p className="text-xs sm:text-sm text-[#6B7280] font-sans leading-relaxed">
+                {capabilityAreas[2].description}
+              </p>
+            </div>
+
+            <div className="lg:col-span-5 lg:col-start-8 space-y-2 border-l-2 border-[#123B63] pl-4">
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-mono font-bold text-[#123B63]">{capabilityAreas[3].num}</span>
+                <h3 className="text-base font-bold text-[#0B1F33] font-sans">
+                  {capabilityAreas[3].title}
+                </h3>
+              </div>
+              <p className="text-xs sm:text-sm text-[#6B7280] font-sans leading-relaxed">
+                {capabilityAreas[3].description}
+              </p>
+            </div>
+
+            {/* Area 05 & 06: Third Row Asymmetry */}
+            <div className="lg:col-span-5 space-y-2 border-l-2 border-gray-300 pl-4">
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-mono font-bold text-[#123B63]">{capabilityAreas[4].num}</span>
+                <h3 className="text-base font-bold text-[#0B1F33] font-sans">
+                  {capabilityAreas[4].title}
+                </h3>
+              </div>
+              <p className="text-xs sm:text-sm text-[#6B7280] font-sans leading-relaxed">
+                {capabilityAreas[4].description}
+              </p>
+            </div>
+
+            <div className="lg:col-span-6 lg:col-start-7 space-y-2 border-l-2 border-[#123B63] pl-4">
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-mono font-bold text-[#123B63]">{capabilityAreas[5].num}</span>
+                <h3 className="text-base font-bold text-[#0B1F33] font-sans">
+                  {capabilityAreas[5].title}
+                </h3>
+              </div>
+              <p className="text-xs sm:text-sm text-[#6B7280] font-sans leading-relaxed">
+                {capabilityAreas[5].description}
+              </p>
+            </div>
           </div>
         </div>
       </Container>

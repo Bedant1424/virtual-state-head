@@ -4,13 +4,13 @@
 `feature/vsh-uiux-redesign` (Created from `feature/vsh-premium-rebuild`)
 
 ## Status
-- **Current Milestone:** Milestone 02 — Introducing VSH + Coaches
-- **Current Task:** Rebuild Chapter 03 (`Chapter03IntroducingVSH.tsx`) and Chapter 04 (`Chapter04Coaches.tsx`)
-- **Files Changed:** `src/App.tsx`, `src/sections/Chapters/Chapter01Hero.tsx`, `src/sections/Chapters/Chapter02Problem.tsx`, `task_plan.md`
-- **Validation Result:** Milestone 01 passed TypeScript (`tsc --noEmit`), Vite build, Playwright (1440px and 375px: 0 console errors, 0 warnings, 0px horizontal overflow).
-- **Visual Review Result:** Hero and Problem sections validated.
+- **Current Milestone:** Milestone 03 — What You Get + Sales Performance Engine
+- **Current Task:** Rebuild Chapter 05 (`Chapter05WhatYouGet.tsx`) and Chapter 06 (`Chapter06Engine.tsx`)
+- **Files Changed:** `src/sections/Chapters/Chapter03IntroducingVSH.tsx`, `src/sections/Chapters/Chapter04Coaches.tsx`, `task_plan.md`
+- **Validation Result:** Milestone 02 passed TypeScript (`tsc --noEmit`), Vite build, Playwright (1440px and 375px: 0 console errors, 0 warnings, 0px horizontal overflow).
+- **Visual Review Result:** Introducing VSH (sparse non-grid layout) and Coaches (Midnight Navy authority gallery with verified bios) validated.
 - **Known Issues:** None
-- **Next Task:** Rebuild `Chapter03IntroducingVSH.tsx` (candid advisory photo, H2 headline, locked CTA, six capability focus areas in sparse, unboxed, asymmetrical placement with generous whitespace; no rigid 3-column grid) and `Chapter04Coaches.tsx` (Midnight Navy ground, Royal Bal dominant frame with verified 30+ yrs bio, Saroj Kumar Panda & Sudeep Mohanty paired frames with verified bios, architectural monogram frames `RB`, `SP`, `SM`).
+- **Next Task:** Rebuild `Chapter05WhatYouGet.tsx` (pure typography-first, 5 horizontal architectural bands, generous whitespace, zero cards) and `Chapter06Engine.tsx` (cinematic optical prism artwork, 3 strictly named elements `TRAINING`, `TECHNOLOGY`, `ACCOUNTABILITY`, climax formula lockup, locked CTA, zero UI controls/cards).
 
 ---
 
@@ -23,10 +23,10 @@
   - Playwright visual audit across 1440 and 375 viewports (0 console errors, 0px overflow).
   - Commit: `feat(vsh): rebuild hero and problem experience`.
 
-- [ ] **Milestone 02: Introducing VSH + Coaches**
-  - Rebuild `Chapter03IntroducingVSH.tsx`: Candid advisory photo (`introducing_vsh_advisory.jpg`), H2 headline, locked CTA, six capability focus areas in sparse, unboxed, asymmetrical placement with generous whitespace (no rigid 3-column grid).
-  - Rebuild `Chapter04Coaches.tsx`: High-gravity Midnight Navy (`#0B1F33`), Royal Bal dominant frame with verified 30+ yrs bio, Saroj Kumar Panda & Sudeep Mohanty paired frames with verified bios, architectural monogram frames (`RB`, `SP`, `SM`).
-  - Playwright visual audit across 1440, 1280, 390, 375 viewports.
+- [x] **Milestone 02: Introducing VSH + Coaches**
+  - Rebuilt `Chapter03IntroducingVSH.tsx`: Candid advisory photo (`introducing_vsh_advisory.jpg`), H2 headline, locked CTA, six capability focus areas in sparse, unboxed, asymmetrical placement with generous whitespace (no rigid 3-column grid).
+  - Rebuilt `Chapter04Coaches.tsx`: High-gravity Midnight Navy (`#0B1F33`), Royal Bal dominant frame with verified 30+ yrs bio, Saroj Kumar Panda & Sudeep Mohanty paired frames with verified bios, architectural monogram frames (`RB`, `SP`, `SM`).
+  - Playwright visual audit across 1440 and 375 viewports (0 console errors, 0px overflow).
   - Commit: `feat(vsh): rebuild leadership and coaching experience`.
 
 - [ ] **Milestone 03: What You Get + Sales Performance Engine**
