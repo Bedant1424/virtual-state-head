@@ -89,6 +89,38 @@ export function useScrollProgress(): [RefObject<HTMLDivElement | null>, number] 
   return [ref, progress];
 }
 
+/** Hook: subtle scroll-linked image crop & translation (Level 3 photography motion) */
+export function useImageParallax(
+  maxScale = 1.04,
+  maxTranslateY = 20
+): [RefObject<HTMLDivElement | null>, { transform: string; willChange: string }] {
+  const [ref, progress] = useScrollProgress();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', handleResize, { passive: true });
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // On mobile, keep transform lightweight
+  if (isMobile) {
+    return [ref, { transform: 'scale(1)', willChange: 'auto' }];
+  }
+
+  const scale = 1.0 + progress * (maxScale - 1.0);
+  const translateY = (progress - 0.5) * -maxTranslateY;
+
+  return [
+    ref,
+    {
+      transform: `scale(${scale.toFixed(3)}) translateY(${translateY.toFixed(1)}px)`,
+      willChange: 'transform',
+    },
+  ];
+}
+
 /** Stagger delay calculator: crisp, tight micro-delays (30–50ms) */
 export function staggerDelay(index: number, base = 40): string {
   return `${index * base}ms`;
@@ -102,4 +134,8 @@ export const revealStyles = {
   imageHidden: 'opacity-0 scale-[1.04]',
   imageVisible: 'opacity-100 scale-100',
   imageTransition: 'transition-all duration-700 ease-out',
+  clipMaskContainer: 'overflow-hidden',
+  clipMaskHidden: 'translate-y-full opacity-0',
+  clipMaskVisible: 'translate-y-0 opacity-100',
+  clipMaskTransition: 'transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]',
 } as const;

@@ -45,17 +45,21 @@ export const Chapter10BookingFAQCTA: React.FC<Chapter10BookingFAQCTAProps> = ({ 
             • Process Transparency • Direct Answers
           </div>
 
-          {/* Section Heading */}
+          {/* Section Heading with Mask Reveal */}
           <div className="max-w-3xl mb-6 sm:mb-8">
-            <h2
-              id="faq-heading"
-              className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0B1F33] font-sans tracking-tight leading-tight mb-2"
-            >
-              What to Expect.{' '}
-              <span className="text-[#123B63]">
-                Straightforward Answers.
-              </span>
-            </h2>
+            <div className={revealStyles.clipMaskContainer}>
+              <h2
+                id="faq-heading"
+                className={`text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0B1F33] font-sans tracking-tight leading-tight mb-2 ${
+                  revealStyles.clipMaskTransition
+                } ${stagesVisible ? revealStyles.clipMaskVisible : revealStyles.clipMaskHidden}`}
+              >
+                What to Expect.{' '}
+                <span className="text-[#123B63]">
+                  Straightforward Answers.
+                </span>
+              </h2>
+            </div>
           </div>
 
           {/* 4 Booking Stages — compact row */}
@@ -142,22 +146,31 @@ export const Chapter10BookingFAQCTA: React.FC<Chapter10BookingFAQCTAProps> = ({ 
         className="py-12 sm:py-16 lg:py-20 bg-[#0B1F33] text-white relative overflow-hidden"
       >
         <Container size="default">
-          <div className={`max-w-3xl mx-auto text-center space-y-4 sm:space-y-5 ${revealStyles.transition} ${ctaVisible ? revealStyles.visible : revealStyles.hidden}`}>
-            <div className="text-xs font-mono font-semibold uppercase tracking-widest text-[#87CEEB]">
+          <div className="max-w-3xl mx-auto text-center space-y-4 sm:space-y-5">
+            <div className={`text-xs font-mono font-semibold uppercase tracking-widest text-[#87CEEB] ${revealStyles.transition} ${ctaVisible ? revealStyles.visible : revealStyles.hidden}`}>
               • SALES LEADERSHIP FOR ODISHA MSMES •
             </div>
 
-            <h2
-              id="final-cta-heading"
-              className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white font-sans tracking-tight leading-[1.08]"
-            >
-              Stop Leaving Sales Performance{' '}
-              <span className="text-[#87CEEB] block mt-1">
-                to Chance.
-              </span>
-            </h2>
+            <div className={revealStyles.clipMaskContainer}>
+              <h2
+                id="final-cta-heading"
+                className={`text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white font-sans tracking-tight leading-[1.08] ${
+                  revealStyles.clipMaskTransition
+                } ${ctaVisible ? revealStyles.clipMaskVisible : revealStyles.clipMaskHidden}`}
+              >
+                Stop Leaving Sales Performance{' '}
+                <span className="text-[#87CEEB] block mt-1">
+                  to Chance.
+                </span>
+              </h2>
+            </div>
 
-            <p className="text-sm sm:text-base text-gray-300 font-sans leading-relaxed max-w-2xl mx-auto">
+            <p
+              className={`text-sm sm:text-base text-gray-300 font-sans leading-relaxed max-w-2xl mx-auto ${revealStyles.transition} ${
+                ctaVisible ? revealStyles.visible : revealStyles.hidden
+              }`}
+              style={{ transitionDelay: '100ms' }}
+            >
               Equip your business with the experienced sales leadership, execution structure, and accountability required for consistent sales performance in Odisha.
             </p>
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from '@/components/layout/Container';
 import { vshImages } from '@/assets/images';
-import { useScrollReveal, staggerDelay, revealStyles } from '@/hooks/useMotion';
+import { useScrollReveal, useImageParallax, staggerDelay, revealStyles } from '@/hooks/useMotion';
 
 /**
  * CHAPTER 02 — THE PROBLEM
@@ -11,6 +11,7 @@ import { useScrollReveal, staggerDelay, revealStyles } from '@/hooks/useMotion';
 export const Chapter02Problem: React.FC = () => {
   const [sectionRef, isVisible] = useScrollReveal(0.1);
   const [gapsRef, gapsVisible] = useScrollReveal(0.15);
+  const [imageContainerRef, imageParallax] = useImageParallax(1.04, 18);
 
   const operationalGaps = [
     { num: '01', title: 'Sales Without Clear Direction' },
@@ -29,17 +30,24 @@ export const Chapter02Problem: React.FC = () => {
       <Container size="default">
         {/* Compact 2-column: Large image left, headline + gaps right */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
-          {/* Left: Dominant atmospheric image with mask reveal */}
+          {/* Left: Dominant atmospheric image with scroll parallax */}
           <div className="lg:col-span-6" ref={sectionRef}>
-            <div className={`relative aspect-[4/3] w-full rounded-[2px] overflow-hidden ${revealStyles.imageTransition} ${isVisible ? 'clip-reveal-done' : 'clip-reveal-start'}`}>
-              <img
-                src={vshImages.problem}
-                alt="Executive boardroom table at dusk with solitary lamp illuminating operational reports"
-                width={1200}
-                height={900}
-                className={`w-full h-full object-cover object-center filter saturate-[0.9] contrast-[1.05] ${revealStyles.imageTransition} ${isVisible ? revealStyles.imageVisible : revealStyles.imageHidden}`}
-                loading="lazy"
-              />
+            <div
+              ref={imageContainerRef}
+              className={`relative aspect-[4/3] w-full rounded-[2px] overflow-hidden ${revealStyles.imageTransition} ${
+                isVisible ? revealStyles.imageVisible : revealStyles.imageHidden
+              }`}
+            >
+              <div className="w-full h-full" style={imageParallax}>
+                <img
+                  src={vshImages.problem}
+                  alt="Executive boardroom table at dusk with solitary lamp illuminating operational reports"
+                  width={1200}
+                  height={900}
+                  className="w-full h-full object-cover object-center filter saturate-[0.9] contrast-[1.05]"
+                  loading="lazy"
+                />
+              </div>
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B1F33]/40 via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-3 left-3 text-[10px] font-mono text-white/80 uppercase tracking-widest">
                 THE OPERATIONAL BOTTLENECK • ODISHA
@@ -49,17 +57,26 @@ export const Chapter02Problem: React.FC = () => {
 
           {/* Right: Headline + 5 scannable gaps */}
           <div className="lg:col-span-6 space-y-4 sm:space-y-5">
-            <div className={`${revealStyles.transition} ${isVisible ? revealStyles.visible : revealStyles.hidden}`}>
-              <h2
-                id="problem-heading"
-                className="text-3xl sm:text-4xl lg:text-[2.65rem] font-extrabold text-[#0B1F33] font-sans tracking-tight leading-tight mb-2.5"
+            <div>
+              <div className={revealStyles.clipMaskContainer}>
+                <h2
+                  id="problem-heading"
+                  className={`text-3xl sm:text-4xl lg:text-[2.65rem] font-extrabold text-[#0B1F33] font-sans tracking-tight leading-tight mb-2.5 ${
+                    revealStyles.clipMaskTransition
+                  } ${isVisible ? revealStyles.clipMaskVisible : revealStyles.clipMaskHidden}`}
+                >
+                  More Salespeople. More Targets.{' '}
+                  <span className="text-[#123B63] block sm:inline">
+                    Still Not Enough Sales?
+                  </span>
+                </h2>
+              </div>
+              <p
+                className={`text-sm sm:text-base text-[#333333] font-sans leading-relaxed ${revealStyles.transition} ${
+                  isVisible ? revealStyles.visible : revealStyles.hidden
+                }`}
+                style={{ transitionDelay: '100ms' }}
               >
-                More Salespeople. More Targets.{' '}
-                <span className="text-[#123B63] block sm:inline">
-                  Still Not Enough Sales?
-                </span>
-              </h2>
-              <p className="text-sm sm:text-base text-[#333333] font-sans leading-relaxed">
                 Most sales difficulties in growing MSMEs stem from a lack of sales direction, execution discipline, and regular accountability—not a lack of salespeople.
               </p>
             </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Container } from '@/components/layout/Container';
 import { vshImages } from '@/assets/images';
 import { siteContent } from '@/data/siteContent';
-import { useScrollReveal, staggerDelay, revealStyles } from '@/hooks/useMotion';
+import { useScrollReveal, useImageParallax, staggerDelay, revealStyles } from '@/hooks/useMotion';
 
 /**
  * CHAPTER 07 — FRAMEWORKS & ENGAGEMENT STAGES
@@ -14,29 +14,34 @@ export const Chapter07FrameworksProcess: React.FC = () => {
   const { frameworks, processStages } = siteContent;
   const [sectionRef, isVisible] = useScrollReveal(0.1);
   const [stagesRef, stagesVisible] = useScrollReveal(0.2);
+  const [imageContainerRef, imageParallax] = useImageParallax(1.04, 20);
 
   return (
     <section
       id="how-it-works"
       ref={sectionRef}
       aria-labelledby="frameworks-process-heading"
-      className="py-8 sm:py-12 lg:py-14 bg-white border-b border-gray-200/80 overflow-hidden"
+      className="py-8 sm:py-12 lg:py-14 bg-white border-b border-gray-200/80 overflow-visible"
     >
       <Container size="default">
-        {/* Section Headline */}
-        <div className={`max-w-3xl mb-6 sm:mb-8 ${revealStyles.transition} ${isVisible ? revealStyles.visible : revealStyles.hidden}`}>
-          <h2
-            id="frameworks-process-heading"
-            className="text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-[#0B1F33] font-sans tracking-tight leading-tight mb-2"
-          >
-            Structured Frameworks.{' '}
-            <span className="text-[#123B63]">
-              Disciplined Execution.
-            </span>
-          </h2>
+        {/* Section Headline with Mask Reveal */}
+        <div className="max-w-3xl mb-6 sm:mb-8">
+          <div className={revealStyles.clipMaskContainer}>
+            <h2
+              id="frameworks-process-heading"
+              className={`text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-[#0B1F33] font-sans tracking-tight leading-tight mb-2 ${
+                revealStyles.clipMaskTransition
+              } ${isVisible ? revealStyles.clipMaskVisible : revealStyles.clipMaskHidden}`}
+            >
+              Structured Frameworks.{' '}
+              <span className="text-[#123B63]">
+                Disciplined Execution.
+              </span>
+            </h2>
+          </div>
         </div>
 
-        {/* 2-Column: Frameworks left, large image right */}
+        {/* 2-Column: Frameworks left, large image right with Parallax & Overlap */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center mb-6 sm:mb-8">
           {/* Frameworks — typography with clean hairlines */}
           <div className="lg:col-span-5 space-y-0 border-t border-gray-300">
@@ -56,17 +61,24 @@ export const Chapter07FrameworksProcess: React.FC = () => {
             ))}
           </div>
 
-          {/* Large field image — 3:2 aspect */}
+          {/* Large field image — 3:2 aspect with scroll-linked parallax */}
           <div className="lg:col-span-7">
-            <div className={`relative aspect-[3/2] w-full rounded-[2px] overflow-hidden ${revealStyles.imageTransition} ${isVisible ? revealStyles.imageVisible : revealStyles.imageHidden}`}>
-              <img
-                src={vshImages.howItWorks}
-                alt="Frontline sales field review and strategic execution in Odisha"
-                width={1200}
-                height={800}
-                className="w-full h-full object-cover object-center filter saturate-[0.95]"
-                loading="lazy"
-              />
+            <div
+              ref={imageContainerRef}
+              className={`relative aspect-[3/2] w-full rounded-[2px] overflow-hidden ${revealStyles.imageTransition} ${
+                isVisible ? revealStyles.imageVisible : revealStyles.imageHidden
+              }`}
+            >
+              <div className="w-full h-full" style={imageParallax}>
+                <img
+                  src={vshImages.howItWorks}
+                  alt="Frontline sales field review and strategic execution in Odisha"
+                  width={1200}
+                  height={800}
+                  className="w-full h-full object-cover object-center filter saturate-[0.95]"
+                  loading="lazy"
+                />
+              </div>
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B1F33]/30 via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-3 left-3 text-[10px] font-mono text-white/80 uppercase tracking-widest">
                 FRONTLINE FIELD REVIEW • ODISHA

@@ -21,20 +21,29 @@ export const Chapter04Coaches: React.FC = () => {
       className="py-8 sm:py-12 lg:py-14 bg-[#0B1F33] text-white border-b border-white/10 overflow-hidden relative"
     >
       <Container size="default">
-        {/* Eyebrow + Section Headline */}
-        <div className={`mb-6 sm:mb-8 ${revealStyles.transition} ${isVisible ? revealStyles.visible : revealStyles.hidden}`}>
-          <div className="text-xs font-mono font-semibold uppercase tracking-widest text-[#87CEEB] mb-2.5">
+        {/* Eyebrow + Section Headline with Mask Reveal */}
+        <div className="mb-6 sm:mb-8">
+          <div className={`text-xs font-mono font-semibold uppercase tracking-widest text-[#87CEEB] mb-2.5 ${revealStyles.transition} ${isVisible ? revealStyles.visible : revealStyles.hidden}`}>
             • Senior Sales Leadership • Royal Way Academy
           </div>
           <div className="max-w-3xl">
-            <h2
-              id="coaches-heading"
-              className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-sans tracking-tight leading-tight mb-2.5"
+            <div className={revealStyles.clipMaskContainer}>
+              <h2
+                id="coaches-heading"
+                className={`text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-sans tracking-tight leading-tight mb-2.5 ${
+                  revealStyles.clipMaskTransition
+                } ${isVisible ? revealStyles.clipMaskVisible : revealStyles.clipMaskHidden}`}
+              >
+                30+ Years of Frontline{' '}
+                <span className="text-[#87CEEB]">Sales Experience.</span>
+              </h2>
+            </div>
+            <p
+              className={`text-sm sm:text-base text-gray-300 font-sans leading-relaxed ${revealStyles.transition} ${
+                isVisible ? revealStyles.visible : revealStyles.hidden
+              }`}
+              style={{ transitionDelay: '100ms' }}
             >
-              30+ Years of Frontline{' '}
-              <span className="text-[#87CEEB]">Sales Experience.</span>
-            </h2>
-            <p className="text-sm sm:text-base text-gray-300 font-sans leading-relaxed">
               Sales leadership, frontline coaching, and team development delivered by seasoned consultants with decades of practical field experience.
             </p>
           </div>

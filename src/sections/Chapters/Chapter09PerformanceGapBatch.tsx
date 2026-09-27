@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/Button';
 import { vshImages } from '@/assets/images';
 import { siteContent } from '@/data/siteContent';
 import { ArrowRight } from 'lucide-react';
-import { useScrollReveal, staggerDelay, revealStyles } from '@/hooks/useMotion';
+import { useScrollReveal, useImageParallax, staggerDelay, revealStyles } from '@/hooks/useMotion';
 
 export interface Chapter09PerformanceGapBatchProps {
   onCtaClick?: () => void;
@@ -20,6 +20,7 @@ export const Chapter09PerformanceGapBatch: React.FC<Chapter09PerformanceGapBatch
   const { batch } = siteContent;
   const [sectionRef, isVisible] = useScrollReveal(0.1);
   const [batchRef, batchVisible] = useScrollReveal(0.2);
+  const [imageContainerRef, imageParallax] = useImageParallax(1.04, 16);
 
   const gapImpacts = [
     'Lost or delayed sales opportunities',
@@ -39,40 +40,42 @@ export const Chapter09PerformanceGapBatch: React.FC<Chapter09PerformanceGapBatch
       className="py-8 sm:py-12 lg:py-14 bg-white border-b border-gray-200/80 overflow-hidden"
     >
       <Container size="default">
-        {/* Section Headline */}
-        <div
-          ref={sectionRef}
-          className={`max-w-3xl mb-6 sm:mb-8 ${revealStyles.transition} ${
-            isVisible ? revealStyles.visible : revealStyles.hidden
-          }`}
-        >
-          <h2
-            id="gap-batch-heading"
-            className="text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-[#0B1F33] font-sans tracking-tight leading-tight mb-2"
-          >
-            The Operational Cost of an{' '}
-            <span className="text-[#123B63]">
-              Unstructured Sales Function.
-            </span>
-          </h2>
+        {/* Section Headline with Mask Reveal */}
+        <div ref={sectionRef} className="max-w-3xl mb-6 sm:mb-8">
+          <div className={revealStyles.clipMaskContainer}>
+            <h2
+              id="gap-batch-heading"
+              className={`text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-[#0B1F33] font-sans tracking-tight leading-tight mb-2 ${
+                revealStyles.clipMaskTransition
+              } ${isVisible ? revealStyles.clipMaskVisible : revealStyles.clipMaskHidden}`}
+            >
+              The Operational Cost of an{' '}
+              <span className="text-[#123B63]">
+                Unstructured Sales Function.
+              </span>
+            </h2>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start">
           {/* Left: Tension image + 8 impacts matrix */}
           <div className="lg:col-span-6 space-y-4">
             <div
+              ref={imageContainerRef}
               className={`relative aspect-[2/1] w-full rounded-[2px] overflow-hidden ${
                 revealStyles.imageTransition
               } ${isVisible ? revealStyles.imageVisible : revealStyles.imageHidden}`}
             >
-              <img
-                src={vshImages.gap}
-                alt="Architectural shadow and tension representing operational friction across sales functions"
-                width={1200}
-                height={600}
-                className="w-full h-full object-cover object-center filter saturate-[0.9]"
-                loading="lazy"
-              />
+              <div className="w-full h-full" style={imageParallax}>
+                <img
+                  src={vshImages.gap}
+                  alt="Architectural shadow and tension representing operational friction across sales functions"
+                  width={1200}
+                  height={600}
+                  className="w-full h-full object-cover object-center filter saturate-[0.9]"
+                  loading="lazy"
+                />
+              </div>
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B1F33]/40 via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-3 left-3 text-[10px] font-mono text-white/80 uppercase tracking-widest">
                 THE PERFORMANCE GAP • COMMERCIAL FRICTION

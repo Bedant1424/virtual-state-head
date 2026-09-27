@@ -3,7 +3,7 @@ import { Container } from '@/components/layout/Container';
 import { Button } from '@/components/ui/Button';
 import { vshImages } from '@/assets/images';
 import { ArrowRight } from 'lucide-react';
-import { useScrollReveal, staggerDelay, revealStyles } from '@/hooks/useMotion';
+import { useScrollReveal, useImageParallax, staggerDelay, revealStyles } from '@/hooks/useMotion';
 
 export interface Chapter03IntroducingVSHProps {
   onCtaClick?: () => void;
@@ -17,6 +17,7 @@ export interface Chapter03IntroducingVSHProps {
 export const Chapter03IntroducingVSH: React.FC<Chapter03IntroducingVSHProps> = ({ onCtaClick }) => {
   const [sectionRef, isVisible] = useScrollReveal(0.1);
   const [capsRef, capsVisible] = useScrollReveal(0.15);
+  const [imageContainerRef, imageParallax] = useImageParallax(1.04, 20);
 
   const capabilityAreas = [
     { num: '01', title: 'Sales Strategy' },
@@ -37,17 +38,24 @@ export const Chapter03IntroducingVSH: React.FC<Chapter03IntroducingVSHProps> = (
       <Container size="default">
         {/* Editorial Split: Large Documentary Photo (7 cols) + Authoritative Statement (5 cols) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center mb-8 sm:mb-10">
-          {/* Left: Documentary Photograph */}
+          {/* Left: Documentary Photograph with Scroll Parallax */}
           <div className="lg:col-span-7">
-            <div className={`relative aspect-[3/2] w-full rounded-[2px] overflow-hidden ${revealStyles.imageTransition} ${isVisible ? revealStyles.imageVisible : revealStyles.imageHidden}`}>
-              <img
-                src={vshImages.introducingVsh}
-                alt="Two senior Indian business leaders in deep strategic advisory discussion over operational plans"
-                width={1200}
-                height={800}
-                className="w-full h-full object-cover object-center filter saturate-[0.95]"
-                loading="lazy"
-              />
+            <div
+              ref={imageContainerRef}
+              className={`relative aspect-[3/2] w-full rounded-[2px] overflow-hidden ${revealStyles.imageTransition} ${
+                isVisible ? revealStyles.imageVisible : revealStyles.imageHidden
+              }`}
+            >
+              <div className="w-full h-full" style={imageParallax}>
+                <img
+                  src={vshImages.introducingVsh}
+                  alt="Two senior Indian business leaders in deep strategic advisory discussion over operational plans"
+                  width={1200}
+                  height={800}
+                  className="w-full h-full object-cover object-center filter saturate-[0.95]"
+                  loading="lazy"
+                />
+              </div>
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B1F33]/40 via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-3 left-3 text-[10px] font-mono text-white/80 uppercase tracking-widest">
                 SALES LEADERSHIP SUPPORT • ODISHA
@@ -55,19 +63,28 @@ export const Chapter03IntroducingVSH: React.FC<Chapter03IntroducingVSHProps> = (
             </div>
           </div>
 
-          {/* Right: Oversized Headline + Statement (Open canvas, no cards) */}
-          <div className={`lg:col-span-5 space-y-4 sm:space-y-5 ${revealStyles.transition} ${isVisible ? revealStyles.visible : revealStyles.hidden}`}>
-            <h2
-              id="introducing-heading"
-              className="text-3xl sm:text-4xl lg:text-[2.65rem] font-extrabold text-[#0B1F33] font-sans tracking-tight leading-[1.08]"
-            >
-              Experienced Sales Leadership.{' '}
-              <span className="text-[#123B63] block mt-1 text-xl sm:text-2xl lg:text-3xl font-bold">
-                Without Necessarily Hiring Another Full-Time Executive.
-              </span>
-            </h2>
+          {/* Right: Oversized Headline with Clip Mask + Statement */}
+          <div className="lg:col-span-5 space-y-4 sm:space-y-5">
+            <div className={revealStyles.clipMaskContainer}>
+              <h2
+                id="introducing-heading"
+                className={`text-3xl sm:text-4xl lg:text-[2.65rem] font-extrabold text-[#0B1F33] font-sans tracking-tight leading-[1.08] ${
+                  revealStyles.clipMaskTransition
+                } ${isVisible ? revealStyles.clipMaskVisible : revealStyles.clipMaskHidden}`}
+              >
+                Experienced Sales Leadership.{' '}
+                <span className="text-[#123B63] block mt-1 text-xl sm:text-2xl lg:text-3xl font-bold">
+                  Without Necessarily Hiring Another Full-Time Executive.
+                </span>
+              </h2>
+            </div>
 
-            <p className="text-sm sm:text-base text-[#333333] font-sans leading-relaxed">
+            <p
+              className={`text-sm sm:text-base text-[#333333] font-sans leading-relaxed ${revealStyles.transition} ${
+                isVisible ? revealStyles.visible : revealStyles.hidden
+              }`}
+              style={{ transitionDelay: '100ms' }}
+            >
               Virtual State Head provides experienced sales leadership, strategic direction, team development, performance consulting, and accountability support for MSMEs in Odisha that already have sales activity but need stronger direction, execution, and performance discipline.
             </p>
 
