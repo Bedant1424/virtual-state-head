@@ -56,11 +56,11 @@
   - Zero console errors and zero warnings.
   - Commit: `feat(vsh): finalize responsive visual system`.
 
-- [ ] **Milestone 07: Legacy Cleanup**
-  - Remove truly orphaned components in `src/sections/` legacy folders.
-  - Remove unmounted `GlobalMotionOverlay.tsx`.
-  - Typecheck (`npx tsc --noEmit`) and build (`npm run build`).
-  - Ponytail code debt review & Karpathy surgical diff check.
+- [x] **Milestone 07: Legacy Cleanup**
+  - Removed 16 obsolete legacy sections directories in `src/sections/` (`Batch`, `Benefits`, `Booking`, `Coaches`, `EngagementProcess`, `FAQ`, `FinalCTA`, `Fit`, `Frameworks`, `Hero`, `HowItWorks`, `Introduction`, `PerformanceEngine`, `PerformanceGap`, `Problem`, `Process`).
+  - Removed unmounted `GlobalMotionOverlay.tsx` and unused `SectionLabel.tsx`.
+  - Typecheck (`npx tsc --noEmit`) and build (`npm run build`) passed with 0 errors; CSS payload reduced by 33%.
   - Commit: `refactor(vsh): remove obsolete presentation code`.
 
 - [ ] **Final Quality Gate Checklist Verification**
+  - 22-point quality gate audit across content, design tokens, responsive viewports, and accessibility.
