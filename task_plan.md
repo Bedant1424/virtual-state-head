@@ -4,13 +4,13 @@
 `feature/vsh-uiux-redesign` (Created from `feature/vsh-premium-rebuild`)
 
 ## Status
-- **Current Milestone:** Milestone 03 — What You Get + Sales Performance Engine
-- **Current Task:** Rebuild Chapter 05 (`Chapter05WhatYouGet.tsx`) and Chapter 06 (`Chapter06Engine.tsx`)
-- **Files Changed:** `src/sections/Chapters/Chapter03IntroducingVSH.tsx`, `src/sections/Chapters/Chapter04Coaches.tsx`, `task_plan.md`
-- **Validation Result:** Milestone 02 passed TypeScript (`tsc --noEmit`), Vite build, Playwright (1440px and 375px: 0 console errors, 0 warnings, 0px horizontal overflow).
-- **Visual Review Result:** Introducing VSH (sparse non-grid layout) and Coaches (Midnight Navy authority gallery with verified bios) validated.
+- **Current Milestone:** Milestone 04 — Frameworks + Audience + Batch
+- **Current Task:** Rebuild Chapter 07 (`Chapter07FrameworksProcess.tsx`), Chapter 08 (`Chapter08AudienceWhyVSH.tsx`), and Chapter 09 (`Chapter09PerformanceGapBatch.tsx`)
+- **Files Changed:** `src/sections/Chapters/Chapter05WhatYouGet.tsx`, `src/sections/Chapters/Chapter06Engine.tsx`, `task_plan.md`
+- **Validation Result:** Milestone 03 passed TypeScript (`tsc --noEmit`), Vite build, Playwright (1440px and 375px: 0 console errors, 0 warnings, 0px horizontal overflow).
+- **Visual Review Result:** What You Get (pure typography horizontal bands) and Sales Performance Engine (cinematic optical prism with strictly named TRAINING + TECHNOLOGY + ACCOUNTABILITY) validated.
 - **Known Issues:** None
-- **Next Task:** Rebuild `Chapter05WhatYouGet.tsx` (pure typography-first, 5 horizontal architectural bands, generous whitespace, zero cards) and `Chapter06Engine.tsx` (cinematic optical prism artwork, 3 strictly named elements `TRAINING`, `TECHNOLOGY`, `ACCOUNTABILITY`, climax formula lockup, locked CTA, zero UI controls/cards).
+- **Next Task:** Rebuild `Chapter07FrameworksProcess.tsx` (field reportage photo, 5 named frameworks, 6 stages purely as typography with no arrows/rails/connectors), `Chapter08AudienceWhyVSH.tsx` (dominant 3:4 portrait, concise criteria, quiet secondary differentiators, no cards, no dual dense lists), and `Chapter09PerformanceGapBatch.tsx` (tension photo, 8 approved impacts in 2-col matrix, sculptural '10' cohort block, locked CTA).
 
 ---
 
@@ -29,10 +29,10 @@
   - Playwright visual audit across 1440 and 375 viewports (0 console errors, 0px overflow).
   - Commit: `feat(vsh): rebuild leadership and coaching experience`.
 
-- [ ] **Milestone 03: What You Get + Sales Performance Engine**
-  - Rebuild `Chapter05WhatYouGet.tsx`: Pure typography-first, generous whitespace, 5 horizontal architectural bands (Strategy, Capability, Leadership, Accountability, Consulting). No cards, no icons.
-  - Rebuild `Chapter06Engine.tsx`: Optical crystal prism artwork (`engine_optical_prism.jpg`), 3 strictly named elements (`TRAINING`, `TECHNOLOGY`, `ACCOUNTABILITY`), climax formula lockup (`TRAINING + TECHNOLOGY + ACCOUNTABILITY = SALES PERFORMANCE ENGINE`), locked CTA. No UI controls, no cards, no node diagrams.
-  - Playwright visual audit across 1440, 1280, 390, 375 viewports.
+- [x] **Milestone 03: What You Get + Sales Performance Engine**
+  - Rebuilt `Chapter05WhatYouGet.tsx`: Pure typography-first, generous whitespace, 5 horizontal architectural bands (Strategy, Capability, Leadership, Accountability, Consulting). No cards, no icons.
+  - Rebuilt `Chapter06Engine.tsx`: Optical crystal prism artwork (`engine_optical_prism.jpg`), 3 strictly named elements (`TRAINING`, `TECHNOLOGY`, `ACCOUNTABILITY`), climax formula lockup (`TRAINING + TECHNOLOGY + ACCOUNTABILITY = SALES PERFORMANCE ENGINE`), locked CTA. No UI controls, no cards, no node diagrams.
+  - Playwright visual audit across 1440 and 375 viewports (0 console errors, 0px overflow).
   - Commit: `feat(vsh): rebuild value and performance engine sections`.
 
 - [ ] **Milestone 04: Frameworks + Audience + Batch**

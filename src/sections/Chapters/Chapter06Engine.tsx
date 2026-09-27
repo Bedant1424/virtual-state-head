@@ -11,12 +11,12 @@ export interface Chapter06EngineProps {
 
 /**
  * CHAPTER 06 — SALES PERFORMANCE ENGINE
- * Editorial Strategic Authority
+ * Editorial Strategic Authority: Cinematic Artwork / Abstract Synthesis
  *
- * Three core pillars: Training + Technology + Accountability.
- * Right: Optical prism visual with 3 converging streams.
+ * Three core elements: TRAINING + TECHNOLOGY + ACCOUNTABILITY.
+ * Right: Optical prism visual with 3 converging elements.
  * Left: Clean editorial presentation. Zero UI tabs or control buttons.
- * Height clamped to min(900px, calc(100svh - 68px)) on desktop.
+ * Climax: TRAINING + TECHNOLOGY + ACCOUNTABILITY = SALES PERFORMANCE ENGINE
  */
 export const Chapter06Engine: React.FC<Chapter06EngineProps> = ({ onCtaClick }) => {
   const { pillars } = siteContent.engine;
@@ -28,11 +28,6 @@ export const Chapter06Engine: React.FC<Chapter06EngineProps> = ({ onCtaClick }) 
       className="py-16 sm:py-24 lg:py-28 bg-[#F3F5F7] border-b border-gray-200/80 overflow-hidden"
     >
       <Container size="default">
-        {/* Chapter Micro-Index */}
-        <div className="text-xs font-mono font-semibold uppercase tracking-widest text-[#123B63] mb-4">
-          CHAPTER 06 • THE OPERATING APPROACH
-        </div>
-
         {/* Section Headline */}
         <div className="max-w-3xl mb-12 sm:mb-16">
           <h2
@@ -45,11 +40,11 @@ export const Chapter06Engine: React.FC<Chapter06EngineProps> = ({ onCtaClick }) 
             </span>
           </h2>
           <p className="text-base sm:text-lg text-[#333333] font-sans leading-relaxed">
-            A structured approach that brings together three essential elements of sales performance to create repeatable commercial consistency.
+            A structured approach that brings together three essential elements of sales performance to build sustainable commercial consistency.
           </p>
         </div>
 
-        {/* 2-Column Split: Editorial Pillars Left (48%), Optical Prism Visual Right (52%) */}
+        {/* 2-Column Split: Editorial Pillars Left (42%), Optical Prism Visual Right (58%) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           {/* Left Column (5 cols): Three Clear Pillars + Climax Formula (No Tab Buttons) */}
           <div className="lg:col-span-5 space-y-6 sm:space-y-8">
@@ -63,9 +58,6 @@ export const Chapter06Engine: React.FC<Chapter06EngineProps> = ({ onCtaClick }) 
                     <h3 className="text-lg font-bold text-[#0B1F33] font-sans uppercase tracking-wide">
                       {pillar.title}
                     </h3>
-                    <span className="text-[11px] font-mono font-medium text-[#6B7280] ml-auto uppercase">
-                      {pillar.coreConcept}
-                    </span>
                   </div>
                   <p className="text-xs sm:text-sm text-[#4A5568] font-sans leading-relaxed">
                     {pillar.description}
@@ -74,14 +66,19 @@ export const Chapter06Engine: React.FC<Chapter06EngineProps> = ({ onCtaClick }) 
               ))}
             </div>
 
-            {/* Convergence Formula Box (No Card Cage, Clean Border Rule) */}
-            <div className="bg-white p-5 rounded-[4px] border border-gray-300 space-y-2">
+            {/* Convergence Formula Lockup */}
+            <div className="bg-white p-5 rounded-[4px] border border-gray-300 space-y-2.5">
               <div className="text-[11px] font-mono font-semibold uppercase tracking-widest text-[#123B63]">
                 CONVERGENCE PRINCIPLE
               </div>
-              <p className="text-sm font-semibold text-[#0B1F33] leading-snug">
-                Training builds capability. Technology supports execution. Accountability strengthens follow-through.
-              </p>
+              <div className="space-y-1 text-xs sm:text-sm text-[#333333] font-sans">
+                <p>Training builds capability.</p>
+                <p>Technology supports execution.</p>
+                <p>Accountability strengthens follow-through.</p>
+              </div>
+              <div className="pt-2 border-t border-gray-200 text-xs font-mono font-bold text-[#0B1F33] tracking-wide">
+                TRAINING + TECHNOLOGY + ACCOUNTABILITY = SALES PERFORMANCE ENGINE
+              </div>
             </div>
 
             {/* CTA 3 Placement */}
@@ -90,7 +87,7 @@ export const Chapter06Engine: React.FC<Chapter06EngineProps> = ({ onCtaClick }) 
                 variant="primary"
                 size="lg"
                 onClick={onCtaClick}
-                className="w-full sm:w-auto bg-[#123B63] text-white hover:bg-[#0B1F33] transition-colors font-bold px-8 py-4 rounded-[4px] shadow-none flex items-center justify-center gap-3 cursor-pointer"
+                className="w-full sm:w-auto bg-[#123B63] text-white hover:bg-[#0B1F33] transition-colors font-bold px-8 py-4 rounded-[4px] shadow-none flex items-center justify-center gap-3 cursor-pointer whitespace-nowrap"
               >
                 <span>Book Your Sales Strategy Call</span>
                 <ArrowRight className="w-4 h-4 text-[#87CEEB]" />
@@ -103,7 +100,7 @@ export const Chapter06Engine: React.FC<Chapter06EngineProps> = ({ onCtaClick }) 
             <div className="relative aspect-[16/9] w-full rounded-[4px] overflow-hidden border border-gray-300 shadow-none bg-white">
               <img
                 src={vshImages.engine}
-                alt="Optical glass prism refracting 3 light streams: Training, Technology, and Accountability"
+                alt="Optical crystal prism refracting three essential light streams: Training, Technology, and Accountability"
                 width={1200}
                 height={675}
                 className="w-full h-full object-cover object-center filter saturate-[1.05]"
@@ -112,19 +109,19 @@ export const Chapter06Engine: React.FC<Chapter06EngineProps> = ({ onCtaClick }) 
               {/* Cinematic Vignette */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B1F33]/40 via-transparent to-transparent pointer-events-none" />
 
-              {/* Three Stream Flow Markers */}
+              {/* Three Stream Flow Markers (Strictly Named Elements) */}
               <div className="absolute top-4 left-4 flex flex-col gap-1.5">
-                <span className="inline-flex items-center gap-2 px-2.5 py-1 rounded-[2px] bg-[#0B1F33]/80 backdrop-blur-xs text-[10px] font-mono text-white/90">
+                <span className="inline-flex items-center gap-2 px-2.5 py-1 rounded-[2px] bg-[#0B1F33]/85 backdrop-blur-xs text-[10px] font-mono text-white/95">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#87CEEB]" />
-                  STREAM 01: CAPABILITY
+                  01 TRAINING
                 </span>
-                <span className="inline-flex items-center gap-2 px-2.5 py-1 rounded-[2px] bg-[#0B1F33]/80 backdrop-blur-xs text-[10px] font-mono text-white/90">
+                <span className="inline-flex items-center gap-2 px-2.5 py-1 rounded-[2px] bg-[#0B1F33]/85 backdrop-blur-xs text-[10px] font-mono text-white/95">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#87CEEB]" />
-                  STREAM 02: VISIBILITY
+                  02 TECHNOLOGY
                 </span>
-                <span className="inline-flex items-center gap-2 px-2.5 py-1 rounded-[2px] bg-[#0B1F33]/80 backdrop-blur-xs text-[10px] font-mono text-white/90">
+                <span className="inline-flex items-center gap-2 px-2.5 py-1 rounded-[2px] bg-[#0B1F33]/85 backdrop-blur-xs text-[10px] font-mono text-white/95">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#87CEEB]" />
-                  STREAM 03: GOVERNANCE
+                  03 ACCOUNTABILITY
                 </span>
               </div>
 
