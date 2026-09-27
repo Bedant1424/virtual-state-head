@@ -63,7 +63,7 @@ export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
             <CalendarCheck className="w-6 h-6 text-deep-blue" />
           </div>
           <div>
-            <span className="text-[11px] font-bold uppercase tracking-widest text-deep-blue block">
+            <span className="text-[11px] font-bold uppercase tracking-wider text-deep-blue block">
               Trial / Demonstration Notice
             </span>
             <h3 id="demo-modal-title" className="text-xl font-bold text-navy leading-tight">

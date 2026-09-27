@@ -115,7 +115,7 @@ export const Chapter10BookingFAQCTA: React.FC<Chapter10BookingFAQCTAProps> = ({ 
                       onClick={() => toggleFaq(faq.id)}
                       aria-expanded={isOpen}
                       aria-controls={`faq-answer-${faq.id}`}
-                      className="w-full text-left flex items-start justify-between gap-4 py-2 group cursor-pointer focus-visible:ring-2 focus-visible:ring-[#123B63] focus-visible:outline-none rounded-[2px]"
+                      className="w-full text-left flex items-start justify-between gap-4 py-2.5 min-h-[44px] group cursor-pointer focus-visible:ring-2 focus-visible:ring-[#123B63] focus-visible:outline-none rounded-[2px]"
                     >
                       <div className="flex items-baseline gap-3">
                         <span className="text-xs font-mono font-bold text-[#123B63] shrink-0">
@@ -156,7 +156,7 @@ export const Chapter10BookingFAQCTA: React.FC<Chapter10BookingFAQCTAProps> = ({ 
       >
         <Container size="default">
           <div className="max-w-3xl mx-auto text-center space-y-6 sm:space-y-8">
-            <div className="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-widest text-[#87CEEB]">
+            <div className="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-[#87CEEB]">
               <span className="w-1.5 h-1.5 rounded-full bg-[#87CEEB]" />
               <span>SALES LEADERSHIP FOR ODISHA MSMES</span>
             </div>

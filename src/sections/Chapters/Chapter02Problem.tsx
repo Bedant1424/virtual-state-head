@@ -14,27 +14,27 @@ export const Chapter02Problem: React.FC = () => {
     {
       num: '01',
       title: 'Direction Gap',
-      desc: 'Priorities, commercial focus, and daily sales efforts lack clear business alignment.',
+      desc: 'Sales priorities and commercial efforts lack business alignment.',
     },
     {
       num: '02',
       title: 'Consistency Gap',
-      desc: 'Performance fluctuates month-to-month, relying on isolated individual efforts rather than a team rhythm.',
+      desc: 'Performance fluctuates, relying on individual heroics rather than a team rhythm.',
     },
     {
       num: '03',
       title: 'Accountability Gap',
-      desc: 'Sales targets are set, but consistent follow-through and ownership of commitments lapse without review.',
+      desc: 'Targets exist, but consistent follow-through and ownership lapse without review.',
     },
     {
       num: '04',
       title: 'Opportunity Gap',
-      desc: 'Active follow-ups, negotiations, and conversions stall without structured frontline guidance.',
+      desc: 'High-value follow-ups and negotiations stall without frontline guidance.',
     },
     {
       num: '05',
       title: 'Leadership Gap',
-      desc: 'Business owners bear the full operational burden of sales direction alongside daily operations.',
+      desc: 'Business owners bear the full burden of daily sales direction.',
     },
   ];
 
@@ -98,12 +98,12 @@ export const Chapter02Problem: React.FC = () => {
           <div className="lg:col-span-6 space-y-8">
             <div className="border-t border-gray-300 divide-y divide-gray-300">
               {operationalGaps.map((item) => (
-                <div key={item.num} className="py-5 first:pt-4 last:pb-4 flex items-start gap-4">
+                <div key={item.num} className="py-4 first:pt-3 last:pb-3 flex items-start gap-4">
                   <span className="text-xs font-mono font-bold text-[#123B63] shrink-0 mt-0.5">
                     {item.num}
                   </span>
                   <div>
-                    <h3 className="text-base font-bold text-[#0B1F33] font-sans mb-1 leading-snug">
+                    <h3 className="text-base font-bold text-[#0B1F33] font-sans mb-0.5 leading-snug">
                       {item.title}
                     </h3>
                     <p className="text-xs sm:text-sm text-[#6B7280] font-sans leading-relaxed">

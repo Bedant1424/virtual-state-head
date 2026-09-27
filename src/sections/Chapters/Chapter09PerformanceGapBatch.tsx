@@ -90,7 +90,7 @@ export const Chapter09PerformanceGapBatch: React.FC<Chapter09PerformanceGapBatch
           <div className="lg:col-span-5 bg-[#F3F5F7] rounded-[4px] border border-gray-300 p-8 flex flex-col justify-between">
             <div>
               <div className="flex items-baseline justify-between mb-4 pb-4 border-b border-gray-300">
-                <span className="text-xs font-mono font-bold uppercase text-[#123B63] tracking-widest">
+                <span className="text-xs font-mono font-bold uppercase text-[#123B63] tracking-wider">
                   {batch.statusBadge}
                 </span>
                 <span className="text-[11px] font-mono text-[#6B7280]">

@@ -38,7 +38,7 @@ export const Header: React.FC<HeaderProps> = ({ onCtaClick, className }) => {
           {/* Brand Logo & Wordmark */}
           <a
             href="#"
-            className="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#123B63] rounded-[2px]"
+            className="flex items-center gap-3 min-h-[44px] group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#123B63] rounded-[2px]"
             aria-label="Virtual State Head - Home"
           >
             <div className="w-9 h-9 rounded-[3px] bg-[#123B63] text-white flex items-center justify-center font-mono font-extrabold text-xs tracking-tight border border-[#87CEEB]/40 shadow-none">
@@ -91,7 +91,7 @@ export const Header: React.FC<HeaderProps> = ({ onCtaClick, className }) => {
               aria-label="Open navigation menu"
               aria-expanded={isMobileMenuOpen}
               aria-controls="mobile-nav-menu"
-              className="p-2 rounded-[3px] border border-gray-200 text-[#0B1F33] hover:bg-gray-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#123B63]"
+              className="min-w-[44px] min-h-[44px] flex items-center justify-center p-2 rounded-[3px] border border-gray-200 text-[#0B1F33] hover:bg-gray-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#123B63]"
             >
               <Menu className="w-5 h-5" />
             </button>

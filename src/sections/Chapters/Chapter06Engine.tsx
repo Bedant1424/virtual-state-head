@@ -68,7 +68,7 @@ export const Chapter06Engine: React.FC<Chapter06EngineProps> = ({ onCtaClick }) 
 
             {/* Convergence Formula Lockup */}
             <div className="bg-white p-5 rounded-[4px] border border-gray-300 space-y-2.5">
-              <div className="text-[11px] font-mono font-semibold uppercase tracking-widest text-[#123B63]">
+              <div className="text-[11px] font-mono font-semibold uppercase tracking-wider text-[#123B63]">
                 CONVERGENCE PRINCIPLE
               </div>
               <div className="space-y-1 text-xs sm:text-sm text-[#333333] font-sans">

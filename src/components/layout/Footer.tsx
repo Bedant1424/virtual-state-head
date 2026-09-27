@@ -44,7 +44,7 @@ export const Footer: React.FC = () => {
                 <li key={item.id}>
                   <a
                     href={item.href}
-                    className="hover:text-[#87CEEB] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#87CEEB] rounded-[2px]"
+                    className="hover:text-[#87CEEB] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#87CEEB] rounded-[2px] py-3 min-h-[44px] min-w-[44px] inline-flex items-center"
                   >
                     {item.label}
                   </a>

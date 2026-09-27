@@ -20,32 +20,32 @@ export const Chapter03IntroducingVSH: React.FC<Chapter03IntroducingVSHProps> = (
     {
       num: '01',
       title: 'Sales Strategy',
-      description: 'Bring greater clarity to priorities, direction, and commercial actions required to support business objectives.',
+      description: 'Bring clarity to priorities, direction, and commercial actions.',
     },
     {
       num: '02',
       title: 'Team Development',
-      description: 'Develop sales capability, communication, customer engagement, and execution discipline across the team.',
+      description: 'Develop sales capability, communication, and execution discipline.',
     },
     {
       num: '03',
       title: 'Leadership Support',
-      description: 'Help business owners and sales leaders strengthen how they guide, manage, and support daily sales operations.',
+      description: 'Strengthen how business owners and leaders guide sales teams.',
     },
     {
       num: '04',
       title: 'Accountability',
-      description: 'Establish a more structured approach to reviewing activities, commitments, progress, and performance.',
+      description: 'Establish structured reviews of activities, commitments, and results.',
     },
     {
       num: '05',
       title: 'Sales Execution',
-      description: 'Support practical implementation of agreed sales actions, buyer discussions, and disciplined follow-through routines.',
+      description: 'Support practical implementation of agreed sales practices and follow-through.',
     },
     {
       num: '06',
       title: 'Strategic Discussions',
-      description: 'Work with business owners and leadership teams on important commercial decisions, priorities, and growth.',
+      description: 'Work with business owners on important sales decisions and growth.',
     },
   ];
 
@@ -108,14 +108,14 @@ export const Chapter03IntroducingVSH: React.FC<Chapter03IntroducingVSHProps> = (
 
         {/* Six Capability Focus Areas: Sparse Typography with Asymmetrical Staggered Placement */}
         <div className="pt-10 border-t border-gray-200">
-          <div className="text-xs font-mono font-bold uppercase tracking-widest text-[#123B63] mb-10">
+          <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#123B63] mb-8">
             AREAS OF ACTIVE CONSULTING INTERVENTION
           </div>
 
           {/* Asymmetric, Airy Flow (Not a Rigid 3-Column Boxed Grid) */}
-          <div className="space-y-8 lg:space-y-0 lg:grid lg:grid-cols-12 lg:gap-x-12 lg:gap-y-12">
+          <div className="space-y-6 lg:space-y-0 lg:grid lg:grid-cols-12 lg:gap-x-12 lg:gap-y-10">
             {/* Area 01 & 02: First Row Asymmetry */}
-            <div className="lg:col-span-5 space-y-2 border-l-2 border-[#123B63] pl-4">
+            <div className="lg:col-span-5 space-y-1.5 border-l-2 border-[#123B63] pl-4">
               <div className="flex items-center gap-2">
                 <span className="text-xs font-mono font-bold text-[#123B63]">{capabilityAreas[0].num}</span>
                 <h3 className="text-base font-bold text-[#0B1F33] font-sans">
@@ -127,7 +127,7 @@ export const Chapter03IntroducingVSH: React.FC<Chapter03IntroducingVSHProps> = (
               </p>
             </div>
 
-            <div className="lg:col-span-6 lg:col-start-7 space-y-2 border-l-2 border-gray-300 pl-4">
+            <div className="lg:col-span-6 lg:col-start-7 space-y-1.5 border-l-2 border-gray-300 pl-4">
               <div className="flex items-center gap-2">
                 <span className="text-xs font-mono font-bold text-[#123B63]">{capabilityAreas[1].num}</span>
                 <h3 className="text-base font-bold text-[#0B1F33] font-sans">
@@ -140,7 +140,7 @@ export const Chapter03IntroducingVSH: React.FC<Chapter03IntroducingVSHProps> = (
             </div>
 
             {/* Area 03 & 04: Second Row Asymmetry with Staggered Width */}
-            <div className="lg:col-span-6 space-y-2 border-l-2 border-gray-300 pl-4">
+            <div className="lg:col-span-6 space-y-1.5 border-l-2 border-gray-300 pl-4">
               <div className="flex items-center gap-2">
                 <span className="text-xs font-mono font-bold text-[#123B63]">{capabilityAreas[2].num}</span>
                 <h3 className="text-base font-bold text-[#0B1F33] font-sans">
@@ -152,7 +152,7 @@ export const Chapter03IntroducingVSH: React.FC<Chapter03IntroducingVSHProps> = (
               </p>
             </div>
 
-            <div className="lg:col-span-5 lg:col-start-8 space-y-2 border-l-2 border-[#123B63] pl-4">
+            <div className="lg:col-span-5 lg:col-start-8 space-y-1.5 border-l-2 border-[#123B63] pl-4">
               <div className="flex items-center gap-2">
                 <span className="text-xs font-mono font-bold text-[#123B63]">{capabilityAreas[3].num}</span>
                 <h3 className="text-base font-bold text-[#0B1F33] font-sans">
@@ -165,7 +165,7 @@ export const Chapter03IntroducingVSH: React.FC<Chapter03IntroducingVSHProps> = (
             </div>
 
             {/* Area 05 & 06: Third Row Asymmetry */}
-            <div className="lg:col-span-5 space-y-2 border-l-2 border-gray-300 pl-4">
+            <div className="lg:col-span-5 space-y-1.5 border-l-2 border-gray-300 pl-4">
               <div className="flex items-center gap-2">
                 <span className="text-xs font-mono font-bold text-[#123B63]">{capabilityAreas[4].num}</span>
                 <h3 className="text-base font-bold text-[#0B1F33] font-sans">
@@ -177,7 +177,7 @@ export const Chapter03IntroducingVSH: React.FC<Chapter03IntroducingVSHProps> = (
               </p>
             </div>
 
-            <div className="lg:col-span-6 lg:col-start-7 space-y-2 border-l-2 border-[#123B63] pl-4">
+            <div className="lg:col-span-6 lg:col-start-7 space-y-1.5 border-l-2 border-[#123B63] pl-4">
               <div className="flex items-center gap-2">
                 <span className="text-xs font-mono font-bold text-[#123B63]">{capabilityAreas[5].num}</span>
                 <h3 className="text-base font-bold text-[#0B1F33] font-sans">
