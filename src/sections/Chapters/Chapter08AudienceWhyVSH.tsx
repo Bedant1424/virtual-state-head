@@ -39,19 +39,19 @@ export const Chapter08AudienceWhyVSH: React.FC = () => {
         </div>
 
         {/* 2-Column Split: Editorial Criteria Left (45%), Dominant Portrait Right (55%) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-stretch">
           {/* Left Column (5 cols): Concise Qualification Criteria + Visually Quiet Differentiators */}
-          <div className="lg:col-span-5 space-y-10">
+          <div className="lg:col-span-5 space-y-6 sm:space-y-7 flex flex-col justify-between">
             {/* Concise Qualification Register */}
-            <div className="space-y-4">
+            <div className="space-y-3">
               <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#123B63]">
                 WHO VIRTUAL STATE HEAD IS FOR
               </div>
-              <div className="space-y-2.5">
+              <div className="space-y-2">
                 {qualificationPoints.map((point, idx) => (
                   <div key={idx} className="flex items-baseline gap-2.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#123B63] shrink-0 mt-1.5" />
-                    <span className="text-xs sm:text-sm text-[#333333] font-sans font-medium leading-relaxed">
+                    <span className="text-xs sm:text-sm text-[#333333] font-sans font-medium leading-normal">
                       {point}
                     </span>
                   </div>
@@ -60,17 +60,17 @@ export const Chapter08AudienceWhyVSH: React.FC = () => {
             </div>
 
             {/* Five Differentiators (Secondary, Visually Quiet Typography) */}
-            <div className="pt-8 border-t border-gray-300/80 space-y-4">
+            <div className="pt-6 border-t border-gray-300/80 space-y-3">
               <div className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#6B7280]">
                 FIVE STRATEGIC ADVANTAGES (WHY VSH)
               </div>
-              <div className="space-y-4">
+              <div className="space-y-2.5">
                 {whyVsh.map((diff) => (
-                  <div key={diff.number} className="space-y-1">
+                  <div key={diff.number} className="space-y-0.5">
                     <h3 className="text-xs sm:text-sm font-bold text-[#0B1F33] font-sans">
                       {diff.number}. {diff.title}
                     </h3>
-                    <p className="text-xs text-[#6B7280] font-sans leading-relaxed">
+                    <p className="text-xs text-[#6B7280] font-sans leading-normal">
                       {diff.description}
                     </p>
                   </div>
@@ -80,8 +80,8 @@ export const Chapter08AudienceWhyVSH: React.FC = () => {
           </div>
 
           {/* Right Column (7 cols): Dominant 3:4 Vertical Editorial Portrait (Carries Main Visual Weight) */}
-          <div className="lg:col-span-7">
-            <div className="relative aspect-[3/4] w-full rounded-[4px] overflow-hidden border border-gray-300 shadow-none bg-white">
+          <div className="lg:col-span-7 flex flex-col">
+            <div className="relative aspect-[3/4] lg:aspect-auto lg:h-full w-full rounded-[4px] overflow-hidden border border-gray-300 shadow-none bg-white">
               <img
                 src={vshImages.audience}
                 alt="Odisha industrial manufacturing business leader at operating facility"

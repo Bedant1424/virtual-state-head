@@ -28,9 +28,8 @@ export const Chapter01Hero: React.FC<Chapter01HeroProps> = ({ onCtaClick }) => {
           {/* Left Column (5 cols on lg): Editorial Typography & CTA */}
           <div className="lg:col-span-5 space-y-6 sm:space-y-8 z-10">
             {/* Chapter Micro-Index (Eyebrow 1 of 3 on page) */}
-            <div className="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-widest text-[#123B63]">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#123B63]" />
-              <span>• Sales Leadership • Odisha MSMEs</span>
+            <div className="text-xs font-mono font-semibold uppercase tracking-widest text-[#123B63]">
+              • Sales Leadership • Odisha MSMEs
             </div>
 
             {/* Display Headline */}

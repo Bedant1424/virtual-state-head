@@ -13,28 +13,28 @@ export const Chapter02Problem: React.FC = () => {
   const operationalGaps = [
     {
       num: '01',
-      title: 'Direction Gap',
-      desc: 'Sales priorities and commercial efforts lack business alignment.',
+      title: 'Sales Without Clear Direction',
+      desc: 'Sales priorities, strategy, and execution lack clear business alignment.',
     },
     {
       num: '02',
-      title: 'Consistency Gap',
-      desc: 'Performance fluctuates, relying on individual heroics rather than a team rhythm.',
+      title: 'Inconsistent Sales Performance',
+      desc: 'Performance fluctuates, relying on individual heroics rather than a repeatable team rhythm.',
     },
     {
       num: '03',
-      title: 'Accountability Gap',
-      desc: 'Targets exist, but consistent follow-through and ownership lapse without review.',
+      title: 'Weak Accountability',
+      desc: 'Targets exist, but consistent follow-through and ownership lapse without regular reviews.',
     },
     {
       num: '04',
-      title: 'Opportunity Gap',
-      desc: 'High-value follow-ups and negotiations stall without frontline guidance.',
+      title: 'Missed Opportunities',
+      desc: 'Follow-ups, negotiations, and conversions stall without frontline guidance.',
     },
     {
       num: '05',
-      title: 'Leadership Gap',
-      desc: 'Business owners bear the full burden of daily sales direction.',
+      title: 'Leadership Gaps',
+      desc: 'Business owners bear the full operational burden of daily sales direction.',
     },
   ];
 

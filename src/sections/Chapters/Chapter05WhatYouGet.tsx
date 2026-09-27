@@ -48,7 +48,7 @@ export const Chapter05WhatYouGet: React.FC = () => {
                   {area.number}
                 </span>
                 <h3 className="text-xl sm:text-2xl font-bold text-[#0B1F33] font-sans tracking-tight">
-                  {area.title}
+                  {area.shortLabel}
                 </h3>
               </div>
 

@@ -45,7 +45,7 @@ export const Chapter03IntroducingVSH: React.FC<Chapter03IntroducingVSHProps> = (
     {
       num: '06',
       title: 'Strategic Discussions',
-      description: 'Work with business owners on important sales decisions and growth.',
+      description: 'Work with business owners and leadership teams on important sales decisions and priorities.',
     },
   ];
 
