@@ -5,6 +5,9 @@ import engineOpticalPrism from './engine_optical_prism.jpg';
 import howItWorksField from './how_it_works_field.jpg';
 import audienceIndustrialLeader from './audience_industrial_leader.jpg';
 import performanceGapTension from './performance_gap_tension.jpg';
+import coachDemoRoyal from './coach_demo_royal.jpg';
+import coachDemoSaroj from './coach_demo_saroj.jpg';
+import coachDemoSudeep from './coach_demo_sudeep.jpg';
 
 export const vshImages = {
   hero: heroExecutiveDawn,
@@ -15,6 +18,11 @@ export const vshImages = {
   audience: audienceIndustrialLeader,
   performanceGap: performanceGapTension,
   gap: performanceGapTension,
+  coaches: {
+    royalBal: coachDemoRoyal,
+    sarojPanda: coachDemoSaroj,
+    sudeepMohanty: coachDemoSudeep,
+  },
 };
 
 export default vshImages;

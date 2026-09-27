@@ -1,31 +1,84 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container } from '@/components/layout/Container';
-import { siteContent } from '@/data/siteContent';
+import { siteContent, type Coach } from '@/data/siteContent';
+import { vshImages } from '@/assets/images';
 import { useScrollReveal, revealStyles } from '@/hooks/useMotion';
 
+interface CoachCardData extends Coach {
+  image: string;
+  imageAlt: string;
+  metadataTag: string;
+  descriptor: string;
+  footerLabel: string;
+}
+
 /**
- * CHAPTER 04 — MEET THE COACHES
- * Pure editorial authority on open Midnight Navy canvas.
- * ZERO profile cards, ZERO container boxes, ZERO LinkedIn-style directory UI.
- * Royal Bal dominant left; Saroj Kumar Panda & Sudeep Mohanty supporting right.
+ * CHAPTER 04 — EXPERIENCED COACHES / LEADERSHIP SHOWCASE
+ * Premium editorial profile cards featuring all three coaches.
+ * Image-led, interactive hover/focus choreography:
+ * - Active card scales up 1.05x with image zoom, high focus, and border accent.
+ * - Inactive cards subtly recede (scale 0.96x, opacity 0.78) for focus hierarchy.
+ * - Accessible via keyboard focus (tabIndex) and tap-friendly on mobile devices.
+ * - Fully respects prefers-reduced-motion.
  */
 export const Chapter04Coaches: React.FC = () => {
-  const [sectionRef, isVisible] = useScrollReveal(0.1);
-  const [royalBal, sarojPanda, sudeepMohanty] = siteContent.coaches;
+  const [sectionRef, isVisible] = useScrollReveal(0.12);
+  const [activeCoachId, setActiveCoachId] = useState<string | null>(null);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setPrefersReducedMotion(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setPrefersReducedMotion(e.matches);
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, []);
+
+  const coachesData: CoachCardData[] = [
+    {
+      ...siteContent.coaches[0], // Royal Bal
+      image: vshImages.coaches.royalBal,
+      imageAlt: 'Royal Bal, Sales Leadership Consultant and Founder of Sales Performance Engine',
+      metadataTag: 'FOUNDER • SALES PERFORMANCE ENGINE',
+      descriptor: 'More than 30 years of sales experience',
+      footerLabel: 'LEAD CONSULTANT',
+    },
+    {
+      ...siteContent.coaches[1], // Saroj Kumar Panda
+      image: vshImages.coaches.sarojPanda,
+      imageAlt: 'Saroj Kumar Panda, Mindfulness Educator and Mindset Coach',
+      metadataTag: 'ASSOCIATE COACH • MINDSET & RESILIENCE',
+      descriptor: 'Mindset & Resilience Coach',
+      footerLabel: 'CAPABILITY & MINDSET',
+    },
+    {
+      ...siteContent.coaches[2], // Sudeep Mohanty
+      image: vshImages.coaches.sudeepMohanty,
+      imageAlt: 'Sudeep Mohanty, Head Coach and Sales Leadership Coach',
+      metadataTag: 'HEAD COACH • SALES EXECUTION',
+      descriptor: 'Sales Leadership Coach',
+      footerLabel: 'EXECUTION & DISCIPLINE',
+    },
+  ];
 
   return (
     <section
       id="coaches"
       ref={sectionRef}
       aria-labelledby="coaches-heading"
-      className="py-8 sm:py-12 lg:py-14 bg-[#0B1F33] text-white border-b border-white/10 overflow-hidden relative"
+      className="py-12 sm:py-16 lg:py-20 bg-[#0B1F33] text-white border-b border-white/10 overflow-hidden relative"
     >
       <Container size="default">
-        {/* Eyebrow + Section Headline with Mask Reveal */}
-        <div className="mb-6 sm:mb-8">
-          <div className={`text-xs font-mono font-semibold uppercase tracking-widest text-[#87CEEB] mb-2.5 ${revealStyles.transition} ${isVisible ? revealStyles.visible : revealStyles.hidden}`}>
+        {/* Section Header: Eyebrow + Display Headline */}
+        <div className="mb-8 sm:mb-12">
+          <div
+            className={`text-xs font-mono font-semibold uppercase tracking-widest text-[#87CEEB] mb-2.5 ${
+              revealStyles.transition
+            } ${isVisible ? revealStyles.visible : revealStyles.hidden}`}
+          >
             • Senior Sales Leadership • Royal Way Academy
           </div>
+
           <div className="max-w-3xl">
             <div className={revealStyles.clipMaskContainer}>
               <h2
@@ -39,94 +92,132 @@ export const Chapter04Coaches: React.FC = () => {
               </h2>
             </div>
             <p
-              className={`text-sm sm:text-base text-gray-300 font-sans leading-relaxed ${revealStyles.transition} ${
-                isVisible ? revealStyles.visible : revealStyles.hidden
-              }`}
+              className={`text-sm sm:text-base text-gray-300 font-sans leading-relaxed ${
+                revealStyles.transition
+              } ${isVisible ? revealStyles.visible : revealStyles.hidden}`}
               style={{ transitionDelay: '100ms' }}
             >
-              Sales leadership, frontline coaching, and team development delivered by seasoned consultants with decades of practical field experience.
+              Sales leadership, frontline coaching, and team development delivered by seasoned
+              consultants with decades of practical field experience.
             </p>
           </div>
         </div>
 
-        {/* Human Editorial Composition — Open Canvas, No Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start border-t border-white/15 pt-6">
-          {/* Dominant Coach: Royal Bal (7 cols) */}
-          <div
-            className={`lg:col-span-7 space-y-4 sm:space-y-5 ${revealStyles.transition} ${isVisible ? revealStyles.visible : revealStyles.hidden}`}
-            style={{ transitionDelay: '100ms' }}
-          >
-            <div className="flex items-start gap-5">
-              {/* Minimal Monogram Typography */}
-              <div className="w-14 h-18 sm:w-18 sm:h-22 border border-[#87CEEB]/40 flex flex-col items-center justify-center shrink-0">
-                <span className="text-xl sm:text-2xl font-mono font-extrabold text-[#87CEEB] tracking-wider">
-                  {royalBal.initials}
-                </span>
-                <span className="text-[9px] font-mono text-gray-400 mt-0.5">ODISHA</span>
-              </div>
+        {/* Interactive 3-Card Leadership Showcase */}
+        <div
+          className={`py-4 px-1 sm:px-2 transition-all duration-700 ${
+            isVisible ? revealStyles.visible : revealStyles.hidden
+          }`}
+          style={{ transitionDelay: '180ms' }}
+          role="region"
+          aria-label="Leadership team profiles"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+            {coachesData.map((coach) => {
+              const isCardActive = activeCoachId === coach.id;
+              const isAnyActive = activeCoachId !== null;
+              const isOtherCard = isAnyActive && !isCardActive;
 
-              <div className="space-y-1">
-                <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#87CEEB]">
-                  FOUNDER • SALES PERFORMANCE ENGINE
-                </div>
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white font-sans">
-                  {royalBal.name}
-                </h3>
-                <p className="text-sm sm:text-base font-semibold text-gray-200">
-                  {royalBal.experience}
-                </p>
-                <p className="text-xs text-gray-400 font-sans">
-                  {royalBal.role}
-                </p>
-              </div>
-            </div>
+              // Motion classes based on active state and reduced motion preferences
+              let cardStateClasses = 'border-white/15 bg-[#0e263f]/90 shadow-md shadow-black/20';
+              let imageTransformClass = 'scale-100 brightness-100';
 
-            <p className="text-sm sm:text-base text-gray-300 font-sans leading-relaxed max-w-xl">
-              {royalBal.bioSummary}
-            </p>
+              if (!prefersReducedMotion) {
+                if (isCardActive) {
+                  cardStateClasses =
+                    'scale-[1.05] z-20 border-[#87CEEB]/80 bg-[#123352] shadow-2xl shadow-black/50 ring-1 ring-[#87CEEB]/30';
+                  imageTransformClass = 'scale-[1.09] brightness-105';
+                } else if (isOtherCard) {
+                  cardStateClasses =
+                    'scale-[0.96] opacity-75 z-10 border-white/10 bg-[#0e263f]/60 filter brightness-95';
+                  imageTransformClass = 'scale-100 brightness-90';
+                }
+              } else {
+                // Reduced motion: no scale transforms, pure border and subtle brightness cue
+                if (isCardActive) {
+                  cardStateClasses =
+                    'border-[#87CEEB] bg-[#123352] shadow-lg shadow-black/30 ring-1 ring-[#87CEEB]/40';
+                } else if (isOtherCard) {
+                  cardStateClasses = 'opacity-85 border-white/10 bg-[#0e263f]/70';
+                }
+              }
 
-            <div className="pt-3 border-t border-white/10 flex items-center justify-between text-xs font-mono text-gray-400">
-              <span>SALES LEADERSHIP CONSULTING</span>
-              <span className="text-[#87CEEB]">ODISHA MSME SECTOR</span>
-            </div>
-          </div>
+              return (
+                <article
+                  key={coach.id}
+                  id={`coach-card-${coach.id}`}
+                  tabIndex={0}
+                  role="article"
+                  aria-label={`${coach.name}, ${coach.role}`}
+                  onMouseEnter={() => setActiveCoachId(coach.id)}
+                  onMouseLeave={() => setActiveCoachId(null)}
+                  onFocus={() => setActiveCoachId(coach.id)}
+                  onBlur={() => setActiveCoachId(null)}
+                  onClick={() =>
+                    setActiveCoachId(activeCoachId === coach.id ? null : coach.id)
+                  }
+                  className={`group rounded-[6px] border overflow-hidden flex flex-col justify-between transition-all duration-350 ease-[cubic-bezier(0.16,1,0.3,1)] cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#87CEEB] ${cardStateClasses}`}
+                  style={{
+                    transformOrigin: 'center center',
+                    willChange: prefersReducedMotion ? 'auto' : 'transform, opacity',
+                  }}
+                >
+                  {/* Portrait Photography Canvas */}
+                  <div className="relative aspect-[4/5] sm:aspect-[3/4] w-full overflow-hidden bg-[#071524]">
+                    <img
+                      src={coach.image}
+                      alt={coach.imageAlt}
+                      className={`w-full h-full object-cover object-top transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${imageTransformClass}`}
+                      loading="lazy"
+                    />
 
-          {/* Supporting Coaches: Saroj Kumar Panda & Sudeep Mohanty (5 cols) */}
-          <div
-            className={`lg:col-span-5 space-y-4 sm:space-y-5 lg:border-l lg:border-white/15 lg:pl-8 ${revealStyles.transition} ${isVisible ? revealStyles.visible : revealStyles.hidden}`}
-            style={{ transitionDelay: '200ms' }}
-          >
-            {/* Coach 2: Saroj Kumar Panda */}
-            <div className="space-y-1 pb-4 border-b border-white/10">
-              <div className="text-[11px] font-mono font-semibold text-[#87CEEB] uppercase tracking-wider">
-                ASSOCIATE COACH
-              </div>
-              <h3 className="text-lg sm:text-xl font-bold text-white font-sans">
-                {sarojPanda.name}
-              </h3>
-              <p className="text-xs sm:text-sm font-semibold text-gray-200">
-                {sarojPanda.role} • {sarojPanda.experience}
-              </p>
-              <p className="text-xs text-gray-400 font-sans leading-relaxed">
-                Mindfulness Educator & Mindset Coach
-              </p>
-            </div>
+                    {/* Monogram Badge / Watermark */}
+                    <div className="absolute top-3.5 right-3.5 z-10">
+                      <div className="px-2.5 py-1 rounded-[3px] bg-[#0B1F33]/85 border border-[#87CEEB]/30 backdrop-blur-sm flex items-center gap-1.5 shadow-sm">
+                        <span className="text-[11px] font-mono font-bold text-[#87CEEB] tracking-wider">
+                          {coach.initials}
+                        </span>
+                        <span className="text-[9px] font-mono text-gray-300 uppercase">ODISHA</span>
+                      </div>
+                    </div>
 
-            {/* Coach 3: Sudeep Mohanty */}
-            <div className="space-y-1">
-              <div className="text-[11px] font-mono font-semibold text-[#87CEEB] uppercase tracking-wider">
-                ASSOCIATE COACH
-              </div>
-              <h3 className="text-lg sm:text-xl font-bold text-white font-sans">
-                {sudeepMohanty.name}
-              </h3>
-              <p className="text-xs sm:text-sm font-semibold text-gray-200">
-                {sudeepMohanty.role} • {sudeepMohanty.experience}
-              </p>
-              <p className="text-xs text-gray-400 font-sans leading-relaxed">
-                Head Coach
-              </p>
-            </div>
+                    {/* Gradient Overlay for seamless text blending */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0e263f] via-[#0e263f]/40 to-transparent pointer-events-none" />
+                  </div>
+
+                  {/* Profile Structured Information */}
+                  <div className="p-5 sm:p-6 space-y-3 flex-1 flex flex-col justify-between">
+                    <div className="space-y-1.5">
+                      {/* Subtitle / Program Role Tag */}
+                      <div className="text-[10px] font-mono font-bold tracking-widest text-[#87CEEB] uppercase">
+                        {coach.metadataTag}
+                      </div>
+
+                      {/* Coach Name */}
+                      <h3 className="text-xl sm:text-2xl font-extrabold text-white font-sans tracking-tight">
+                        {coach.name}
+                      </h3>
+
+                      {/* Experience Line */}
+                      <p className="text-xs sm:text-sm font-semibold text-gray-200 font-sans">
+                        {coach.descriptor}
+                      </p>
+
+                      {/* Bio Summary */}
+                      <p className="text-xs text-gray-300 font-sans leading-relaxed pt-1">
+                        {coach.bioSummary}
+                      </p>
+                    </div>
+
+                    {/* Metadata Footer */}
+                    <div className="pt-3 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-gray-400">
+                      <span className="text-white/60">{coach.footerLabel}</span>
+                      <span className="text-[#87CEEB] font-semibold">VSH ADVISORY</span>
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </Container>
