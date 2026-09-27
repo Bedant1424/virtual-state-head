@@ -12,8 +12,9 @@ export interface Chapter09PerformanceGapBatchProps {
 
 /**
  * CHAPTER 09 — THE PERFORMANCE GAP & UPCOMING BATCH
- * Compressed: tension image + compact impact grid + sculptural "10" moment.
- * The "10" scales in on scroll reveal.
+ * Open canvas: Architectural tension visual + 8 operational impacts on left.
+ * Right: The "10" is a pure typographic visual event with NO enclosing card.
+ * ZERO cards, ZERO container boxes.
  */
 export const Chapter09PerformanceGapBatch: React.FC<Chapter09PerformanceGapBatchProps> = ({ onCtaClick }) => {
   const { batch } = siteContent;
@@ -35,11 +36,16 @@ export const Chapter09PerformanceGapBatch: React.FC<Chapter09PerformanceGapBatch
     <section
       id="batch"
       aria-labelledby="gap-batch-heading"
-      className="py-12 sm:py-16 lg:py-20 bg-white overflow-hidden"
+      className="py-12 sm:py-16 lg:py-20 bg-white border-b border-gray-200/80 overflow-hidden"
     >
       <Container size="default">
-        {/* Compact headline */}
-        <div className={`max-w-3xl mb-8 sm:mb-10 ${revealStyles.transition} ${isVisible ? revealStyles.visible : revealStyles.hidden}`} ref={sectionRef}>
+        {/* Section Headline */}
+        <div
+          ref={sectionRef}
+          className={`max-w-3xl mb-8 sm:mb-12 ${revealStyles.transition} ${
+            isVisible ? revealStyles.visible : revealStyles.hidden
+          }`}
+        >
           <h2
             id="gap-batch-heading"
             className="text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-[#0B1F33] font-sans tracking-tight leading-tight mb-2"
@@ -51,10 +57,14 @@ export const Chapter09PerformanceGapBatch: React.FC<Chapter09PerformanceGapBatch
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
-          {/* Left: Tension image + compact impact grid */}
-          <div className="lg:col-span-7 space-y-5">
-            <div className={`relative aspect-[2/1] w-full rounded-[4px] overflow-hidden ${revealStyles.imageTransition} ${isVisible ? revealStyles.imageVisible : revealStyles.imageHidden}`}>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
+          {/* Left: Tension image + 8 impacts matrix */}
+          <div className="lg:col-span-6 space-y-6">
+            <div
+              className={`relative aspect-[2/1] w-full rounded-[2px] overflow-hidden ${
+                revealStyles.imageTransition
+              } ${isVisible ? revealStyles.imageVisible : revealStyles.imageHidden}`}
+            >
               <img
                 src={vshImages.gap}
                 alt="Architectural shadow and tension representing operational friction across sales functions"
@@ -64,18 +74,20 @@ export const Chapter09PerformanceGapBatch: React.FC<Chapter09PerformanceGapBatch
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B1F33]/40 via-transparent to-transparent pointer-events-none" />
-              <div className="absolute bottom-3 left-3 px-3 py-1.5 rounded-[2px] bg-[#0B1F33]/80 backdrop-blur-xs text-[11px] font-mono text-white/90">
-                THE PERFORMANCE GAP
+              <div className="absolute bottom-3 left-3 text-[10px] font-mono text-white/80 uppercase tracking-widest">
+                THE PERFORMANCE GAP • COMMERCIAL FRICTION
               </div>
             </div>
 
-            {/* Compact 2-col impact grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2">
+            {/* Eight Approved Impacts: 2-Column Hairline Matrix */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 pt-2 border-t border-gray-200">
               {gapImpacts.map((impact, idx) => (
                 <div
                   key={idx}
-                  className={`flex items-baseline gap-2 text-xs sm:text-sm text-[#333333] font-sans py-1 ${revealStyles.transition} ${isVisible ? revealStyles.visible : revealStyles.hidden}`}
-                  style={{ transitionDelay: staggerDelay(idx, 40) }}
+                  className={`flex items-baseline gap-2 text-xs sm:text-sm text-[#333333] font-sans py-1.5 border-b border-gray-100 ${
+                    revealStyles.transition
+                  } ${isVisible ? revealStyles.visible : revealStyles.hidden}`}
+                  style={{ transitionDelay: staggerDelay(idx, 30) }}
                 >
                   <span className="text-xs font-mono font-bold text-[#123B63] shrink-0">
                     {String(idx + 1).padStart(2, '0')}.
@@ -86,12 +98,13 @@ export const Chapter09PerformanceGapBatch: React.FC<Chapter09PerformanceGapBatch
             </div>
           </div>
 
-          {/* Right: Sculptural cohort block with animated "10" */}
+          {/* Right: Typographic "10" Event (Open Canvas, No Enclosing Card) */}
           <div
             ref={batchRef}
-            className="lg:col-span-5 bg-[#F3F5F7] rounded-[4px] border border-gray-300 p-6 sm:p-8"
+            className="lg:col-span-6 flex flex-col justify-between space-y-6 lg:pl-6"
           >
-            <div className="flex items-baseline justify-between mb-3 pb-3 border-b border-gray-300">
+            {/* Header info line with delicate hairline */}
+            <div className="flex items-baseline justify-between pb-3 border-b border-gray-200">
               <span className="text-xs font-mono font-bold uppercase text-[#123B63] tracking-wider">
                 {batch.statusBadge}
               </span>
@@ -100,38 +113,42 @@ export const Chapter09PerformanceGapBatch: React.FC<Chapter09PerformanceGapBatch
               </span>
             </div>
 
-            {/* Sculptural 10 — scales in on reveal */}
-            <div className={`flex items-baseline gap-4 my-5 transition-all duration-1000 ease-out ${
-              batchVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-[0.6]'
-            }`}>
-              <span className="text-7xl sm:text-8xl lg:text-[6.5rem] font-extrabold text-[#0B1F33] font-mono leading-none tracking-tighter">
+            {/* Sculptural "10" Typographic Event */}
+            <div
+              className={`flex items-baseline gap-5 my-2 transition-all duration-1000 ease-out ${
+                batchVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-[0.7]'
+              }`}
+            >
+              <span className="text-8xl sm:text-9xl lg:text-[7.5rem] font-extrabold text-[#0B1F33] font-mono leading-none tracking-tighter">
                 10
               </span>
-              <div className="text-xl sm:text-2xl font-extrabold text-[#0B1F33] font-sans leading-tight">
+              <div className="text-2xl sm:text-3xl font-extrabold text-[#0B1F33] font-sans leading-tight">
                 MSME Companies.
-                <span className="block text-[#123B63] font-bold text-base sm:text-lg">
+                <span className="block text-[#123B63] font-bold text-lg sm:text-xl mt-1">
                   One Focused Batch.
                 </span>
               </div>
             </div>
 
-            <p className="text-xs sm:text-sm text-[#4A5568] font-sans leading-relaxed mb-4">
+            <p className="text-sm sm:text-base text-[#4A5568] font-sans leading-relaxed">
               Each batch is strictly limited to 10 MSME companies from Odisha to ensure intensive coaching attention and executive oversight.
             </p>
 
-            <div className="text-[11px] font-mono text-[#6B7280] bg-white p-3 rounded-[3px] border border-gray-200 mb-5">
-              NOTE: {batch.note}
+            <div className="text-xs font-mono text-[#6B7280] py-2 border-l-2 border-[#123B63] pl-3">
+              Selection confirmed through mutual fit assessment during initial strategy discussion.
             </div>
 
-            <Button
-              variant="primary"
-              size="lg"
-              onClick={onCtaClick}
-              className="w-full bg-[#123B63] text-white hover:bg-[#0B1F33] transition-colors font-bold px-8 py-4 rounded-[4px] shadow-none flex items-center justify-center gap-3 cursor-pointer whitespace-nowrap"
-            >
-              <span>Book Your Sales Strategy Call</span>
-              <ArrowRight className="w-4 h-4 text-[#87CEEB]" />
-            </Button>
+            <div className="pt-2">
+              <Button
+                variant="primary"
+                size="lg"
+                onClick={onCtaClick}
+                className="w-full sm:w-auto bg-[#123B63] text-white hover:bg-[#0B1F33] transition-colors font-bold px-10 py-4 rounded-[4px] shadow-none flex items-center justify-center gap-3 cursor-pointer whitespace-nowrap"
+              >
+                <span>Book Your Sales Strategy Call</span>
+                <ArrowRight className="w-4 h-4 text-[#87CEEB]" />
+              </Button>
+            </div>
           </div>
         </div>
       </Container>

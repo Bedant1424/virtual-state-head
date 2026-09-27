@@ -6,8 +6,9 @@ import { useScrollReveal, staggerDelay, revealStyles } from '@/hooks/useMotion';
 
 /**
  * CHAPTER 07 — FRAMEWORKS & ENGAGEMENT STAGES
- * Compressed: larger image, stronger framework typography, tighter stage spacing.
- * Clip reveal on image, stagger on frameworks + stages.
+ * Open canvas: 5 bold framework names on left, frontline documentary photo on right.
+ * Six engagement stages as a clean, ultra-compact typographic strip below.
+ * ZERO cards, ZERO rails, ZERO arrows, ZERO connectors.
  */
 export const Chapter07FrameworksProcess: React.FC = () => {
   const { frameworks, processStages } = siteContent;
@@ -19,10 +20,10 @@ export const Chapter07FrameworksProcess: React.FC = () => {
       id="how-it-works"
       ref={sectionRef}
       aria-labelledby="frameworks-process-heading"
-      className="py-12 sm:py-16 lg:py-20 bg-white overflow-hidden"
+      className="py-12 sm:py-16 lg:py-20 bg-white border-b border-gray-200/80 overflow-hidden"
     >
       <Container size="default">
-        {/* Compact headline */}
+        {/* Section Headline */}
         <div className={`max-w-3xl mb-8 sm:mb-10 ${revealStyles.transition} ${isVisible ? revealStyles.visible : revealStyles.hidden}`}>
           <h2
             id="frameworks-process-heading"
@@ -36,19 +37,19 @@ export const Chapter07FrameworksProcess: React.FC = () => {
         </div>
 
         {/* 2-Column: Frameworks left, large image right */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center mb-10 sm:mb-12">
-          {/* Frameworks — stronger typography */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center mb-8 sm:mb-10">
+          {/* Frameworks — typography with clean hairlines */}
           <div className="lg:col-span-5 space-y-0 border-t border-gray-300">
             {frameworks.map((fw, idx) => (
               <div
                 key={fw.id}
                 className={`py-3 flex items-center gap-3 border-b border-gray-300/60 ${revealStyles.transition} ${isVisible ? revealStyles.visible : revealStyles.hidden}`}
-                style={{ transitionDelay: staggerDelay(idx, 60) }}
+                style={{ transitionDelay: staggerDelay(idx, 50) }}
               >
                 <span className="text-xs font-mono font-bold text-[#123B63]">
                   {fw.number}
                 </span>
-                <h3 className="text-lg sm:text-xl font-bold text-[#0B1F33] font-sans">
+                <h3 className="text-base sm:text-lg font-bold text-[#0B1F33] font-sans">
                   {fw.name}
                 </h3>
               </div>
@@ -57,7 +58,7 @@ export const Chapter07FrameworksProcess: React.FC = () => {
 
           {/* Large field image — 3:2 aspect */}
           <div className="lg:col-span-7">
-            <div className={`relative aspect-[3/2] w-full rounded-[4px] overflow-hidden ${revealStyles.imageTransition} ${isVisible ? revealStyles.imageVisible : revealStyles.imageHidden}`}>
+            <div className={`relative aspect-[3/2] w-full rounded-[2px] overflow-hidden ${revealStyles.imageTransition} ${isVisible ? revealStyles.imageVisible : revealStyles.imageHidden}`}>
               <img
                 src={vshImages.howItWorks}
                 alt="Frontline sales field review and strategic execution in Odisha"
@@ -67,29 +68,29 @@ export const Chapter07FrameworksProcess: React.FC = () => {
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B1F33]/30 via-transparent to-transparent pointer-events-none" />
-              <div className="absolute bottom-3 left-3 px-3 py-1.5 rounded-[2px] bg-[#0B1F33]/80 backdrop-blur-xs text-[11px] font-mono text-white/90">
+              <div className="absolute bottom-3 left-3 text-[10px] font-mono text-white/80 uppercase tracking-widest">
                 FRONTLINE FIELD REVIEW • ODISHA
               </div>
             </div>
           </div>
         </div>
 
-        {/* Six Engagement Stages — large typography, tight gaps */}
-        <div ref={stagesRef} className="pt-8 border-t border-gray-200">
-          <div className={`text-xs font-mono font-bold uppercase tracking-wider text-[#6B7280] mb-5 ${revealStyles.transition} ${stagesVisible ? revealStyles.visible : revealStyles.hidden}`}>
+        {/* Six Engagement Stages: Compact Typographic Strip */}
+        <div ref={stagesRef} className="pt-6 border-t border-gray-200">
+          <div className={`text-[11px] font-mono font-semibold uppercase tracking-wider text-[#6B7280] mb-4 ${revealStyles.transition} ${stagesVisible ? revealStyles.visible : revealStyles.hidden}`}>
             SIX ENGAGEMENT STAGES
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-6 items-baseline">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 items-baseline">
             {processStages.map((stage, idx) => (
               <div
                 key={stage.id}
-                className={`space-y-1 ${revealStyles.transition} ${stagesVisible ? revealStyles.visible : revealStyles.hidden}`}
-                style={{ transitionDelay: staggerDelay(idx, 80) }}
+                className={`flex items-baseline gap-2 ${revealStyles.transition} ${stagesVisible ? revealStyles.visible : revealStyles.hidden}`}
+                style={{ transitionDelay: staggerDelay(idx, 40) }}
               >
-                <span className="text-xs font-mono font-bold text-[#123B63] block">
+                <span className="text-xs font-mono font-bold text-[#123B63]">
                   {stage.number}
                 </span>
-                <span className="text-xl sm:text-2xl font-bold text-[#0B1F33] font-sans tracking-tight block leading-snug">
+                <span className="text-sm sm:text-base font-bold text-[#0B1F33] font-sans tracking-tight">
                   {stage.name}
                 </span>
               </div>

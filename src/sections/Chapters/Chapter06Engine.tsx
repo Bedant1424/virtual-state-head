@@ -12,13 +12,9 @@ export interface Chapter06EngineProps {
 
 /**
  * CHAPTER 06 — SALES PERFORMANCE ENGINE
- * The visual peak. Cinematic scroll-driven sequence.
- *
- * Artwork dominates the viewport. Scroll drives through:
- * STATE 01: Training emphasized
- * STATE 02: Technology emphasized
- * STATE 03: Accountability emphasized
- * STATE 04: All three converge → SALES PERFORMANCE ENGINE resolves
+ * Cinematic visual peak. The optical crystal prism dominates the viewport.
+ * ZERO frosted glass cards, ZERO status dots, ZERO UI-like pillar controls.
+ * Pure typography integrated into cinematic art direction.
  */
 export const Chapter06Engine: React.FC<Chapter06EngineProps> = ({ onCtaClick }) => {
   const { pillars } = siteContent.engine;
@@ -26,7 +22,6 @@ export const Chapter06Engine: React.FC<Chapter06EngineProps> = ({ onCtaClick }) 
   const [headerRef, headerVisible] = useScrollReveal(0.15);
 
   // Determine active pillar based on scroll progress (0–1)
-  // 0.0-0.25: entering, 0.25-0.45: Training, 0.45-0.65: Technology, 0.65-0.85: Accountability, 0.85+: converge
   const getActiveIndex = () => {
     if (progress < 0.2) return -1;
     if (progress < 0.4) return 0;
@@ -38,8 +33,8 @@ export const Chapter06Engine: React.FC<Chapter06EngineProps> = ({ onCtaClick }) 
   const isConverged = activeIndex === 3;
 
   // Image transform based on scroll
-  const imageScale = 1.15 - progress * 0.15; // 1.15 → 1.0
-  const imageY = (1 - progress) * 20; // subtle parallax
+  const imageScale = 1.12 - progress * 0.12;
+  const imageY = (1 - progress) * 15;
 
   return (
     <section
@@ -48,9 +43,9 @@ export const Chapter06Engine: React.FC<Chapter06EngineProps> = ({ onCtaClick }) 
       aria-labelledby="engine-heading"
       className="relative bg-[#0B1F33] overflow-hidden"
     >
-      {/* Dark cinematic canvas */}
-      <div className="relative min-h-[700px] lg:min-h-[800px]">
-        {/* Full-bleed artwork background */}
+      {/* Full-bleed cinematic artwork canvas */}
+      <div className="relative min-h-[720px] lg:min-h-[820px]">
+        {/* Dominant Artwork Background */}
         <div
           className="absolute inset-0 overflow-hidden"
           style={{
@@ -64,22 +59,24 @@ export const Chapter06Engine: React.FC<Chapter06EngineProps> = ({ onCtaClick }) 
             className="w-full h-full object-cover object-center filter saturate-[1.1]"
             loading="lazy"
           />
-          {/* Progressive darkening as content enters */}
+          {/* Subtle cinematic gradient to ground typography */}
           <div
             className="absolute inset-0 transition-opacity duration-500"
-            style={{ opacity: 0.4 + progress * 0.3 }}
+            style={{ opacity: 0.45 + progress * 0.25 }}
           >
-            <div className="w-full h-full bg-gradient-to-t from-[#0B1F33] via-[#0B1F33]/70 to-[#0B1F33]/30" />
+            <div className="w-full h-full bg-gradient-to-t from-[#0B1F33] via-[#0B1F33]/60 to-[#0B1F33]/20" />
           </div>
         </div>
 
-        {/* Content overlay */}
-        <div className="relative z-10 flex flex-col justify-end min-h-[700px] lg:min-h-[800px] px-5 sm:px-8 pb-12 sm:pb-16 lg:pb-20 pt-16 sm:pt-20">
+        {/* Content overlay: Pure typography directly on the visual field */}
+        <div className="relative z-10 flex flex-col justify-end min-h-[720px] lg:min-h-[820px] px-5 sm:px-8 pb-12 sm:pb-16 lg:pb-20 pt-20">
           <Container size="default">
-            {/* Section header */}
+            {/* Section Heading */}
             <div
               ref={headerRef}
-              className={`mb-8 sm:mb-10 ${revealStyles.transition} ${headerVisible ? revealStyles.visible : revealStyles.hidden}`}
+              className={`mb-8 sm:mb-12 max-w-2xl ${revealStyles.transition} ${
+                headerVisible ? revealStyles.visible : revealStyles.hidden
+              }`}
             >
               <h2
                 id="engine-heading"
@@ -90,42 +87,34 @@ export const Chapter06Engine: React.FC<Chapter06EngineProps> = ({ onCtaClick }) 
                   Sales Performance Engine
                 </span>
               </h2>
-              <p className="text-sm sm:text-base text-gray-300 font-sans leading-relaxed max-w-xl">
+              <p className="text-sm sm:text-base text-gray-300 font-sans leading-relaxed">
                 Three essential elements converge to build sustainable commercial consistency.
               </p>
             </div>
 
-            {/* Three pillars — scroll-driven emphasis */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-8">
+            {/* Three Pillars: Pure Typography Over Artwork (No Cards, No Status Dots) */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-12 mb-10 border-t border-white/20 pt-6">
               {pillars.map((pillar, idx) => {
                 const isActive = activeIndex === idx || isConverged;
                 return (
-                  <div
-                    key={pillar.id}
-                    className={`relative p-4 sm:p-5 rounded-[4px] border transition-all duration-500 ${
-                      isActive
-                        ? 'bg-white/10 border-[#87CEEB]/40 backdrop-blur-sm'
-                        : 'bg-white/[0.03] border-white/10'
-                    }`}
-                  >
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <span
-                        className={`w-2 h-2 rounded-full transition-all duration-500 ${
-                          isActive ? 'bg-[#87CEEB] scale-100' : 'bg-white/30 scale-75'
-                        }`}
-                      />
+                  <div key={pillar.id} className="space-y-2">
+                    <div className="flex items-baseline gap-2">
                       <span className="text-xs font-mono font-bold text-[#87CEEB]">
                         {pillar.number}
                       </span>
-                      <h3 className={`text-sm sm:text-base font-bold font-sans uppercase tracking-wide transition-colors duration-500 ${
-                        isActive ? 'text-white' : 'text-white/50'
-                      }`}>
+                      <h3
+                        className={`text-base sm:text-lg font-bold font-sans uppercase tracking-wider transition-colors duration-500 ${
+                          isActive ? 'text-white' : 'text-white/50'
+                        }`}
+                      >
                         {pillar.title}
                       </h3>
                     </div>
-                    <p className={`text-xs text-gray-400 font-sans leading-relaxed transition-opacity duration-500 ${
-                      isActive ? 'opacity-100' : 'opacity-40'
-                    }`}>
+                    <p
+                      className={`text-xs sm:text-sm text-gray-300 font-sans leading-relaxed transition-opacity duration-500 ${
+                        isActive ? 'opacity-100' : 'opacity-40'
+                      }`}
+                    >
                       {pillar.description}
                     </p>
                   </div>
@@ -133,11 +122,13 @@ export const Chapter06Engine: React.FC<Chapter06EngineProps> = ({ onCtaClick }) 
               })}
             </div>
 
-            {/* Convergence principle + CTA */}
-            <div className={`flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8 transition-all duration-700 ${
-              isConverged ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-            }`}>
-              <div className="text-xs font-mono font-bold text-[#87CEEB] tracking-wider">
+            {/* Convergence Formula Lockup + Primary Action */}
+            <div
+              className={`flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pt-6 border-t border-white/20 transition-all duration-700 ${
+                isConverged ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
+            >
+              <div className="text-xs sm:text-sm font-mono font-bold text-[#87CEEB] tracking-wider">
                 TRAINING + TECHNOLOGY + ACCOUNTABILITY = SALES PERFORMANCE ENGINE
               </div>
               <Button

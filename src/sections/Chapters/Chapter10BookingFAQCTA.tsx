@@ -11,7 +11,8 @@ export interface Chapter10BookingFAQCTAProps {
 
 /**
  * CHAPTER 10 — CONVERSION: BOOKING STAGES, FAQS & DECISIVE CLOSING
- * Compact FAQ rows, smooth height transitions, tight connection to final CTA.
+ * Open canvas: 4 compact booking stages + 9 master FAQs + Midnight Navy closing CTA.
+ * ZERO cards, ZERO status dots, ZERO fake booking calendar UI.
  */
 export const Chapter10BookingFAQCTA: React.FC<Chapter10BookingFAQCTAProps> = ({ onCtaClick }) => {
   const { faqs } = siteContent;
@@ -32,7 +33,7 @@ export const Chapter10BookingFAQCTA: React.FC<Chapter10BookingFAQCTAProps> = ({ 
 
   return (
     <div id="conversion" className="overflow-hidden">
-      {/* SECTION 1: BOOKING STAGES & FAQS */}
+      {/* SECTION 1: BOOKING STAGES & FAQS (Open Light Mist Canvas) */}
       <section
         id="faqs"
         aria-labelledby="faq-heading"
@@ -44,7 +45,7 @@ export const Chapter10BookingFAQCTA: React.FC<Chapter10BookingFAQCTAProps> = ({ 
             • Process Transparency • Direct Answers
           </div>
 
-          {/* Compact heading */}
+          {/* Section Heading */}
           <div className="max-w-3xl mb-8 sm:mb-10">
             <h2
               id="faq-heading"
@@ -62,12 +63,12 @@ export const Chapter10BookingFAQCTA: React.FC<Chapter10BookingFAQCTAProps> = ({ 
             <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#123B63] mb-5">
               WHAT HAPPENS AFTER YOU REQUEST A CALL
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {bookingStages.map((stage, idx) => (
                 <div
                   key={stage.num}
                   className={`space-y-1 ${revealStyles.transition} ${stagesVisible ? revealStyles.visible : revealStyles.hidden}`}
-                  style={{ transitionDelay: staggerDelay(idx, 80) }}
+                  style={{ transitionDelay: staggerDelay(idx, 60) }}
                 >
                   <span className="text-xs font-mono font-bold text-[#123B63] block">
                     STAGE {stage.num}
@@ -83,7 +84,7 @@ export const Chapter10BookingFAQCTA: React.FC<Chapter10BookingFAQCTAProps> = ({ 
             </div>
           </div>
 
-          {/* 9 Master FAQs — compact accordion */}
+          {/* 9 Master FAQs — Collapsed Accordion */}
           <div className="max-w-4xl mx-auto">
             <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#123B63] mb-4">
               FREQUENTLY ASKED QUESTIONS
@@ -116,17 +117,15 @@ export const Chapter10BookingFAQCTA: React.FC<Chapter10BookingFAQCTAProps> = ({ 
                       />
                     </button>
 
-                    {/* Smooth height transition for FAQ answer */}
-                    <div
-                      id={`faq-answer-${faq.id}`}
-                      className={`overflow-hidden transition-all duration-300 ease-out ${
-                        isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                      }`}
-                    >
-                      <div className="pb-3 pl-6 pr-4 text-sm text-[#4A5568] font-sans leading-relaxed">
+                    {/* Conditional render: answers appear on user interaction */}
+                    {isOpen && (
+                      <div
+                        id={`faq-answer-${faq.id}`}
+                        className="pb-3 pl-6 pr-4 text-sm text-[#4A5568] font-sans leading-relaxed border-t border-gray-200 mt-1 pt-2"
+                      >
                         {faq.answer}
                       </div>
-                    </div>
+                    )}
                   </div>
                 );
               })}
@@ -135,7 +134,7 @@ export const Chapter10BookingFAQCTA: React.FC<Chapter10BookingFAQCTAProps> = ({ 
         </Container>
       </section>
 
-      {/* SECTION 2: FINAL DECISIVE CTA — Direct transition, no gap */}
+      {/* SECTION 2: FINAL DECISIVE CTA (Midnight Navy Canvas, Zero Gap) */}
       <section
         id="final-cta"
         ref={ctaRef}
@@ -144,9 +143,8 @@ export const Chapter10BookingFAQCTA: React.FC<Chapter10BookingFAQCTAProps> = ({ 
       >
         <Container size="default">
           <div className={`max-w-3xl mx-auto text-center space-y-5 sm:space-y-6 ${revealStyles.transition} ${ctaVisible ? revealStyles.visible : revealStyles.hidden}`}>
-            <div className="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-[#87CEEB]">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#87CEEB]" />
-              <span>SALES LEADERSHIP FOR ODISHA MSMES</span>
+            <div className="text-xs font-mono font-semibold uppercase tracking-widest text-[#87CEEB]">
+              • SALES LEADERSHIP FOR ODISHA MSMES •
             </div>
 
             <h2

@@ -91,7 +91,7 @@ export const Chapter01Hero: React.FC<Chapter01HeroProps> = ({ onCtaClick }) => {
             <div className="absolute inset-0 bg-gradient-to-t from-[#0B1F33]/30 via-transparent to-transparent pointer-events-none" />
 
             {/* Photo Caption */}
-            <div className="absolute bottom-4 right-4 px-3 py-1.5 rounded-[2px] bg-[#0B1F33]/70 backdrop-blur-xs text-[11px] font-mono text-white/80 tracking-wider">
+            <div className="absolute bottom-4 right-4 text-[10px] font-mono text-white/80 uppercase tracking-widest">
               COMMERCIAL DIRECTION • ODISHA
             </div>
           </div>

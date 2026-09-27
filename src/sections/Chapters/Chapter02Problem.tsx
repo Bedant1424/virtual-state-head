@@ -41,8 +41,8 @@ export const Chapter02Problem: React.FC = () => {
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B1F33]/40 via-transparent to-transparent pointer-events-none" />
-              <div className="absolute bottom-3 left-3 px-3 py-1.5 rounded-[2px] bg-[#0B1F33]/80 backdrop-blur-xs text-[11px] font-mono text-white/90">
-                THE OPERATIONAL BOTTLENECK
+              <div className="absolute bottom-3 left-3 text-[10px] font-mono text-white/80 uppercase tracking-widest">
+                THE OPERATIONAL BOTTLENECK • ODISHA
               </div>
             </div>
           </div>
