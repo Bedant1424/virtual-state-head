@@ -8,6 +8,11 @@ import performanceGapTension from './performance_gap_tension.jpg';
 import coachDemoRoyal from './coach_demo_royal.jpg';
 import coachDemoSaroj from './coach_demo_saroj.jpg';
 import coachDemoSudeep from './coach_demo_sudeep.jpg';
+import benefitDemoStrategy from './benefit_demo_strategy.jpg';
+import benefitDemoTeam from './benefit_demo_team.jpg';
+import benefitDemoLeadership from './benefit_demo_leadership.jpg';
+import benefitDemoAccountability from './benefit_demo_accountability.jpg';
+import benefitDemoConsulting from './benefit_demo_consulting.jpg';
 
 export const vshImages = {
   hero: heroExecutiveDawn,
@@ -22,6 +27,13 @@ export const vshImages = {
     royalBal: coachDemoRoyal,
     sarojPanda: coachDemoSaroj,
     sudeepMohanty: coachDemoSudeep,
+  },
+  benefits: {
+    strategy: benefitDemoStrategy,
+    team: benefitDemoTeam,
+    leadership: benefitDemoLeadership,
+    accountability: benefitDemoAccountability,
+    consulting: benefitDemoConsulting,
   },
 };
 
