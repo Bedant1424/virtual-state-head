@@ -384,7 +384,7 @@ export const Chapter09PerformanceGapBatch: React.FC<Chapter09PerformanceGapBatch
             {/* Headline & Focused Cohort Proposition */}
             <div className="lg:col-span-7 space-y-4">
               <div className="inline-block px-3 py-1 rounded-[4px] bg-[#EAF5FB] border border-[#87CEEB]/40 text-[#123B63] text-xs font-mono font-bold uppercase tracking-wider">
-                COMMITTED CAPACITY • NOT OPEN-ENROLLMENT
+                PLANNED BATCH • ODISHA MSMES
               </div>
 
               <h3 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0B1F33] font-sans tracking-tight leading-tight">
@@ -395,8 +395,8 @@ export const Chapter09PerformanceGapBatch: React.FC<Chapter09PerformanceGapBatch
               </h3>
 
               <p className="text-base sm:text-lg text-[#333333] font-sans leading-relaxed">
-                Each batch is strictly limited to 10 MSME companies from Odisha to ensure intensive coaching attention,
-                high-touch executive oversight, and direct involvement from senior leadership.
+                A planned batch for 10 MSME companies in Odisha, providing experienced sales leadership,
+                team development, and ongoing performance support.
               </p>
 
               <div className="flex items-center gap-3 p-3.5 bg-[#F3F5F7] rounded-[4px] border-l-4 border-l-[#123B63]">
@@ -431,7 +431,7 @@ export const Chapter09PerformanceGapBatch: React.FC<Chapter09PerformanceGapBatch
               {/* Overlay Badge */}
               <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white text-xs font-mono">
                 <span className="font-bold tracking-wider uppercase text-[#87CEEB]">
-                  CLOSED-DOOR EXECUTIVE ENGAGEMENT • 10 ENTERPRISES ONLY
+                  PLANNED BATCH • 10 MSME COMPANIES
                 </span>
                 <span className="hidden sm:inline-block text-white/80">
                   BHUBANESWAR, ODISHA
