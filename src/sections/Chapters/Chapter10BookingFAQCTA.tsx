@@ -23,7 +23,7 @@ const bookingStages: readonly BookingStage[] = [
     num: '01',
     title: 'Book Your Call',
     desc: 'Schedule an initial sales strategy discussion for your business.',
-    detail: 'A confidential 45-minute exploratory consultation directly with senior sales leadership.',
+    detail: 'An introductory sales strategy discussion directly with senior sales leadership.',
     tag: 'INITIAL CONSULTATION',
   },
   {
@@ -36,8 +36,8 @@ const bookingStages: readonly BookingStage[] = [
   {
     num: '03',
     title: 'Assess the Fit',
-    desc: 'Determine mutual fit and readiness for the engagement.',
-    detail: 'We evaluate whether the VSH advisory and coaching model aligns with your operational stage.',
+    desc: 'Assess alignment and readiness for the engagement.',
+    detail: 'We evaluate whether the VSH advisory and coaching model aligns with your operational stage. Booking a call does not guarantee acceptance.',
     tag: 'FIT ASSESSMENT',
   },
   {
@@ -148,7 +148,7 @@ export const Chapter10BookingFAQCTA: React.FC<Chapter10BookingFAQCTAProps> = ({ 
             </div>
 
             <p className="text-sm sm:text-base text-[#4A5568] font-sans leading-relaxed max-w-2xl">
-              A structured four-stage process to explore mutual fit and determine whether the Virtual State Head
+              A structured four-stage process to review your sales function and determine whether the Virtual State Head
               engagement aligns with your commercial objectives.
             </p>
           </div>
@@ -252,7 +252,7 @@ export const Chapter10BookingFAQCTA: React.FC<Chapter10BookingFAQCTAProps> = ({ 
                 <div className="space-y-2">
                   <div className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-[#123B63]">
                     <CalendarCheck className="w-4 h-4 text-[#123B63]" />
-                    CONFIDENTIAL STRATEGY CALL
+                    SALES STRATEGY DISCUSSION
                   </div>
                   <h3 className="text-xl sm:text-2xl font-extrabold text-[#0B1F33] font-sans leading-tight">
                     Direct Executive Dialogue.
@@ -266,15 +266,15 @@ export const Chapter10BookingFAQCTA: React.FC<Chapter10BookingFAQCTAProps> = ({ 
                 <div className="space-y-2.5 pt-2 border-t border-gray-200 text-xs text-[#333333] font-sans">
                   <div className="flex items-center gap-2.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#123B63]" />
-                    <span>Confidential 45-minute exploratory diagnostic discussion</span>
+                    <span>Initial diagnostic discussion on sales structure and goals</span>
                   </div>
                   <div className="flex items-center gap-2.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#123B63]" />
-                    <span>Diagnostic review of your current sales function</span>
+                    <span>Review of current sales activities and bottlenecks</span>
                   </div>
                   <div className="flex items-center gap-2.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#123B63]" />
-                    <span>Mutual fit assessment for Odisha MSMEs</span>
+                    <span>Assessment of alignment and operational readiness</span>
                   </div>
                 </div>
 
@@ -453,7 +453,7 @@ export const Chapter10BookingFAQCTA: React.FC<Chapter10BookingFAQCTAProps> = ({ 
             {/* Reassurance Footer Line */}
             <div className="pt-1 flex items-center justify-center gap-2 text-xs text-gray-400 font-sans">
               <ShieldCheck className="w-4 h-4 text-[#87CEEB] shrink-0" />
-              <span>Planned batch of 10 MSME companies in Odisha • Selection confirmed through mutual fit assessment</span>
+              <span>Planned batch for 10 MSME companies in Odisha • Booking a call does not guarantee acceptance</span>
             </div>
           </div>
         </Container>

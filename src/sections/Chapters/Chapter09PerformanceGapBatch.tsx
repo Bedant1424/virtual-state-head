@@ -100,7 +100,7 @@ const performanceImpacts: readonly PerformanceImpact[] = [
  * - Powerful visual reset from serious friction to focused clarity.
  * - Sculptural "10" graphic event with restrained pointer parallax and subtle scale.
  * - Panoramic photographic field (batch_demo_cohort.jpg) of the focused executive session.
- * - Approved batch messaging (strictly 10 MSME companies from Odisha).
+ * - Approved batch messaging (planned batch of 10 MSME companies in Odisha).
  * - Primary CTA: "Book Your Sales Strategy Call".
  * - NO countdown clocks, NO fake urgency, NO artificial scarcity.
  */
@@ -402,7 +402,7 @@ export const Chapter09PerformanceGapBatch: React.FC<Chapter09PerformanceGapBatch
               <div className="flex items-center gap-3 p-3.5 bg-[#F3F5F7] rounded-[4px] border-l-4 border-l-[#123B63]">
                 <ShieldCheck className="w-5 h-5 text-[#123B63] shrink-0" />
                 <p className="text-xs sm:text-sm font-sans text-[#333333]">
-                  {batch.note}
+                  Initial discussion to review sales structure and assess readiness. Booking a call does not guarantee acceptance.
                 </p>
               </div>
             </div>
@@ -451,7 +451,7 @@ export const Chapter09PerformanceGapBatch: React.FC<Chapter09PerformanceGapBatch
                 Discuss your sales team structure, key friction points, and engagement readiness.
               </p>
               <p className="text-xs text-[#6B7280] font-sans">
-                Confidential 45-minute discussion with senior sales leadership. No sales pitch, no obligation.
+                Exploratory discussion with senior sales leadership. No sales pitch, no obligation.
               </p>
             </div>
 
