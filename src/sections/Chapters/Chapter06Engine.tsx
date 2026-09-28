@@ -4,29 +4,32 @@ import { Button } from '@/components/ui/Button';
 import { vshImages } from '@/assets/images';
 import { siteContent } from '@/data/siteContent';
 import { ArrowRight } from 'lucide-react';
-import { useScrollProgress, useScrollReveal, revealStyles } from '@/hooks/useMotion';
+import { useScrollReveal, revealStyles } from '@/hooks/useMotion';
 
 export interface Chapter06EngineProps {
   onCtaClick?: () => void;
 }
 
+type ActivePillar = null | 'training' | 'technology' | 'accountability';
+
 /**
  * CHAPTER 06 — SALES PERFORMANCE ENGINE
- * Cinematic visual peak. The optical crystal prism anchors the viewport with
- * scroll-driven transformation across 5 distinct visual states:
+ * Three-pillar interactive hover showcase:
+ * 01 TRAINING
+ * 02 TECHNOLOGY
+ * 03 ACCOUNTABILITY
  *
- * State 01: TRAINING visually dominates (left light stream, scale, left pillar glow)
- * State 02: TECHNOLOGY dominates (central beam, balanced prism, center pillar glow)
- * State 03: ACCOUNTABILITY dominates (right light stream, right pillar glow)
- * State 04: CONVERGENCE (all 3 pillars illuminated, central bloom intensifies)
- * State 05: SALES PERFORMANCE ENGINE CLIMAX (formula reveal + closing concept + CTA)
+ * Controlled exclusively by user interaction:
+ * - mouse hover (onMouseEnter / onMouseLeave)
+ * - keyboard focus (onFocus / onBlur)
+ * - mobile tap (onClick)
  *
- * ZERO software badges, ZERO phase pills, ZERO clickable tab controls.
- * Purely scroll-driven, cinematic visual progression.
+ * ZERO scroll-driven pillar highlighting.
+ * ZERO phase badges, phase pills, status labels, or software controls.
  */
 export const Chapter06Engine: React.FC<Chapter06EngineProps> = ({ onCtaClick }) => {
   const { pillars } = siteContent.engine;
-  const [scrollRef, progress] = useScrollProgress();
+  const [activePillar, setActivePillar] = useState<ActivePillar>(null);
   const [headerRef, headerVisible] = useScrollReveal(0.12);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
@@ -38,97 +41,72 @@ export const Chapter06Engine: React.FC<Chapter06EngineProps> = ({ onCtaClick }) 
     return () => mq.removeEventListener('change', handler);
   }, []);
 
-  // Five distinct scroll-driven visual states:
-  // State 1: 0.00 – 0.32 (TRAINING)
-  // State 2: 0.32 – 0.52 (TECHNOLOGY)
-  // State 3: 0.52 – 0.72 (ACCOUNTABILITY)
-  // State 4: 0.72 – 0.86 (CONVERGENCE)
-  // State 5: 0.86 – 1.00 (SALES PERFORMANCE ENGINE CLIMAX)
-  const getVisualState = (p: number) => {
-    if (prefersReducedMotion) return 5;
-    if (p < 0.32) return 1;
-    if (p < 0.52) return 2;
-    if (p < 0.72) return 3;
-    if (p < 0.86) return 4;
-    return 5;
-  };
-
-  const currentVisualState = getVisualState(progress);
-  const isConverged = currentVisualState >= 4;
-
-  // Dynamic light bloom gradient according to active pillar/state
+  // Optical light bloom gradient responds directly to activePillar
   const getLightBloomStyle = () => {
     if (prefersReducedMotion) {
       return {
-        opacity: 0.65,
+        opacity: 0.55,
         background:
-          'radial-gradient(circle at 50% 45%, rgba(135,206,235,0.45) 0%, rgba(18,59,99,0.35) 45%, transparent 75%)',
+          'radial-gradient(circle at 50% 48%, rgba(135,206,235,0.40) 0%, rgba(18,59,99,0.28) 45%, transparent 70%)',
       };
     }
 
-    switch (currentVisualState) {
-      case 1: // Training: left stream
+    switch (activePillar) {
+      case 'training': // Light focus shifts left toward Training
         return {
-          opacity: 0.55,
+          opacity: 0.65,
           background:
-            'radial-gradient(circle at 28% 50%, rgba(135,206,235,0.45) 0%, rgba(18,59,99,0.30) 35%, transparent 68%)',
+            'radial-gradient(circle at 28% 50%, rgba(135,206,235,0.52) 0%, rgba(18,59,99,0.34) 38%, transparent 68%)',
         };
-      case 2: // Technology: center beam
-        return {
-          opacity: 0.58,
-          background:
-            'radial-gradient(circle at 50% 48%, rgba(135,206,235,0.48) 0%, rgba(18,59,99,0.32) 40%, transparent 68%)',
-        };
-      case 3: // Accountability: right stream
-        return {
-          opacity: 0.55,
-          background:
-            'radial-gradient(circle at 72% 50%, rgba(135,206,235,0.45) 0%, rgba(18,59,99,0.30) 35%, transparent 68%)',
-        };
-      case 4: // Convergence: all three converge
+      case 'technology': // Central beam intensifies
         return {
           opacity: 0.72,
           background:
-            'radial-gradient(circle at 50% 45%, rgba(135,206,235,0.58) 0%, rgba(18,59,99,0.42) 45%, transparent 75%)',
+            'radial-gradient(circle at 50% 48%, rgba(135,206,235,0.58) 0%, rgba(18,59,99,0.38) 42%, transparent 72%)',
         };
-      case 5: // Climax: maximum optical brilliance
+      case 'accountability': // Light focus shifts right toward Accountability
+        return {
+          opacity: 0.65,
+          background:
+            'radial-gradient(circle at 72% 50%, rgba(135,206,235,0.52) 0%, rgba(18,59,99,0.34) 38%, transparent 68%)',
+        };
+      case null: // Resting neutral state: calm, balanced illumination
       default:
         return {
-          opacity: 0.82,
+          opacity: 0.45,
           background:
-            'radial-gradient(circle at 50% 42%, rgba(135,206,235,0.65) 0%, rgba(18,59,99,0.48) 50%, transparent 80%)',
+            'radial-gradient(circle at 50% 48%, rgba(135,206,235,0.36) 0%, rgba(18,59,99,0.22) 40%, transparent 68%)',
         };
     }
   };
 
-  // Prism spatial position & scale
+  // Prism spatial position & zoom respond directly to activePillar
   const getPrismTransform = () => {
-    if (prefersReducedMotion) return 'scale(1.05) translate(0, 0)';
+    if (prefersReducedMotion) return 'scale(1.02) translate(0, 0)';
 
-    const baseScale = 1.04 + progress * 0.10;
-    const scrollY = (progress - 0.5) * -22;
-
-    let shiftX = 0;
-    if (currentVisualState === 1) shiftX = -1.2;
-    else if (currentVisualState === 3) shiftX = 1.2;
-
-    return `scale(${baseScale.toFixed(3)}) translate(${shiftX}%, ${scrollY.toFixed(1)}px)`;
+    switch (activePillar) {
+      case 'training':
+        return 'scale(1.05) translate(-1.8%, 0)';
+      case 'technology':
+        return 'scale(1.06) translate(0, 0)';
+      case 'accountability':
+        return 'scale(1.05) translate(1.8%, 0)';
+      case null:
+      default:
+        return 'scale(1.00) translate(0, 0)';
+    }
   };
 
-  // Background atmosphere depth movement
-  const bgAtmosphereY = prefersReducedMotion ? 0 : ((progress - 0.5) * 16).toFixed(1);
-
-  // Pillar concept descriptions from approved copy
-  const pillarConcepts = [
-    { id: 'training', summary: 'Builds Capability' },
-    { id: 'technology', summary: 'Supports Execution' },
-    { id: 'accountability', summary: 'Strengthens Follow-Through' },
-  ];
+  // Pillar concept descriptors from approved copy
+  const pillarConcepts: Record<string, string> = {
+    training: 'Builds Capability',
+    technology: 'Supports Execution',
+    accountability: 'Strengthens Follow-Through',
+  };
 
   return (
     <section
       id="engine"
-      ref={scrollRef}
       aria-labelledby="engine-heading"
       className="relative bg-[#0B1F33] overflow-hidden"
     >
@@ -139,21 +117,22 @@ export const Chapter06Engine: React.FC<Chapter06EngineProps> = ({ onCtaClick }) 
       <div className="relative min-h-[760px] lg:min-h-[880px] flex flex-col justify-between py-12 sm:py-16 lg:py-20">
         {/* Layer 1: Background Atmospheric Depth Texture */}
         <div
-          className="absolute inset-0 pointer-events-none opacity-20 transition-transform duration-1000 ease-out"
+          className="absolute inset-0 pointer-events-none opacity-20"
           style={{
-            transform: `translateY(${bgAtmosphereY}px)`,
             backgroundImage:
               'radial-gradient(circle at 50% 30%, rgba(135,206,235,0.15) 0%, transparent 60%)',
           }}
         />
 
-        {/* Layer 2: Dominant Optical Prism Artwork with Scroll-Linked Transformation */}
+        {/* Layer 2: Dominant Optical Prism Artwork with Hover-Responsive Optics */}
         <div
           className="absolute inset-0 overflow-hidden pointer-events-none"
           style={{
             transform: getPrismTransform(),
             willChange: 'transform',
-            transition: prefersReducedMotion ? 'none' : 'transform 700ms cubic-bezier(0.16, 1, 0.3, 1)',
+            transition: prefersReducedMotion
+              ? 'none'
+              : 'transform 500ms cubic-bezier(0.16, 1, 0.3, 1)',
           }}
         >
           <img
@@ -168,7 +147,9 @@ export const Chapter06Engine: React.FC<Chapter06EngineProps> = ({ onCtaClick }) 
             className="absolute inset-0 pointer-events-none"
             style={{
               ...getLightBloomStyle(),
-              transition: prefersReducedMotion ? 'opacity 200ms ease-out' : 'background 700ms ease-out, opacity 700ms ease-out',
+              transition: prefersReducedMotion
+                ? 'opacity 200ms ease-out'
+                : 'background 500ms ease-out, opacity 500ms ease-out',
             }}
           />
 
@@ -216,40 +197,72 @@ export const Chapter06Engine: React.FC<Chapter06EngineProps> = ({ onCtaClick }) 
               </p>
             </div>
 
-            {/* LOWER COMPOSITION: Three Large Typographic Pillars (Integrated Spatial Layout) */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 mb-8 sm:mb-10">
-              {pillars.map((pillar, idx) => {
-                const pillarNumber = idx + 1;
-                const isPillarActive =
-                  currentVisualState === pillarNumber || isConverged || prefersReducedMotion;
-                const concept = pillarConcepts[idx];
+            {/* LOWER COMPOSITION: Three Large Interactive Typographic Pillars (Integrated Spatial Layout) */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 mb-8 sm:mb-12">
+              {pillars.map((pillar) => {
+                const isSelected = activePillar === pillar.id;
+                const isAnySelected = activePillar !== null;
+                const isDimmed = isAnySelected && !isSelected;
+                const summary = pillarConcepts[pillar.id] || '';
 
                 return (
-                  <div
+                  <button
                     key={pillar.id}
-                    className={`transition-all duration-500 ease-out border-t pt-4 sm:pt-5 ${
-                      isPillarActive
-                        ? 'border-t-2 border-[#87CEEB] shadow-[0_-8px_24px_-8px_rgba(135,206,235,0.25)]'
-                        : 'border-t border-white/20'
+                    type="button"
+                    id={`engine-pillar-btn-${pillar.id}`}
+                    aria-pressed={isSelected}
+                    aria-label={`${pillar.title} pillar: ${summary}`}
+                    onMouseEnter={() =>
+                      setActivePillar(pillar.id as 'training' | 'technology' | 'accountability')
+                    }
+                    onMouseLeave={() => setActivePillar(null)}
+                    onFocus={() =>
+                      setActivePillar(pillar.id as 'training' | 'technology' | 'accountability')
+                    }
+                    onBlur={() => setActivePillar(null)}
+                    onClick={() =>
+                      setActivePillar((prev) =>
+                        prev === pillar.id
+                          ? null
+                          : (pillar.id as 'training' | 'technology' | 'accountability')
+                      )
+                    }
+                    className={`w-full text-left bg-transparent p-0 cursor-pointer rounded-[4px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#87CEEB] focus-visible:ring-offset-4 focus-visible:ring-offset-[#0B1F33] transition-all duration-300 ease-out border-t pt-4 sm:pt-5 ${
+                      isSelected
+                        ? 'border-t-2 border-[#87CEEB] shadow-[0_-8px_24px_-8px_rgba(135,206,235,0.35)]'
+                        : isDimmed
+                        ? 'border-t border-white/15'
+                        : 'border-t border-white/30 hover:border-white/50'
                     } ${
-                      !prefersReducedMotion &&
-                      (isPillarActive
-                        ? 'transform scale-[1.025] -translate-y-1'
-                        : 'transform scale-[0.985] opacity-50')
+                      prefersReducedMotion
+                        ? ''
+                        : isSelected
+                        ? 'transform scale-[1.06] -translate-y-1'
+                        : isDimmed
+                        ? 'transform scale-[0.96] opacity-60'
+                        : 'transform scale-100 opacity-100'
                     }`}
                   >
                     {/* Pillar Number & Title */}
                     <div className="flex items-baseline gap-2.5 mb-2">
                       <span
-                        className={`text-xs sm:text-sm font-mono font-bold transition-colors duration-500 ${
-                          isPillarActive ? 'text-[#87CEEB]' : 'text-white/40'
+                        className={`text-xs sm:text-sm font-mono font-bold transition-colors duration-300 ${
+                          isSelected
+                            ? 'text-white'
+                            : isDimmed
+                            ? 'text-white/40'
+                            : 'text-[#87CEEB]'
                         }`}
                       >
                         {pillar.number}
                       </span>
                       <h3
-                        className={`text-lg sm:text-xl lg:text-2xl font-sans font-extrabold uppercase tracking-wider transition-colors duration-500 ${
-                          isPillarActive ? 'text-white' : 'text-white/50'
+                        className={`text-lg sm:text-xl lg:text-2xl font-sans font-extrabold uppercase tracking-wider transition-colors duration-300 ${
+                          isSelected
+                            ? 'text-white'
+                            : isDimmed
+                            ? 'text-white/60'
+                            : 'text-white'
                         }`}
                       >
                         {pillar.title}
@@ -257,37 +270,49 @@ export const Chapter06Engine: React.FC<Chapter06EngineProps> = ({ onCtaClick }) 
                     </div>
 
                     {/* Short Role Descriptor */}
-                    <div className="mb-2">
+                    <div className="mb-2.5">
                       <span
-                        className={`text-[10px] sm:text-[11px] font-mono uppercase tracking-wider font-semibold transition-colors duration-500 ${
-                          isPillarActive ? 'text-[#87CEEB]/90' : 'text-white/30'
+                        className={`text-[10px] sm:text-[11px] font-mono uppercase tracking-wider font-semibold transition-colors duration-300 ${
+                          isSelected
+                            ? 'text-[#87CEEB]'
+                            : isDimmed
+                            ? 'text-white/40'
+                            : 'text-[#87CEEB]/80'
                         }`}
                       >
-                        {concept.summary}
+                        {summary}
                       </span>
                     </div>
 
                     {/* Approved Description */}
                     <p
-                      className={`text-xs sm:text-sm font-sans leading-relaxed transition-all duration-500 ${
-                        isPillarActive ? 'text-gray-200 opacity-100' : 'text-gray-400 opacity-40'
+                      className={`text-xs sm:text-sm font-sans leading-relaxed transition-all duration-300 ${
+                        isSelected
+                          ? 'text-white opacity-100 font-medium'
+                          : isDimmed
+                          ? 'text-gray-400 opacity-60'
+                          : 'text-gray-300 opacity-90'
                       }`}
                     >
                       {pillar.description}
                     </p>
-                  </div>
+
+                    {/* Active Underline Accent */}
+                    <div
+                      className={`h-0.5 mt-3.5 rounded-full transition-all duration-300 ${
+                        isSelected
+                          ? 'w-12 bg-[#87CEEB] opacity-100'
+                          : 'w-0 bg-transparent opacity-0'
+                      }`}
+                      aria-hidden="true"
+                    />
+                  </button>
                 );
               })}
             </div>
 
-            {/* CONVERGENCE & CLIMAX: Closing Concept, Formula Reveal & CTA */}
-            <div
-              className={`pt-6 sm:pt-8 border-t border-white/20 transition-all duration-700 ease-out ${
-                isConverged || prefersReducedMotion
-                  ? 'opacity-100 translate-y-0'
-                  : 'opacity-20 translate-y-3 pointer-events-none'
-              }`}
-            >
+            {/* STATIC FORMULA & CTA BLOCK: Permanent, stable section element */}
+            <div className="pt-8 sm:pt-10 border-t border-white/20">
               {/* Closing Summary Concept */}
               <div className="mb-4 text-xs sm:text-sm text-gray-300 font-sans tracking-wide">
                 <span className="text-white font-medium">Training builds capability.</span>{' '}
@@ -297,7 +322,7 @@ export const Chapter06Engine: React.FC<Chapter06EngineProps> = ({ onCtaClick }) 
                 <span className="text-white font-medium">Accountability strengthens follow-through.</span>
               </div>
 
-              {/* Grand Formula Reveal Lockup + Secondary Action */}
+              {/* Formula Lockup + Primary Action */}
               <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
                 <div className="text-sm sm:text-base lg:text-lg font-mono font-extrabold text-[#87CEEB] tracking-wider leading-snug">
                   <span className="inline-block">TRAINING</span> +{' '}
