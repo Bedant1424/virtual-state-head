@@ -5,6 +5,8 @@ import engineOpticalPrism from './engine_optical_prism.jpg';
 import howItWorksField from './how_it_works_field.jpg';
 import audienceIndustrialLeader from './audience_industrial_leader.jpg';
 import performanceGapTension from './performance_gap_tension.jpg';
+import gapDemoReview from './gap_demo_review.jpg';
+import batchDemoCohort from './batch_demo_cohort.jpg';
 import coachDemoRoyal from './coach_demo_royal.jpg';
 import coachDemoSaroj from './coach_demo_saroj.jpg';
 import coachDemoSudeep from './coach_demo_sudeep.jpg';
@@ -28,8 +30,10 @@ export const vshImages = {
   howItWorks: howItWorksField,
   audience: audienceIndustrialLeader,
   whyVsh: whyVshDemoLeadership,
-  performanceGap: performanceGapTension,
-  gap: performanceGapTension,
+  performanceGap: gapDemoReview,
+  gap: gapDemoReview,
+  gapTension: performanceGapTension,
+  batch: batchDemoCohort,
   coaches: {
     royalBal: coachDemoRoyal,
     sarojPanda: coachDemoSaroj,
