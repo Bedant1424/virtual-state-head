@@ -295,7 +295,7 @@ export const siteContent: SiteContent = {
   cta: {
     primaryLabel: 'Book Your Sales Strategy Call',
     secondaryLabel: 'Explore the Engine',
-    helperText: 'Confidential 1-on-1 strategy discussion for MSME leadership in Odisha.',
+    helperText: 'Exploratory strategy discussion for MSME leadership in Odisha.',
   },
 
   authority: {
@@ -855,13 +855,13 @@ export const siteContent: SiteContent = {
       id: 'faq-6',
       question: 'Does booking a call guarantee selection?',
       answer:
-        'No. Booking a Sales Strategy Call is an exploratory diagnostic discussion to understand your business, sales challenges, and growth goals. Selection into a cohort is based on mutual fit and team readiness.',
+        'No. Booking a Sales Strategy Call is an exploratory diagnostic discussion to understand your business, sales challenges, and growth goals. Booking a call does not guarantee acceptance into a batch.',
     },
     {
       id: 'faq-7',
       question: 'How many companies will be selected for the upcoming batch?',
       answer:
-        'Each batch is strictly limited to 10 MSME companies from Odisha to ensure intensive, high-touch executive oversight and direct coaching attention from our senior leaders.',
+        'Each planned batch is designed for 10 MSME companies from Odisha to provide structured sales leadership, team development, and ongoing performance support.',
     },
     {
       id: 'faq-8',
@@ -873,7 +873,7 @@ export const siteContent: SiteContent = {
       id: 'faq-9',
       question: 'How can I get started?',
       answer:
-        'You can start by booking a confidential 45-minute Sales Strategy Call. We will review your current sales structure, identify key friction points, and determine whether the Virtual State Head engagement is the right strategic fit for your business.',
+        'You can start by booking an initial Sales Strategy Call. We will review your current sales structure, identify key friction points, and determine whether the Virtual State Head engagement aligns with your business goals.',
     },
   ],
 
@@ -882,6 +882,6 @@ export const siteContent: SiteContent = {
     cohortLimit: '10 MSME Companies',
     targetMarket: 'Odisha MSMEs',
     deliveryModel: 'Senior Sales Leadership & Coaching',
-    note: 'Selection confirmed through mutual fit assessment during initial strategy discussion.',
+    note: 'Initial discussion to review sales structure and assess readiness. Booking a call does not guarantee acceptance.',
   },
 };
